@@ -102,7 +102,7 @@
 "JqM-rM-xzY.text" = "Soru sayısı";
 
 /* Class = "UILabel"; text = "Enter your login details"; ObjectID = "JuE-8c-e4f"; */
-"JuE-8c-e4f.text" = "Enter your login details";
+"JuE-8c-e4f.text" = "Giriş bilgilerinizi girin";
 
 /* Class = "UIButton"; normalTitle = "Previous"; ObjectID = "KHw-YL-1Oc"; */
 "KHw-YL-1Oc.normalTitle" = "Önceki";
@@ -189,7 +189,7 @@
 "YVi-VN-xSf.normalTitle" = "İletişim";
 
 /* Class = "UIButton"; normalTitle = "Log in"; ObjectID = "YcT-t1-pRW"; */
-"YcT-t1-pRW.normalTitle" = "Log in";
+"YcT-t1-pRW.normalTitle" = "Giriş yap";
 
 /* Class = "UILabel"; text = "Footer"; ObjectID = "Ycy-gS-j3w"; */
 "Ycy-gS-j3w.text" = "Footer";
@@ -240,7 +240,7 @@
 "ePr-KY-St8.normalTitle" = "Gönder";
 
 /* Class = "UITextField"; placeholder = "Password"; ObjectID = "fDO-qC-QP6"; */
-"fDO-qC-QP6.placeholder" = "Password";
+"fDO-qC-QP6.placeholder" = "Şifre";
 
 /* Class = "UIButton"; normalTitle = "Previous"; ObjectID = "fv8-aK-s2C"; */
 "fv8-aK-s2C.normalTitle" = "Önceki";
@@ -267,7 +267,7 @@
 "jtd-n4-qAa.text" = "-";
 
 /* Class = "UITextField"; placeholder = "User name"; ObjectID = "kNy-PS-ENe"; */
-"kNy-PS-ENe.placeholder" = "User name";
+"kNy-PS-ENe.placeholder" = "Kullanıcı adı";
 
 /* Class = "UIButton"; normalTitle = "?"; ObjectID = "ka1-96-HVq"; */
 "ka1-96-HVq.normalTitle" = "?";

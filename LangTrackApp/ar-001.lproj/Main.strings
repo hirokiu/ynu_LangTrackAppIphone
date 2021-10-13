@@ -84,7 +84,7 @@
 "JqM-rM-xzY.text" = "عدد الأسئلة";
 
 /* Class = "UILabel"; text = "Enter your login details"; ObjectID = "JuE-8c-e4f"; */
-"JuE-8c-e4f.text" = "Enter your login details";
+"JuE-8c-e4f.text" = "أدخل تفاصيل الدخول الخاصة بك";
 
 /* Class = "UIButton"; normalTitle = "Previous"; ObjectID = "KHw-YL-1Oc"; */
 "KHw-YL-1Oc.normalTitle" = "سابق";
@@ -165,7 +165,7 @@
 "YVi-VN-xSf.normalTitle" = "اتصل";
 
 /* Class = "UIButton"; normalTitle = "Log in"; ObjectID = "YcT-t1-pRW"; */
-"YcT-t1-pRW.normalTitle" = "Log in";
+"YcT-t1-pRW.normalTitle" = "تسجيل الدخول";
 
 /* Class = "UILabel"; text = "Footer"; ObjectID = "Ycy-gS-j3w"; */
 "Ycy-gS-j3w.text" = "Footer";
@@ -213,7 +213,7 @@
 "ePr-KY-St8.normalTitle" = "موافق/إرسال";
 
 /* Class = "UITextField"; placeholder = "Password"; ObjectID = "fDO-qC-QP6"; */
-"fDO-qC-QP6.placeholder" = "Password";
+"fDO-qC-QP6.placeholder" = "كلمة السر";
 
 /* Class = "UIButton"; normalTitle = "Previous"; ObjectID = "fv8-aK-s2C"; */
 "fv8-aK-s2C.normalTitle" = "سابق";
@@ -237,7 +237,7 @@
 "jtd-n4-qAa.text" = "-";
 
 /* Class = "UITextField"; placeholder = "User name"; ObjectID = "kNy-PS-ENe"; */
-"kNy-PS-ENe.placeholder" = "User name";
+"kNy-PS-ENe.placeholder" = "اسم المستخدم";
 
 /* Class = "UIButton"; normalTitle = "?"; ObjectID = "ka1-96-HVq"; */
 "ka1-96-HVq.normalTitle" = "?";
