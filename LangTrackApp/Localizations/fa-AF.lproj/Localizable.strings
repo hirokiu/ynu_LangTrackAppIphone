@@ -1,0 +1,98 @@
+
+
+/*
+ Localizable.strings (Persian Dari)
+ LangTrackApp
+  
+ Created by Stephan Björck on 2021-09-08.
+ Copyright © 2021 Stephan Björck. All rights reserved.
+*/
+
+
+//Main
+
+//questions
+"next" = "بعدی";
+"previous" = "قبلی";
+
+//Login
+"Info" = "اطلاعات";
+"The Lang Track App is an app developed by" = "The Lang Track App یک (اپ) است که توسط آزمایشگاۀ علوم انسانی در پوهنتون/دانشگاۀ (لوند) برای اهداف تحقیقاتی، انکشاف داده شده است.\n\nبه کمک همان اسم کاربری و رمز ورودی که از طرف آزمایشگاۀ علوم انسانی در پوهنتون/دانشگاۀ (لوند) برای تان داده شده است، وارد سیستم شوید.";
+"Login error" = "اشتباه در هنگام وارد شدن به سیستم";
+"Invalid username or password" = "اسم کاربری یا رمز ورودی اعتبار ندارد";
+"Incorrect entry" = "اطلاعات داده شده نادرست";
+"Please enter your username and password and try again" = "لطفاَ اسم کاربری و رمز ورودی را ارائه نموده و دوباره کوشش نمایید";
+
+// Menu
+"Log out" = "از سیستم خارج شوید";
+"Do you want to log out?" = "آیا می خواهید از سیستم خارج شوید؟";
+"Cancel" = "قطع نمایید";
+"Time left:" = "زمان باقی مانده:";
+"and" = "و";
+"minutes" = "دقایق";
+"minute" = "دقیقه";
+"hours" = "ساعت ها";
+"hour" = "ساعت";
+"day" = "روز";
+"days" = "روزها";
+"Unanswered" = "پاسخ داده نشده";
+"Answered" = "پاسخ داده شده";
+
+// main
+"Here it was empty" = "
+اینجا خالی است
+وقتی Humlabbet (آزمایشگاۀ علوم انسانی) یک پرسشنامه را برای شما اختصاص می دهد، شما آن را در اینجا خواهید دید.
+";
+"numberEnding" = "";
+"No contact with server" = "بدون تماس با سرور";
+"You have answered-formate" = "شما بهشما بهشما به %d پرسشنامه از %d پرسشنامه اختصاصی خود پاسخ داده اید.";
+"You have answered" = "شما به ";
+"of your" = " پرسشنامه از ";
+"assigned surveys." = " پرسشنامه اختصاصی خود پاسخ داده اید.";
+"Survey expired" = "نظرسنجی منقضی شد";
+
+// Contact
+"Contact" = "تماس";
+"contact text 1" = "اگر مشکل فنی دارید ، با استفان بیورک تماس بگیرید";
+"contact text 4" = "در صورتی که درباره محتوای فرم ها سوال و یا نظری دارید از طریق ایمیل با هنریت آرندت تماس بگیرید.";
+"tech mail subject" = "Concerning Lang-Track-App";
+"No Email Client popup title" = "No Email Client";
+"No Email Client popup text" = "E-mail does not seem to be possible. Click on the link to the Humanities Lab below and contact that way instead.";
+"Links" = "پیوندها";
+"Lang-Track-App project" = "Lang-Track-App project";
+"Humanities Lab" = "Humanities Lab";
+"Lund University Humanities Lab" = "Lund University Humanities Lab";
+"Lund University" = "Lund University";
+
+//about
+"aboutText1" = "
+ما Lang-Track-Appرا انکشاف داده ایم تا مطالعه کنیم که چه زمان، در کجا و چگونه انسان ها در زندگی روزمرۀ شان با زبان های خارجی در تماس می باشند.
+
+ این موضوع برای درک بهتر چالش ها و مشکلات برای آموزش زبان در خارج از صنف درسی، مهم می باشد.
+
+این پروژه کار مشترک است میان مرکز زبان و ادبیات و آزمایشگاۀ علوم انسانی پوهنتون/ دانشگاۀ (لوند).
+";
+"MarianneInfo" = "استاد روانشناسی زبان، مرکز زبان و ادبیات";
+"JonasInfo" = "استاد زبان شناسی فرانسوی، مرکز زبان و ادبیات";
+"HenrietteInfo" = "داکتر فلسفه/ فوق داکترا، پوهنتون/ دانشگاۀ لوند، آزمایشگاۀ علوم انسانی";
+"JosefInfo" = "توسعه دهندۀ نرم افزار، دانشگاۀ لوند، آزمایشگاۀ علوم انسانی";
+"StephanInfo" = "توسعه دهندۀ نرم افزار، دانشگاۀ لوند، آزمایشگاۀ علوم انسانی";
+"Team" = "گروه";
+"Funded by" = "تمویل مالی شده توسط";
+"founder image" = "stiftelsen_wallenberg_en";
+"https://maw.wallenberg.org/en" = "https://maw.wallenberg.org/en";
+
+//Instructions
+"Instructions" = "رهنمود ها";
+"instructionsText1" = "
+ما می خواهیم از شما تقاضا نماییم تا روزانه چند بار از طریق این (اپ) به پرسشنامه های کوتاه پاسخ بدهید.  هر زمانی که یک پرسشنامه جدید بیاید شما یک پیام را دریافت می کنید.  تیلفون تان را با خود به همراه داشته باشید و صدای دریافت پیام را خاموش نسازید.!
+.
+
+مهم است تا همه پرسشنامه ها را به زودی ممکن پاسخ بدهید. اگر به یک پرسشنامه جواب ندهید، به شکل اتومات بعد از 60 دقیقه منقضی می گردد.
+";
+"Data processing" = "کاربرد اطلاعات";
+"dataProcessing1" = "
+علاوه بر جواب های شما، تاریخ و زمان باز نمودن پرسشنامه و فرستادن جواب های تان نیز به شکل اتومات توسط (اپ) ثبت می شود. هیچگونه معلومات دیگر، مانند معلومات در مورد محل، توسط (اپ) جمع آوری نمی شود.
+
+اطلاعات شما توسط پژوهشگران در این پروژه تدوین و تحلیل خواهد شد.  هیچکس دیگر به جواب های شما دسترسی نخواهد داشت.  در زمان گزارش نتیجۀ پروژه همه افراد اشتراک کننده در پژوهش ناشناس خواهند بود.
+";

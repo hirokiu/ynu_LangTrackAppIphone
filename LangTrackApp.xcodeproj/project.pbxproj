@@ -193,6 +193,15 @@
 		F1DB19952424B8A60068F49E /* OverviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewViewController.swift; sourceTree = "<group>"; };
 		F1DB199C2424FEC10068F49E /* IncludeIf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncludeIf.swift; sourceTree = "<group>"; };
 		F1DB199E24275D810068F49E /* NextButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextButton.swift; sourceTree = "<group>"; };
+		F1EF299D26E8D8950094EA26 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Main.strings; sourceTree = "<group>"; };
+		F1EF299E26E8D8960094EA26 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		F1EF299F26E8D8960094EA26 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		F1EF29A026E8D9360094EA26 /* fa */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fa; path = fa.lproj/Main.strings; sourceTree = "<group>"; };
+		F1EF29A126E8D9370094EA26 /* fa */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fa; path = fa.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		F1EF29A226E8D9370094EA26 /* fa */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fa; path = fa.lproj/Localizable.strings; sourceTree = "<group>"; };
+		F1EF29A326E8D9980094EA26 /* fa-AF */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "fa-AF"; path = "fa-AF.lproj/Main.strings"; sourceTree = "<group>"; };
+		F1EF29A426E8D9990094EA26 /* fa-AF */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "fa-AF"; path = "fa-AF.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		F1EF29A526E8D9990094EA26 /* fa-AF */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "fa-AF"; path = "fa-AF.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		F1F7771F245B67B200B93D8D /* ContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
 		F1F77722245B691200B93D8D /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		F1F7D1DD246FEE57003D881B /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -601,6 +610,9 @@
 				Base,
 				sv,
 				"ar-001",
+				tr,
+				fa,
+				"fa-AF",
 			);
 			mainGroup = F156586423E2DD7500EC2796;
 			productRefGroup = F156586E23E2DD7500EC2796 /* Products */;
@@ -824,6 +836,9 @@
 				F156587723E2DD7500EC2796 /* Base */,
 				F128D855246FE81E009E3EB9 /* sv */,
 				F1B0A57D2542AA790054CB54 /* ar-001 */,
+				F1EF299D26E8D8950094EA26 /* tr */,
+				F1EF29A026E8D9360094EA26 /* fa */,
+				F1EF29A326E8D9980094EA26 /* fa-AF */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -834,6 +849,9 @@
 				F156587C23E2DD7600EC2796 /* Base */,
 				F128D856246FE81E009E3EB9 /* sv */,
 				F1B0A57E2542AA790054CB54 /* ar-001 */,
+				F1EF299E26E8D8960094EA26 /* tr */,
+				F1EF29A126E8D9370094EA26 /* fa */,
+				F1EF29A426E8D9990094EA26 /* fa-AF */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -844,6 +862,9 @@
 				F1F7D1DD246FEE57003D881B /* sv */,
 				F1F7D1DF246FEE8B003D881B /* en */,
 				F1B0A57F2542AA7A0054CB54 /* ar-001 */,
+				F1EF299F26E8D8960094EA26 /* tr */,
+				F1EF29A226E8D9370094EA26 /* fa */,
+				F1EF29A526E8D9990094EA26 /* fa-AF */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -974,7 +995,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = LangTrackApp/LangTrackApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 9;
+				CURRENT_PROJECT_VERSION = 12;
 				DEVELOPMENT_TEAM = 3CY4P3X5YK;
 				INFOPLIST_FILE = LangTrackApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
@@ -982,7 +1003,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.0;
+				MARKETING_VERSION = 1.2.2;
 				PRODUCT_BUNDLE_IDENTIFIER = se.lu.LangTrackApp;
 				PRODUCT_NAME = "Lang Track App";
 				SWIFT_VERSION = 5.0;
@@ -997,7 +1018,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = LangTrackApp/LangTrackApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 9;
+				CURRENT_PROJECT_VERSION = 12;
 				DEVELOPMENT_TEAM = 3CY4P3X5YK;
 				INFOPLIST_FILE = LangTrackApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
@@ -1005,7 +1026,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.0;
+				MARKETING_VERSION = 1.2.2;
 				PRODUCT_BUNDLE_IDENTIFIER = se.lu.LangTrackApp;
 				PRODUCT_NAME = "Lang Track App";
 				SWIFT_VERSION = 5.0;

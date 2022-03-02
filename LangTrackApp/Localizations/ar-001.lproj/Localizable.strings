@@ -1,11 +1,11 @@
 
 
 /*
-Localizable.strings (English)
+Localizable.strings (Arabic)
 LangTrackApp
  
-Created by Stephan Björck on 2020-05-16.
-Copyright © 2020 Stephan Björck. All rights reserved.
+Created by Stephan Björck on 2021-09-08.
+Copyright © 2021 Stephan Björck. All rights reserved.
 */
 
 
@@ -44,9 +44,11 @@ Copyright © 2020 Stephan Björck. All rights reserved.
 عندما يكلفك مختبر الإنسانيات باستبيان، ستراه هنا.";
 "numberEnding" = "";
 "No contact with server" = "No contact with server";
+"You have answered-formate" = "لقد أجبت على %d من %d من الاستبيانات المخصصة لك.";
 "You have answered" = " لقد أجبت على";
 "of your" = " من ";
 "assigned surveys." = "استطلاعًا ";
+"Survey expired" = "انتهت صلاحية الاستطلاع";
 
 // Contact
 "Contact" = "اتصل";

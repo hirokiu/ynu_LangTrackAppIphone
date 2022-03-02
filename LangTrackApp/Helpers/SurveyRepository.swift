@@ -15,12 +15,6 @@ import Firebase
 
 struct SurveyRepository {
     
-    //sista nollan ska ändras till etta vid hämtning från dropbox
-    //static let theUrl = "https://www.dropbox.com/s/qmvskzi4ejtg5ij/play_survey_json.txt?dl=1"
-    //static let mockUrl = "https://e3777de6-509b-46a9-a996-ea2708cc0192.mock.pstmn.io/"
-    //static let ltaUrl = "http://ht-lang-track.ht.lu.se/api/"
-    //url on Firebase: "https://lta.ht.lu.se/api/"
-    //stagingUrl on Firebase: "https://lta-staging.ht.lu.se/api/"
     
     
     static var idToken = ""
@@ -41,7 +35,6 @@ struct SurveyRepository {
     static var selectedAssignment: Assignment?
     static let tempuserId = "u123"
     static var userId = ""
-    //static var ref: DatabaseReference!
     static let realtimeRef = Database.database().reference()
     static var useStagingServer = false
     
@@ -55,8 +48,6 @@ struct SurveyRepository {
     
     static func setStagingServer(isActive: Bool){
         useStagingServer = isActive
-        //selectedAssignment = nil
-        //assignmentList = []
     }
     
     static func getUrl(completionhandler: @escaping (_ result: String?) -> Void){
@@ -144,11 +135,6 @@ struct SurveyRepository {
                                        parameters: theBody,
                                        encoder: JSONParameterEncoder.default,
                                        headers: headers)
-                            /*
-                             //print out request
-                            req.cURLDescription { (curl) in
-                               print("CURL \(curl)")
-                            }*/
                             req.response { response in
                             }
                         }
@@ -166,7 +152,6 @@ struct SurveyRepository {
                 getUrl { (theUrl) in
                     if let theUrl = theUrl{
                         if theUrl != ""{
-                            //https://lta.ht.lu.se/api/assignments/(selectedAssignment!.id)/open
                             let deviceTokenUrl = "\(theUrl)assignments/\(selectedAssignment!.id)/open"
                             let request = NSMutableURLRequest(url: URL(string: deviceTokenUrl)!)
                             request.setValue("application/json", forHTTPHeaderField: "Accept")
@@ -276,7 +261,6 @@ struct SurveyRepository {
                 if theUrl != ""{
                     print("getSurveys, userId: \(userId)")
                     if userId != ""{
-                        //http://ht-lang-track.ht.lu.se/api/users/alicia/assignments
                         let assignmentsTokenUrl = "\(theUrl)users/\(userId)/assignments"
                         let request = NSMutableURLRequest(url: URL(string: assignmentsTokenUrl)!)
                         
@@ -294,14 +278,6 @@ struct SurveyRepository {
                                 completionhandler(nil)
                                 return
                             }
-                            /*do {
-                             // Read all HTTP Response Headers
-                             if let response = response as? HTTPURLResponse {
-                             print("All headers: \(response.allHeaderFields)")
-                             // Read a specific HTTP Response Header by name
-                             print("Specific header: \(response.value(forHTTPHeaderField: "Content-Type") ?? " header not found")")
-                             }
-                             }*/
                             if data != nil{
                                 let listWithAssignments = createAssignmentsFromData(data: data!)
                                 if listWithAssignments != nil{

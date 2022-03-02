@@ -1,0 +1,103 @@
+
+
+/*
+Localizable.strings (Persian Farsi)
+LangTrackApp
+ 
+Created by Stephan Björck on 2021-09-08.
+Copyright © 2021 Stephan Björck. All rights reserved.
+*/
+
+
+//Main
+
+//questions
+"next" = "بعدی";
+"previous" = "قبلی";
+
+//Login
+"Info" = "اطلاعات";
+"The Lang Track App is an app developed by" = "
+اپلیکیشن LANG TRACK اپلیکیشنی است که توسط لابراتور علوم انسانی دانشگاه لوند به هدف استفاده در این پروژه ایجاد شده است.
+
+با نام کاربری و رمز ورود خود که از لابراتور علوم انسانی دانشگاه لوند دریافت کرده‌اید، وارد شوید.
+";
+"Login error" = "خطا در ورود";
+"Invalid username or password" = "نام کاربری و رمز ورود نامعتبر";
+"Incorrect entry" = "تایپ اشتباه";
+"Please enter your username and password and try again" = "نام کاربری و رمز خود را وارد کنید و دوباره امتحان کنید";
+
+// Menu
+"Log out" = "خارج شوید";
+"Do you want to log out?" = "آیا میخواهید خارج شوید؟";
+"Cancel" = "انصراف";
+"Time left:" = "زمان باقی مانده:";
+"and" = "و";
+"minutes" = "دقایق";
+"minute" = "دقیقه";
+"hours" = "ساعت ها";
+"hour" = "ساعت";
+"day" = "روز";
+"days" = "روزها";
+"Unanswered" = "پاسخ نداده";
+"Answered" = "پاسخ داده";
+
+// main
+"Here it was empty" = "
+اینجا خالی بود
+زمانی که لابراتور علوم انسانی فرمی را به شما می فرستد در این قسمت قرار میگیرد
+";
+"numberEnding" = "";
+"No contact with server" = "بدون تماس با سرور";
+"You have answered-formate" = "شما به %d فرم از %d فرم های داده شده پاسخ داده اید.";
+"You have answered" = "You have answered";
+"of your" = "of your";
+"assigned surveys." = "assigned surveys.";
+"Survey expired" = "نظر سنجی منقضی شده است";
+
+// Contact
+"Contact" = "تماس";
+"contact text 1" = "در صورتی که مشکل فنی دارید با استفان بیورک تماس بگیرید.";
+"contact text 4" = "در صورتی که درباره محتوای فرم ها سوال و یا نظری دارید از طریق ایمیل با هنریت آرندت تماس بگیرید.";
+"tech mail subject" = "Concerning Lang-Track-App";
+"No Email Client popup title" = "No Email Client";
+"No Email Client popup text" = "E-mail does not seem to be possible. Click on the link to the Humanities Lab below and contact that way instead.";
+"Links" = "پیوندها";
+"Lang-Track-App project" = "Lang-Track-App project";
+"Humanities Lab" = "لابراتور علوم انسانی";
+"Lund University Humanities Lab" = "Lund University Humanities Lab";
+"Lund University" = "Lund University";
+
+//about
+"aboutText1" = "
+ما اپلیکیشن LANG TRACK را برای تحقیق در مورد زمان، مکان و چگونگی استفاده زبان خارجی توسط افراد در زندگی روزمره ایجاد کرده ایم. ما سعی میکنیم چالش های آموزش زبان را در خارج از کلاس زبان درک کنیم.
+
+این پروژه همکاری بین مرکز زبان و ادبیات و علوم انسانی دانشگاه لوند است.
+";
+"MarianneInfo" = " پروفسور زبان روان شناسی، مرکز زبان و ادبیات";
+"JonasInfo" = "پروفسور زبان فرانسه، مرکز زبان و ادبیات";
+"HenrietteInfo" = "فوق دکترا، لابراتور علوم انسانی دانشگاه لوند";
+"JosefInfo" = "سازنده اپلیکیشن و سیستم، لابراتور علوم انسانی دانشگاه لوند";
+"StephanInfo" = "سازنده اپلیکیشن و سیستم، لابراتور علوم انسانی دانشگاه لوند";
+"Team" = "گروه";
+"Funded by" = "حامی مالی این پروژه";
+"founder image" = "stiftelsen_wallenberg_en";
+"https://maw.wallenberg.org/en" = "https://maw.wallenberg.org/en";
+
+//Instructions
+"Instructions" = "دستورالعمل";
+"instructionsText1" = "
+ما از شما می خواهیم چند بار در روز در اپلیکیشن خود به فرم های کوتاه پاسخ دهید. زمانی که فرم جدیدی می آید به شما پیام داده می شود. تلفن خود را همراه داشته باشید و صدای پیام ها را نبندید.
+
+
+
+مهم است که هر فرم را هرچه زودتر پاسخ دهید. اگر به فرمی پاسخ ندهید به صورت اتوماتیک بعد از ۶۰ دقیقه خاموش می شود.
+";
+"Data processing" = "استفاده از اطلاعات";
+"dataProcessing1" = "
+علاوه بر جواب های شما به سوالات این اپلیکیشن به طور اتوماتیک تاریخ و زمان باز شدن فرم ها و فرستادن جواب ها را نیز ثبت می کند. این اپلیکیشن داده های دیگری مانند اطلاعات مکانی شمارا ذخیره نمیکند.
+
+
+
+داده های شما توسط محققان این پروژه جمع‌آوری و تحلیل خواهند شد. هیچ فرد دیگری به جوابهای شما دسترسی نخواهد داشت. زمانی که نتایج پروژه را اعلام می کنیم تمامی شرکت کنندگان ناشناس خواهند بود.
+";

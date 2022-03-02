@@ -1,0 +1,80 @@
+
+
+/*
+Localizable.strings (Turkish)
+LangTrackApp
+ 
+Created by Stephan Björck on 2021-09-08.
+Copyright © 2021 Stephan Björck. All rights reserved.
+*/
+
+
+//Main
+
+//questions
+"next" = "Sonraki";
+"previous" = "Önceki";
+
+//Login
+"Info" = "Bilgi";
+"The Lang Track App is an app developed by" = "Lang Track App, Lund Üniversitesi'ndeki Beşeri Bilimler Laboratuvarı tarafından araştırma amacıyla geliştirilmiş bir uygulamadır.\n\nHumlabbet Lund Üniversitesi'nden size atanan kullanıcı adı ve şifre ile giriş yapın.";
+"Login error" = "Giriş yapılırken hata oluştu";
+"Invalid username or password" = "Geçersiz kullanıcı adı veya şifre";
+"Incorrect entry" = "Yanlış giriş";
+"Please enter your username and password and try again" = "Kullanıcı adını ve şifreyi girin ve tekrar deneyin";
+
+// Menu
+"Log out" = "Çıkış yap";
+"Do you want to log out?" = "Oturumu kapatmak istiyor musunuz?";
+"Cancel" = "İptal";
+"Time left:" = "Kalan süre:";
+"and" = "ve";
+"minutes" = "dakika";
+"minute" = "dakika";
+"hours" = "saat";
+"hour" = "saat";
+"day" = "gün";
+"days" = "günler";
+"Unanswered" = "Cevaplanmayan";
+"Answered" = "Cevaplanan";
+
+// main
+"Here it was empty" = "Burası boştu…\nHumlabbet size bir anket gönderdiğinde, burada görünecek.";
+"numberEnding" = "";
+"No contact with server" = "Sunucuyla iletişim yok";
+"You have answered-formate" = "Size gönderilen %d anketin %d’ünü yanıtladınız.";
+"You have answered" = "Size gönderilen";
+"of your" = "anketin";
+"assigned surveys." = "’ini/ünü yanıtladınız.";
+"Survey expired" = "Anketin süresi doldu";
+
+// Contact
+"Contact" = "İletişim";
+"contact text 1" = "Teknik sorunlarınız varsa, Stephan Björck ile iletişime geçin.";
+"contact text 4" = "Anketlerin içeriği hakkında sorularınız veya yorumlarınız varsa, Henriette Arndt'a e-posta gönderin.";
+"tech mail subject" = "Concerning Lang-Track-App";
+"No Email Client popup title" = "No Email Client";
+"No Email Client popup text" = "E-mail does not seem to be possible. Click on the link to the Humanities Lab below and contact that way instead.";
+"Links" = "Bağlantılar";
+"Lang-Track-App project" = "Lang-Track-App project";
+"Humanities Lab" = "Humanities Lab";
+"Lund University Humanities Lab" = "Lund University Humanities Lab";
+"Lund University" = "Lund University";
+
+//about
+"aboutText1" = "İnsanların günlük yaşamda yabancı dillerle ne zaman, nerede ve ne sıklıkta iletişim kurduklarını araştırmak için Lang-Track-App'i geliştirdik. Bu uygulama, sınıf dışında dil öğrenmenin zorluklarını daha iyi anlamak için önemlidir.\n\nProje, Dil ve Edebiyat Merkezi ile Lund Üniversitesi Beşeri Bilimler Laboratuvarı arasındaki bir işbirliğidir.";
+"MarianneInfo" = "Psikodilbilim Profesörü, Dil ve Edebiyat Merkezi";
+"JonasInfo" = "Fransız Dilbilimi Profesörü, Dil ve Edebiyat Merkezi";
+"HenrietteInfo" = "Doktora Sonrası Araştırma Görevlisi, LU Beşeri Bilimler Laboratuvarı";
+"JosefInfo" = "Sistem Geliştirici, LU Beşeri Bilimler Laboratuvarı";
+"StephanInfo" = "Sistem Geliştirici, LU Beşeri Bilimler Laboratuvarı";
+"Team" = "Takım";
+"Funded by" = "Finanse eden";
+"founder image" = "stiftelsen_wallenberg_en";
+"https://maw.wallenberg.org/en" = "https://maw.wallenberg.org/en";
+
+//Instructions
+"Instructions" = "Talimatlar";
+"instructionsText1" = "Bu uygulamadaki kısa anketleri günde birkaç kez yanıtlamanızı rica ediyoruz. Yeni bir anket olduğunda bir push bildirimi alacaksınız. Telefonunuzu yanınızda taşıyın ve bildirim sesini kapatmayın.\n\nHer soruyu mümkün olan en kısa sürede yanıtlamanız önemlidir. Bir anketi yanıtlamazsanız, 60 dakika sonra otomatik olarak kapanacaktır.";
+"Data processing" = "Veri işleme";
+"dataProcessing1" = "Uygulama, sorulara verdiğiniz yanıtlara ek olarak, anketi açtığınız ve yanıtlarınızı gönderdiğiniz tarih ve saati otomatik olarak kaydeder. Uygulama, konum bilgisi gibi başka herhangi bir veri toplamaz.\n\nVerileriniz projedeki araştırmacılar tarafından derlenecek ve analiz edilecektir. Başka hiç kimse verilerinize erişemez. Proje sonuçlarını raporladığımızda, tüm araştırma katılımcıları isimsiz olacaktır.";

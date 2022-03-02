@@ -15,6 +15,7 @@ class SurveyViewController: UIViewController {
     var theAssignment: Assignment? = nil
     var currentPage = Question()
     var theUser: User?
+    var inTestMode = false
     
     var header: HeaderViewController?
     var likertScale: LikertScaleViewController?
@@ -64,7 +65,7 @@ class SurveyViewController: UIViewController {
         if theAssignment?.survey.questions.first != nil{
             showPage(newPage: theAssignment!.survey.questions.first!)
         }
-         #warning ("TODO popup if error")
+         // TODO: popup if error
     }
     
 
@@ -466,29 +467,45 @@ extension SurveyViewController: QuestionListener{
     
     func sendInSurvey() {
         if !answer.isEmpty{
-            let tempList = theAssignment!.survey.questions.sorted(by: {$0.index > $1.index})
-            var answersToInclude = [Int]()
-            //begin with last
-            var counter = tempList.first?.index ?? -99
-            if counter != -99{
-                while counter > 0 {
-                    let currentQuestion = tempList.first(where: { $0.index == counter})
-                    if currentQuestion?.type ?? "header" != "header" &&
-                        currentQuestion?.type ?? "footer" != "footer"{
-                        answersToInclude.append(counter)
+            
+            // check if expired
+            if theAssignment!.timeLeftToExpiryInMilli() == 0 && inTestMode == false{
+                //expired - show popup
+                DispatchQueue.main.async {
+                    let date = DateParser.displayString(for: DateParser.getDate(dateString: self.theAssignment!.expiry)!)
+                    let popup = UIAlertController(title: translatedSurveyExpired, message: "\n\(date)", preferredStyle: .alert)
+                    popup.addAction(UIAlertAction(title: "OK", style: .default, handler: {_ in
+                        self.dismiss(animated: true, completion: nil)
+                    }))
+                    
+                    self.present(popup, animated: true, completion: nil)
+                }
+            }else{
+                //not expired (or in test mode) - send in answers
+                let tempList = theAssignment!.survey.questions.sorted(by: {$0.index > $1.index})
+                var answersToInclude = [Int]()
+                //begin with last
+                var counter = tempList.first?.index ?? -99
+                if counter != -99{
+                    while counter > 0 {
+                        let currentQuestion = tempList.first(where: { $0.index == counter})
+                        if currentQuestion?.type ?? "header" != "header" &&
+                            currentQuestion?.type ?? "footer" != "footer"{
+                            answersToInclude.append(counter)
+                        }
+                        counter = currentQuestion?.previous ?? 0
                     }
-                    counter = currentQuestion?.previous ?? 0
                 }
-            }
-            var tempAnswers = [Int:Answer]()
-            for a in answersToInclude{
-                if let theAnswer = answer.first(where: {$0.value.index == a}){
-                    tempAnswers[theAnswer.value.index] = theAnswer.value
+                var tempAnswers = [Int:Answer]()
+                for a in answersToInclude{
+                    if let theAnswer = answer.first(where: {$0.value.index == a}){
+                        tempAnswers[theAnswer.value.index] = theAnswer.value
+                    }
                 }
+                SurveyRepository.postAnswer(answerDict: tempAnswers)
+                self.dismiss(animated: true, completion: nil)
             }
-            SurveyRepository.postAnswer(answerDict: tempAnswers)
         }
-        self.dismiss(animated: true, completion: nil)
     }
     
     func nextQuestion(current: Question) {

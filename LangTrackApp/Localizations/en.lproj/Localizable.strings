@@ -42,9 +42,11 @@ Copyright © 2020 Stephan Björck. All rights reserved.
 "Here it was empty" = "There's nothing here...\nWhen Humlab assigns you a survey, you will see it here.";
 "numberEnding" = "";
 "No contact with server" = "No contact with server";
+"You have answered-formate" = "You have answered %d of your %d assigned surveys.";
 "You have answered" = "You have answered";
 "of your" = "of your";
 "assigned surveys." = "assigned surveys.";
+"Survey expired" = "Survey expired";
 
 // Contact
 "Contact" = "Contact";

@@ -347,8 +347,22 @@ class MainViewController: UIViewController {
             .paragraphStyle : paragraphStyle], range: NSRange(location: 0, length: centerText.length))
         chartView.centerAttributedText = centerText
         
-        headerViewLabel.text = "\(translatedYouHaveAnswered) \(numberOfAnswered) \(translatedOfYour) \(totalNumberOfSurveys) \(translatedAssignedSurveys)"
+        //headerViewLabel.text = "\(translatedYouHaveAnswered) \(numberOfAnswered) \(translatedOfYour) \(totalNumberOfSurveys) \(translatedAssignedSurveys)"
         
+        let preferredLanguage = Locale.current.languageCode ?? "noCode"
+        if preferredLanguage == "tr" {
+            headerViewLabel.text = String.localizedStringWithFormat(
+                NSLocalizedString("You have answered-formate",
+                                  comment: ""),
+                totalNumberOfSurveys,
+                numberOfAnswered)
+        } else{
+            headerViewLabel.text = String.localizedStringWithFormat(
+                NSLocalizedString("You have answered-formate",
+                                  comment: ""),
+                numberOfAnswered,
+                totalNumberOfSurveys)
+        }
         
         if percent >= 90{
             headerViewEmojiLabel.text = "🌟"
@@ -490,6 +504,7 @@ class MainViewController: UIViewController {
             //dest.theSurvey = SurveyRepository.selectedAssignment?.survey//selectedSurvey
             dest.theAssignment = SurveyRepository.selectedAssignment
             dest.theUser = SurveyRepository.theUser
+            dest.inTestMode = self.inTestMode
             SurveyRepository.surveyOpened()
         }else if segue.identifier == "login"{
             let dest = segue.destination as! LoginViewController

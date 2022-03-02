@@ -34,6 +34,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate {
             let newViewcontroller:UIViewController = mainstoryboard.instantiateViewController(withIdentifier: "main") as! MainViewController
             window.rootViewController = newViewcontroller
         }
+        if #available(iOS 15.0, *){
+            UITableView.appearance().sectionHeaderTopPadding = 0
+        }
         return true
     }
     
