@@ -100,6 +100,180 @@ struct SurveyRepository {
         }
     }
     
+    //MARK: - Team and dynamic texts
+    
+    static func getContactInfo(complete: @escaping (_ result: [String:[String:String]]?) -> Void){
+        realtimeRef.child("contactInfo").keepSynced(true)
+        realtimeRef.child("contactInfo").observeSingleEvent(of: .value, with: {(snapshot) in
+            let snapDict = snapshot.value
+            if let userNamesDict = snapDict as? [Any]{
+                var theResult : [String:[String:String]] = [:]
+                for i in userNamesDict{
+                    if let part = i as? [String:Any]{
+                        var email = ""
+                        var theTexts: [String:String] = [:]
+                        for j in part{
+                            if j.key == "email"{
+                                email = j.value as? String ?? ""
+                            }
+                            if j.key == "text"{
+                                if let textArray = j.value as? [String: String]{
+                                    theTexts = textArray
+                                }
+                            }
+                        }
+                        theResult[email] = theTexts
+                    }
+                }
+                complete(theResult)
+            }
+        }) { (error) in
+            print("getContactInfo error: \(error)")
+                complete(nil)
+            
+        }
+    }
+    
+    static func getAboutText(complete: @escaping (_ result: [String:String]) -> Void){
+        realtimeRef.child("about").keepSynced(true)
+        realtimeRef.child("about").observeSingleEvent(of: .value, with: {(snapshot) in
+            let snapDict = snapshot.value
+            if let userNamesDict = snapDict as? [String:String]{
+                complete(userNamesDict)
+            }
+        })
+    }
+    
+    static func getTeamUsernames(complete: @escaping (_ result: [String:String]) -> Void){
+        realtimeRef.child("admins").keepSynced(true)
+        realtimeRef.child("admins").observeSingleEvent(of: .value, with: {(snapshot) in
+            let snapDict = snapshot.value
+            if let userNamesDict = snapDict as? [String:String]{
+                complete(userNamesDict)
+            }
+        })
+    }
+    
+    static func getTeamsText(complete: @escaping (_ result: [TeamMember]) -> Void){
+        realtimeRef.child("team").keepSynced(true)
+        realtimeRef.child("team").observeSingleEvent(of: .value, with: {(snapshot) in
+            let snapDict = snapshot.value
+            
+            if let itemDict = snapDict as? [Any]{
+                var temList : [TeamMember] = []
+                for person in itemDict{
+                    var listWithNames: [String:String] = [:]
+                    var listWithDescr: [String:String] = [:]
+                    if let personDict = person as? [String:Any]{
+                        for language in personDict{
+                            if let thelanguage = language.value as? [String:Any]{
+                                var name = ""
+                                var description = ""
+                                for item in thelanguage{
+                                    if item.key == "name"{
+                                        name = item.value as? String ?? ""
+                                    }
+                                    if item.key == "description"{
+                                        description = item.value as? String ?? ""
+                                    }
+                                }
+                                listWithNames[language.key] = name
+                                listWithDescr[language.key] = description
+                            }
+                        }
+                    }
+                    if listWithNames.first?.value ?? "" != ""{
+                        temList.append(TeamMember(name: listWithNames,description: listWithDescr))
+                    }
+                }
+                complete(temList)
+            }
+        })
+    }
+    
+    
+    //MARK: - Device & other
+    
+    static func apiIsAlive(completionHandler: @escaping (_ result: Bool) -> Void){
+        getUrl { (theUrl) in
+            if let theUrl = theUrl{
+                if theUrl != ""{
+                    let pingUrl = "\(theUrl)ping"
+                    let request = NSMutableURLRequest(url: URL(string: pingUrl)!)
+                    request.setValue(idToken, forHTTPHeaderField: "token")
+                    let session = URLSession.shared
+                    request.httpMethod = "GET"
+                    let task = session.dataTask(with: request as URLRequest, completionHandler: {data, response, error -> Void in
+                        if let httpResponse = response as? HTTPURLResponse {
+                            if httpResponse.statusCode == 200{
+                                completionHandler(true)
+                            }else{
+                                completionHandler(false)
+                            }
+                        }else{
+                            completionHandler(false)
+                        }
+                        return
+                    })
+                    task.resume()
+                }
+            }
+        }
+    }
+    
+    static func postDeviceToken(){
+        print("postDeviceToken 1")
+        if userId != "" && deviceToken != ""{
+            let vNumber = UIDevice.current.systemVersion
+            print("vNumber: \(vNumber)")
+            getUrl { (theUrl) in
+                if let theUrl = theUrl{
+                    if theUrl != ""{
+                        let version = UIApplication.appVersion ?? "noVersionNumber"
+                        let param = [
+                            "timezone": localTimeZoneIdentifier,
+                            "deviceToken": deviceToken,
+                            "versionNumber": version,
+                            "os": "iOS \(vNumber)"
+                        ]
+                        
+                        let deviceTokenUrl = "\(theUrl)users/\(userId)"
+                        let request = NSMutableURLRequest(url: URL(string: deviceTokenUrl)!)
+                        request.setValue("application/json", forHTTPHeaderField: "Accept")
+                        request.setValue(idToken, forHTTPHeaderField: "token")
+                        
+                        do {
+                            request.httpBody = try JSONSerialization.data(withJSONObject: param, options: .prettyPrinted)
+                        } catch let error {
+                            print(error.localizedDescription)
+                        }
+                        
+                        let session = URLSession.shared
+                        request.httpMethod = "PUT"
+                        
+                        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+                        request.addValue("application/json", forHTTPHeaderField: "Accept")
+                        
+                        let task = session.dataTask(with: request as URLRequest, completionHandler: {data, response, error -> Void in
+                            if(error != nil){
+                                print("postDeviceToken ERROR, task = session.dataTask: \(error!.localizedDescription)")
+                                return
+                            }else{
+                                if let httpResponse = response as? HTTPURLResponse {
+                                    print("postDeviceToken response statusCode: \(httpResponse.statusCode)")
+                                }
+                            }
+                        })
+                        task.resume()
+                    }
+                }
+                
+            }
+        }
+    }
+    
+    //MARK: - Survey
+    
     static func postAnswer(answerDict: [Int: Answer]){
         if userId != ""{
             var answers = [AnswerBody]()
@@ -193,83 +367,6 @@ struct SurveyRepository {
         }
     }
     
-    static func apiIsAlive(completionHandler: @escaping (_ result: Bool) -> Void){
-        getUrl { (theUrl) in
-            if let theUrl = theUrl{
-                if theUrl != ""{
-                    let pingUrl = "\(theUrl)ping"
-                    let request = NSMutableURLRequest(url: URL(string: pingUrl)!)
-                    request.setValue(idToken, forHTTPHeaderField: "token")
-                    let session = URLSession.shared
-                    request.httpMethod = "GET"
-                    let task = session.dataTask(with: request as URLRequest, completionHandler: {data, response, error -> Void in
-                        if let httpResponse = response as? HTTPURLResponse {
-                            if httpResponse.statusCode == 200{
-                                completionHandler(true)
-                            }else{
-                                completionHandler(false)
-                            }
-                        }else{
-                            completionHandler(false)
-                        }
-                        return
-                    })
-                    task.resume()
-                }
-            }
-        }
-    }
-    
-    static func postDeviceToken(){
-        if userId != "" && deviceToken != ""{
-            let vNumber = UIDevice.current.systemVersion
-            print("vNumber: \(vNumber)")
-            getUrl { (theUrl) in
-                if let theUrl = theUrl{
-                    if theUrl != ""{
-                        let version = UIApplication.appVersion ?? "noVersionNumber"
-                        let param = [
-                            "timezone": localTimeZoneIdentifier,
-                            "deviceToken": deviceToken,
-                            "versionNumber": version,
-                            "os": "iOS \(vNumber)"
-                        ]
-                        
-                        let deviceTokenUrl = "\(theUrl)users/\(userId)"
-                        let request = NSMutableURLRequest(url: URL(string: deviceTokenUrl)!)
-                        request.setValue("application/json", forHTTPHeaderField: "Accept")
-                        request.setValue(idToken, forHTTPHeaderField: "token")
-                        
-                        do {
-                            request.httpBody = try JSONSerialization.data(withJSONObject: param, options: .prettyPrinted)
-                        } catch let error {
-                            print(error.localizedDescription)
-                        }
-                        
-                        let session = URLSession.shared
-                        request.httpMethod = "PUT"
-                        
-                        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-                        request.addValue("application/json", forHTTPHeaderField: "Accept")
-                        
-                        let task = session.dataTask(with: request as URLRequest, completionHandler: {data, response, error -> Void in
-                            if(error != nil){
-                                print("postDeviceToken ERROR, task = session.dataTask: \(error!.localizedDescription)")
-                                return
-                            }else{
-                                if let httpResponse = response as? HTTPURLResponse {
-                                    print("postDeviceToken response statusCode: \(httpResponse.statusCode)")
-                                }
-                            }
-                        })
-                        task.resume()
-                    }
-                }
-                
-            }
-        }
-    }
-    
     static func getSurveys( completionhandler: @escaping (_ result: [Assignment]?) -> Void){
         getUrl { (theUrl) in
             if let theUrl = theUrl{
@@ -334,6 +431,9 @@ struct SurveyRepository {
         }
         
     }
+    
+    
+    //MARK: - helper func
     
     static func sortAssignmentList(theList : [Assignment]) -> [Assignment]{
         let now = Date()

@@ -30,7 +30,11 @@ class AboutViewController: UIViewController, UIScrollViewDelegate {
         
         theScrollview.delegate = self
         setAboutText()
-        setTeamText()
+        //setTeamText()
+        
+        SurveyRepository.getTeamsText { result in
+            self.setTeamTextFromFirebase(members: result)
+        }
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -48,7 +52,26 @@ class AboutViewController: UIViewController, UIScrollViewDelegate {
     }
     
     func setAboutText(){
-//        let theHeader = "Project description"
+        
+        /*SurveyRepository.getAboutText { result in
+            
+            let languageCode = UIApplication.getLanguageCode()
+            var theInfo = result[languageCode] ?? "noInfo"
+            theInfo = theInfo.replacingOccurrences(of: "\\n", with: "\n")
+            let finalString = NSMutableAttributedString(string: "\(theInfo)\n\n", attributes: attributeLtaBlueText)
+            finalString.append(NSAttributedString(string: "\(translatedFundedBy)\n", attributes: attributeSmallText))
+            
+            //image
+            let image1Attachment = NSTextAttachment()
+            image1Attachment.image = UIImage(named: "\(translatedFounderImage).png")
+            let image1String = NSMutableAttributedString(attachment: image1Attachment)
+            let myRange = NSRange(location: 0, length: image1String.length)
+            image1String.addAttributes([NSAttributedString.Key.link: URL(string: translatedFounderAddress)!], range: myRange)
+            finalString.append(image1String)
+            
+            self.aboutTextView.attributedText = finalString
+        }*/
+        
         let finalString = NSMutableAttributedString(string: "\(translatedAboutText1)\n\n", attributes: attributeLtaBlueText)
         finalString.append(NSAttributedString(string: "\(translatedFundedBy)\n", attributes: attributeSmallText))
         
@@ -63,6 +86,20 @@ class AboutViewController: UIViewController, UIScrollViewDelegate {
         aboutTextView.attributedText = finalString
     }
     
+    func setTeamTextFromFirebase(members: [TeamMember]){
+        
+        let languageCode = UIApplication.getLanguageCode()
+        
+        let finalString = NSMutableAttributedString(string: "\(translatedTeam)\n\n", attributes: attributeLtaBlueHeaderText)
+        for member in members{
+            let thename1 = member.name[languageCode] ?? "noName"
+            finalString.append(NSAttributedString(string: thename1, attributes: attributeLtaRedHeaderText))
+            let theDescription1 = ", \(member.description[languageCode] ?? "noInfo")\n"
+            finalString.append(NSAttributedString(string: theDescription1, attributes: attributeLtaBlueText))
+        }
+        teamLabel.attributedText = finalString
+    }
+    /*
     func setTeamText(){
         
         let finalString = NSMutableAttributedString(string: "\(translatedTeam)\n\n", attributes: attributeLtaBlueHeaderText)
@@ -100,7 +137,7 @@ class AboutViewController: UIViewController, UIScrollViewDelegate {
     
     func setTechText(){
         
-    }
+    }*/
     
     @IBAction func closeButton(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)

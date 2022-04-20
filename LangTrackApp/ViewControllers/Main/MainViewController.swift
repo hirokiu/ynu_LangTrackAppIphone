@@ -135,7 +135,8 @@ class MainViewController: UIViewController {
     }
     
     @objc func willEnterForeground() {
-       
+        print("willEnterForeground")
+        //TODO: save deviceToken to backend / postDeviceToken
        updateAssignments()
     }
     

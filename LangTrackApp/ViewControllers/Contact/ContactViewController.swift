@@ -49,8 +49,67 @@ class ContactViewController: UIViewController, UIScrollViewDelegate, UITextViewD
             }
         }
     }
-    
     func setContactText(){
+        SurveyRepository.getContactInfo { contactInfo in
+            
+            let languageCode = UIApplication.getLanguageCode()
+            let theHeader = ""
+            let finalString = NSMutableAttributedString(string: theHeader, attributes: attributeLtaBlueHeaderText)
+            if let contactInfo = contactInfo{
+                for (i,contact) in contactInfo{
+                    let email = i
+                    var listWithLanguages : [String:String] = [:]
+                    for language in contact{
+                        listWithLanguages[language.key] = language.value
+                    }
+                    let contactInfo = listWithLanguages[languageCode] ?? "noInfo"
+                    let contactInfoText = "\(contactInfo)\n"
+                    let attrcontactInfoText = NSMutableAttributedString(string: contactInfoText, attributes: attributeLtaBlueText)
+                    finalString.append(attrcontactInfoText)
+                    
+                    let reserchLink = email
+                    let myreserchRange = NSRange(location: 0, length: reserchLink.count)
+                    let attrreserchText2 = NSMutableAttributedString(string: reserchLink, attributes: attributeLtaBlueText)
+                    attrreserchText2.addAttribute(NSAttributedString.Key.link,
+                                                  value: "tech",
+                                                  range: myreserchRange)
+                    finalString.append(attrreserchText2)
+                    if #available(iOS 15, *) {
+                        finalString.append(NSAttributedString("\n\n"))
+                    } else {
+                        // Fallback on earlier versions
+                    }
+                }
+                self.contactsTextView.attributedText = finalString
+            }else{
+                self.contactsTextView.attributedText = NSAttributedString()
+                self.showToast(message: "Unable to retrieve contact information, check internet connection!", font: UIFont.systemFont(ofSize: 17))
+            }
+        }
+        
+        
+        
+        
+        /*
+        let techText3 = "\n\n\(translatedTechText1)\n"
+        let attrtechText3 = NSMutableAttributedString(string: techText3, attributes: attributeLtaBlueText)
+        finalString.append(attrtechText3)
+        
+        let techLink = "henriette.arndt@humlab.lu.se"
+        let mytechRange = NSRange(location: 0, length: techLink.count)
+        let attrtechText2 = NSMutableAttributedString(string: techLink, attributes: attributeLtaBlueText)
+        attrtechText2.addAttribute(NSAttributedString.Key.link,
+                                      value: "reserch",
+                                      range: mytechRange)
+        finalString.append(attrtechText2)*/
+        
+    }
+    
+    
+    /*func setContactText(){
+        
+        
+        
         let theHeader = ""
         let finalString = NSMutableAttributedString(string: theHeader, attributes: attributeLtaBlueHeaderText)
         
@@ -79,7 +138,7 @@ class ContactViewController: UIViewController, UIScrollViewDelegate, UITextViewD
         finalString.append(attrtechText2)
         
         contactsTextView.attributedText = finalString
-    }
+    }*/
     
     func setLinkText(){
         let theHeader = "\(translatedLinks)\n\n"

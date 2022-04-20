@@ -57,14 +57,18 @@ class SideMenu: UIViewController {
     
     func setTestView(userName: String){
         
-        /*
-        Adding userName for team members
-         will let them
-         * switch between staging server and production server
-         * using app in testMode -> open all surveys as active
-         */
+        SurveyRepository.getTeamUsernames { result in
+            if result.keys.contains(userName){
+                self.testViewBottomConstraint.constant = 10
+                self.testView.isHidden = false
+            }else{
+                self.testView.isHidden = true
+                self.testViewBottomConstraint.constant = -self.testView.frame.height
+            }
+        }
         
-        if  userName == "stephan" ||
+        
+        /*if  userName == "stephan" ||
             userName == "stephandroid" ||
             userName == "josef" ||
             userName == "marianne" ||
@@ -75,7 +79,7 @@ class SideMenu: UIViewController {
         }else{
             testView.isHidden = true
             testViewBottomConstraint.constant = -testView.frame.height
-        }
+        }*/
     }
     
     func setInfo(name: String, listener: MenuListener){

@@ -66,6 +66,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate {
             print("makeNewItem in didFinishLaunchingWithOptions2")
         }*/
         FirebaseApp.configure()
+        Database.database().isPersistenceEnabled = true
         Messaging.messaging().delegate = self
         if #available(iOS 10.0, *) {
           // For iOS 10 display notification (sent via APNS)

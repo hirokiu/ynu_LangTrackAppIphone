@@ -76,6 +76,7 @@
 		F1C9CA8825FE41840098B5C0 /* DoubleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C9CA8725FE41840098B5C0 /* DoubleExtension.swift */; };
 		F1C9CA8D25FF4F4B0098B5C0 /* OverviewSliderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C9CA8C25FF4F4B0098B5C0 /* OverviewSliderTableViewCell.swift */; };
 		F1CA5B8D245B11D00024450B /* applicationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CA5B8C245B11D00024450B /* applicationExtension.swift */; };
+		F1D5AF0E27F7272500F8D7CD /* TeamMember.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D5AF0D27F7272500F8D7CD /* TeamMember.swift */; };
 		F1DB19962424B8A60068F49E /* OverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DB19952424B8A60068F49E /* OverviewViewController.swift */; };
 		F1DB199D2424FEC10068F49E /* IncludeIf.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DB199C2424FEC10068F49E /* IncludeIf.swift */; };
 		F1DB199F24275D810068F49E /* NextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DB199E24275D810068F49E /* NextButton.swift */; };
@@ -190,6 +191,7 @@
 		F1C9CA8725FE41840098B5C0 /* DoubleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleExtension.swift; sourceTree = "<group>"; };
 		F1C9CA8C25FF4F4B0098B5C0 /* OverviewSliderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewSliderTableViewCell.swift; sourceTree = "<group>"; };
 		F1CA5B8C245B11D00024450B /* applicationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = applicationExtension.swift; sourceTree = "<group>"; };
+		F1D5AF0D27F7272500F8D7CD /* TeamMember.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamMember.swift; sourceTree = "<group>"; };
 		F1DB19952424B8A60068F49E /* OverviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewViewController.swift; sourceTree = "<group>"; };
 		F1DB199C2424FEC10068F49E /* IncludeIf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncludeIf.swift; sourceTree = "<group>"; };
 		F1DB199E24275D810068F49E /* NextButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextButton.swift; sourceTree = "<group>"; };
@@ -440,6 +442,7 @@
 				F18314192418F1690036A5D3 /* Dataset.swift */,
 				F1BAFD032420B6260047E9E5 /* AnswerBody.swift */,
 				F1DB199C2424FEC10068F49E /* IncludeIf.swift */,
+				F1D5AF0D27F7272500F8D7CD /* TeamMember.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -742,6 +745,7 @@
 				F1399CEB243DE7BF00545D47 /* OverviewOpenTableViewCell.swift in Sources */,
 				F1532DB423EB10B400171355 /* DateExtension.swift in Sources */,
 				F10B84BD23E47AD0003CAC76 /* SurveyTableViewCell.swift in Sources */,
+				F1D5AF0E27F7272500F8D7CD /* TeamMember.swift in Sources */,
 				F11499F8240E8D8200DC988A /* TextViewExtension.swift in Sources */,
 				F1CA5B8D245B11D00024450B /* applicationExtension.swift in Sources */,
 				F1C9CA8D25FF4F4B0098B5C0 /* OverviewSliderTableViewCell.swift in Sources */,
@@ -1019,7 +1023,7 @@
 				CODE_SIGN_ENTITLEMENTS = LangTrackApp/LangTrackApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 12;
-				DEVELOPMENT_TEAM = 3CY4P3X5YK;
+				DEVELOPMENT_TEAM = MMH2VL4QF4;
 				INFOPLIST_FILE = LangTrackApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (

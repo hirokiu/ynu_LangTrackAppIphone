@@ -16,7 +16,7 @@ Copyright © 2020 Stephan Björck. All rights reserved.
 
 //Login
 "Info" = "Info";
-"The Lang Track App is an app developed by" = "The Lang Track App är en app som utvecklats av Humanistlaboratoriet på Lunds universitet i forskningssyfte.\n\nLogga in med det användarnamn och lösenord som du tilldelats från Humlabbet Lunds universitet";
+"The Lang Track App is an app developed by" = "The Lang Track App är en app som utvecklats av Humanistlaboratoriet på Lunds universitet i forskningssyfte.\n\nLogga in med det användarnamn och lösenord som du tilldelats från Humanistlaboratoriet Lunds universitet";
 "Login error" = "Fel vid inloggning";
 "Invalid username or password" = "Ogiltigt användarnamn eller lösenord";
 "Incorrect entry" = "Fel inmatning";
