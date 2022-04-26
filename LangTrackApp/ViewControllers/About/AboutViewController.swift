@@ -53,6 +53,7 @@ class AboutViewController: UIViewController, UIScrollViewDelegate {
     
     func setAboutText(){
         
+        //not using firebase texts for now...
         /*SurveyRepository.getAboutText { result in
             
             let languageCode = UIApplication.getLanguageCode()

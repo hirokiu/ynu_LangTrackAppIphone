@@ -1,6 +1,6 @@
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "01k-fC-L9h"; */
-"01k-fC-L9h.text" = "Label";
+"01k-fC-L9h.text" = "Kan inte hämta kontaktinformation, kontrollera internetuppkopplingen!";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "0pQ-kq-x18"; */
 "0pQ-kq-x18.text" = "Label";
@@ -237,7 +237,7 @@
 "nfY-tV-m2n.text" = "Test mode";
 
 /* Class = "UITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."; ObjectID = "pci-sV-XuJ"; */
-"pci-sV-XuJ.text" = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.";
+"pci-sV-XuJ.text" = "Kan inte hämta information, kontrollera internetuppkopplingen!";
 
 /* Class = "UILabel"; text = "1"; ObjectID = "qHl-Ef-67p"; */
 "qHl-Ef-67p.text" = "1";

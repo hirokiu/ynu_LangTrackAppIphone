@@ -66,20 +66,6 @@ class SideMenu: UIViewController {
                 self.testViewBottomConstraint.constant = -self.testView.frame.height
             }
         }
-        
-        
-        /*if  userName == "stephan" ||
-            userName == "stephandroid" ||
-            userName == "josef" ||
-            userName == "marianne" ||
-            userName == "jonas" ||
-            userName == "henriette"  {
-            testViewBottomConstraint.constant = 10
-            testView.isHidden = false
-        }else{
-            testView.isHidden = true
-            testViewBottomConstraint.constant = -testView.frame.height
-        }*/
     }
     
     func setInfo(name: String, listener: MenuListener){

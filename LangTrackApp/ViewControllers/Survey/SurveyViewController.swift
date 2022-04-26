@@ -469,7 +469,7 @@ extension SurveyViewController: QuestionListener{
         if !answer.isEmpty{
             
             // check if expired
-            /*if theAssignment!.timeLeftToExpiryInMilli() == 0 && inTestMode == false{
+            if theAssignment!.timeLeftToExpiryInMilli() == 0 && inTestMode == false{
                 //expired - show popup
                 DispatchQueue.main.async {
                     let date = DateParser.displayString(for: DateParser.getDate(dateString: self.theAssignment!.expiry)!)
@@ -480,7 +480,7 @@ extension SurveyViewController: QuestionListener{
                     
                     self.present(popup, animated: true, completion: nil)
                 }
-            }else{*/
+            }else{
                 //not expired (or in test mode) - send in answers
                 let tempList = theAssignment!.survey.questions.sorted(by: {$0.index > $1.index})
                 var answersToInclude = [Int]()
@@ -504,7 +504,7 @@ extension SurveyViewController: QuestionListener{
                 }
                 SurveyRepository.postAnswer(answerDict: tempAnswers)
                 self.dismiss(animated: true, completion: nil)
-            //}
+            }
         }
     }
     
