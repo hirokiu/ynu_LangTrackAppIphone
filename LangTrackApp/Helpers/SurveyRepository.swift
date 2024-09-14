@@ -33,7 +33,7 @@ struct SurveyRepository {
     static var localTimeZoneIdentifier = ""
     static var assignmentList: [Assignment] = []
     static var selectedAssignment: Assignment?
-    static let tempuserId = "u123"
+    static let tempuserId = ""
     static var userId = ""
     static let realtimeRef = Database.database().reference()
     static var useStagingServer = false
@@ -80,16 +80,16 @@ struct SurveyRepository {
         })
     }
     
-    static func checkDeviceToken(completionhandler: @escaping (_ result: String?) -> Void){
-        InstanceID.instanceID().instanceID { (result, error) in
-            if let error = error {
-                print("Error fetching remote instance ID: \(error)")
-                completionhandler(nil)
-            } else if let result = result {
-                completionhandler(result.token)
-            }
-        }
-    }
+//    static func checkDeviceToken(completionhandler: @escaping (_ result: String?) -> Void){
+//        InstanceID.instanceID().instanceID { (result, error) in
+//            if let error = error {
+//                print("Error fetching remote instance ID: \(error)")
+//                completionhandler(nil)
+//            } else if let result = result {
+//                completionhandler(result.token)
+//            }
+//        }
+//    }
     
     static func postAnswer(answerDict: [Int: Answer]){
         if userId != ""{
@@ -206,6 +206,7 @@ struct SurveyRepository {
     }
     
     static func postDeviceToken(){
+        print("do postDeviceToken to upsert user")
         if userId != "" && deviceToken != ""{
             let vNumber = UIDevice.current.systemVersion
             print("vNumber: \(vNumber)")

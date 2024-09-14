@@ -3,13 +3,16 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		71967A414066E8E461BDCC08 /* libPods-LangTrackApp-LangTrackAppUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F06E86645774676371786AC1 /* libPods-LangTrackApp-LangTrackAppUITests.a */; };
-		94B4EB66FC98D0C3F2B153BB /* libPods-LangTrackApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A530DB572774870989E2C771 /* libPods-LangTrackApp.a */; };
-		AD6A010EC8C8B003AFF44096 /* libPods-LangTrackAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8847FE5F691EC3525ACAEAA4 /* libPods-LangTrackAppTests.a */; };
+		54DB1004A6E7F932D425F726 /* Pods_LangTrackApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26D6E42C0665E59A650D691E /* Pods_LangTrackApp.framework */; };
+		6E4FE3B3224743DA056F0CD3 /* Pods_LangTrackAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29A9D436C2DAAC846D48CC6C /* Pods_LangTrackAppTests.framework */; };
+		92F808F32C7D6F8F00FB7220 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 92F808F22C7D6F8F00FB7220 /* GoogleService-Info.plist */; };
+		92F808F42C7D6F8F00FB7220 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 92F808F22C7D6F8F00FB7220 /* GoogleService-Info.plist */; };
+		92F808F52C7D6F8F00FB7220 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 92F808F22C7D6F8F00FB7220 /* GoogleService-Info.plist */; };
+		C99F2335B4663B157DF4D920 /* Pods_LangTrackApp_LangTrackAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20A3D1734BD8CD9AA9390A18 /* Pods_LangTrackApp_LangTrackAppUITests.framework */; };
 		F10136E723E8372300B36CF0 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10136E623E8372300B36CF0 /* LoginViewController.swift */; };
 		F10136EA23E85F3B00B36CF0 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10136E923E85F3B00B36CF0 /* StringExtension.swift */; };
 		F102725224460EEF00203711 /* OverviewHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F102725124460EEF00203711 /* OverviewHeaderTableViewCell.swift */; };
@@ -54,7 +57,6 @@
 		F15658B123E3418B00EC2796 /* FooterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15658B023E3418B00EC2796 /* FooterViewController.swift */; };
 		F1576376242A3C6C003C5F59 /* MenuListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1576375242A3C6C003C5F59 /* MenuListener.swift */; };
 		F15F595A23ED91B20026430A /* LikertRadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15F595923ED91B20026430A /* LikertRadioButton.swift */; };
-		F16D557023E8238500DD92A1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F16D556F23E8238500DD92A1 /* GoogleService-Info.plist */; };
 		F178752323E4160E003D16D1 /* Type.swift in Sources */ = {isa = PBXBuildFile; fileRef = F178752223E4160E003D16D1 /* Type.swift */; };
 		F178752523E41639003D16D1 /* Survey.swift in Sources */ = {isa = PBXBuildFile; fileRef = F178752423E41639003D16D1 /* Survey.swift */; };
 		F178752723E41654003D16D1 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = F178752623E41654003D16D1 /* Question.swift */; };
@@ -103,15 +105,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0685C451A74A0F70B1375ECF /* Pods-LangTrackApp-LangTrackAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LangTrackApp-LangTrackAppUITests.release.xcconfig"; path = "Target Support Files/Pods-LangTrackApp-LangTrackAppUITests/Pods-LangTrackApp-LangTrackAppUITests.release.xcconfig"; sourceTree = "<group>"; };
-		7AF3DBB3C535454135931FBA /* Pods-LangTrackApp-LangTrackAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LangTrackApp-LangTrackAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-LangTrackApp-LangTrackAppUITests/Pods-LangTrackApp-LangTrackAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		8847FE5F691EC3525ACAEAA4 /* libPods-LangTrackAppTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LangTrackAppTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		9BCD639B2053BBB119B8E7E7 /* Pods-LangTrackApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LangTrackApp.debug.xcconfig"; path = "Target Support Files/Pods-LangTrackApp/Pods-LangTrackApp.debug.xcconfig"; sourceTree = "<group>"; };
-		A530DB572774870989E2C771 /* libPods-LangTrackApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LangTrackApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		A79AEA3BB8C78AE9581D5748 /* Pods-LangTrackApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LangTrackApp.release.xcconfig"; path = "Target Support Files/Pods-LangTrackApp/Pods-LangTrackApp.release.xcconfig"; sourceTree = "<group>"; };
-		AB21B6F5E0070783AAAC3BA7 /* Pods-LangTrackAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LangTrackAppTests.release.xcconfig"; path = "Target Support Files/Pods-LangTrackAppTests/Pods-LangTrackAppTests.release.xcconfig"; sourceTree = "<group>"; };
-		C2E9D2767F9757E5E82CAE95 /* Pods-LangTrackAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LangTrackAppTests.debug.xcconfig"; path = "Target Support Files/Pods-LangTrackAppTests/Pods-LangTrackAppTests.debug.xcconfig"; sourceTree = "<group>"; };
-		F06E86645774676371786AC1 /* libPods-LangTrackApp-LangTrackAppUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LangTrackApp-LangTrackAppUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		20A3D1734BD8CD9AA9390A18 /* Pods_LangTrackApp_LangTrackAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LangTrackApp_LangTrackAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		26D6E42C0665E59A650D691E /* Pods_LangTrackApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LangTrackApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		29A9D436C2DAAC846D48CC6C /* Pods_LangTrackAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LangTrackAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5E4DE9080702DE004AB6208D /* Pods-LangTrackAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LangTrackAppTests.debug.xcconfig"; path = "Target Support Files/Pods-LangTrackAppTests/Pods-LangTrackAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		665265555BAEA6CE00ACDB4D /* Pods-LangTrackApp-LangTrackAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LangTrackApp-LangTrackAppUITests.release.xcconfig"; path = "Target Support Files/Pods-LangTrackApp-LangTrackAppUITests/Pods-LangTrackApp-LangTrackAppUITests.release.xcconfig"; sourceTree = "<group>"; };
+		91BB9D68362794D4DD1123C3 /* Pods-LangTrackAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LangTrackAppTests.release.xcconfig"; path = "Target Support Files/Pods-LangTrackAppTests/Pods-LangTrackAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		924A9A402C9563E100867462 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
+		924A9A412C9563E100867462 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		924A9A422C9563E100867462 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		92F808F22C7D6F8F00FB7220 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E57484CCDC0255241B18BE18 /* Pods-LangTrackApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LangTrackApp.debug.xcconfig"; path = "Target Support Files/Pods-LangTrackApp/Pods-LangTrackApp.debug.xcconfig"; sourceTree = "<group>"; };
+		EC847465AAA8DB24D6027D7C /* Pods-LangTrackApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LangTrackApp.release.xcconfig"; path = "Target Support Files/Pods-LangTrackApp/Pods-LangTrackApp.release.xcconfig"; sourceTree = "<group>"; };
 		F10136E623E8372300B36CF0 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		F10136E923E85F3B00B36CF0 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		F102725124460EEF00203711 /* OverviewHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewHeaderTableViewCell.swift; sourceTree = "<group>"; };
@@ -165,7 +170,6 @@
 		F15658B023E3418B00EC2796 /* FooterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterViewController.swift; sourceTree = "<group>"; };
 		F1576375242A3C6C003C5F59 /* MenuListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuListener.swift; sourceTree = "<group>"; };
 		F15F595923ED91B20026430A /* LikertRadioButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikertRadioButton.swift; sourceTree = "<group>"; };
-		F16D556F23E8238500DD92A1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F178752223E4160E003D16D1 /* Type.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Type.swift; sourceTree = "<group>"; };
 		F178752423E41639003D16D1 /* Survey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Survey.swift; sourceTree = "<group>"; };
 		F178752623E41654003D16D1 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
@@ -207,6 +211,7 @@
 		F1F7D1DD246FEE57003D881B /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F1F7D1DF246FEE8B003D881B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F1F7D1E0246FEEDC003D881B /* TranslatedStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslatedStrings.swift; sourceTree = "<group>"; };
+		FF22494D824D3C921A1D0751 /* Pods-LangTrackApp-LangTrackAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LangTrackApp-LangTrackAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-LangTrackApp-LangTrackAppUITests/Pods-LangTrackApp-LangTrackAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -214,7 +219,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				94B4EB66FC98D0C3F2B153BB /* libPods-LangTrackApp.a in Frameworks */,
+				54DB1004A6E7F932D425F726 /* Pods_LangTrackApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -222,7 +227,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AD6A010EC8C8B003AFF44096 /* libPods-LangTrackAppTests.a in Frameworks */,
+				6E4FE3B3224743DA056F0CD3 /* Pods_LangTrackAppTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -230,19 +235,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				71967A414066E8E461BDCC08 /* libPods-LangTrackApp-LangTrackAppUITests.a in Frameworks */,
+				C99F2335B4663B157DF4D920 /* Pods_LangTrackApp_LangTrackAppUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		873AE4E5583D2E10FB02F4EA /* Frameworks */ = {
+		782E9B8A9C2711B2DD01C22A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				A530DB572774870989E2C771 /* libPods-LangTrackApp.a */,
-				F06E86645774676371786AC1 /* libPods-LangTrackApp-LangTrackAppUITests.a */,
-				8847FE5F691EC3525ACAEAA4 /* libPods-LangTrackAppTests.a */,
+				26D6E42C0665E59A650D691E /* Pods_LangTrackApp.framework */,
+				20A3D1734BD8CD9AA9390A18 /* Pods_LangTrackApp_LangTrackAppUITests.framework */,
+				29A9D436C2DAAC846D48CC6C /* Pods_LangTrackAppTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -250,12 +255,12 @@
 		C748AA31549D222278D046F0 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				9BCD639B2053BBB119B8E7E7 /* Pods-LangTrackApp.debug.xcconfig */,
-				A79AEA3BB8C78AE9581D5748 /* Pods-LangTrackApp.release.xcconfig */,
-				7AF3DBB3C535454135931FBA /* Pods-LangTrackApp-LangTrackAppUITests.debug.xcconfig */,
-				0685C451A74A0F70B1375ECF /* Pods-LangTrackApp-LangTrackAppUITests.release.xcconfig */,
-				C2E9D2767F9757E5E82CAE95 /* Pods-LangTrackAppTests.debug.xcconfig */,
-				AB21B6F5E0070783AAAC3BA7 /* Pods-LangTrackAppTests.release.xcconfig */,
+				E57484CCDC0255241B18BE18 /* Pods-LangTrackApp.debug.xcconfig */,
+				EC847465AAA8DB24D6027D7C /* Pods-LangTrackApp.release.xcconfig */,
+				FF22494D824D3C921A1D0751 /* Pods-LangTrackApp-LangTrackAppUITests.debug.xcconfig */,
+				665265555BAEA6CE00ACDB4D /* Pods-LangTrackApp-LangTrackAppUITests.release.xcconfig */,
+				5E4DE9080702DE004AB6208D /* Pods-LangTrackAppTests.debug.xcconfig */,
+				91BB9D68362794D4DD1123C3 /* Pods-LangTrackAppTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -337,7 +342,7 @@
 				F156589123E2DD7600EC2796 /* LangTrackAppUITests */,
 				F156586E23E2DD7500EC2796 /* Products */,
 				C748AA31549D222278D046F0 /* Pods */,
-				873AE4E5583D2E10FB02F4EA /* Frameworks */,
+				782E9B8A9C2711B2DD01C22A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -358,7 +363,6 @@
 				F11499F9241155DC00DC988A /* LangTrackApp.entitlements */,
 				F1B05A1723ED9766004B8BB6 /* CustonViews */,
 				F10136E823E85F2200B36CF0 /* Extentions */,
-				F16D556F23E8238500DD92A1 /* GoogleService-Info.plist */,
 				F10B84B723E47A63003CAC76 /* Helpers */,
 				F178752823E41C16003D16D1 /* Protocols */,
 				F178752123E415FA003D16D1 /* Models */,
@@ -369,6 +373,7 @@
 				F156587923E2DD7600EC2796 /* Assets.xcassets */,
 				F156587B23E2DD7600EC2796 /* LaunchScreen.storyboard */,
 				F156587E23E2DD7600EC2796 /* Info.plist */,
+				92F808F22C7D6F8F00FB7220 /* GoogleService-Info.plist */,
 				F10B84B323E46025003CAC76 /* Colors.xcassets */,
 				F10B84B523E46400003CAC76 /* TestSurvey.swift */,
 			);
@@ -523,10 +528,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F156589723E2DD7600EC2796 /* Build configuration list for PBXNativeTarget "LangTrackApp" */;
 			buildPhases = (
-				23FF36DBED72E331F07F7825 /* [CP] Check Pods Manifest.lock */,
+				87EA69BD8BFC33BE763625C9 /* [CP] Check Pods Manifest.lock */,
 				F156586923E2DD7500EC2796 /* Sources */,
 				F156586A23E2DD7500EC2796 /* Frameworks */,
 				F156586B23E2DD7500EC2796 /* Resources */,
+				60A2A2A212C832F3EF73BCFD /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -541,7 +547,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F156589A23E2DD7600EC2796 /* Build configuration list for PBXNativeTarget "LangTrackAppTests" */;
 			buildPhases = (
-				896BE3620146A7FC55242930 /* [CP] Check Pods Manifest.lock */,
+				31731EF1B1B5F92781754314 /* [CP] Check Pods Manifest.lock */,
 				F156587F23E2DD7600EC2796 /* Sources */,
 				F156588023E2DD7600EC2796 /* Frameworks */,
 				F156588123E2DD7600EC2796 /* Resources */,
@@ -560,10 +566,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F156589D23E2DD7600EC2796 /* Build configuration list for PBXNativeTarget "LangTrackAppUITests" */;
 			buildPhases = (
-				DC8E975B6720C13A284D6B3B /* [CP] Check Pods Manifest.lock */,
+				3B2451CC5F963F0B451E7862 /* [CP] Check Pods Manifest.lock */,
 				F156588A23E2DD7600EC2796 /* Sources */,
 				F156588B23E2DD7600EC2796 /* Frameworks */,
 				F156588C23E2DD7600EC2796 /* Resources */,
+				B057CCCDBC77DE0FE51A90D5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -613,6 +620,7 @@
 				tr,
 				fa,
 				"fa-AF",
+				ja,
 			);
 			mainGroup = F156586423E2DD7500EC2796;
 			productRefGroup = F156586E23E2DD7500EC2796 /* Products */;
@@ -632,9 +640,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				F17F34822437343100CD64BB /* SingleItem.xib in Resources */,
+				92F808F32C7D6F8F00FB7220 /* GoogleService-Info.plist in Resources */,
 				F156587D23E2DD7600EC2796 /* LaunchScreen.storyboard in Resources */,
 				F10B84B423E46025003CAC76 /* Colors.xcassets in Resources */,
-				F16D557023E8238500DD92A1 /* GoogleService-Info.plist in Resources */,
 				F1399CDF243D0D9400545D47 /* SingleView.xib in Resources */,
 				F1F7D1DC246FEE57003D881B /* Localizable.strings in Resources */,
 				F156587A23E2DD7600EC2796 /* Assets.xcassets in Resources */,
@@ -646,6 +654,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92F808F42C7D6F8F00FB7220 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -653,35 +662,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92F808F52C7D6F8F00FB7220 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		23FF36DBED72E331F07F7825 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-LangTrackApp-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		896BE3620146A7FC55242930 /* [CP] Check Pods Manifest.lock */ = {
+		31731EF1B1B5F92781754314 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -703,7 +691,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		DC8E975B6720C13A284D6B3B /* [CP] Check Pods Manifest.lock */ = {
+		3B2451CC5F963F0B451E7862 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -723,6 +711,62 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		60A2A2A212C832F3EF73BCFD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LangTrackApp/Pods-LangTrackApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LangTrackApp/Pods-LangTrackApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LangTrackApp/Pods-LangTrackApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		87EA69BD8BFC33BE763625C9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LangTrackApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B057CCCDBC77DE0FE51A90D5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LangTrackApp-LangTrackAppUITests/Pods-LangTrackApp-LangTrackAppUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LangTrackApp-LangTrackAppUITests/Pods-LangTrackApp-LangTrackAppUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LangTrackApp-LangTrackAppUITests/Pods-LangTrackApp-LangTrackAppUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -839,6 +883,7 @@
 				F1EF299D26E8D8950094EA26 /* tr */,
 				F1EF29A026E8D9360094EA26 /* fa */,
 				F1EF29A326E8D9980094EA26 /* fa-AF */,
+				924A9A402C9563E100867462 /* ja */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -852,6 +897,7 @@
 				F1EF299E26E8D8960094EA26 /* tr */,
 				F1EF29A126E8D9370094EA26 /* fa */,
 				F1EF29A426E8D9990094EA26 /* fa-AF */,
+				924A9A412C9563E100867462 /* ja */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -865,6 +911,7 @@
 				F1EF299F26E8D8960094EA26 /* tr */,
 				F1EF29A226E8D9370094EA26 /* fa */,
 				F1EF29A526E8D9990094EA26 /* fa-AF */,
+				924A9A422C9563E100867462 /* ja */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -990,13 +1037,14 @@
 		};
 		F156589823E2DD7600EC2796 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9BCD639B2053BBB119B8E7E7 /* Pods-LangTrackApp.debug.xcconfig */;
+			baseConfigurationReference = E57484CCDC0255241B18BE18 /* Pods-LangTrackApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = LangTrackApp/LangTrackApp.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 12;
-				DEVELOPMENT_TEAM = 3CY4P3X5YK;
+				DEVELOPMENT_TEAM = T2NKM8MRZM;
 				INFOPLIST_FILE = LangTrackApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1004,8 +1052,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.2.2;
-				PRODUCT_BUNDLE_IDENTIFIER = se.lu.LangTrackApp;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.alchembright.dev.ynu-lta-dev";
 				PRODUCT_NAME = "Lang Track App";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -1013,13 +1062,14 @@
 		};
 		F156589923E2DD7600EC2796 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A79AEA3BB8C78AE9581D5748 /* Pods-LangTrackApp.release.xcconfig */;
+			baseConfigurationReference = EC847465AAA8DB24D6027D7C /* Pods-LangTrackApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = LangTrackApp/LangTrackApp.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 12;
-				DEVELOPMENT_TEAM = 3CY4P3X5YK;
+				DEVELOPMENT_TEAM = T2NKM8MRZM;
 				INFOPLIST_FILE = LangTrackApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1027,8 +1077,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.2.2;
-				PRODUCT_BUNDLE_IDENTIFIER = se.lu.LangTrackApp;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.alchembright.dev.ynu-lta-dev";
 				PRODUCT_NAME = "Lang Track App";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -1036,12 +1087,12 @@
 		};
 		F156589B23E2DD7600EC2796 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C2E9D2767F9757E5E82CAE95 /* Pods-LangTrackAppTests.debug.xcconfig */;
+			baseConfigurationReference = 5E4DE9080702DE004AB6208D /* Pods-LangTrackAppTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = ZAUQL34532;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = LangTrackAppTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1059,12 +1110,12 @@
 		};
 		F156589C23E2DD7600EC2796 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AB21B6F5E0070783AAAC3BA7 /* Pods-LangTrackAppTests.release.xcconfig */;
+			baseConfigurationReference = 91BB9D68362794D4DD1123C3 /* Pods-LangTrackAppTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = ZAUQL34532;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = LangTrackAppTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1082,11 +1133,11 @@
 		};
 		F156589E23E2DD7600EC2796 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7AF3DBB3C535454135931FBA /* Pods-LangTrackApp-LangTrackAppUITests.debug.xcconfig */;
+			baseConfigurationReference = FF22494D824D3C921A1D0751 /* Pods-LangTrackApp-LangTrackAppUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = ZAUQL34532;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = LangTrackAppUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1103,11 +1154,11 @@
 		};
 		F156589F23E2DD7600EC2796 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0685C451A74A0F70B1375ECF /* Pods-LangTrackApp-LangTrackAppUITests.release.xcconfig */;
+			baseConfigurationReference = 665265555BAEA6CE00ACDB4D /* Pods-LangTrackApp-LangTrackAppUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = ZAUQL34532;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = LangTrackAppUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

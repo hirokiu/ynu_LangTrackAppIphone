@@ -12,31 +12,31 @@ Copyright © 2020 Stephan Björck. All rights reserved.
 //Main
 
 //questions
-"next" = "Next";
-"previous" = "Previous";
+"next" = "次へ";
+"previous" = "前へ";
 
 //Login
-"Info" = "Info";
+"Info" = "インフォメーション";
 "The Lang Track App is an app developed by" = "The Lang Track App is an app developed by Lund University Humanities Lab for research purposes.\n\nLog in with the username and password assigned to you by Lund University Humanities Lab";
-"Login error" = "Login error";
-"Invalid username or password" = "Invalid username or password";
+"Login error" = "ログインエラー";
+"Invalid username or password" = "ユーザ名、またはパスワードが間違っています。";
 "Incorrect entry" = "Incorrect entry";
-"Please enter your username and password and try again" = "Please enter your username and password and try again";
+"Please enter your username and password and try again" = "正しいユーザ名とパスワードを入れてください。";
 
 // Menu
-"Log out" = "Log out";
-"Do you want to log out?" = "Do you want to log out?";
-"Cancel" = "Cancel";
-"Time left:" = "Time left:";
+"Log out" = "ログアウト";
+"Do you want to log out?" = "本当にログアウトしますか？";
+"Cancel" = "キャンセル";
+"Time left:" = "残り時間:";
 "and" = "and";
-"minutes" = "minutes";
-"minute" = "minute";
-"hours" = "hours";
-"hour" = "hour";
-"day" = "day";
-"days" = "days";
-"Unanswered" = "Unanswered";
-"Answered" = "Answered";
+"minutes" = "分";
+"minute" = "分";
+"hours" = "時間";
+"hour" = "時間";
+"day" = "日";
+"days" = "日";
+"Unanswered" = "未回答";
+"Answered" = "回答済み";
 
 // main
 "Here it was empty" = "There's nothing here...\nWhen Humlab assigns you a survey, you will see it here.";
@@ -49,7 +49,7 @@ Copyright © 2020 Stephan Björck. All rights reserved.
 "Survey expired" = "Survey expired";
 
 // Contact
-"Contact" = "Contact";
+"Contact" = "連絡先";
 "contact text 1" = "If you are experiencing any technical issues, please contact Stephan Björck.";
 "contact text 4" = "If you have questions or comments about the content of the survey, please email Henriette Arndt.";
 "tech mail subject" = "Concerning Lang-Track-App";
