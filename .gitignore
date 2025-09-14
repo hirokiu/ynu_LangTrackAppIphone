@@ -18,6 +18,8 @@ build/*
 xcuserdata
 profile
 *.moved-aside
+*.lock
+
 # Finder
 .DS_Store
 .svn
