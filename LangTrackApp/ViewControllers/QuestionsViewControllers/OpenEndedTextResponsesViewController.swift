@@ -28,7 +28,7 @@ class OpenEndedTextResponsesViewController: UIViewController {
         theIcon.setSmallViewShadow()
         openTextView.layer.cornerRadius = 8
         openTextView.layer.borderWidth = 1
-        openTextView.addDoneButton(title: "Klar", target: self, selector: #selector(tapDone(sender:)))
+        openTextView.addDoneButton(title: "OK", target: self, selector: #selector(tapDone(sender:)))
     }
     
     func setInfo(question: Question){

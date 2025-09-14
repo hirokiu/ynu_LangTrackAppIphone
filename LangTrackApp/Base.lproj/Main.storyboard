@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23094" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23084"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -638,7 +638,7 @@
                                                 <color key="textColor" name="lta_blue"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ynu_logo" translatesAutoresizingMaskIntoConstraints="NO" id="DL1-IP-g8L">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ynu_unnamed" translatesAutoresizingMaskIntoConstraints="NO" id="DL1-IP-g8L">
                                                 <rect key="frame" x="132" y="66.5" width="150" height="150"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="150" id="KPy-7C-biS"/>
@@ -1168,117 +1168,8 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Ir-BH-tGR">
                                                     <rect key="frame" x="10" y="65" width="394" height="98"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="14z-ZG-jJh">
-                                                            <rect key="frame" x="163.5" y="0.0" width="153.5" height="38"/>
-                                                            <fontDescription key="fontDescription" type="italicSystem" pointSize="13"/>
-                                                            <color key="textColor" name="lta_grey"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OMD-y7-F99">
-                                                            <rect key="frame" x="327" y="0.0" width="4" height="98"/>
-                                                            <color key="backgroundColor" systemColor="systemGray6Color"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" constant="4" id="oCO-BH-2Gf"/>
-                                                            </constraints>
-                                                        </view>
-                                                        <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="COv-2J-T8N" customClass="LikertRadioButton" customModule="Lang_Track_App" customModuleProvider="target">
-                                                            <rect key="frame" x="5" y="40" width="60" height="28"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="28" id="Re2-j3-Nnc"/>
-                                                            </constraints>
-                                                            <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <userDefinedRuntimeAttributes>
-                                                                <userDefinedRuntimeAttribute type="color" keyPath="outerCircleColor">
-                                                                    <color key="value" name="lta_blue"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                                <userDefinedRuntimeAttribute type="color" keyPath="innerCircleCircleColor">
-                                                                    <color key="value" name="lta_light_grey"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                                <userDefinedRuntimeAttribute type="number" keyPath="outerCircleLineWidth">
-                                                                    <real key="value" value="2"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                                <userDefinedRuntimeAttribute type="number" keyPath="innerCircleGap">
-                                                                    <real key="value" value="2"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                            </userDefinedRuntimeAttributes>
-                                                            <connections>
-                                                                <action selector="likertButtonPressed:" destination="mSc-aZ-iwR" eventType="touchUpInside" id="beB-Yh-0yT"/>
-                                                            </connections>
-                                                        </button>
-                                                        <button opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FRY-YK-L9B" customClass="LikertRadioButton" customModule="Lang_Track_App" customModuleProvider="target">
-                                                            <rect key="frame" x="70" y="40" width="59.5" height="28"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="28" id="yi9-eE-VUS"/>
-                                                            </constraints>
-                                                            <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <userDefinedRuntimeAttributes>
-                                                                <userDefinedRuntimeAttribute type="color" keyPath="outerCircleColor">
-                                                                    <color key="value" name="lta_blue"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                                <userDefinedRuntimeAttribute type="color" keyPath="innerCircleCircleColor">
-                                                                    <color key="value" name="lta_light_grey"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                                <userDefinedRuntimeAttribute type="number" keyPath="outerCircleLineWidth">
-                                                                    <real key="value" value="2"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                                <userDefinedRuntimeAttribute type="number" keyPath="innerCircleGap">
-                                                                    <real key="value" value="2"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                            </userDefinedRuntimeAttributes>
-                                                            <connections>
-                                                                <action selector="likertButtonPressed:" destination="mSc-aZ-iwR" eventType="touchUpInside" id="YXU-1n-rOQ"/>
-                                                            </connections>
-                                                        </button>
-                                                        <button opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QUH-qR-5yB" customClass="LikertRadioButton" customModule="Lang_Track_App" customModuleProvider="target">
-                                                            <rect key="frame" x="134.5" y="40" width="60" height="28"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="28" id="tll-w4-mfh"/>
-                                                            </constraints>
-                                                            <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <userDefinedRuntimeAttributes>
-                                                                <userDefinedRuntimeAttribute type="color" keyPath="outerCircleColor">
-                                                                    <color key="value" name="lta_blue"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                                <userDefinedRuntimeAttribute type="color" keyPath="innerCircleCircleColor">
-                                                                    <color key="value" name="lta_light_grey"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                                <userDefinedRuntimeAttribute type="number" keyPath="outerCircleLineWidth">
-                                                                    <real key="value" value="2"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                                <userDefinedRuntimeAttribute type="number" keyPath="innerCircleGap">
-                                                                    <real key="value" value="2"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                            </userDefinedRuntimeAttributes>
-                                                            <connections>
-                                                                <action selector="likertButtonPressed:" destination="mSc-aZ-iwR" eventType="touchUpInside" id="p5f-2Z-xXS"/>
-                                                            </connections>
-                                                        </button>
-                                                        <button opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5OV-Vo-NCE" customClass="LikertRadioButton" customModule="Lang_Track_App" customModuleProvider="target">
-                                                            <rect key="frame" x="199.5" y="40" width="60" height="28"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="28" id="dYJ-kU-SYK"/>
-                                                            </constraints>
-                                                            <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <userDefinedRuntimeAttributes>
-                                                                <userDefinedRuntimeAttribute type="color" keyPath="outerCircleColor">
-                                                                    <color key="value" name="lta_blue"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                                <userDefinedRuntimeAttribute type="color" keyPath="innerCircleCircleColor">
-                                                                    <color key="value" name="lta_light_grey"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                                <userDefinedRuntimeAttribute type="number" keyPath="outerCircleLineWidth">
-                                                                    <real key="value" value="2"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                                <userDefinedRuntimeAttribute type="number" keyPath="innerCircleGap">
-                                                                    <real key="value" value="2"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                            </userDefinedRuntimeAttributes>
-                                                            <connections>
-                                                                <action selector="likertButtonPressed:" destination="mSc-aZ-iwR" eventType="touchUpInside" id="Cvv-Z1-J9m"/>
-                                                            </connections>
-                                                        </button>
                                                         <button opaque="NO" userInteractionEnabled="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Ig-5B-T4Q" customClass="LikertRadioButton" customModule="Lang_Track_App" customModuleProvider="target">
-                                                            <rect key="frame" x="264.5" y="40" width="59.5" height="28"/>
+                                                            <rect key="frame" x="294" y="40" width="91" height="28"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="28" id="wG1-DW-a6M"/>
                                                             </constraints>
@@ -1301,10 +1192,10 @@
                                                                 <action selector="likertButtonPressed:" destination="mSc-aZ-iwR" eventType="touchUpInside" id="YnG-jf-f7j"/>
                                                             </connections>
                                                         </button>
-                                                        <button opaque="NO" userInteractionEnabled="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QAd-Ol-N7D" customClass="LikertRadioButton" customModule="Lang_Track_App" customModuleProvider="target">
-                                                            <rect key="frame" x="329" y="40" width="60" height="28"/>
+                                                        <button opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5OV-Vo-NCE" customClass="LikertRadioButton" customModule="Lang_Track_App" customModuleProvider="target">
+                                                            <rect key="frame" x="223" y="40" width="91" height="28"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="28" id="BQs-LM-8hu"/>
+                                                                <constraint firstAttribute="height" constant="28" id="dYJ-kU-SYK"/>
                                                             </constraints>
                                                             <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <userDefinedRuntimeAttributes>
@@ -1322,11 +1213,95 @@
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
                                                             <connections>
-                                                                <action selector="likertButtonPressed:" destination="mSc-aZ-iwR" eventType="touchUpInside" id="K0M-h5-GoU"/>
+                                                                <action selector="likertButtonPressed:" destination="mSc-aZ-iwR" eventType="touchUpInside" id="Cvv-Z1-J9m"/>
                                                             </connections>
                                                         </button>
+                                                        <button opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QUH-qR-5yB" customClass="LikertRadioButton" customModule="Lang_Track_App" customModuleProvider="target">
+                                                            <rect key="frame" x="151.5" y="40" width="91" height="28"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="28" id="tll-w4-mfh"/>
+                                                            </constraints>
+                                                            <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="color" keyPath="outerCircleColor">
+                                                                    <color key="value" name="lta_blue"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="color" keyPath="innerCircleCircleColor">
+                                                                    <color key="value" name="lta_light_grey"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="outerCircleLineWidth">
+                                                                    <real key="value" value="2"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="innerCircleGap">
+                                                                    <real key="value" value="2"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                            <connections>
+                                                                <action selector="likertButtonPressed:" destination="mSc-aZ-iwR" eventType="touchUpInside" id="p5f-2Z-xXS"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FRY-YK-L9B" customClass="LikertRadioButton" customModule="Lang_Track_App" customModuleProvider="target">
+                                                            <rect key="frame" x="79.5" y="40" width="91" height="28"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="28" id="yi9-eE-VUS"/>
+                                                            </constraints>
+                                                            <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="color" keyPath="outerCircleColor">
+                                                                    <color key="value" name="lta_blue"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="color" keyPath="innerCircleCircleColor">
+                                                                    <color key="value" name="lta_light_grey"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="outerCircleLineWidth">
+                                                                    <real key="value" value="2"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="innerCircleGap">
+                                                                    <real key="value" value="2"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                            <connections>
+                                                                <action selector="likertButtonPressed:" destination="mSc-aZ-iwR" eventType="touchUpInside" id="YXU-1n-rOQ"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="COv-2J-T8N" customClass="LikertRadioButton" customModule="Lang_Track_App" customModuleProvider="target">
+                                                            <rect key="frame" x="9" y="40" width="91" height="28"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="28" id="Re2-j3-Nnc"/>
+                                                            </constraints>
+                                                            <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="color" keyPath="outerCircleColor">
+                                                                    <color key="value" name="lta_blue"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="color" keyPath="innerCircleCircleColor">
+                                                                    <color key="value" name="lta_light_grey"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="outerCircleLineWidth">
+                                                                    <real key="value" value="2"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="innerCircleGap">
+                                                                    <real key="value" value="2"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                            <connections>
+                                                                <action selector="likertButtonPressed:" destination="mSc-aZ-iwR" eventType="touchUpInside" id="beB-Yh-0yT"/>
+                                                            </connections>
+                                                        </button>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wxW-QB-vo3">
+                                                            <rect key="frame" x="10" y="-0.5" width="186" height="38"/>
+                                                            <fontDescription key="fontDescription" type="italicSystem" pointSize="13"/>
+                                                            <color key="textColor" name="lta_grey"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="14z-ZG-jJh">
+                                                            <rect key="frame" x="197" y="0.0" width="187" height="38"/>
+                                                            <fontDescription key="fontDescription" type="italicSystem" pointSize="13"/>
+                                                            <color key="textColor" name="lta_grey"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ltz-pa-Bs7">
-                                                            <rect key="frame" x="5" y="73" width="60.5" height="20"/>
+                                                            <rect key="frame" x="50.5" y="73" width="8.5" height="20"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="20" id="N7G-nx-LWi"/>
                                                             </constraints>
@@ -1334,17 +1309,8 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HAc-oL-pvb">
-                                                            <rect key="frame" x="70.5" y="73" width="60" height="20"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="20" id="Sk1-OG-QhF"/>
-                                                            </constraints>
-                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L9W-xI-PjE">
-                                                            <rect key="frame" x="135.5" y="73" width="60.5" height="20"/>
+                                                            <rect key="frame" x="191.5" y="73" width="11" height="20"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="20" id="sgX-99-tCa"/>
                                                             </constraints>
@@ -1352,17 +1318,8 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="842-bG-yUj">
-                                                            <rect key="frame" x="201" y="73" width="60" height="20"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="20" id="dFF-Te-euh"/>
-                                                            </constraints>
-                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qah-CN-Kd4">
-                                                            <rect key="frame" x="266" y="73" width="60.5" height="20"/>
+                                                            <rect key="frame" x="334" y="73" width="11" height="20"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="20" id="ANY-jI-ZH7"/>
                                                             </constraints>
@@ -1370,72 +1327,64 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="N/A" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MKa-xV-Wph" userLabel="N/A">
-                                                            <rect key="frame" x="331.5" y="73" width="57.5" height="20"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HAc-oL-pvb">
+                                                            <rect key="frame" x="99" y="73" width="32" height="20"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="20" id="5pk-9l-tlA"/>
+                                                                <constraint firstAttribute="height" constant="20" id="Sk1-OG-QhF"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wxW-QB-vo3">
-                                                            <rect key="frame" x="10" y="0.0" width="153.5" height="38"/>
-                                                            <fontDescription key="fontDescription" type="italicSystem" pointSize="13"/>
-                                                            <color key="textColor" name="lta_grey"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="4" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="842-bG-yUj">
+                                                            <rect key="frame" x="272" y="73" width="24" height="20"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="20" id="dFF-Te-euh"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                                            <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
                                                     <constraints>
-                                                        <constraint firstItem="MKa-xV-Wph" firstAttribute="leading" secondItem="Qah-CN-Kd4" secondAttribute="trailing" constant="5" id="0GN-wk-Fd1"/>
-                                                        <constraint firstItem="842-bG-yUj" firstAttribute="leading" secondItem="L9W-xI-PjE" secondAttribute="trailing" constant="5" id="1Ul-qD-myK"/>
-                                                        <constraint firstItem="5OV-Vo-NCE" firstAttribute="leading" secondItem="QUH-qR-5yB" secondAttribute="trailing" constant="5" id="301-wY-bao"/>
-                                                        <constraint firstItem="ltz-pa-Bs7" firstAttribute="leading" secondItem="9Ir-BH-tGR" secondAttribute="leading" constant="5" id="597-51-xeI"/>
-                                                        <constraint firstItem="842-bG-yUj" firstAttribute="width" secondItem="L9W-xI-PjE" secondAttribute="width" id="93o-Ga-0aA"/>
+                                                        <constraint firstItem="HAc-oL-pvb" firstAttribute="centerX" secondItem="FRY-YK-L9B" secondAttribute="centerX" id="1yd-qG-HbV"/>
+                                                        <constraint firstItem="842-bG-yUj" firstAttribute="centerX" secondItem="5OV-Vo-NCE" secondAttribute="centerX" id="5A3-AJ-gTB"/>
+                                                        <constraint firstItem="Qah-CN-Kd4" firstAttribute="leading" secondItem="842-bG-yUj" secondAttribute="trailing" constant="60" id="71Q-Ik-aum"/>
+                                                        <constraint firstItem="QUH-qR-5yB" firstAttribute="centerX" secondItem="9Ir-BH-tGR" secondAttribute="centerX" id="8jc-5W-8wa"/>
                                                         <constraint firstItem="wxW-QB-vo3" firstAttribute="top" secondItem="9Ir-BH-tGR" secondAttribute="top" id="9gk-HG-KmT"/>
-                                                        <constraint firstAttribute="trailing" secondItem="QAd-Ol-N7D" secondAttribute="trailing" constant="5" id="ABa-JN-dYJ"/>
+                                                        <constraint firstItem="HAc-oL-pvb" firstAttribute="leading" secondItem="ltz-pa-Bs7" secondAttribute="trailing" constant="60" id="ABm-FA-ask"/>
+                                                        <constraint firstAttribute="trailing" secondItem="0Ig-5B-T4Q" secondAttribute="trailing" constant="9" id="AOi-fM-hsK"/>
                                                         <constraint firstItem="14z-ZG-jJh" firstAttribute="leading" secondItem="wxW-QB-vo3" secondAttribute="trailing" id="ATu-xi-Dbd"/>
                                                         <constraint firstItem="14z-ZG-jJh" firstAttribute="width" secondItem="wxW-QB-vo3" secondAttribute="width" id="BTQ-VU-ePo"/>
-                                                        <constraint firstItem="L9W-xI-PjE" firstAttribute="width" secondItem="HAc-oL-pvb" secondAttribute="width" id="CSj-0L-cYp"/>
-                                                        <constraint firstItem="OMD-y7-F99" firstAttribute="leading" secondItem="14z-ZG-jJh" secondAttribute="trailing" constant="10" id="CX5-XG-mVa"/>
-                                                        <constraint firstItem="FRY-YK-L9B" firstAttribute="leading" secondItem="COv-2J-T8N" secondAttribute="trailing" constant="5" id="Dcg-uM-bJj"/>
+                                                        <constraint firstItem="L9W-xI-PjE" firstAttribute="leading" secondItem="HAc-oL-pvb" secondAttribute="trailing" constant="60" id="EMn-vJ-uSc"/>
+                                                        <constraint firstItem="HAc-oL-pvb" firstAttribute="centerX" secondItem="FRY-YK-L9B" secondAttribute="centerX" id="Ea9-ar-BRh"/>
                                                         <constraint firstItem="0Ig-5B-T4Q" firstAttribute="width" secondItem="5OV-Vo-NCE" secondAttribute="width" id="EgJ-gv-UMJ"/>
                                                         <constraint firstItem="QUH-qR-5yB" firstAttribute="top" secondItem="14z-ZG-jJh" secondAttribute="bottom" constant="2" id="HfO-9k-BHg"/>
-                                                        <constraint firstItem="Qah-CN-Kd4" firstAttribute="leading" secondItem="842-bG-yUj" secondAttribute="trailing" constant="5" id="Ig1-Mv-Svv"/>
                                                         <constraint firstItem="COv-2J-T8N" firstAttribute="top" secondItem="9Ir-BH-tGR" secondAttribute="top" constant="40" id="Iik-dZ-s9t"/>
+                                                        <constraint firstItem="ltz-pa-Bs7" firstAttribute="centerX" secondItem="COv-2J-T8N" secondAttribute="centerX" id="JMq-b0-mg8"/>
                                                         <constraint firstItem="FRY-YK-L9B" firstAttribute="width" secondItem="COv-2J-T8N" secondAttribute="width" id="KRf-jt-Dhr"/>
+                                                        <constraint firstItem="Qah-CN-Kd4" firstAttribute="centerX" secondItem="0Ig-5B-T4Q" secondAttribute="centerX" id="KVw-ng-Uca"/>
+                                                        <constraint firstItem="L9W-xI-PjE" firstAttribute="centerX" secondItem="QUH-qR-5yB" secondAttribute="centerX" id="MeI-XY-Jgl"/>
                                                         <constraint firstItem="5OV-Vo-NCE" firstAttribute="width" secondItem="QUH-qR-5yB" secondAttribute="width" id="N5b-hr-dne"/>
+                                                        <constraint firstItem="ltz-pa-Bs7" firstAttribute="centerX" secondItem="COv-2J-T8N" secondAttribute="centerX" id="RCQ-HW-JYJ"/>
                                                         <constraint firstAttribute="bottom" secondItem="ltz-pa-Bs7" secondAttribute="bottom" constant="5" id="Smb-oT-Hmu"/>
+                                                        <constraint firstItem="COv-2J-T8N" firstAttribute="leading" secondItem="9Ir-BH-tGR" secondAttribute="leading" constant="9" id="U5o-w3-oDp"/>
                                                         <constraint firstItem="wxW-QB-vo3" firstAttribute="leading" secondItem="9Ir-BH-tGR" secondAttribute="leading" constant="10" id="Uns-PP-xpF"/>
+                                                        <constraint firstItem="L9W-xI-PjE" firstAttribute="centerX" secondItem="9Ir-BH-tGR" secondAttribute="centerX" id="VN0-Pg-NhF"/>
+                                                        <constraint firstItem="842-bG-yUj" firstAttribute="leading" secondItem="L9W-xI-PjE" secondAttribute="trailing" constant="60" id="Ypi-c6-P1m"/>
                                                         <constraint firstItem="0Ig-5B-T4Q" firstAttribute="top" secondItem="9Ir-BH-tGR" secondAttribute="top" constant="40" id="agp-OY-wVv"/>
-                                                        <constraint firstItem="Qah-CN-Kd4" firstAttribute="top" secondItem="QAd-Ol-N7D" secondAttribute="bottom" constant="5" id="cLm-Ah-Xcp"/>
-                                                        <constraint firstItem="QAd-Ol-N7D" firstAttribute="leading" secondItem="OMD-y7-F99" secondAttribute="trailing" constant="-2" id="cbP-i8-Mwu"/>
                                                         <constraint firstItem="ltz-pa-Bs7" firstAttribute="top" secondItem="COv-2J-T8N" secondAttribute="bottom" constant="5" id="e36-In-hJI"/>
-                                                        <constraint firstItem="COv-2J-T8N" firstAttribute="leading" secondItem="9Ir-BH-tGR" secondAttribute="leading" constant="5" id="eK3-Np-wqX"/>
                                                         <constraint firstItem="5OV-Vo-NCE" firstAttribute="top" secondItem="9Ir-BH-tGR" secondAttribute="top" constant="40" id="f4r-cv-wkz"/>
+                                                        <constraint firstAttribute="trailing" secondItem="14z-ZG-jJh" secondAttribute="trailing" constant="10" id="fV8-bM-JOj"/>
                                                         <constraint firstItem="COv-2J-T8N" firstAttribute="top" secondItem="wxW-QB-vo3" secondAttribute="bottom" constant="2" id="g1w-il-Gcq"/>
                                                         <constraint firstItem="HAc-oL-pvb" firstAttribute="top" secondItem="FRY-YK-L9B" secondAttribute="bottom" constant="5" id="gNg-XJ-Hv0"/>
-                                                        <constraint firstItem="MKa-xV-Wph" firstAttribute="width" secondItem="ltz-pa-Bs7" secondAttribute="width" multiplier="0.956522" id="gZu-cb-BAa"/>
-                                                        <constraint firstItem="OMD-y7-F99" firstAttribute="top" secondItem="9Ir-BH-tGR" secondAttribute="top" id="grF-eS-A8A"/>
-                                                        <constraint firstAttribute="trailing" secondItem="MKa-xV-Wph" secondAttribute="trailing" constant="5" id="gz9-9f-5jE"/>
-                                                        <constraint firstItem="QAd-Ol-N7D" firstAttribute="width" secondItem="COv-2J-T8N" secondAttribute="width" id="hVo-0n-TXt"/>
-                                                        <constraint firstItem="0Ig-5B-T4Q" firstAttribute="leading" secondItem="5OV-Vo-NCE" secondAttribute="trailing" constant="5" id="hiD-Bx-Yve"/>
-                                                        <constraint firstItem="HAc-oL-pvb" firstAttribute="width" secondItem="ltz-pa-Bs7" secondAttribute="width" id="jh6-lg-EgK"/>
                                                         <constraint firstItem="FRY-YK-L9B" firstAttribute="top" secondItem="9Ir-BH-tGR" secondAttribute="top" constant="40" id="lEk-B5-s2r"/>
-                                                        <constraint firstAttribute="bottom" secondItem="OMD-y7-F99" secondAttribute="bottom" id="m8c-iJ-tUX"/>
                                                         <constraint firstItem="842-bG-yUj" firstAttribute="top" secondItem="QUH-qR-5yB" secondAttribute="bottom" constant="5" id="mei-Fa-4ex"/>
-                                                        <constraint firstItem="MKa-xV-Wph" firstAttribute="top" secondItem="0Ig-5B-T4Q" secondAttribute="bottom" constant="5" id="nAO-cH-TqI"/>
-                                                        <constraint firstItem="QAd-Ol-N7D" firstAttribute="top" secondItem="9Ir-BH-tGR" secondAttribute="top" constant="40" id="nPs-Kn-fag"/>
-                                                        <constraint firstItem="QAd-Ol-N7D" firstAttribute="leading" secondItem="0Ig-5B-T4Q" secondAttribute="trailing" constant="5" id="rHe-cg-nNc"/>
                                                         <constraint firstItem="QUH-qR-5yB" firstAttribute="width" secondItem="FRY-YK-L9B" secondAttribute="width" id="rhg-tU-cXA"/>
-                                                        <constraint firstItem="HAc-oL-pvb" firstAttribute="leading" secondItem="ltz-pa-Bs7" secondAttribute="trailing" constant="5" id="tAW-Y7-Gym"/>
                                                         <constraint firstItem="L9W-xI-PjE" firstAttribute="top" secondItem="FRY-YK-L9B" secondAttribute="bottom" constant="5" id="unO-qe-ZHp"/>
                                                         <constraint firstItem="Qah-CN-Kd4" firstAttribute="top" secondItem="5OV-Vo-NCE" secondAttribute="bottom" constant="5" id="veH-2f-bUf"/>
                                                         <constraint firstItem="14z-ZG-jJh" firstAttribute="top" secondItem="9Ir-BH-tGR" secondAttribute="top" id="vfO-1P-e8g"/>
                                                         <constraint firstItem="QUH-qR-5yB" firstAttribute="top" secondItem="9Ir-BH-tGR" secondAttribute="top" constant="40" id="wk9-AJ-FrS"/>
-                                                        <constraint firstItem="QUH-qR-5yB" firstAttribute="leading" secondItem="FRY-YK-L9B" secondAttribute="trailing" constant="5" id="x0i-JR-WqL"/>
-                                                        <constraint firstItem="L9W-xI-PjE" firstAttribute="leading" secondItem="HAc-oL-pvb" secondAttribute="trailing" constant="5" id="xHJ-mj-XiD"/>
-                                                        <constraint firstItem="Qah-CN-Kd4" firstAttribute="width" secondItem="842-bG-yUj" secondAttribute="width" id="zha-HR-hGM"/>
                                                     </constraints>
                                                 </view>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lta_icon_likert_light" translatesAutoresizingMaskIntoConstraints="NO" id="dIS-ci-uTA">
@@ -1448,6 +1397,8 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="9Ir-BH-tGR" firstAttribute="leading" secondItem="K1W-yX-0Lr" secondAttribute="leading" constant="10" id="08y-TF-W9a"/>
+                                                <constraint firstItem="9Ir-BH-tGR" firstAttribute="centerX" secondItem="K1W-yX-0Lr" secondAttribute="centerX" id="0Pw-EU-vRw"/>
+                                                <constraint firstItem="9Ir-BH-tGR" firstAttribute="centerX" secondItem="K1W-yX-0Lr" secondAttribute="centerX" id="3e4-oi-JDO"/>
                                                 <constraint firstItem="Rhh-uW-ybQ" firstAttribute="leading" secondItem="dIS-ci-uTA" secondAttribute="trailing" constant="8" id="GhN-h4-sOg"/>
                                                 <constraint firstItem="9Ir-BH-tGR" firstAttribute="top" secondItem="Rhh-uW-ybQ" secondAttribute="bottom" constant="20" id="KwE-fX-27W"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="Rhh-uW-ybQ" secondAttribute="trailing" constant="12" id="MNl-2a-vuv"/>
@@ -1464,7 +1415,6 @@
                                             <outlet property="likertButton2" destination="QUH-qR-5yB" id="aiA-us-HgI"/>
                                             <outlet property="likertButton3" destination="5OV-Vo-NCE" id="yOu-vK-XbF"/>
                                             <outlet property="likertButton4" destination="0Ig-5B-T4Q" id="wm3-fl-F23"/>
-                                            <outlet property="likertButtonNA" destination="QAd-Ol-N7D" id="73y-aQ-zaV"/>
                                             <outlet property="likertMaxLabel" destination="14z-ZG-jJh" id="IVJ-JA-npf"/>
                                             <outlet property="likertMinLabel" destination="wxW-QB-vo3" id="7wo-vm-hHs"/>
                                             <outlet property="likertTextLabel" destination="Rhh-uW-ybQ" id="1dB-DA-jyo"/>
@@ -1794,7 +1744,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ynu_logo" translatesAutoresizingMaskIntoConstraints="NO" id="i0u-b6-9rE">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ynu_unnamed" translatesAutoresizingMaskIntoConstraints="NO" id="i0u-b6-9rE">
                                                     <rect key="frame" x="161" y="16" width="92" height="92"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="92" id="5Lb-Qa-CKl"/>
@@ -1899,7 +1849,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AFb-i8-VWF">
                                 <rect key="frame" x="0.0" y="197" width="414" height="367.5"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ynu_logo" translatesAutoresizingMaskIntoConstraints="NO" id="DcM-we-GbX">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ynu_unnamed" translatesAutoresizingMaskIntoConstraints="NO" id="DcM-we-GbX">
                                         <rect key="frame" x="107" y="20" width="200" height="200"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="200" id="Dd9-7I-9FI"/>
@@ -2026,21 +1976,8 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F2X-pR-6wd">
                                                 <rect key="frame" x="10" y="73.5" width="394" height="101.5"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label Label Label Label Label Label" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0pQ-kq-x18">
-                                                        <rect key="frame" x="163.5" y="0.0" width="153.5" height="38"/>
-                                                        <fontDescription key="fontDescription" type="italicSystem" pointSize="15"/>
-                                                        <color key="textColor" name="lta_grey"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Ky-US-CTo">
-                                                        <rect key="frame" x="327" y="0.0" width="4" height="101.5"/>
-                                                        <color key="backgroundColor" systemColor="systemGray6Color"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="4" id="G37-S3-xJx"/>
-                                                        </constraints>
-                                                    </view>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v2D-Q9-2b4" customClass="LikertRadioButton" customModule="Lang_Track_App" customModuleProvider="target">
-                                                        <rect key="frame" x="5" y="40" width="60" height="30"/>
+                                                        <rect key="frame" x="41" y="40" width="30" height="30"/>
                                                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="outerCircleColor">
@@ -2060,8 +1997,14 @@
                                                             <action selector="likertButtonPressed:" destination="mSc-aZ-iwR" eventType="touchUpInside" id="h5E-kC-su0"/>
                                                         </connections>
                                                     </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F66-Cc-zBV">
+                                                        <rect key="frame" x="52" y="75" width="8.5" height="21.5"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
                                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="liH-Vh-sj5" customClass="LikertRadioButton" customModule="Lang_Track_App" customModuleProvider="target">
-                                                        <rect key="frame" x="70" y="40" width="59.5" height="30"/>
+                                                        <rect key="frame" x="111" y="40" width="30" height="30"/>
                                                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="outerCircleColor">
@@ -2081,8 +2024,14 @@
                                                             <action selector="likertButtonPressed:" destination="mSc-aZ-iwR" eventType="touchUpInside" id="Kgh-7s-Stq"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4aK-s2-IIn" customClass="LikertRadioButton" customModule="Lang_Track_App" customModuleProvider="target">
-                                                        <rect key="frame" x="134.5" y="40" width="60" height="30"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZIx-tQ-7LP">
+                                                        <rect key="frame" x="120.5" y="75" width="11" height="21"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4aK-s2-IIn" customClass="LikertRadioButton" customModule="Lang_Track_App" customModuleProvider="target">
+                                                        <rect key="frame" x="313" y="40" width="73" height="30"/>
                                                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="outerCircleColor">
@@ -2102,8 +2051,14 @@
                                                             <action selector="likertButtonPressed:" destination="mSc-aZ-iwR" eventType="touchUpInside" id="QuV-lu-1dO"/>
                                                         </connections>
                                                     </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rKY-KD-z7c">
+                                                        <rect key="frame" x="191.5" y="75" width="11.5" height="21"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
                                                     <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hE6-XY-EwL" customClass="LikertRadioButton" customModule="Lang_Track_App" customModuleProvider="target">
-                                                        <rect key="frame" x="199.5" y="40" width="60" height="30"/>
+                                                        <rect key="frame" x="253.5" y="40" width="30" height="30"/>
                                                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="outerCircleColor">
@@ -2123,8 +2078,14 @@
                                                             <action selector="likertButtonPressed:" destination="mSc-aZ-iwR" eventType="touchUpInside" id="hcO-Nh-bpo"/>
                                                         </connections>
                                                     </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JbZ-nB-WXU">
+                                                        <rect key="frame" x="263" y="75" width="11.5" height="21"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
                                                     <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DqY-w5-jmK" customClass="LikertRadioButton" customModule="Lang_Track_App" customModuleProvider="target">
-                                                        <rect key="frame" x="264.5" y="40" width="59.5" height="30"/>
+                                                        <rect key="frame" x="325" y="40" width="30" height="30"/>
                                                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="outerCircleColor">
@@ -2144,118 +2105,57 @@
                                                             <action selector="likertButtonPressed:" destination="mSc-aZ-iwR" eventType="touchUpInside" id="wkG-Vm-obZ"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UUo-H3-VFC" customClass="LikertRadioButton" customModule="Lang_Track_App" customModuleProvider="target">
-                                                        <rect key="frame" x="329" y="40" width="60" height="30"/>
-                                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="color" keyPath="outerCircleColor">
-                                                                <color key="value" name="lta_blue"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="color" keyPath="innerCircleCircleColor">
-                                                                <color key="value" name="lta_light_grey"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="outerCircleLineWidth">
-                                                                <real key="value" value="2"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="innerCircleGap">
-                                                                <real key="value" value="2"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                        </userDefinedRuntimeAttributes>
-                                                        <connections>
-                                                            <action selector="likertButtonPressed:" destination="mSc-aZ-iwR" eventType="touchUpInside" id="8fj-dX-Bw2"/>
-                                                        </connections>
-                                                    </button>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F66-Cc-zBV">
-                                                        <rect key="frame" x="5" y="75" width="60.5" height="21.5"/>
-                                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZIx-tQ-7LP">
-                                                        <rect key="frame" x="70.5" y="75" width="60" height="21"/>
-                                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rKY-KD-z7c">
-                                                        <rect key="frame" x="135.5" y="75" width="60.5" height="21"/>
-                                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JbZ-nB-WXU">
-                                                        <rect key="frame" x="201" y="75" width="60" height="21"/>
-                                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iqU-Kp-ygx">
-                                                        <rect key="frame" x="266" y="75" width="60.5" height="21"/>
-                                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="N/A" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bXa-GB-NDM" userLabel="N/A">
-                                                        <rect key="frame" x="331.5" y="75" width="57.5" height="21"/>
-                                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fwj-LR-JI5">
-                                                        <rect key="frame" x="10" y="0.0" width="153.5" height="38"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fwj-LR-JI5">
+                                                        <rect key="frame" x="10" y="0.0" width="178" height="38"/>
                                                         <fontDescription key="fontDescription" type="italicSystem" pointSize="15"/>
                                                         <color key="textColor" name="lta_grey"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label Label Label Label Label Label" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0pQ-kq-x18">
+                                                        <rect key="frame" x="197" y="0.0" width="187" height="38"/>
+                                                        <fontDescription key="fontDescription" type="italicSystem" pointSize="15"/>
+                                                        <color key="textColor" name="lta_grey"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iqU-Kp-ygx">
+                                                        <rect key="frame" x="334.5" y="75" width="11" height="21"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
                                                 </subviews>
                                                 <constraints>
-                                                    <constraint firstItem="rKY-KD-z7c" firstAttribute="width" secondItem="ZIx-tQ-7LP" secondAttribute="width" id="1Hu-0e-2BS"/>
-                                                    <constraint firstItem="bXa-GB-NDM" firstAttribute="leading" secondItem="iqU-Kp-ygx" secondAttribute="trailing" constant="5" id="1X7-b8-i7N"/>
-                                                    <constraint firstItem="iqU-Kp-ygx" firstAttribute="width" secondItem="JbZ-nB-WXU" secondAttribute="width" id="2RJ-NA-tQi"/>
+                                                    <constraint firstItem="ZIx-tQ-7LP" firstAttribute="centerX" secondItem="liH-Vh-sj5" secondAttribute="centerX" id="4B6-9Q-Pia"/>
                                                     <constraint firstItem="iqU-Kp-ygx" firstAttribute="top" secondItem="hE6-XY-EwL" secondAttribute="bottom" constant="5" id="66v-5D-r1b"/>
                                                     <constraint firstItem="liH-Vh-sj5" firstAttribute="top" secondItem="F2X-pR-6wd" secondAttribute="top" constant="40" id="6fG-tD-8dr"/>
+                                                    <constraint firstItem="ZIx-tQ-7LP" firstAttribute="leading" secondItem="F66-Cc-zBV" secondAttribute="trailing" constant="60" id="71E-kT-Ibz"/>
                                                     <constraint firstItem="0pQ-kq-x18" firstAttribute="top" secondItem="F2X-pR-6wd" secondAttribute="top" id="7mi-GG-Jgd"/>
-                                                    <constraint firstItem="8Ky-US-CTo" firstAttribute="top" secondItem="F2X-pR-6wd" secondAttribute="top" id="9jl-Qb-MFc"/>
-                                                    <constraint firstItem="hE6-XY-EwL" firstAttribute="leading" secondItem="4aK-s2-IIn" secondAttribute="trailing" constant="5" id="Ao6-0r-ROE"/>
+                                                    <constraint firstItem="rKY-KD-z7c" firstAttribute="centerX" secondItem="F2X-pR-6wd" secondAttribute="centerX" id="A5A-Fc-Bwp"/>
                                                     <constraint firstItem="DqY-w5-jmK" firstAttribute="top" secondItem="F2X-pR-6wd" secondAttribute="top" constant="40" id="BBO-GP-4O7"/>
                                                     <constraint firstItem="rKY-KD-z7c" firstAttribute="top" secondItem="liH-Vh-sj5" secondAttribute="bottom" constant="5" id="Bf5-1h-k1T"/>
                                                     <constraint firstItem="v2D-Q9-2b4" firstAttribute="top" secondItem="F2X-pR-6wd" secondAttribute="top" constant="40" id="BwX-5z-tPL"/>
-                                                    <constraint firstItem="8Ky-US-CTo" firstAttribute="leading" secondItem="0pQ-kq-x18" secondAttribute="trailing" constant="10" id="D7K-rX-emJ"/>
-                                                    <constraint firstItem="ZIx-tQ-7LP" firstAttribute="leading" secondItem="F66-Cc-zBV" secondAttribute="trailing" constant="5" id="GOR-9N-2DF"/>
+                                                    <constraint firstItem="rKY-KD-z7c" firstAttribute="centerX" secondItem="4aK-s2-IIn" secondAttribute="centerX" id="DJ8-Yh-Rgs"/>
                                                     <constraint firstItem="hE6-XY-EwL" firstAttribute="width" secondItem="4aK-s2-IIn" secondAttribute="width" id="GRj-UD-NjU"/>
-                                                    <constraint firstItem="4aK-s2-IIn" firstAttribute="leading" secondItem="liH-Vh-sj5" secondAttribute="trailing" constant="5" id="Heb-uE-BId"/>
                                                     <constraint firstItem="fwj-LR-JI5" firstAttribute="top" secondItem="F2X-pR-6wd" secondAttribute="top" id="IYv-D9-Z8o"/>
                                                     <constraint firstItem="0pQ-kq-x18" firstAttribute="leading" secondItem="fwj-LR-JI5" secondAttribute="trailing" id="JKO-47-qUh"/>
                                                     <constraint firstItem="4aK-s2-IIn" firstAttribute="top" secondItem="F2X-pR-6wd" secondAttribute="top" constant="40" id="K19-Ko-ft0"/>
-                                                    <constraint firstItem="v2D-Q9-2b4" firstAttribute="leading" secondItem="F2X-pR-6wd" secondAttribute="leading" constant="5" id="Lih-U2-TEk"/>
                                                     <constraint firstItem="0pQ-kq-x18" firstAttribute="width" secondItem="fwj-LR-JI5" secondAttribute="width" id="LkB-2J-WxK"/>
-                                                    <constraint firstItem="UUo-H3-VFC" firstAttribute="top" secondItem="F2X-pR-6wd" secondAttribute="top" constant="40" id="Mfb-Zj-8Yq"/>
-                                                    <constraint firstItem="JbZ-nB-WXU" firstAttribute="width" secondItem="rKY-KD-z7c" secondAttribute="width" id="Ncy-d7-r0O"/>
-                                                    <constraint firstItem="JbZ-nB-WXU" firstAttribute="leading" secondItem="rKY-KD-z7c" secondAttribute="trailing" constant="5" id="Q4c-0C-EO1"/>
-                                                    <constraint firstItem="iqU-Kp-ygx" firstAttribute="top" secondItem="UUo-H3-VFC" secondAttribute="bottom" constant="5" id="R4j-Ak-hEi"/>
-                                                    <constraint firstItem="DqY-w5-jmK" firstAttribute="leading" secondItem="hE6-XY-EwL" secondAttribute="trailing" constant="5" id="Tyx-yj-vFv"/>
+                                                    <constraint firstItem="JbZ-nB-WXU" firstAttribute="centerX" secondItem="hE6-XY-EwL" secondAttribute="centerX" id="N1n-Po-U4B"/>
+                                                    <constraint firstItem="iqU-Kp-ygx" firstAttribute="leading" secondItem="JbZ-nB-WXU" secondAttribute="trailing" constant="60" id="NEM-Z3-c99"/>
+                                                    <constraint firstItem="iqU-Kp-ygx" firstAttribute="centerX" secondItem="DqY-w5-jmK" secondAttribute="centerX" id="NgG-ei-NJQ"/>
                                                     <constraint firstAttribute="bottom" secondItem="F66-Cc-zBV" secondAttribute="bottom" constant="5" id="XUz-d6-o1N"/>
-                                                    <constraint firstItem="ZIx-tQ-7LP" firstAttribute="width" secondItem="F66-Cc-zBV" secondAttribute="width" id="Z9m-fO-UJr"/>
-                                                    <constraint firstItem="bXa-GB-NDM" firstAttribute="top" secondItem="DqY-w5-jmK" secondAttribute="bottom" constant="5" id="ZDj-Kp-4fa"/>
                                                     <constraint firstItem="ZIx-tQ-7LP" firstAttribute="top" secondItem="liH-Vh-sj5" secondAttribute="bottom" constant="5" id="ZNi-0L-8Sv"/>
                                                     <constraint firstItem="JbZ-nB-WXU" firstAttribute="top" secondItem="4aK-s2-IIn" secondAttribute="bottom" constant="5" id="Zg5-P7-5xy"/>
-                                                    <constraint firstAttribute="trailing" secondItem="bXa-GB-NDM" secondAttribute="trailing" constant="5" id="a3A-4b-EBt"/>
                                                     <constraint firstItem="v2D-Q9-2b4" firstAttribute="top" secondItem="fwj-LR-JI5" secondAttribute="bottom" constant="2" id="ahP-Wf-ZF1"/>
                                                     <constraint firstItem="4aK-s2-IIn" firstAttribute="top" secondItem="0pQ-kq-x18" secondAttribute="bottom" constant="2" id="akB-Iu-4QY"/>
+                                                    <constraint firstItem="rKY-KD-z7c" firstAttribute="leading" secondItem="ZIx-tQ-7LP" secondAttribute="trailing" constant="60" id="bpQ-vn-7Rc"/>
                                                     <constraint firstItem="liH-Vh-sj5" firstAttribute="width" secondItem="v2D-Q9-2b4" secondAttribute="width" id="dYN-Qg-E55"/>
-                                                    <constraint firstAttribute="bottom" secondItem="8Ky-US-CTo" secondAttribute="bottom" id="fVv-Gj-I3f"/>
-                                                    <constraint firstItem="UUo-H3-VFC" firstAttribute="leading" secondItem="DqY-w5-jmK" secondAttribute="trailing" constant="5" id="fe9-bP-c7D"/>
-                                                    <constraint firstAttribute="trailing" secondItem="UUo-H3-VFC" secondAttribute="trailing" constant="5" id="gTu-sd-p7Z"/>
-                                                    <constraint firstItem="UUo-H3-VFC" firstAttribute="width" secondItem="v2D-Q9-2b4" secondAttribute="width" id="jde-t2-xGU"/>
-                                                    <constraint firstItem="iqU-Kp-ygx" firstAttribute="leading" secondItem="JbZ-nB-WXU" secondAttribute="trailing" constant="5" id="jiP-nX-I9r"/>
                                                     <constraint firstItem="fwj-LR-JI5" firstAttribute="leading" secondItem="F2X-pR-6wd" secondAttribute="leading" constant="10" id="k8D-3F-KaX"/>
+                                                    <constraint firstItem="JbZ-nB-WXU" firstAttribute="leading" secondItem="rKY-KD-z7c" secondAttribute="trailing" constant="60" id="kCT-4f-KOJ"/>
                                                     <constraint firstItem="4aK-s2-IIn" firstAttribute="width" secondItem="liH-Vh-sj5" secondAttribute="width" id="kMt-g4-78x"/>
-                                                    <constraint firstItem="UUo-H3-VFC" firstAttribute="leading" secondItem="8Ky-US-CTo" secondAttribute="trailing" constant="-2" id="l9W-k7-7Hg"/>
-                                                    <constraint firstItem="liH-Vh-sj5" firstAttribute="leading" secondItem="v2D-Q9-2b4" secondAttribute="trailing" constant="5" id="mhy-QX-ONK"/>
-                                                    <constraint firstItem="bXa-GB-NDM" firstAttribute="width" secondItem="F66-Cc-zBV" secondAttribute="width" multiplier="0.956522" id="qgz-MC-2EJ"/>
+                                                    <constraint firstItem="F66-Cc-zBV" firstAttribute="centerX" secondItem="v2D-Q9-2b4" secondAttribute="centerX" id="syS-h2-J13"/>
                                                     <constraint firstItem="hE6-XY-EwL" firstAttribute="top" secondItem="F2X-pR-6wd" secondAttribute="top" constant="40" id="uck-zp-QGY"/>
-                                                    <constraint firstItem="rKY-KD-z7c" firstAttribute="leading" secondItem="ZIx-tQ-7LP" secondAttribute="trailing" constant="5" id="urm-YP-zvr"/>
-                                                    <constraint firstItem="F66-Cc-zBV" firstAttribute="leading" secondItem="F2X-pR-6wd" secondAttribute="leading" constant="5" id="voD-fz-BOk"/>
+                                                    <constraint firstAttribute="trailing" secondItem="0pQ-kq-x18" secondAttribute="trailing" constant="10" id="v0t-zc-vHO"/>
                                                     <constraint firstItem="DqY-w5-jmK" firstAttribute="width" secondItem="hE6-XY-EwL" secondAttribute="width" id="z7H-0y-afB"/>
                                                     <constraint firstItem="F66-Cc-zBV" firstAttribute="top" secondItem="v2D-Q9-2b4" secondAttribute="bottom" constant="5" id="ziT-Ca-9QP"/>
                                                 </constraints>
@@ -2263,12 +2163,14 @@
                                         </subviews>
                                         <constraints>
                                             <constraint firstItem="F2X-pR-6wd" firstAttribute="top" secondItem="eMd-0B-AqQ" secondAttribute="bottom" constant="5" id="7ly-sa-GIH"/>
+                                            <constraint firstAttribute="trailing" secondItem="F2X-pR-6wd" secondAttribute="trailing" constant="10" id="87q-Ue-BzE"/>
                                             <constraint firstAttribute="trailing" secondItem="eMd-0B-AqQ" secondAttribute="trailing" constant="30" id="H7i-w9-hE7"/>
                                             <constraint firstItem="eMd-0B-AqQ" firstAttribute="leading" secondItem="sV0-5B-e51" secondAttribute="leading" constant="30" id="IFw-Vp-Da9"/>
                                             <constraint firstItem="F2X-pR-6wd" firstAttribute="leading" secondItem="sV0-5B-e51" secondAttribute="leading" constant="10" id="LCa-G4-mai"/>
                                             <constraint firstItem="tIR-57-dKU" firstAttribute="leading" secondItem="sV0-5B-e51" secondAttribute="leading" constant="30" id="Q2M-va-cne"/>
                                             <constraint firstAttribute="trailing" secondItem="F2X-pR-6wd" secondAttribute="trailing" constant="10" id="WwB-34-cSx"/>
                                             <constraint firstItem="eMd-0B-AqQ" firstAttribute="top" secondItem="tIR-57-dKU" secondAttribute="bottom" constant="15" id="hww-ce-Fp8"/>
+                                            <constraint firstItem="F2X-pR-6wd" firstAttribute="centerX" secondItem="sV0-5B-e51" secondAttribute="centerX" id="kAf-Q6-7Qe"/>
                                             <constraint firstItem="tIR-57-dKU" firstAttribute="top" secondItem="sV0-5B-e51" secondAttribute="top" constant="10" id="tVc-yI-7qB"/>
                                             <constraint firstAttribute="trailing" secondItem="tIR-57-dKU" secondAttribute="trailing" constant="30" id="ukZ-qx-e0g"/>
                                             <constraint firstAttribute="bottom" secondItem="F2X-pR-6wd" secondAttribute="bottom" id="va1-JC-aLg"/>
@@ -2322,7 +2224,6 @@
                         <outlet property="radioButton4" destination="hE6-XY-EwL" id="MpM-LJ-9wV"/>
                         <outlet property="radioButton5" destination="DqY-w5-jmK" id="etF-dl-f3p"/>
                         <outlet property="radioButtonContainer" destination="F2X-pR-6wd" id="OWm-4j-DRw"/>
-                        <outlet property="radioButtonNA" destination="UUo-H3-VFC" id="iev-fo-UbE"/>
                         <outlet property="theIcon" destination="rSh-5b-w28" id="4ef-ET-6Ty"/>
                     </connections>
                 </viewController>
@@ -3268,7 +3169,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="802"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="414" placeholderIntrinsicHeight="200" axis="vertical" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="0Cr-Fx-B3Q">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="473.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="259.5"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1ON-kf-SoQ">
                                                         <rect key="frame" x="13" y="12" width="388" height="239.5"/>
@@ -3287,24 +3188,6 @@
                                                             <constraint firstAttribute="bottom" secondItem="gMY-Lt-qYi" secondAttribute="bottom" constant="8" id="lhU-yH-z46"/>
                                                             <constraint firstAttribute="trailing" secondItem="gMY-Lt-qYi" secondAttribute="trailing" constant="8" id="ney-rO-3MB"/>
                                                             <constraint firstItem="gMY-Lt-qYi" firstAttribute="leading" secondItem="1ON-kf-SoQ" secondAttribute="leading" constant="8" id="rqF-8K-YJm"/>
-                                                        </constraints>
-                                                    </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ebg-Qr-Nma">
-                                                        <rect key="frame" x="13" y="265.5" width="388" height="200"/>
-                                                        <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="01k-fC-L9h">
-                                                                <rect key="frame" x="12" y="8" width="364" height="180"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                                <nil key="textColor"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                        </subviews>
-                                                        <color key="backgroundColor" systemColor="systemGray5Color"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="trailing" secondItem="01k-fC-L9h" secondAttribute="trailing" constant="12" id="5Wr-tW-n6y"/>
-                                                            <constraint firstAttribute="bottom" secondItem="01k-fC-L9h" secondAttribute="bottom" constant="12" id="6Ba-KR-jFd"/>
-                                                            <constraint firstItem="01k-fC-L9h" firstAttribute="leading" secondItem="ebg-Qr-Nma" secondAttribute="leading" constant="12" id="B9m-vG-Ddu"/>
-                                                            <constraint firstItem="01k-fC-L9h" firstAttribute="top" secondItem="ebg-Qr-Nma" secondAttribute="top" constant="8" id="a7P-Mr-BoN"/>
                                                         </constraints>
                                                     </view>
                                                 </subviews>
@@ -3379,11 +3262,9 @@
                     <size key="freeformSize" width="414" height="1000"/>
                     <connections>
                         <outlet property="aboutTextView" destination="gMY-Lt-qYi" id="Hrw-k5-MsR"/>
-                        <outlet property="teamLabel" destination="01k-fC-L9h" id="2PK-vf-USj"/>
                         <outlet property="theScrollview" destination="aNZ-QC-G7Z" id="tmw-Eq-BeY"/>
                         <outlet property="topView" destination="Od5-Rg-CNE" id="dCc-G1-cyZ"/>
                         <outlet property="view1" destination="1ON-kf-SoQ" id="aKU-sl-bf3"/>
-                        <outlet property="view2" destination="ebg-Qr-Nma" id="WsY-5B-pRm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HDV-Gd-Vt9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -3727,50 +3608,6 @@
             <point key="canvasLocation" x="3379.7101449275365" y="1532.8125"/>
         </scene>
     </scenes>
-    <designables>
-        <designable name="0Ig-5B-T4Q">
-            <size key="intrinsicContentSize" width="30" height="30"/>
-        </designable>
-        <designable name="0i5-XQ-5De">
-            <size key="intrinsicContentSize" width="30" height="30"/>
-        </designable>
-        <designable name="4aK-s2-IIn">
-            <size key="intrinsicContentSize" width="30" height="30"/>
-        </designable>
-        <designable name="5OV-Vo-NCE">
-            <size key="intrinsicContentSize" width="30" height="30"/>
-        </designable>
-        <designable name="CKu-H8-aAG">
-            <size key="intrinsicContentSize" width="30" height="30"/>
-        </designable>
-        <designable name="COv-2J-T8N">
-            <size key="intrinsicContentSize" width="30" height="30"/>
-        </designable>
-        <designable name="DqY-w5-jmK">
-            <size key="intrinsicContentSize" width="30" height="30"/>
-        </designable>
-        <designable name="FRY-YK-L9B">
-            <size key="intrinsicContentSize" width="30" height="30"/>
-        </designable>
-        <designable name="QAd-Ol-N7D">
-            <size key="intrinsicContentSize" width="30" height="30"/>
-        </designable>
-        <designable name="QUH-qR-5yB">
-            <size key="intrinsicContentSize" width="30" height="30"/>
-        </designable>
-        <designable name="UUo-H3-VFC">
-            <size key="intrinsicContentSize" width="30" height="30"/>
-        </designable>
-        <designable name="hE6-XY-EwL">
-            <size key="intrinsicContentSize" width="30" height="30"/>
-        </designable>
-        <designable name="liH-Vh-sj5">
-            <size key="intrinsicContentSize" width="30" height="30"/>
-        </designable>
-        <designable name="v2D-Q9-2b4">
-            <size key="intrinsicContentSize" width="30" height="30"/>
-        </designable>
-    </designables>
     <resources>
         <image name="close_icon" width="67" height="67"/>
         <image name="hamburger_menu2" width="1024" height="1024"/>
@@ -3782,7 +3619,7 @@
         <image name="lta_icon_open_light" width="507" height="506"/>
         <image name="lta_icon_single_marked_light" width="507" height="506"/>
         <image name="lta_icon_slider_light" width="507" height="506"/>
-        <image name="ynu_logo" width="280" height="270"/>
+        <image name="ynu_unnamed" width="245" height="265"/>
         <namedColor name="lta_blue">
             <color red="0.31764705882352939" green="0.39215686274509803" blue="0.58823529411764708" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
@@ -3805,13 +3642,13 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGray4Color">
-            <color red="0.81960784310000001" green="0.81960784310000001" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray5Color">
-            <color red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray6Color">
-            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

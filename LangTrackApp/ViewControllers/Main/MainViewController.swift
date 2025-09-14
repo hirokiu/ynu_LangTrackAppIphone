@@ -575,7 +575,13 @@ class MainViewController: UIViewController {
             }
         }
         DispatchQueue.main.async {
-            UIApplication.shared.applicationIconBadgeNumber = numberOfActive
+            if #available(iOS 16.0, *) {
+                // 通知を許可しないと機能しない
+                UNUserNotificationCenter.current().setBadgeCount(numberOfActive)
+            } else {
+                // Fallback on earlier versions
+                UIApplication.shared.applicationIconBadgeNumber = numberOfActive
+            }
         }
     }
 }

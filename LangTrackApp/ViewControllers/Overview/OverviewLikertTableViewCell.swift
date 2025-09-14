@@ -15,7 +15,7 @@ class OverviewLikertTableViewCell: UITableViewCell {
     @IBOutlet weak var likertButton2: LikertRadioButton!
     @IBOutlet weak var likertButton3: LikertRadioButton!
     @IBOutlet weak var likertButton4: LikertRadioButton!
-    @IBOutlet weak var likertButtonNA: LikertRadioButton!
+//    @IBOutlet weak var likertButtonNA: LikertRadioButton!
     //@IBOutlet weak var likert0: UIView!
     //@IBOutlet weak var likert1: UIView!
     //@IBOutlet weak var likert2: UIView!
@@ -67,7 +67,7 @@ class OverviewLikertTableViewCell: UITableViewCell {
         likertButton2.isSelected = false
         likertButton3.isSelected = false
         likertButton4.isSelected = false
-        likertButtonNA.isSelected = false
+//        likertButtonNA.isSelected = false
     }
     
     func setLikertScale(){
@@ -80,49 +80,49 @@ class OverviewLikertTableViewCell: UITableViewCell {
                     likertButton2.isSelected = false
                     likertButton3.isSelected = false
                     likertButton4.isSelected = false
-                    likertButtonNA.isSelected = false
+//                    likertButtonNA.isSelected = false
                 case 1:
                     likertButton0.isSelected = false
                     likertButton1.isSelected = true
                     likertButton2.isSelected = false
                     likertButton3.isSelected = false
                     likertButton4.isSelected = false
-                    likertButtonNA.isSelected = false
+//                    likertButtonNA.isSelected = false
                 case 2:
                     likertButton0.isSelected = false
                     likertButton1.isSelected = false
                     likertButton2.isSelected = true
                     likertButton3.isSelected = false
                     likertButton4.isSelected = false
-                    likertButtonNA.isSelected = false
+//                    likertButtonNA.isSelected = false
                 case 3:
                     likertButton0.isSelected = false
                     likertButton1.isSelected = false
                     likertButton2.isSelected = false
                     likertButton3.isSelected = true
                     likertButton4.isSelected = false
-                    likertButtonNA.isSelected = false
+//                    likertButtonNA.isSelected = false
                 case 4:
                     likertButton0.isSelected = false
                     likertButton1.isSelected = false
                     likertButton2.isSelected = false
                     likertButton3.isSelected = false
                     likertButton4.isSelected = true
-                    likertButtonNA.isSelected = false
+//                    likertButtonNA.isSelected = false
                 case 5:
                     likertButton0.isSelected = false
                     likertButton1.isSelected = false
                     likertButton2.isSelected = false
                     likertButton3.isSelected = false
                     likertButton4.isSelected = false
-                    likertButtonNA.isSelected = true
+//                    likertButtonNA.isSelected = true
                 default:
                     likertButton0.isSelected = false
                     likertButton1.isSelected = false
                     likertButton2.isSelected = false
                     likertButton3.isSelected = false
                     likertButton4.isSelected = false
-                    likertButtonNA.isSelected = false
+//                    likertButtonNA.isSelected = false
                 }
             }else{
                 setAllUnmarked()

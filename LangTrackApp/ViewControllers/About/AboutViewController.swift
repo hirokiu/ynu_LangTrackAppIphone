@@ -11,7 +11,7 @@ import UIKit
 class AboutViewController: UIViewController, UIScrollViewDelegate {
     
     @IBOutlet weak var view1: UIView!
-    @IBOutlet weak var view2: UIView!
+//    @IBOutlet weak var view2: UIView!
     @IBOutlet weak var aboutTextView: UITextView!
     
     @IBOutlet weak var teamLabel: UILabel!
@@ -25,12 +25,12 @@ class AboutViewController: UIViewController, UIScrollViewDelegate {
 
         view1.layer.cornerRadius = 12
         view1.setLargeViewShadow()
-        view2.layer.cornerRadius = 12
-        view2.setLargeViewShadow()
+        //view2.layer.cornerRadius = 12
+        //view2.setLargeViewShadow()
         
         theScrollview.delegate = self
         setAboutText()
-        setTeamText()
+        //setTeamText()
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {

@@ -16,7 +16,7 @@ class LikertScaleViewController: UIViewController {
     @IBOutlet weak var radioButton3: LikertRadioButton!
     @IBOutlet weak var radioButton4: LikertRadioButton!
     @IBOutlet weak var radioButton5: LikertRadioButton!
-    @IBOutlet weak var radioButtonNA: LikertRadioButton!
+//    @IBOutlet weak var radioButtonNA: LikertRadioButton!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var likertTextLabel: UILabel!
     @IBOutlet weak var radioButtonContainer: UIView!
@@ -66,49 +66,49 @@ class LikertScaleViewController: UIViewController {
             radioButton3.isSelected = false
             radioButton4.isSelected = false
             radioButton5.isSelected = false
-            radioButtonNA.isSelected = false
+//            radioButtonNA.isSelected = false
         case 1:
             radioButton1.isSelected = false
             radioButton2.isSelected = true
             radioButton3.isSelected = false
             radioButton4.isSelected = false
             radioButton5.isSelected = false
-            radioButtonNA.isSelected = false
+//            radioButtonNA.isSelected = false
         case 2:
             radioButton1.isSelected = false
             radioButton2.isSelected = false
             radioButton3.isSelected = true
             radioButton4.isSelected = false
             radioButton5.isSelected = false
-            radioButtonNA.isSelected = false
+//            radioButtonNA.isSelected = false
         case 3:
             radioButton1.isSelected = false
             radioButton2.isSelected = false
             radioButton3.isSelected = false
             radioButton4.isSelected = true
             radioButton5.isSelected = false
-            radioButtonNA.isSelected = false
+//            radioButtonNA.isSelected = false
         case 4:
             radioButton1.isSelected = false
             radioButton2.isSelected = false
             radioButton3.isSelected = false
             radioButton4.isSelected = false
             radioButton5.isSelected = true
-            radioButtonNA.isSelected = false
+//            radioButtonNA.isSelected = false
         case 5:
             radioButton1.isSelected = false
             radioButton2.isSelected = false
             radioButton3.isSelected = false
             radioButton4.isSelected = false
             radioButton5.isSelected = false
-            radioButtonNA.isSelected = true
+//            radioButtonNA.isSelected = true
         default:
             radioButton1.isSelected = false
             radioButton2.isSelected = false
             radioButton3.isSelected = false
             radioButton4.isSelected = false
             radioButton5.isSelected = false
-            radioButtonNA.isSelected = false
+//            radioButtonNA.isSelected = false
             print("likert setSelected: \(selected)")
         }
     }
@@ -123,7 +123,7 @@ class LikertScaleViewController: UIViewController {
         radioButton3.isSelected = false
         radioButton4.isSelected = false
         radioButton5.isSelected = false
-        radioButtonNA.isSelected = false
+//        radioButtonNA.isSelected = false
     }
     
     @IBAction func previousButtonPressed(_ sender: Any) {

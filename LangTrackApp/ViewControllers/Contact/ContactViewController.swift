@@ -58,25 +58,26 @@ class ContactViewController: UIViewController, UIScrollViewDelegate, UITextViewD
         let attrcontactInfoText = NSMutableAttributedString(string: contactInfoText, attributes: attributeLtaBlueText)
         finalString.append(attrcontactInfoText)
         
-        let reserchLink = "stephan.bjorck@humlab.lu.se"
+//        let reserchLink = "stephan.bjorck@humlab.lu.se"
+        let reserchLink = "ltajapan2024@gmail.com"
         let myreserchRange = NSRange(location: 0, length: reserchLink.count)
         let attrreserchText2 = NSMutableAttributedString(string: reserchLink, attributes: attributeLtaBlueText)
         attrreserchText2.addAttribute(NSAttributedString.Key.link,
-                                      value: "tech",
+                                      value: "research",
                                       range: myreserchRange)
         finalString.append(attrreserchText2)
         
         let techText3 = "\n\n\(translatedTechText1)\n"
         let attrtechText3 = NSMutableAttributedString(string: techText3, attributes: attributeLtaBlueText)
-        finalString.append(attrtechText3)
+        //finalString.append(attrtechText3)
         
         let techLink = "henriette.arndt@humlab.lu.se"
         let mytechRange = NSRange(location: 0, length: techLink.count)
         let attrtechText2 = NSMutableAttributedString(string: techLink, attributes: attributeLtaBlueText)
         attrtechText2.addAttribute(NSAttributedString.Key.link,
-                                      value: "reserch",
+                                      value: "texh",
                                       range: mytechRange)
-        finalString.append(attrtechText2)
+//        finalString.append(attrtechText2)
         
         contactsTextView.attributedText = finalString
     }

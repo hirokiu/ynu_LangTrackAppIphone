@@ -50,9 +50,8 @@ Copyright © 2020 Stephan Björck. All rights reserved.
 
 // Contact
 "Contact" = "Contact";
-"contact text 1" = "If you are experiencing any technical issues, please contact Stephan Björck.";
-"contact text 4" = "If you have questions or comments about the content of the survey, please email Henriette Arndt.";
-"tech mail subject" = "Concerning Lang-Track-App";
+"contact text 1" = "If you are experiencing any technical issues or have any questions/comments about the content of the survey, please email;";
+"contact text 4" = "";
 "No Email Client popup title" = "No Email Client";
 "No Email Client popup text" = "E-mail does not seem to be possible. Click on the link to the Humanities Lab below and contact that way instead.";
 "Links" = "Links";
