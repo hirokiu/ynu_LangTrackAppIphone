@@ -30,7 +30,7 @@
 
 import UIKit
 import Firebase
-import Charts
+import DGCharts
 
 extension Notification.Name {
 static let newNotification = Notification.Name("newNotification")
@@ -387,7 +387,7 @@ class MainViewController: UIViewController {
         chartView.drawHoleEnabled = true
         chartView.rotationAngle = -90
         chartView.rotationEnabled = false
-        chartView.chartDescription?.enabled = false
+        chartView.chartDescription.enabled = false
         chartView.isUserInteractionEnabled = false
         
     }

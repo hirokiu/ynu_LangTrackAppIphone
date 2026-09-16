@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1540"
-   version = "1.7">
+   LastUpgradeVersion = "2600"
+   version = "2.2">
    <BuildAction
       parallelizeBuildables = "YES"
       buildImplicitDependencies = "YES"
@@ -20,6 +20,15 @@
                BlueprintName = "LangTrackApp"
                ReferencedContainer = "container:LangTrackApp.xcodeproj">
             </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <AutocreatedTestPlanReference>
+            </AutocreatedTestPlanReference>
          </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
@@ -68,10 +77,19 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F156586C23E2DD7500EC2796"
             BuildableName = "Lang Track App.app"
+            BlueprintName = "Kirokun"
+            ReferencedContainer = "container:Kirokun.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "F156586C23E2DD7500EC2796"
+            BuildableName = "Lang Track App.app"
             BlueprintName = "LangTrackApp"
             ReferencedContainer = "container:LangTrackApp.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -89,6 +107,15 @@
             ReferencedContainer = "container:LangTrackApp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "F156586C23E2DD7500EC2796"
+            BuildableName = "Lang Track App.app"
+            BlueprintName = "LangTrackApp"
+            ReferencedContainer = "container:LangTrackApp.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

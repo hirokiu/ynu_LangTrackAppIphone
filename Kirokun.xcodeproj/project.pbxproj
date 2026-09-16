@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		54DB1004A6E7F932D425F726 /* Pods_LangTrackApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26D6E42C0665E59A650D691E /* Pods_LangTrackApp.framework */; };
-		6E4FE3B3224743DA056F0CD3 /* Pods_LangTrackAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29A9D436C2DAAC846D48CC6C /* Pods_LangTrackAppTests.framework */; };
+		79254C002B2EC64DFD0F0382 /* Pods_Kirokun.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CF814D4F328EF7D7DF89444 /* Pods_Kirokun.framework */; };
 		92F808F32C7D6F8F00FB7220 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 92F808F22C7D6F8F00FB7220 /* GoogleService-Info.plist */; };
 		92F808F42C7D6F8F00FB7220 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 92F808F22C7D6F8F00FB7220 /* GoogleService-Info.plist */; };
 		92F808F52C7D6F8F00FB7220 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 92F808F22C7D6F8F00FB7220 /* GoogleService-Info.plist */; };
-		C99F2335B4663B157DF4D920 /* Pods_LangTrackApp_LangTrackAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20A3D1734BD8CD9AA9390A18 /* Pods_LangTrackApp_LangTrackAppUITests.framework */; };
+		D3C52BF53771D8789B8362B5 /* Pods_Kirokun_KirokunUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7080B495011BCC590132CBA /* Pods_Kirokun_KirokunUITests.framework */; };
+		DE390164834D7D60FF6348F7 /* Pods_KirokunTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE07763E25751DA1335CB8A7 /* Pods_KirokunTests.framework */; };
 		F10136E723E8372300B36CF0 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10136E623E8372300B36CF0 /* LoginViewController.swift */; };
 		F10136EA23E85F3B00B36CF0 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10136E923E85F3B00B36CF0 /* StringExtension.swift */; };
 		F102725224460EEF00203711 /* OverviewHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F102725124460EEF00203711 /* OverviewHeaderTableViewCell.swift */; };
@@ -105,20 +105,21 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		20A3D1734BD8CD9AA9390A18 /* Pods_LangTrackApp_LangTrackAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LangTrackApp_LangTrackAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		26D6E42C0665E59A650D691E /* Pods_LangTrackApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LangTrackApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		29A9D436C2DAAC846D48CC6C /* Pods_LangTrackAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LangTrackAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5E4DE9080702DE004AB6208D /* Pods-LangTrackAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LangTrackAppTests.debug.xcconfig"; path = "Target Support Files/Pods-LangTrackAppTests/Pods-LangTrackAppTests.debug.xcconfig"; sourceTree = "<group>"; };
-		665265555BAEA6CE00ACDB4D /* Pods-LangTrackApp-LangTrackAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LangTrackApp-LangTrackAppUITests.release.xcconfig"; path = "Target Support Files/Pods-LangTrackApp-LangTrackAppUITests/Pods-LangTrackApp-LangTrackAppUITests.release.xcconfig"; sourceTree = "<group>"; };
-		91BB9D68362794D4DD1123C3 /* Pods-LangTrackAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LangTrackAppTests.release.xcconfig"; path = "Target Support Files/Pods-LangTrackAppTests/Pods-LangTrackAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		3966711958B60E545CBF7C4F /* Pods-KirokunTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KirokunTests.release.xcconfig"; path = "Target Support Files/Pods-KirokunTests/Pods-KirokunTests.release.xcconfig"; sourceTree = "<group>"; };
+		4CF814D4F328EF7D7DF89444 /* Pods_Kirokun.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kirokun.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5187634D5603CB87955B3369 /* Pods-Kirokun.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kirokun.debug.xcconfig"; path = "Target Support Files/Pods-Kirokun/Pods-Kirokun.debug.xcconfig"; sourceTree = "<group>"; };
+		57608BCD0647F61496C0177D /* Pods-Kirokun-KirokunUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kirokun-KirokunUITests.debug.xcconfig"; path = "Target Support Files/Pods-Kirokun-KirokunUITests/Pods-Kirokun-KirokunUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		67893367C32DFBB921A5B40B /* Pods-Kirokun-KirokunUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kirokun-KirokunUITests.release.xcconfig"; path = "Target Support Files/Pods-Kirokun-KirokunUITests/Pods-Kirokun-KirokunUITests.release.xcconfig"; sourceTree = "<group>"; };
 		924A9A402C9563E100867462 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
 		924A9A412C9563E100867462 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		924A9A422C9563E100867462 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		92C66D882CB7ABDB0074E27C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		92C66D8A2CB7ABE80074E27C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		92F808F22C7D6F8F00FB7220 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		E57484CCDC0255241B18BE18 /* Pods-LangTrackApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LangTrackApp.debug.xcconfig"; path = "Target Support Files/Pods-LangTrackApp/Pods-LangTrackApp.debug.xcconfig"; sourceTree = "<group>"; };
-		EC847465AAA8DB24D6027D7C /* Pods-LangTrackApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LangTrackApp.release.xcconfig"; path = "Target Support Files/Pods-LangTrackApp/Pods-LangTrackApp.release.xcconfig"; sourceTree = "<group>"; };
+		A0EB333163E50B55E70C6D24 /* Pods-Kirokun.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kirokun.release.xcconfig"; path = "Target Support Files/Pods-Kirokun/Pods-Kirokun.release.xcconfig"; sourceTree = "<group>"; };
+		AE07763E25751DA1335CB8A7 /* Pods_KirokunTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KirokunTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B7080B495011BCC590132CBA /* Pods_Kirokun_KirokunUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kirokun_KirokunUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D03700066FB9AF4B70851B50 /* Pods-KirokunTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KirokunTests.debug.xcconfig"; path = "Target Support Files/Pods-KirokunTests/Pods-KirokunTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F10136E623E8372300B36CF0 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		F10136E923E85F3B00B36CF0 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		F102725124460EEF00203711 /* OverviewHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewHeaderTableViewCell.swift; sourceTree = "<group>"; };
@@ -156,10 +157,10 @@
 		F156587923E2DD7600EC2796 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F156587C23E2DD7600EC2796 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F156587E23E2DD7600EC2796 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F156588323E2DD7600EC2796 /* LangTrackAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LangTrackAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F156588323E2DD7600EC2796 /* KirokunTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KirokunTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F156588723E2DD7600EC2796 /* LangTrackAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LangTrackAppTests.swift; sourceTree = "<group>"; };
 		F156588923E2DD7600EC2796 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F156588E23E2DD7600EC2796 /* LangTrackAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LangTrackAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F156588E23E2DD7600EC2796 /* KirokunUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KirokunUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F156589223E2DD7600EC2796 /* LangTrackAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LangTrackAppUITests.swift; sourceTree = "<group>"; };
 		F156589423E2DD7600EC2796 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F15658A123E33D1400EC2796 /* SurveyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyViewController.swift; sourceTree = "<group>"; };
@@ -213,7 +214,6 @@
 		F1F7D1DD246FEE57003D881B /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F1F7D1DF246FEE8B003D881B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F1F7D1E0246FEEDC003D881B /* TranslatedStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslatedStrings.swift; sourceTree = "<group>"; };
-		FF22494D824D3C921A1D0751 /* Pods-LangTrackApp-LangTrackAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LangTrackApp-LangTrackAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-LangTrackApp-LangTrackAppUITests/Pods-LangTrackApp-LangTrackAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -221,7 +221,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				54DB1004A6E7F932D425F726 /* Pods_LangTrackApp.framework in Frameworks */,
+				79254C002B2EC64DFD0F0382 /* Pods_Kirokun.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -229,7 +229,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6E4FE3B3224743DA056F0CD3 /* Pods_LangTrackAppTests.framework in Frameworks */,
+				DE390164834D7D60FF6348F7 /* Pods_KirokunTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -237,19 +237,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C99F2335B4663B157DF4D920 /* Pods_LangTrackApp_LangTrackAppUITests.framework in Frameworks */,
+				D3C52BF53771D8789B8362B5 /* Pods_Kirokun_KirokunUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		782E9B8A9C2711B2DD01C22A /* Frameworks */ = {
+		5F44E29F24431FC8BA32DE87 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				26D6E42C0665E59A650D691E /* Pods_LangTrackApp.framework */,
-				20A3D1734BD8CD9AA9390A18 /* Pods_LangTrackApp_LangTrackAppUITests.framework */,
-				29A9D436C2DAAC846D48CC6C /* Pods_LangTrackAppTests.framework */,
+				4CF814D4F328EF7D7DF89444 /* Pods_Kirokun.framework */,
+				B7080B495011BCC590132CBA /* Pods_Kirokun_KirokunUITests.framework */,
+				AE07763E25751DA1335CB8A7 /* Pods_KirokunTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -257,12 +257,12 @@
 		C748AA31549D222278D046F0 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				E57484CCDC0255241B18BE18 /* Pods-LangTrackApp.debug.xcconfig */,
-				EC847465AAA8DB24D6027D7C /* Pods-LangTrackApp.release.xcconfig */,
-				FF22494D824D3C921A1D0751 /* Pods-LangTrackApp-LangTrackAppUITests.debug.xcconfig */,
-				665265555BAEA6CE00ACDB4D /* Pods-LangTrackApp-LangTrackAppUITests.release.xcconfig */,
-				5E4DE9080702DE004AB6208D /* Pods-LangTrackAppTests.debug.xcconfig */,
-				91BB9D68362794D4DD1123C3 /* Pods-LangTrackAppTests.release.xcconfig */,
+				5187634D5603CB87955B3369 /* Pods-Kirokun.debug.xcconfig */,
+				A0EB333163E50B55E70C6D24 /* Pods-Kirokun.release.xcconfig */,
+				57608BCD0647F61496C0177D /* Pods-Kirokun-KirokunUITests.debug.xcconfig */,
+				67893367C32DFBB921A5B40B /* Pods-Kirokun-KirokunUITests.release.xcconfig */,
+				D03700066FB9AF4B70851B50 /* Pods-KirokunTests.debug.xcconfig */,
+				3966711958B60E545CBF7C4F /* Pods-KirokunTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -344,7 +344,7 @@
 				F156589123E2DD7600EC2796 /* LangTrackAppUITests */,
 				F156586E23E2DD7500EC2796 /* Products */,
 				C748AA31549D222278D046F0 /* Pods */,
-				782E9B8A9C2711B2DD01C22A /* Frameworks */,
+				5F44E29F24431FC8BA32DE87 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -352,8 +352,8 @@
 			isa = PBXGroup;
 			children = (
 				F156586D23E2DD7500EC2796 /* Lang Track App.app */,
-				F156588323E2DD7600EC2796 /* LangTrackAppTests.xctest */,
-				F156588E23E2DD7600EC2796 /* LangTrackAppUITests.xctest */,
+				F156588323E2DD7600EC2796 /* KirokunTests.xctest */,
+				F156588E23E2DD7600EC2796 /* KirokunUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -526,30 +526,30 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		F156586C23E2DD7500EC2796 /* LangTrackApp */ = {
+		F156586C23E2DD7500EC2796 /* Kirokun */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F156589723E2DD7600EC2796 /* Build configuration list for PBXNativeTarget "LangTrackApp" */;
+			buildConfigurationList = F156589723E2DD7600EC2796 /* Build configuration list for PBXNativeTarget "Kirokun" */;
 			buildPhases = (
-				87EA69BD8BFC33BE763625C9 /* [CP] Check Pods Manifest.lock */,
+				B297ABAA8B425416053B635F /* [CP] Check Pods Manifest.lock */,
 				F156586923E2DD7500EC2796 /* Sources */,
 				F156586A23E2DD7500EC2796 /* Frameworks */,
 				F156586B23E2DD7500EC2796 /* Resources */,
-				60A2A2A212C832F3EF73BCFD /* [CP] Embed Pods Frameworks */,
+				AE3C0FF6E1CDACCAD5F848B1 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = LangTrackApp;
+			name = Kirokun;
 			productName = LangTrackApp;
 			productReference = F156586D23E2DD7500EC2796 /* Lang Track App.app */;
 			productType = "com.apple.product-type.application";
 		};
-		F156588223E2DD7600EC2796 /* LangTrackAppTests */ = {
+		F156588223E2DD7600EC2796 /* KirokunTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F156589A23E2DD7600EC2796 /* Build configuration list for PBXNativeTarget "LangTrackAppTests" */;
+			buildConfigurationList = F156589A23E2DD7600EC2796 /* Build configuration list for PBXNativeTarget "KirokunTests" */;
 			buildPhases = (
-				31731EF1B1B5F92781754314 /* [CP] Check Pods Manifest.lock */,
+				8C85AAD686AF34C770EF4F70 /* [CP] Check Pods Manifest.lock */,
 				F156587F23E2DD7600EC2796 /* Sources */,
 				F156588023E2DD7600EC2796 /* Frameworks */,
 				F156588123E2DD7600EC2796 /* Resources */,
@@ -559,29 +559,29 @@
 			dependencies = (
 				F156588523E2DD7600EC2796 /* PBXTargetDependency */,
 			);
-			name = LangTrackAppTests;
+			name = KirokunTests;
 			productName = LangTrackAppTests;
-			productReference = F156588323E2DD7600EC2796 /* LangTrackAppTests.xctest */;
+			productReference = F156588323E2DD7600EC2796 /* KirokunTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		F156588D23E2DD7600EC2796 /* LangTrackAppUITests */ = {
+		F156588D23E2DD7600EC2796 /* KirokunUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F156589D23E2DD7600EC2796 /* Build configuration list for PBXNativeTarget "LangTrackAppUITests" */;
+			buildConfigurationList = F156589D23E2DD7600EC2796 /* Build configuration list for PBXNativeTarget "KirokunUITests" */;
 			buildPhases = (
-				3B2451CC5F963F0B451E7862 /* [CP] Check Pods Manifest.lock */,
+				EFCD39B868BF563BB0DF8B2D /* [CP] Check Pods Manifest.lock */,
 				F156588A23E2DD7600EC2796 /* Sources */,
 				F156588B23E2DD7600EC2796 /* Frameworks */,
 				F156588C23E2DD7600EC2796 /* Resources */,
-				B057CCCDBC77DE0FE51A90D5 /* [CP] Embed Pods Frameworks */,
+				FC14A177197FA2B9E8F175C5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				F156589023E2DD7600EC2796 /* PBXTargetDependency */,
 			);
-			name = LangTrackAppUITests;
+			name = KirokunUITests;
 			productName = LangTrackAppUITests;
-			productReference = F156588E23E2DD7600EC2796 /* LangTrackAppUITests.xctest */;
+			productReference = F156588E23E2DD7600EC2796 /* KirokunUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -590,12 +590,13 @@
 		F156586523E2DD7500EC2796 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				BuildIndependentTargetsInParallel = YES;
 				KnownAssetTags = (
 					New,
 				);
 				LastSwiftUpdateCheck = 1130;
-				LastUpgradeCheck = 1130;
-				ORGANIZATIONNAME = "Stephan Björck";
+				LastUpgradeCheck = 2600;
+				ORGANIZATIONNAME = Alchembright;
 				TargetAttributes = {
 					F156586C23E2DD7500EC2796 = {
 						CreatedOnToolsVersion = 11.3.1;
@@ -610,7 +611,7 @@
 					};
 				};
 			};
-			buildConfigurationList = F156586823E2DD7500EC2796 /* Build configuration list for PBXProject "LangTrackApp" */;
+			buildConfigurationList = F156586823E2DD7500EC2796 /* Build configuration list for PBXProject "Kirokun" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -629,9 +630,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F156586C23E2DD7500EC2796 /* LangTrackApp */,
-				F156588223E2DD7600EC2796 /* LangTrackAppTests */,
-				F156588D23E2DD7600EC2796 /* LangTrackAppUITests */,
+				F156586C23E2DD7500EC2796 /* Kirokun */,
+				F156588223E2DD7600EC2796 /* KirokunTests */,
+				F156588D23E2DD7600EC2796 /* KirokunUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -671,7 +672,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		31731EF1B1B5F92781754314 /* [CP] Check Pods Manifest.lock */ = {
+		8C85AAD686AF34C770EF4F70 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -686,57 +687,35 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-LangTrackAppTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-KirokunTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		3B2451CC5F963F0B451E7862 /* [CP] Check Pods Manifest.lock */ = {
+		AE3C0FF6E1CDACCAD5F848B1 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-LangTrackApp-LangTrackAppUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		60A2A2A212C832F3EF73BCFD /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-LangTrackApp/Pods-LangTrackApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Kirokun/Pods-Kirokun-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			inputPaths = (
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-LangTrackApp/Pods-LangTrackApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Kirokun/Pods-Kirokun-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LangTrackApp/Pods-LangTrackApp-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Kirokun/Pods-Kirokun-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		87EA69BD8BFC33BE763625C9 /* [CP] Check Pods Manifest.lock */ = {
+		B297ABAA8B425416053B635F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -751,32 +730,54 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-LangTrackApp-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Kirokun-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B057CCCDBC77DE0FE51A90D5 /* [CP] Embed Pods Frameworks */ = {
+		EFCD39B868BF563BB0DF8B2D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-LangTrackApp-LangTrackAppUITests/Pods-LangTrackApp-LangTrackAppUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Kirokun-KirokunUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FC14A177197FA2B9E8F175C5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Kirokun-KirokunUITests/Pods-Kirokun-KirokunUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			inputPaths = (
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-LangTrackApp-LangTrackAppUITests/Pods-LangTrackApp-LangTrackAppUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Kirokun-KirokunUITests/Pods-Kirokun-KirokunUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LangTrackApp-LangTrackAppUITests/Pods-LangTrackApp-LangTrackAppUITests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Kirokun-KirokunUITests/Pods-Kirokun-KirokunUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -873,12 +874,12 @@
 /* Begin PBXTargetDependency section */
 		F156588523E2DD7600EC2796 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = F156586C23E2DD7500EC2796 /* LangTrackApp */;
+			target = F156586C23E2DD7500EC2796 /* Kirokun */;
 			targetProxy = F156588423E2DD7600EC2796 /* PBXContainerItemProxy */;
 		};
 		F156589023E2DD7600EC2796 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = F156586C23E2DD7500EC2796 /* LangTrackApp */;
+			target = F156586C23E2DD7500EC2796 /* Kirokun */;
 			targetProxy = F156588F23E2DD7600EC2796 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -935,6 +936,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -958,6 +960,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -968,6 +971,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -987,6 +991,7 @@
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -996,6 +1001,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -1019,6 +1025,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -1029,6 +1036,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -1041,6 +1049,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
@@ -1049,21 +1058,30 @@
 		};
 		F156589823E2DD7600EC2796 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E57484CCDC0255241B18BE18 /* Pods-LangTrackApp.debug.xcconfig */;
+			baseConfigurationReference = 5187634D5603CB87955B3369 /* Pods-Kirokun.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-KIROKUN";
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = LangTrackApp/LangTrackApp.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 12;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = T2NKM8MRZM;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				INFOPLIST_FILE = LangTrackApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3.4;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${TOOLCHAIN_DIR}/usr/lib/swift/${PLATFORM_NAME}\"",
+					/usr/lib/swift,
+					"$(PROJECT_DIR)/Pods/**",
+				);
+				MARKETING_VERSION = 2.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.alchembright.dev.ynu-lta-dev";
 				PRODUCT_NAME = "Lang Track App";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1074,21 +1092,30 @@
 		};
 		F156589923E2DD7600EC2796 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EC847465AAA8DB24D6027D7C /* Pods-LangTrackApp.release.xcconfig */;
+			baseConfigurationReference = A0EB333163E50B55E70C6D24 /* Pods-Kirokun.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-KIROKUN";
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = LangTrackApp/LangTrackApp.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 12;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = T2NKM8MRZM;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				INFOPLIST_FILE = LangTrackApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3.4;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${TOOLCHAIN_DIR}/usr/lib/swift/${PLATFORM_NAME}\"",
+					/usr/lib/swift,
+					"$(PROJECT_DIR)/Pods/**",
+				);
+				MARKETING_VERSION = 2.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.alchembright.dev.ynu-lta-dev";
 				PRODUCT_NAME = "Lang Track App";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1099,14 +1126,13 @@
 		};
 		F156589B23E2DD7600EC2796 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5E4DE9080702DE004AB6208D /* Pods-LangTrackAppTests.debug.xcconfig */;
+			baseConfigurationReference = D03700066FB9AF4B70851B50 /* Pods-KirokunTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = LangTrackAppTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1116,20 +1142,19 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LangTrackApp.app/LangTrackApp";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Lang Track App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Lang Track App";
 			};
 			name = Debug;
 		};
 		F156589C23E2DD7600EC2796 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 91BB9D68362794D4DD1123C3 /* Pods-LangTrackAppTests.release.xcconfig */;
+			baseConfigurationReference = 3966711958B60E545CBF7C4F /* Pods-KirokunTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = LangTrackAppTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1139,18 +1164,18 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LangTrackApp.app/LangTrackApp";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Lang Track App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Lang Track App";
 			};
 			name = Release;
 		};
 		F156589E23E2DD7600EC2796 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FF22494D824D3C921A1D0751 /* Pods-LangTrackApp-LangTrackAppUITests.debug.xcconfig */;
+			baseConfigurationReference = 57608BCD0647F61496C0177D /* Pods-Kirokun-KirokunUITests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = LangTrackAppUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1166,12 +1191,12 @@
 		};
 		F156589F23E2DD7600EC2796 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 665265555BAEA6CE00ACDB4D /* Pods-LangTrackApp-LangTrackAppUITests.release.xcconfig */;
+			baseConfigurationReference = 67893367C32DFBB921A5B40B /* Pods-Kirokun-KirokunUITests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = LangTrackAppUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1188,7 +1213,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		F156586823E2DD7500EC2796 /* Build configuration list for PBXProject "LangTrackApp" */ = {
+		F156586823E2DD7500EC2796 /* Build configuration list for PBXProject "Kirokun" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F156589523E2DD7600EC2796 /* Debug */,
@@ -1197,7 +1222,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F156589723E2DD7600EC2796 /* Build configuration list for PBXNativeTarget "LangTrackApp" */ = {
+		F156589723E2DD7600EC2796 /* Build configuration list for PBXNativeTarget "Kirokun" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F156589823E2DD7600EC2796 /* Debug */,
@@ -1206,7 +1231,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F156589A23E2DD7600EC2796 /* Build configuration list for PBXNativeTarget "LangTrackAppTests" */ = {
+		F156589A23E2DD7600EC2796 /* Build configuration list for PBXNativeTarget "KirokunTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F156589B23E2DD7600EC2796 /* Debug */,
@@ -1215,7 +1240,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F156589D23E2DD7600EC2796 /* Build configuration list for PBXNativeTarget "LangTrackAppUITests" */ = {
+		F156589D23E2DD7600EC2796 /* Build configuration list for PBXNativeTarget "KirokunUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F156589E23E2DD7600EC2796 /* Debug */,

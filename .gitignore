@@ -31,3 +31,16 @@ Frank/frankified_build/
 
 # Cocoapods
 /Pods/
+
+# Local tools, generated output and signing secrets
+.DS_Store
+.idea/
+.gradle/
+**/build/
+local.properties
+*.jks
+*.keystore
+*.p8
+*.p12
+*.mobileprovision
+!Podfile.lock
