@@ -1,34 +1,12 @@
-//
-//  LangTrackAppTests.swift
-//  LangTrackAppTests
-//
-//  Created by Stephan Björck on 2020-01-30.
-//  Copyright © 2020 Stephan Björck. All rights reserved.
-//
-
 import XCTest
-@testable import LangTrackApp
+@testable import Lang_Track_App
 
-class LangTrackAppTests: XCTestCase {
-
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+final class LangTrackAppTests: XCTestCase {
+    func testServerTimestampParsesUTC() {
+        let date = DateParser.getDate(dateString: "2025-11-08T00:00:00.000Z")
+        XCTAssertEqual(date?.timeIntervalSince1970, 1762560000)
     }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    func testInvalidServerTimestampIsRejected() {
+        XCTAssertNil(DateParser.getDate(dateString: "not-a-date"))
     }
-
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-
 }

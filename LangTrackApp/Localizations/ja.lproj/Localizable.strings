@@ -52,11 +52,11 @@ Copyright © 2020 Stephan Björck. All rights reserved.
 "Contact" = "連絡先";
 "contact text 1" = "技術的な問題が発生した場合や、アンケートの内容についてご質問やご意見がある場合は、メールでお問い合わせください。";
 "contact text 4" = "";
-"tech mail subject" = "Concerning Lang-Track-App";
+"tech mail subject" = "Concerning KIROKUN";
 "No Email Client popup title" = "No Email Client";
 "No Email Client popup text" = "E-mail does not seem to be possible. Click on the link to the Humanities Lab below and contact that way instead.";
 "Links" = "Links";
-"Lang-Track-App project" = "Lang-Track-App project";
+"Lang-Track-App project" = "KIROKUN project";
 "Humanities Lab" = "Humanities Lab";
 "Lund University Humanities Lab" = "Lund University Humanities Lab";
 "Lund University" = "Lund University";

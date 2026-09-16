@@ -17,8 +17,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "F156586C23E2DD7500EC2796"
                BuildableName = "Lang Track App.app"
-               BlueprintName = "LangTrackApp"
-               ReferencedContainer = "container:LangTrackApp.xcodeproj">
+               BlueprintName = "Kirokun"
+               ReferencedContainer = "container:Kirokun.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -45,8 +45,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "F156588223E2DD7600EC2796"
                BuildableName = "LangTrackAppTests.xctest"
-               BlueprintName = "LangTrackAppTests"
-               ReferencedContainer = "container:LangTrackApp.xcodeproj">
+               BlueprintName = "KirokunTests"
+               ReferencedContainer = "container:Kirokun.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -55,8 +55,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "F156588D23E2DD7600EC2796"
                BuildableName = "LangTrackAppUITests.xctest"
-               BlueprintName = "LangTrackAppUITests"
-               ReferencedContainer = "container:LangTrackApp.xcodeproj">
+               BlueprintName = "KirokunUITests"
+               ReferencedContainer = "container:Kirokun.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -86,8 +86,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F156586C23E2DD7500EC2796"
             BuildableName = "Lang Track App.app"
-            BlueprintName = "LangTrackApp"
-            ReferencedContainer = "container:LangTrackApp.xcodeproj">
+            BlueprintName = "Kirokun"
+            ReferencedContainer = "container:Kirokun.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </LaunchAction>
@@ -103,8 +103,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F156586C23E2DD7500EC2796"
             BuildableName = "Lang Track App.app"
-            BlueprintName = "LangTrackApp"
-            ReferencedContainer = "container:LangTrackApp.xcodeproj">
+            BlueprintName = "Kirokun"
+            ReferencedContainer = "container:Kirokun.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <MacroExpansion>
@@ -112,8 +112,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F156586C23E2DD7500EC2796"
             BuildableName = "Lang Track App.app"
-            BlueprintName = "LangTrackApp"
-            ReferencedContainer = "container:LangTrackApp.xcodeproj">
+            BlueprintName = "Kirokun"
+            ReferencedContainer = "container:Kirokun.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>
