@@ -16,21 +16,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="kirokun_app-icon" translatesAutoresizingMaskIntoConstraints="NO" id="F9q-E0-fJc">
-                                <rect key="frame" x="36" y="178" width="288" height="288"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash" translatesAutoresizingMaskIntoConstraints="NO" id="c3w-1A-Zba">
-                                <rect key="frame" x="212" y="426" width="170" height="368"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="kirokun_app-icon" translatesAutoresizingMaskIntoConstraints="NO" id="F9q-E0-fJc">
+                                <rect key="frame" x="87" y="328" width="240" height="240"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="c3w-1A-Zba" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" multiplier="0.7" constant="-119.8" id="SG2-0Z-mGh"/>
-                            <constraint firstItem="c3w-1A-Zba" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" constant="90" id="X1b-hH-XA6"/>
-                            <constraint firstItem="c3w-1A-Zba" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height" multiplier="0.7" constant="-259.19999999999999" id="dXX-LZ-BUz"/>
-                            <constraint firstItem="c3w-1A-Zba" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="162" id="jfN-PN-h7h"/>
+                            <constraint firstItem="F9q-E0-fJc" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="logo-center-x"/>
+                            <constraint firstItem="F9q-E0-fJc" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="logo-center-y"/>
+                            <constraint firstItem="F9q-E0-fJc" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" multiplier="0.58" id="logo-width"/>
+                            <constraint firstItem="F9q-E0-fJc" firstAttribute="height" secondItem="F9q-E0-fJc" secondAttribute="width" id="logo-square"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -41,7 +37,6 @@
     </scenes>
     <resources>
         <image name="kirokun_app-icon" width="1024" height="1024"/>
-        <image name="splash" width="640" height="960"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

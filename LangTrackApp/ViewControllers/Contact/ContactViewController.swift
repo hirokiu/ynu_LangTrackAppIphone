@@ -11,11 +11,9 @@ import MessageUI
 
 class ContactViewController: UIViewController, UIScrollViewDelegate, UITextViewDelegate, MFMailComposeViewControllerDelegate {
 
-    @IBOutlet weak var linkView: UIView!
     @IBOutlet weak var view2: UIView!
     @IBOutlet weak var contactsTextView: UITextView!
     
-    @IBOutlet weak var linksTextView: UITextView!
     @IBOutlet weak var topView: UIView!
     @IBOutlet weak var theScrollview: UIScrollView!
     
@@ -24,15 +22,12 @@ class ContactViewController: UIViewController, UIScrollViewDelegate, UITextViewD
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        linkView.layer.cornerRadius = 12
-        linkView.setLargeViewShadow()
         view2.layer.cornerRadius = 12
         view2.setLargeViewShadow()
         contactsTextView.delegate = self
         theScrollview.delegate = self
         
         setContactText()
-        setLinkText()
     }
     
     
@@ -80,31 +75,6 @@ class ContactViewController: UIViewController, UIScrollViewDelegate, UITextViewD
 //        finalString.append(attrtechText2)
         
         contactsTextView.attributedText = finalString
-    }
-    
-    func setLinkText(){
-        let theHeader = "\(translatedLinks)\n\n"
-        let finalString = NSMutableAttributedString(string: theHeader, attributes: attributeLtaBlueHeaderText)
-        
-        let linkText1 = "\(translatedLangTrackAppProject)\n\n"
-        let attrText1 = NSMutableAttributedString(string: linkText1, attributes: attributeLtaBlueText)
-        let myRange = NSRange(location: 0, length: attrText1.length)
-        attrText1.addAttributes([NSAttributedString.Key.link: URL(string: "https://portal.research.lu.se/portal/en/projects/the-langtrackapp-studying-exposure-to-and-use-of-a-new-language-using-smartphone-technology(4e734940-981f-4dd0-841a-eb6ac760af0c).html")!], range: myRange)
-        finalString.append(attrText1)
-        
-        let linkText2 = "\(translatedLundUniversityHumanitiesLab)\n\n"
-        let attrText2 = NSMutableAttributedString(string: linkText2, attributes: attributeLtaBlueText)
-        let myRange2 = NSRange(location: 0, length: attrText2.length)
-        attrText2.addAttributes([NSAttributedString.Key.link: URL(string: "https://www.humlab.lu.se")!], range: myRange2)
-        finalString.append(attrText2)
-        
-        let linkText3 = translatedLundUniversity
-        let attrText3 = NSMutableAttributedString(string: linkText3, attributes: attributeLtaBlueText)
-        let myRange3 = NSRange(location: 0, length: attrText3.length)
-        attrText3.addAttributes([NSAttributedString.Key.link: URL(string: "https://www.lu.se/")!], range: myRange3)
-        finalString.append(attrText3)
-        
-        linksTextView.attributedText = finalString
     }
     
     func textView(_ textView: UITextView, shouldInteractWith theURL: URL, in characterRange: NSRange, interaction: UITextItemInteraction) -> Bool {
