@@ -1,15 +1,15 @@
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "01k-fC-L9h"; */
-"01k-fC-L9h.text" = "Label";
+"01k-fC-L9h.text" = "";
 
 /* Class = "UILabel"; text = "Label Label Label Label Label Label"; ObjectID = "0pQ-kq-x18"; */
-"0pQ-kq-x18.text" = "Label Label Label Label Label Label";
+"0pQ-kq-x18.text" = "";
 
 /* Class = "UILabel"; text = "N/A"; ObjectID = "0qq-gO-ptx"; */
-"0qq-gO-ptx.text" = "N/A";
+"0qq-gO-ptx.text" = "該当なし";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "14z-ZG-jJh"; */
-"14z-ZG-jJh.text" = "Label";
+"14z-ZG-jJh.text" = "";
 
 /* Class = "UIButton"; normalTitle = "Next"; ObjectID = "1s7-LP-7JH"; */
 "1s7-LP-7JH.normalTitle" = "次へ";
@@ -30,7 +30,7 @@
 "64B-oU-dYN.normalTitle" = "前の質問";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "72Y-QF-TEK"; */
-"72Y-QF-TEK.text" = "Label";
+"72Y-QF-TEK.text" = "";
 
 /* Class = "UILabel"; text = "About"; ObjectID = "7Qp-Um-7Fy"; */
 "7Qp-Um-7Fy.text" = "このアプリについて";
@@ -48,7 +48,7 @@
 "AjW-8H-6e5.normalTitle" = "前の質問";
 
 /* Class = "UILabel"; text = "Slider scale"; ObjectID = "B0w-Kc-jUk"; */
-"B0w-Kc-jUk.text" = "Slider scale";
+"B0w-Kc-jUk.text" = "スライダー式の質問";
 
 /* Class = "UIButton"; normalTitle = "Previous"; ObjectID = "BLk-8S-07U"; */
 "BLk-8S-07U.normalTitle" = "前の質問";
@@ -60,13 +60,13 @@
 "C9o-z7-sxd.normalTitle" = "ログアウト";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "Cjl-Xo-cZf"; */
-"Cjl-Xo-cZf.text" = "Label";
+"Cjl-Xo-cZf.text" = "";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "EId-bn-sk6"; */
-"EId-bn-sk6.text" = "Label";
+"EId-bn-sk6.text" = "";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "Een-kh-8xP"; */
-"Een-kh-8xP.text" = "Label";
+"Een-kh-8xP.text" = "";
 
 /* Class = "UILabel"; text = "0 timmar 0 minurer"; ObjectID = "EvB-kf-jqC"; */
 "EvB-kf-jqC.text" = "0 時間 0 分";
@@ -78,10 +78,10 @@
 "Fcb-Ub-2k0.text" = "▽";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "FqD-yX-W1h"; */
-"FqD-yX-W1h.text" = "Label";
+"FqD-yX-W1h.text" = "";
 
 /* Class = "UITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."; ObjectID = "GQ3-cv-nbW"; */
-"GQ3-cv-nbW.text" = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.";
+"GQ3-cv-nbW.text" = "";
 
 /* Class = "UILabel"; text = "2"; ObjectID = "HAc-oL-pvb"; */
 "HAc-oL-pvb.text" = "2";
@@ -90,7 +90,7 @@
 "HQ3-31-fgN.text" = "連絡先";
 
 /* Class = "UILabel"; text = "staging server"; ObjectID = "Hke-TM-baw"; */
-"Hke-TM-baw.text" = "staging server";
+"Hke-TM-baw.text" = "検証用サーバー";
 
 /* Class = "UILabel"; text = "-"; ObjectID = "JWk-3i-zIq"; */
 "JWk-3i-zIq.text" = "-";
@@ -99,16 +99,16 @@
 "JbZ-nB-WXU.text" = "4";
 
 /* Class = "UILabel"; text = "Number of questions"; ObjectID = "JqM-rM-xzY"; */
-"JqM-rM-xzY.text" = "Number of questions";
+"JqM-rM-xzY.text" = "質問数";
 
 /* Class = "UILabel"; text = "Enter your login details"; ObjectID = "JuE-8c-e4f"; */
-"JuE-8c-e4f.text" = "Enter your login details";
+"JuE-8c-e4f.text" = "ユーザー名とパスワードを入力してください";
 
 /* Class = "UIButton"; normalTitle = "Previous"; ObjectID = "KHw-YL-1Oc"; */
 "KHw-YL-1Oc.normalTitle" = "前の質問";
 
 /* Class = "UILabel"; text = "Version 0.9"; ObjectID = "Kak-EI-0N0"; */
-"Kak-EI-0N0.text" = "Version 0.9";
+"Kak-EI-0N0.text" = "バージョン";
 
 /* Class = "UIButton"; normalTitle = "Next"; ObjectID = "Kpw-J1-1Gs"; */
 "Kpw-J1-1Gs.normalTitle" = "次へ";
@@ -120,7 +120,7 @@
 "M8Q-VO-zO8.text" = "-";
 
 /* Class = "UILabel"; text = "N/A"; ObjectID = "MKa-xV-Wph"; */
-"MKa-xV-Wph.text" = "N/A";
+"MKa-xV-Wph.text" = "該当なし";
 
 /* Class = "UIButton"; normalTitle = "Start"; ObjectID = "NOs-aw-GyH"; */
 "NOs-aw-GyH.normalTitle" = "開始";
@@ -141,19 +141,19 @@
 "Qah-CN-Kd4.text" = "5";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "Res-eg-f0H"; */
-"Res-eg-f0H.text" = "Label";
+"Res-eg-f0H.text" = "";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "Rhh-uW-ybQ"; */
-"Rhh-uW-ybQ.text" = "Label";
+"Rhh-uW-ybQ.text" = "";
 
 /* Class = "UILabel"; text = "Published"; ObjectID = "SK1-0R-RzW"; */
-"SK1-0R-RzW.text" = "Published";
+"SK1-0R-RzW.text" = "公開日";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "Sbv-ja-mw9"; */
-"Sbv-ja-mw9.text" = "Label";
+"Sbv-ja-mw9.text" = "";
 
 /* Class = "UILabel"; text = "Answered survey"; ObjectID = "TgD-fw-Wio"; */
-"TgD-fw-Wio.text" = "Answered survey";
+"TgD-fw-Wio.text" = "回答済みのアンケート";
 
 /* Class = "UILabel"; text = "YNU-LTA Ver 0.1"; ObjectID = "Tjz-Uh-RzL"; */
 "Tjz-Uh-RzL.text" = "KIROKUN";
@@ -162,16 +162,16 @@
 "U3A-IQ-9UK.normalTitle" = "このアプリについて";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "UoD-Ob-F7E"; */
-"UoD-Ob-F7E.text" = "Label";
+"UoD-Ob-F7E.text" = "";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "Wfi-MO-YHv"; */
-"Wfi-MO-YHv.text" = "Label";
+"Wfi-MO-YHv.text" = "";
 
 /* Class = "UILabel"; text = "Unanswered survey"; ObjectID = "Whz-M9-R61"; */
 "Whz-M9-R61.text" = "未回答の調査";
 
 /* Class = "UITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."; ObjectID = "Wkp-sr-RjI"; */
-"Wkp-sr-RjI.text" = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.";
+"Wkp-sr-RjI.text" = "";
 
 /* Class = "UILabel"; text = "100"; ObjectID = "XIM-9s-Gyo"; */
 "XIM-9s-Gyo.text" = "100";
@@ -180,10 +180,10 @@
 "XWC-H8-tbc.text" = "-";
 
 /* Class = "UILabel"; text = "Published:"; ObjectID = "XgO-Nj-9n0"; */
-"XgO-Nj-9n0.text" = "Published:";
+"XgO-Nj-9n0.text" = "公開日：";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "Y4A-Mg-mXj"; */
-"Y4A-Mg-mXj.text" = "Label";
+"Y4A-Mg-mXj.text" = "";
 
 /* Class = "UIButton"; normalTitle = "Contact"; ObjectID = "YVi-VN-xSf"; */
 "YVi-VN-xSf.normalTitle" = "連絡先";
@@ -192,7 +192,7 @@
 "YcT-t1-pRW.normalTitle" = "ログイン";
 
 /* Class = "UILabel"; text = "Footer"; ObjectID = "Ycy-gS-j3w"; */
-"Ycy-gS-j3w.text" = "Footer";
+"Ycy-gS-j3w.text" = "";
 
 /* Class = "UIButton"; normalTitle = "Next"; ObjectID = "Yxy-Zg-DwB"; */
 "Yxy-Zg-DwB.normalTitle" = "次へ";
@@ -201,16 +201,16 @@
 "ZIx-tQ-7LP.text" = "2";
 
 /* Class = "UILabel"; text = " namn"; ObjectID = "Zaf-fj-Yty"; */
-"Zaf-fj-Yty.text" = " namn";
+"Zaf-fj-Yty.text" = "名前";
 
 /* Class = "UILabel"; text = "YNU-LTA Ver 0.1"; ObjectID = "aAF-P2-oxc"; */
 "aAF-P2-oxc.text" = "KIROKUN";
 
 /* Class = "UILabel"; text = "N/A"; ObjectID = "bXa-GB-NDM"; */
-"bXa-GB-NDM.text" = "N/A";
+"bXa-GB-NDM.text" = "該当なし";
 
 /* Class = "UILabel"; text = "Titel"; ObjectID = "bfa-Hq-QQk"; */
-"bfa-Hq-QQk.text" = "Titel";
+"bfa-Hq-QQk.text" = "タイトル";
 
 /* Class = "UILabel"; text = "_____"; ObjectID = "c9w-eu-TBZ"; */
 "c9w-eu-TBZ.text" = "_____";
@@ -219,19 +219,19 @@
 "cIE-W1-jID.text" = "時間";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "d9H-4h-uFI"; */
-"d9H-4h-uFI.text" = "Label";
+"d9H-4h-uFI.text" = "";
 
 /* Class = "UILabel"; text = "Fill In The Blank"; ObjectID = "dCv-sV-tB8"; */
-"dCv-sV-tB8.text" = "Fill In The Blank";
+"dCv-sV-tB8.text" = "空欄補充";
 
 /* Class = "UILabel"; text = "Expired:"; ObjectID = "ddg-Lo-lTd"; */
-"ddg-Lo-lTd.text" = "Expired:";
+"ddg-Lo-lTd.text" = "回答期限：";
 
 /* Class = "UILabel"; text = "minuter"; ObjectID = "eKp-us-TRq"; */
 "eKp-us-TRq.text" = "分";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "eMd-0B-AqQ"; */
-"eMd-0B-AqQ.text" = "Label";
+"eMd-0B-AqQ.text" = "";
 
 /* Class = "UIButton"; normalTitle = "Next"; ObjectID = "eNh-k7-bAJ"; */
 "eNh-k7-bAJ.normalTitle" = "次へ";
@@ -240,22 +240,22 @@
 "ePr-KY-St8.normalTitle" = "完了";
 
 /* Class = "UITextField"; placeholder = "Password"; ObjectID = "fDO-qC-QP6"; */
-"fDO-qC-QP6.placeholder" = "Password";
+"fDO-qC-QP6.placeholder" = "パスワード";
 
 /* Class = "UIButton"; normalTitle = "Previous"; ObjectID = "fv8-aK-s2C"; */
 "fv8-aK-s2C.normalTitle" = "前の質問";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "fwj-LR-JI5"; */
-"fwj-LR-JI5.text" = "Label";
+"fwj-LR-JI5.text" = "";
 
 /* Class = "UITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."; ObjectID = "gMY-Lt-qYi"; */
-"gMY-Lt-qYi.text" = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.";
+"gMY-Lt-qYi.text" = "";
 
 /* Class = "UIButton"; normalTitle = "Instructions"; ObjectID = "hIz-TM-uHw"; */
 "hIz-TM-uHw.normalTitle" = "使用方法";
 
 /* Class = "UILabel"; text = "Max"; ObjectID = "hLl-b9-hSo"; */
-"hLl-b9-hSo.text" = "Max";
+"hLl-b9-hSo.text" = "最大";
 
 /* Class = "UILabel"; text = "Titel"; ObjectID = "i4J-Pg-lc9"; */
 "i4J-Pg-lc9.text" = "タイトル";
@@ -279,16 +279,16 @@
 "ltz-pa-Bs7.text" = "1";
 
 /* Class = "UILabel"; text = "Number of questions:"; ObjectID = "m1j-uz-0xa"; */
-"m1j-uz-0xa.text" = "Number of questions:";
+"m1j-uz-0xa.text" = "質問数：";
 
 /* Class = "UILabel"; text = "Test mode"; ObjectID = "nfY-tV-m2n"; */
-"nfY-tV-m2n.text" = "Test mode";
+"nfY-tV-m2n.text" = "テストモード";
 
 /* Class = "UITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."; ObjectID = "oO4-sE-OYd"; */
-"oO4-sE-OYd.text" = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.";
+"oO4-sE-OYd.text" = "";
 
 /* Class = "UITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."; ObjectID = "pci-sV-XuJ"; */
-"pci-sV-XuJ.text" = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.";
+"pci-sV-XuJ.text" = "";
 
 /* Class = "UIButton"; normalTitle = "Next"; ObjectID = "qmh-Gk-RIJ"; */
 "qmh-Gk-RIJ.normalTitle" = "次へ";
@@ -297,16 +297,16 @@
 "rKY-KD-z7c.text" = "3";
 
 /* Class = "UIButton"; normalTitle = "Previous"; ObjectID = "rhZ-CS-Oxl"; */
-"rhZ-CS-Oxl.normalTitle" = "Previous";
+"rhZ-CS-Oxl.normalTitle" = "前へ";
 
 /* Class = "UIButton"; normalTitle = "Previous"; ObjectID = "s14-UN-bn1"; */
-"s14-UN-bn1.normalTitle" = "Previous";
+"s14-UN-bn1.normalTitle" = "前へ";
 
 /* Class = "UILabel"; text = "N/A"; ObjectID = "sF6-uu-dkb"; */
-"sF6-uu-dkb.text" = "N/A";
+"sF6-uu-dkb.text" = "該当なし";
 
 /* Class = "UILabel"; text = "Min"; ObjectID = "sUK-6t-emr"; */
-"sUK-6t-emr.text" = "Min";
+"sUK-6t-emr.text" = "最小";
 
 /* Class = "UILabel"; text = "Likert scale"; ObjectID = "tIR-57-dKU"; */
 "tIR-57-dKU.text" = "5段階評価";
@@ -315,22 +315,22 @@
 "tgS-SR-MHT.text" = "100";
 
 /* Class = "UILabel"; text = "Survey to answer"; ObjectID = "uZY-DP-nOO"; */
-"uZY-DP-nOO.text" = "Survey to answer";
+"uZY-DP-nOO.text" = "回答するアンケート";
 
 /* Class = "UIButton"; normalTitle = "Next"; ObjectID = "w7x-B8-pvH"; */
 "w7x-B8-pvH.normalTitle" = "次へ";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "w9K-HB-bjd"; */
-"w9K-HB-bjd.text" = "Label";
+"w9K-HB-bjd.text" = "";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "wxW-QB-vo3"; */
-"wxW-QB-vo3.text" = "Label";
+"wxW-QB-vo3.text" = "";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "yH7-07-A2j"; */
-"yH7-07-A2j.text" = "Label";
+"yH7-07-A2j.text" = "";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "yOO-nn-ar4"; */
-"yOO-nn-ar4.text" = "Label";
+"yOO-nn-ar4.text" = "";
 
 /* Class = "UILabel"; text = "Menu"; ObjectID = "yWW-Cm-MXi"; */
 "yWW-Cm-MXi.text" = "メニュー";

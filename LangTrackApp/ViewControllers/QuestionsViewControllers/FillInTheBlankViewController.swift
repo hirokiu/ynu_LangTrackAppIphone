@@ -193,7 +193,7 @@ class FillInTheBlankViewController: UIViewController {
     func resetBlankView(){
         theQuestion = Question()
         theAnswer = nil
-        selectedWordLabel.text = "Välj ord i listan"
+        selectedWordLabel.text = NSLocalizedString("Select a word from the list", comment: "Word selection prompt")
         if self.tableviewHeightConstraint.constant != self.radious{
             closeProjectDropDown()
         }

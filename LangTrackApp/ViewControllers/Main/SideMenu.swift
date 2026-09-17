@@ -48,7 +48,7 @@ class SideMenu: UIViewController {
         
         let version = UIApplication.appVersion
         if version != nil{
-            versionInfoLabel.text = "Version \(version ?? "")"
+            versionInfoLabel.text = String(format: NSLocalizedString("Version %@", comment: "App version"), version ?? "")
         }else{
             versionInfoLabel.text = ""
         }

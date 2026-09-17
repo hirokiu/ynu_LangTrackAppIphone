@@ -17,7 +17,7 @@ Copyright © 2020 Stephan Björck. All rights reserved.
 
 //Login
 "Info" = "Info";
-"The Lang Track App is an app developed by" = "The Lang Track App is an app developed by Lund University Humanities Lab for research purposes.\n\nLog in with the username and password assigned to you by Lund University Humanities Lab";
+"The Lang Track App is an app developed by" = "KIROKUN is an app for participating in research through daily records and surveys.\n\nLog in with the username and password assigned to you.";
 "Login error" = "Login error";
 "Invalid username or password" = "Invalid username or password";
 "Incorrect entry" = "Incorrect entry";
@@ -53,7 +53,7 @@ Copyright © 2020 Stephan Björck. All rights reserved.
 "contact text 1" = "If you are experiencing any technical issues or have any questions/comments about the content of the survey, please email;";
 "contact text 4" = "";
 "No Email Client popup title" = "No Email Client";
-"No Email Client popup text" = "E-mail does not seem to be possible. Click on the link to the Humanities Lab below and contact that way instead.";
+"No Email Client popup text" = "Set up a mail app or contact ltajapan2024@gmail.com directly.";
 "Links" = "Links";
 "Lang-Track-App project" = "KIROKUN project";
 "Humanities Lab" = "Humanities Lab";
@@ -77,3 +77,9 @@ Copyright © 2020 Stephan Björck. All rights reserved.
 "instructionsText1" = "We will ask you to complete brief surveys in this app 1-3 times times per day. You will receive a push notification whenever there is a new survey. Make sure you keep your phone nearby and the notification sounds turned on!\n\nIt’s important that you answer each survey as soon as possible. If you don’t answer a survey, it will automatically expire after 60 minutes.";
 "Data processing" = "Data processing";
 "dataProcessing1" = "In addition to your survey responses, the app will automatically record the date and time when you opened each survey and when you submitted your answers. The app will not record any other data, e.g. about your location.\n\nYour data will be compiled and analyzed by the project team. No one else will have access to your answers. When we report the results of the project, all information will be anonymized.";
+
+"Select a word from the list" = "Select a word from the list";
+
+"Version %@" = "Version %@";
+
+"tech mail subject" = "Concerning KIROKUN";

@@ -17,10 +17,10 @@ Copyright © 2020 Stephan Björck. All rights reserved.
 
 //Login
 "Info" = "インフォメーション";
-"The Lang Track App is an app developed by" = "The Lang Track App is an app developed by Lund University Humanities Lab for research purposes.\n\nLog in with the username and password assigned to you by Lund University Humanities Lab";
+"The Lang Track App is an app developed by" = "KIROKUNは、日々の記録やアンケートへの回答を通じて研究に参加するためのアプリです。\n\n案内されたユーザー名とパスワードでログインしてください。";
 "Login error" = "ログインエラー";
 "Invalid username or password" = "ユーザ名、またはパスワードが間違っています。";
-"Incorrect entry" = "Incorrect entry";
+"Incorrect entry" = "入力内容を確認してください";
 "Please enter your username and password and try again" = "正しいユーザ名とパスワードを入れてください。";
 
 // Menu
@@ -28,7 +28,7 @@ Copyright © 2020 Stephan Björck. All rights reserved.
 "Do you want to log out?" = "本当にログアウトしますか？";
 "Cancel" = "キャンセル";
 "Time left:" = "残り時間:";
-"and" = "and";
+"and" = "・";
 "minutes" = "分";
 "minute" = "分";
 "hours" = "時間";
@@ -39,28 +39,26 @@ Copyright © 2020 Stephan Björck. All rights reserved.
 "Answered" = "回答済み";
 
 // main
-"Here it was empty" = "There's nothing here...\nWhen Humlab assigns you a survey, you will see it here.";
+"Here it was empty" = "現在、アンケートはありません。\nアンケートが配信されると、ここに表示されます。";
 "numberEnding" = "";
-"No contact with server" = "No contact with server";
-"You have answered-formate" = "You have answered %d of your %d assigned surveys.";
-"You have answered" = "You have answered";
-"of your" = "of your";
-"assigned surveys." = "assigned surveys.";
-"Survey expired" = "Survey expired";
-
+"No contact with server" = "サーバーに接続できません";
+"You have answered-formate" = "全%2$d件のアンケートのうち%1$d件に回答しました。";
+"You have answered" = "回答済み：";
+"of your" = "／";
+"assigned surveys." = "件";
+"Survey expired" = "アンケートの回答期限が切れました";
 // Contact
 "Contact" = "連絡先";
 "contact text 1" = "技術的な問題が発生した場合や、アンケートの内容についてご質問やご意見がある場合は、メールでお問い合わせください。";
 "contact text 4" = "";
-"tech mail subject" = "Concerning KIROKUN";
-"No Email Client popup title" = "No Email Client";
-"No Email Client popup text" = "E-mail does not seem to be possible. Click on the link to the Humanities Lab below and contact that way instead.";
-"Links" = "Links";
-"Lang-Track-App project" = "KIROKUN project";
-"Humanities Lab" = "Humanities Lab";
-"Lund University Humanities Lab" = "Lund University Humanities Lab";
-"Lund University" = "Lund University";
-
+"tech mail subject" = "KIROKUNについてのお問い合わせ";
+"No Email Client popup title" = "メールを送信できません";
+"No Email Client popup text" = "メールアプリを設定するか、ltajapan2024@gmail.com に直接お問い合わせください。";
+"Links" = "リンク";
+"Lang-Track-App project" = "KIROKUNプロジェクト";
+"Humanities Lab" = "人文学研究所";
+"Lund University Humanities Lab" = "ルンド大学人文学研究所";
+"Lund University" = "ルンド大学";
 //about
 "aboutText1" = "私たちは、言語学習者が日常生活の中でいつ、どこで、どのくらいの頻度でさまざまな外国語に触れているかを研究するために、KIROKUN アプリを開発しました。これは、教室外での言語学習の課題に対する理解を深めるために非常に重要です。";
 "MarianneInfo" = "　";
@@ -78,3 +76,7 @@ Copyright © 2020 Stephan Björck. All rights reserved.
 "instructionsText1" = "このアプリでは、1 日に 1 ～ 3 回、簡単なアンケートにご回答いただきます。新しいアンケートがあるたびにプッシュ通知が届きます。携帯電話を近くに置いて、通知音をオンにしておいてください。\n\nアンケートにはできるだけ早く回答することが重要です。アンケートに回答しないと、60 分後に自動的に期限切れになります。";
 "Data processing" = "データ利用";
 "dataProcessing1" = "アンケートの回答に加えて、アプリは各アンケートを開いた日時と回答を送信した日時を自動的に記録します。アプリは、位置情報などその他のデータは記録しません。\n\nあなたのデータはプロジェクト チームによって集計および分析されます。あなたの回答に他の誰もアクセスできません。プロジェクトの結果を報告する際、すべての情報は匿名化されます。";
+
+"Select a word from the list" = "リストから単語を選択してください";
+
+"Version %@" = "バージョン %@";
