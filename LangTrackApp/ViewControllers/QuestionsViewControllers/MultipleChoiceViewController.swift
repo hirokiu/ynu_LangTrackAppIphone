@@ -177,7 +177,8 @@ extension MultipleChoiceViewController: UITableViewDelegate, UITableViewDataSour
             
             cell.choiceLabel.text = theQuestion.multipleChoisesAnswers?[indexPath.row]
             cell.choiceLabel.font = fontInCell
-            cell.checkBox.bgColorSelected = UIColor(named: "lta_blue") ?? .black
+            cell.checkBox.bgColorSelected = KirokunTheme.action
+            cell.checkBox.borderColor = KirokunTheme.action
             cell.checkBox.color = .white
             cell.checkBox.borderWidth = 1.5
             cell.tag = indexPath.row

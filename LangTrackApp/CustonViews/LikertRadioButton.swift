@@ -123,6 +123,8 @@ public class LikertRadioButton: UIButton {
     }
     override public func layoutSubviews() {
         super.layoutSubviews()
+        outerCircleColor = KirokunTheme.action
+        innerCircleCircleColor = KirokunTheme.action
         setCircleLayouts()
     }
     override public var isSelected: Bool {

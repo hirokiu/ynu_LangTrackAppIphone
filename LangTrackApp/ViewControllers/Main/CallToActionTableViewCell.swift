@@ -66,7 +66,14 @@ class CallToActionTableViewCell: UITableViewCell {
 
     func setSurveyInfo(assignment: Assignment, tableviewHeight: CGFloat)  {
         self.callToActionHeightConstraint.constant = tableviewHeight / 3
-        callToActionLabel.text = assignment.survey.title + "\n" + NSLocalizedString("survey_ready", comment: "")
+        let text = NSMutableAttributedString(string: assignment.survey.title + "\n")
+        let marker = NSTextAttachment()
+        marker.image = UIImage(systemName: "square.and.pencil")?.withTintColor(KirokunTheme.action, renderingMode: .alwaysOriginal)
+        marker.bounds = CGRect(x: 0, y: -3, width: 22, height: 22)
+        text.append(NSAttributedString(attachment: marker))
+        text.append(NSAttributedString(string: " " + NSLocalizedString("unanswered_status", comment: "")))
+        callToActionLabel.attributedText = text
+        callToActionLabel.accessibilityLabel = assignment.survey.title + "、" + NSLocalizedString("unanswered_status", comment: "")
         callToActionLabel.numberOfLines = 0
         self.theSurvey = assignment.survey
         self.theAssignment = assignment

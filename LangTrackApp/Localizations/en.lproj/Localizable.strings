@@ -107,9 +107,9 @@ Copyright © 2020 Stephan Björck. All rights reserved.
 "dev_expired" = "Expired";
 "dev_deadline" = "Due";
 "dev_begin_answer" = "Open survey";
-"dev_sending" = "Saving your answers…";
-"dev_saved" = "Your answers have been saved";
-"dev_save_failed" = "Could not confirm that answers were saved";
+"dev_sending" = "Submitting your answers…";
+"dev_saved" = "Your answers have been submitted";
+"dev_save_failed" = "Could not confirm that answers were submitted";
 "dev_answers_retained" = "Your input is still on this screen. Check your connection and try again.";
 
 "project_connected_format" = "Connected to: %@";
@@ -129,7 +129,7 @@ Copyright © 2020 Stephan Björck. All rights reserved.
 "survey_start_count" = "Start · %d questions";
 "survey_total_count" = "%d questions total";
 "survey_progress" = "Question %d / %d";
-"survey_review" = "Submit responses";
+"survey_review" = "Review answers";
 "survey_dates" = "Published: %@\nDeadline: %@";
 "date_unspecified" = "Not specified";
 "input_mode_open" = "Free text · Optional";
@@ -140,3 +140,11 @@ Copyright © 2020 Stephan Björck. All rights reserved.
 "input_mode_slider" = "Slider · Default 50 (N/A available)";
 "input_mode_duration" = "Duration · Default 0 hours 0 minutes";
 "survey_ready" = "Ready to answer";
+
+"unanswered_status" = "Unanswered";
+"submit_answers" = "Submit answers";
+"review_before_submit" = "Review your answers before submitting. Use Previous to make changes.";
+"review_no_answer" = "No answer";
+"review_empty_text" = "Not entered (optional)";
+"review_na" = "Not applicable";
+"review_duration" = "%d hours %d minutes";

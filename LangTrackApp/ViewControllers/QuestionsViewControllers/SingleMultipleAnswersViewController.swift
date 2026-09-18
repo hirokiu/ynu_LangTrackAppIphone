@@ -178,7 +178,8 @@ extension SingleMultipleAnswersViewController: UITableViewDelegate, UITableViewD
         if let cell = cell as? SingleItemTableViewCell{
             cell.choiceLabel.text = theQuestion.singleMultipleAnswers?[indexPath.row]
             cell.choiceLabel.font = fontInCell
-            cell.checkBox.bgColorSelected = UIColor(named: "lta_blue") ?? .black
+            cell.checkBox.bgColorSelected = KirokunTheme.action
+            cell.checkBox.borderColor = KirokunTheme.action
             cell.checkBox.color = .white
             cell.checkBox.borderWidth = 1.5
             cell.checkBox.line = .thin

@@ -305,6 +305,8 @@ class SurveyViewController: UIViewController {
             footer!.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
             footer!.didMove(toParent: self)
             footer!.setInfo(question: theQuestion)
+            let submittedQuestions = submissionQuestions()
+            footer!.setReview(questions: submittedQuestions, answers: answer)
         }
         children.forEach { KirokunTheme.styleQuestion($0) }
     }
@@ -531,6 +533,21 @@ extension SurveyViewController: QuestionListener{
         self.dismiss(animated: true, completion: nil)
     }
     
+    // The preview and payload must use the same branch path; answers from abandoned
+    // branches must not appear in the preview or be sent.
+    private func submissionQuestions() -> [Question] {
+        guard let questions = theAssignment?.survey.questions else { return [] }
+        var index = questions.max(by: { $0.index < $1.index })?.index ?? 0
+        var visited = Set<Int>()
+        var included: [Question] = []
+        while index > 0, visited.insert(index).inserted,
+              let question = questions.first(where: { $0.index == index }) {
+            if question.type != "header" && question.type != "footer", answer[index] != nil { included.append(question) }
+            index = question.previous ?? 0
+        }
+        return included.sorted { $0.index < $1.index }
+    }
+
     func sendInSurvey() {
         if !answer.isEmpty{
             
@@ -548,26 +565,8 @@ extension SurveyViewController: QuestionListener{
                 }
             }else{
                 //not expired (or in test mode) - send in answers
-                let tempList = theAssignment!.survey.questions.sorted(by: {$0.index > $1.index})
-                var answersToInclude = [Int]()
-                //begin with last
-                var counter = tempList.first?.index ?? -99
-                if counter != -99{
-                    while counter > 0 {
-                        let currentQuestion = tempList.first(where: { $0.index == counter})
-                        if currentQuestion?.type ?? "header" != "header" &&
-                            currentQuestion?.type ?? "footer" != "footer"{
-                            answersToInclude.append(counter)
-                        }
-                        counter = currentQuestion?.previous ?? 0
-                    }
-                }
-                var tempAnswers = [Int:Answer]()
-                for a in answersToInclude{
-                    if let theAnswer = answer.first(where: {$0.value.index == a}){
-                        tempAnswers[theAnswer.value.index] = theAnswer.value
-                    }
-                }
+                var tempAnswers = [Int: Answer]()
+                for question in submissionQuestions() { tempAnswers[question.index] = answer[question.index] }
                 #if KIROKUN_DEV
                 guard !sending else { return }
                 sending = true

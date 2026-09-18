@@ -104,9 +104,9 @@ Copyright © 2020 Stephan Björck. All rights reserved.
 "dev_expired" = "回答期限終了";
 "dev_deadline" = "回答期限";
 "dev_begin_answer" = "アンケートを開きます";
-"dev_sending" = "回答を保存しています…";
-"dev_saved" = "回答を保存しました";
-"dev_save_failed" = "回答の保存を確認できませんでした";
+"dev_sending" = "回答を送信しています…";
+"dev_saved" = "回答を送信しました";
+"dev_save_failed" = "回答の送信を確認できませんでした";
 "dev_answers_retained" = "入力内容はこの画面に残っています。接続を確認し、もう一度送信してください。";
 
 "project_connected_format" = "接続中：%@";
@@ -126,7 +126,7 @@ Copyright © 2020 Stephan Björck. All rights reserved.
 "survey_start_count" = "回答開始・全%d問";
 "survey_total_count" = "全%d問";
 "survey_progress" = "設問 %d / %d";
-"survey_review" = "回答内容の送信";
+"survey_review" = "回答内容の確認";
 "survey_dates" = "公開日：%@\n回答期限：%@";
 "date_unspecified" = "未設定";
 "input_mode_open" = "自由入力・任意";
@@ -137,3 +137,11 @@ Copyright © 2020 Stephan Björck. All rights reserved.
 "input_mode_slider" = "スライダー・初期値50（該当なしも選択可）";
 "input_mode_duration" = "時間入力・初期値0時間0分";
 "survey_ready" = "回答するアンケート";
+
+"unanswered_status" = "未回答";
+"submit_answers" = "回答を送信";
+"review_before_submit" = "送信する回答を確認してください。修正する場合は「前へ」で戻れます。";
+"review_no_answer" = "回答なし";
+"review_empty_text" = "未入力（任意）";
+"review_na" = "該当なし";
+"review_duration" = "%d時間%d分";

@@ -34,7 +34,15 @@ class SurveyTableViewCell: UITableViewCell {
         surveyTitle.textColor = foreground; answeredLabel.textColor = foreground
         surveyTitle.font = .systemFont(ofSize: 17, weight: answered ? .regular : .semibold)
         dateLabel.textColor = KirokunTheme.answeredText
-        answeredIndicator.backgroundColor = answered ? .secondaryLabel : KirokunTheme.brand
+        answeredIndicator.backgroundColor = answered ? (UIColor(named: "lta_green") ?? .systemGreen) : .clear
+        let markerTag = 74110
+        answeredIndicator.viewWithTag(markerTag)?.removeFromSuperview()
+        if !answered {
+            let marker = UIImageView(image: UIImage(systemName: "circle"))
+            marker.tag = markerTag; marker.tintColor = KirokunTheme.action
+            marker.frame = answeredIndicator.bounds; marker.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+            answeredIndicator.addSubview(marker)
+        }
     }
 
     func setSurveyInfo(assignment: Assignment)  {
