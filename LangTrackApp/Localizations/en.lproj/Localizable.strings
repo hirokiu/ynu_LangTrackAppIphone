@@ -83,3 +83,12 @@ Copyright © 2020 Stephan Björck. All rights reserved.
 "Version %@" = "Version %@";
 
 "tech mail subject" = "Concerning KIROKUN";
+
+"dev_login_intro" = "Sign in with your development Google account. This screen checks access only; Survey answering is not connected yet.";
+"dev_sign_out" = "Sign out";
+"dev_retry_connection" = "Check connection again";
+"dev_login_failed" = "Sign-in was cancelled or failed. Please try again.";
+"dev_connecting" = "Checking development server access…";
+"dev_connected" = "Google sign-in and development server access verified. Survey answering will be connected in the next step.";
+"dev_not_authorized" = "This account is not authorized for development. Sign out and choose the authorized account.";
+"dev_connection_failed" = "Signed in. The development server could not be reached. Check the development connection and retry.";

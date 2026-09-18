@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		692F31DDE03DFA0372FF10CF /* DevLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E673C16112CC1B73CA5E4F98 /* DevLoginViewController.swift */; };
 		79254C002B2EC64DFD0F0382 /* Pods_Kirokun.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CF814D4F328EF7D7DF89444 /* Pods_Kirokun.framework */; };
-		92F808F32C7D6F8F00FB7220 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 92F808F22C7D6F8F00FB7220 /* GoogleService-Info.plist */; };
 		92F808F42C7D6F8F00FB7220 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 92F808F22C7D6F8F00FB7220 /* GoogleService-Info.plist */; };
 		92F808F52C7D6F8F00FB7220 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 92F808F22C7D6F8F00FB7220 /* GoogleService-Info.plist */; };
 		D3C52BF53771D8789B8362B5 /* Pods_Kirokun_KirokunUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7080B495011BCC590132CBA /* Pods_Kirokun_KirokunUITests.framework */; };
@@ -106,8 +106,10 @@
 
 /* Begin PBXFileReference section */
 		23717050A65A493A1C2F74EE /* Pods-KirokunTests.protodebug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KirokunTests.protodebug.xcconfig"; path = "Target Support Files/Pods-KirokunTests/Pods-KirokunTests.protodebug.xcconfig"; sourceTree = "<group>"; };
+		31D95FFE57EC9D240301C681 /* Pods-KirokunTests.devrelease.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KirokunTests.devrelease.xcconfig"; path = "Target Support Files/Pods-KirokunTests/Pods-KirokunTests.devrelease.xcconfig"; sourceTree = "<group>"; };
 		3966711958B60E545CBF7C4F /* Pods-KirokunTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KirokunTests.release.xcconfig"; path = "Target Support Files/Pods-KirokunTests/Pods-KirokunTests.release.xcconfig"; sourceTree = "<group>"; };
 		4CF814D4F328EF7D7DF89444 /* Pods_Kirokun.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kirokun.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4F91C11DEEAD3A1A5F8CBFD1 /* Pods-Kirokun-KirokunUITests.devrelease.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kirokun-KirokunUITests.devrelease.xcconfig"; path = "Target Support Files/Pods-Kirokun-KirokunUITests/Pods-Kirokun-KirokunUITests.devrelease.xcconfig"; sourceTree = "<group>"; };
 		5187634D5603CB87955B3369 /* Pods-Kirokun.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kirokun.debug.xcconfig"; path = "Target Support Files/Pods-Kirokun/Pods-Kirokun.debug.xcconfig"; sourceTree = "<group>"; };
 		57608BCD0647F61496C0177D /* Pods-Kirokun-KirokunUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kirokun-KirokunUITests.debug.xcconfig"; path = "Target Support Files/Pods-Kirokun-KirokunUITests/Pods-Kirokun-KirokunUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		67893367C32DFBB921A5B40B /* Pods-Kirokun-KirokunUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kirokun-KirokunUITests.release.xcconfig"; path = "Target Support Files/Pods-Kirokun-KirokunUITests/Pods-Kirokun-KirokunUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -120,11 +122,15 @@
 		92F808F22C7D6F8F00FB7220 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		94DCEC5C895F6C0CD332B531 /* Pods-Kirokun-KirokunUITests.protorelease.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kirokun-KirokunUITests.protorelease.xcconfig"; path = "Target Support Files/Pods-Kirokun-KirokunUITests/Pods-Kirokun-KirokunUITests.protorelease.xcconfig"; sourceTree = "<group>"; };
 		A0EB333163E50B55E70C6D24 /* Pods-Kirokun.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kirokun.release.xcconfig"; path = "Target Support Files/Pods-Kirokun/Pods-Kirokun.release.xcconfig"; sourceTree = "<group>"; };
+		A6A7E31BAED0E6D146F082CF /* Pods-Kirokun.devdebug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kirokun.devdebug.xcconfig"; path = "Target Support Files/Pods-Kirokun/Pods-Kirokun.devdebug.xcconfig"; sourceTree = "<group>"; };
 		AE07763E25751DA1335CB8A7 /* Pods_KirokunTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KirokunTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7080B495011BCC590132CBA /* Pods_Kirokun_KirokunUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kirokun_KirokunUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB88986E8A48C528F81E539A /* Pods-Kirokun.devrelease.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kirokun.devrelease.xcconfig"; path = "Target Support Files/Pods-Kirokun/Pods-Kirokun.devrelease.xcconfig"; sourceTree = "<group>"; };
+		C6698323C95BA50233C95C8C /* Pods-KirokunTests.devdebug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KirokunTests.devdebug.xcconfig"; path = "Target Support Files/Pods-KirokunTests/Pods-KirokunTests.devdebug.xcconfig"; sourceTree = "<group>"; };
 		C72899C1AD82EBFABB488C3A /* Pods-Kirokun.protorelease.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kirokun.protorelease.xcconfig"; path = "Target Support Files/Pods-Kirokun/Pods-Kirokun.protorelease.xcconfig"; sourceTree = "<group>"; };
 		D03700066FB9AF4B70851B50 /* Pods-KirokunTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KirokunTests.debug.xcconfig"; path = "Target Support Files/Pods-KirokunTests/Pods-KirokunTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E41F0F22045C319634D8B99A /* Pods-KirokunTests.protorelease.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KirokunTests.protorelease.xcconfig"; path = "Target Support Files/Pods-KirokunTests/Pods-KirokunTests.protorelease.xcconfig"; sourceTree = "<group>"; };
+		E673C16112CC1B73CA5E4F98 /* DevLoginViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DevLoginViewController.swift; path = LangTrackApp/DevLoginViewController.swift; sourceTree = "<group>"; };
 		F10136E623E8372300B36CF0 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		F10136E923E85F3B00B36CF0 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		F102725124460EEF00203711 /* OverviewHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewHeaderTableViewCell.swift; sourceTree = "<group>"; };
@@ -219,6 +225,7 @@
 		F1F7D1DD246FEE57003D881B /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F1F7D1DF246FEE8B003D881B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F1F7D1E0246FEEDC003D881B /* TranslatedStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslatedStrings.swift; sourceTree = "<group>"; };
+		FCCAD4D0274C4E55FF03D2A0 /* Pods-Kirokun-KirokunUITests.devdebug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kirokun-KirokunUITests.devdebug.xcconfig"; path = "Target Support Files/Pods-Kirokun-KirokunUITests/Pods-Kirokun-KirokunUITests.devdebug.xcconfig"; sourceTree = "<group>"; };
 		FD1EBDD9C0BD2B457A50A85E /* Pods-Kirokun.protodebug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kirokun.protodebug.xcconfig"; path = "Target Support Files/Pods-Kirokun/Pods-Kirokun.protodebug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -275,6 +282,12 @@
 				94DCEC5C895F6C0CD332B531 /* Pods-Kirokun-KirokunUITests.protorelease.xcconfig */,
 				23717050A65A493A1C2F74EE /* Pods-KirokunTests.protodebug.xcconfig */,
 				E41F0F22045C319634D8B99A /* Pods-KirokunTests.protorelease.xcconfig */,
+				A6A7E31BAED0E6D146F082CF /* Pods-Kirokun.devdebug.xcconfig */,
+				BB88986E8A48C528F81E539A /* Pods-Kirokun.devrelease.xcconfig */,
+				FCCAD4D0274C4E55FF03D2A0 /* Pods-Kirokun-KirokunUITests.devdebug.xcconfig */,
+				4F91C11DEEAD3A1A5F8CBFD1 /* Pods-Kirokun-KirokunUITests.devrelease.xcconfig */,
+				C6698323C95BA50233C95C8C /* Pods-KirokunTests.devdebug.xcconfig */,
+				31D95FFE57EC9D240301C681 /* Pods-KirokunTests.devrelease.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -357,6 +370,7 @@
 				F156586E23E2DD7500EC2796 /* Products */,
 				C748AA31549D222278D046F0 /* Pods */,
 				5F44E29F24431FC8BA32DE87 /* Frameworks */,
+				E673C16112CC1B73CA5E4F98 /* DevLoginViewController.swift */,
 			);
 			sourceTree = "<group>";
 		};
@@ -547,6 +561,7 @@
 				F156586A23E2DD7500EC2796 /* Frameworks */,
 				F156586B23E2DD7500EC2796 /* Resources */,
 				AE3C0FF6E1CDACCAD5F848B1 /* [CP] Embed Pods Frameworks */,
+				4B9B9642F0704A24D1584E8B /* Select Firebase environment */,
 			);
 			buildRules = (
 			);
@@ -655,7 +670,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F17F34822437343100CD64BB /* SingleItem.xib in Resources */,
-				92F808F32C7D6F8F00FB7220 /* GoogleService-Info.plist in Resources */,
 				F156587D23E2DD7600EC2796 /* LaunchScreen.storyboard in Resources */,
 				F10B84B423E46025003CAC76 /* Colors.xcassets in Resources */,
 				F1399CDF243D0D9400545D47 /* SingleView.xib in Resources */,
@@ -684,6 +698,26 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		4B9B9642F0704A24D1584E8B /* Select Firebase environment */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/$(KIROKUN_FIREBASE_CONFIG)",
+			);
+			name = "Select Firebase environment";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(TARGET_BUILD_DIR)/$(UNLOCALIZED_RESOURCES_FOLDER_PATH)/GoogleService-Info.plist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -eu\nsrc=\"${SRCROOT}/${KIROKUN_FIREBASE_CONFIG}\"\nexpected=\"ynu-lta-dev\"\nif [ \"${KIROKUN_ENVIRONMENT}\" = \"dev\" ]; then expected=\"kirokun-dev\"; fi\nactual=$(/usr/libexec/PlistBuddy -c 'Print :PROJECT_ID' \"$src\")\nif [ \"$actual\" != \"$expected\" ]; then echo 'error: Firebase project mismatch'; exit 1; fi\nbundle=$(/usr/libexec/PlistBuddy -c 'Print :BUNDLE_ID' \"$src\")\nif [ \"$bundle\" != \"$PRODUCT_BUNDLE_IDENTIFIER\" ]; then echo 'error: Firebase bundle mismatch'; exit 1; fi\ncp \"$src\" \"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleService-Info.plist\"\n";
+		};
 		8C85AAD686AF34C770EF4F70 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -854,6 +888,7 @@
 				F1963209240922AE00A0D8D2 /* VKCheckbox.swift in Sources */,
 				F11499FF2416384700DC988A /* CellTimerListener.swift in Sources */,
 				F13C4B1023E968F80028F912 /* User.swift in Sources */,
+				692F31DDE03DFA0372FF10CF /* DevLoginViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -946,6 +981,9 @@
 				INFOPLIST_FILE = LangTrackAppUITests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				KIROKUN_API_BASE_URL = "https://proto.kirokun.alchembright.com/api/";
+				KIROKUN_DISPLAY_NAME = KIROKUN;
+				KIROKUN_ENVIRONMENT = proto;
+				KIROKUN_FIREBASE_CONFIG = "LangTrackApp/GoogleService-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -975,6 +1013,9 @@
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				KIROKUN_API_BASE_URL = "https://proto.kirokun.alchembright.com/api/";
+				KIROKUN_DISPLAY_NAME = KIROKUN;
+				KIROKUN_ENVIRONMENT = proto;
+				KIROKUN_FIREBASE_CONFIG = "LangTrackApp/GoogleService-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -994,6 +1035,61 @@
 			};
 			name = ProtoDebug;
 		};
+		27F7AACE2673741FFDED1535 /* DevRelease */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4F91C11DEEAD3A1A5F8CBFD1 /* Pods-Kirokun-KirokunUITests.devrelease.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				INFOPLIST_FILE = LangTrackAppUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
+				KIROKUN_API_BASE_URL = "https://dev.kirokun.alchembright.com/api/";
+				KIROKUN_DISPLAY_NAME = "KIROKUN Dev";
+				KIROKUN_ENVIRONMENT = dev;
+				KIROKUN_FIREBASE_CONFIG = "Config/Dev/GoogleService-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.alchembright.kirokun.dev.kirokunuitests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) KIROKUN_DEV";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Kirokun;
+			};
+			name = DevRelease;
+		};
+		3798B7BF180FC10DF111CD48 /* DevDebug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C6698323C95BA50233C95C8C /* Pods-KirokunTests.devdebug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				INFOPLIST_FILE = LangTrackAppTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
+				KIROKUN_API_BASE_URL = "http://localhost:18082/api/";
+				KIROKUN_DISPLAY_NAME = "KIROKUN Dev";
+				KIROKUN_ENVIRONMENT = dev;
+				KIROKUN_FIREBASE_CONFIG = "Config/Dev/GoogleService-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.alchembright.kirokun.dev.kirokuntests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) KIROKUN_DEV DEBUG";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Lang Track App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Lang Track App";
+			};
+			name = DevDebug;
+		};
 		6704A873A0B19871992047BD /* ProtoRelease */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E41F0F22045C319634D8B99A /* Pods-KirokunTests.protorelease.xcconfig */;
@@ -1005,6 +1101,9 @@
 				INFOPLIST_FILE = LangTrackAppTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				KIROKUN_API_BASE_URL = "https://proto.kirokun.alchembright.com/api/";
+				KIROKUN_DISPLAY_NAME = KIROKUN;
+				KIROKUN_ENVIRONMENT = proto;
+				KIROKUN_FIREBASE_CONFIG = "LangTrackApp/GoogleService-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1073,6 +1172,9 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				KIROKUN_DISPLAY_NAME = KIROKUN;
+				KIROKUN_ENVIRONMENT = proto;
+				KIROKUN_FIREBASE_CONFIG = "LangTrackApp/GoogleService-Info.plist";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1082,6 +1184,73 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = ProtoDebug;
+		};
+		7982C776B3027D5494E41DD3 /* DevRelease */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 31D95FFE57EC9D240301C681 /* Pods-KirokunTests.devrelease.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				INFOPLIST_FILE = LangTrackAppTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
+				KIROKUN_API_BASE_URL = "https://dev.kirokun.alchembright.com/api/";
+				KIROKUN_DISPLAY_NAME = "KIROKUN Dev";
+				KIROKUN_ENVIRONMENT = dev;
+				KIROKUN_FIREBASE_CONFIG = "Config/Dev/GoogleService-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.alchembright.kirokun.dev.kirokuntests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) KIROKUN_DEV";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Lang Track App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Lang Track App";
+			};
+			name = DevRelease;
+		};
+		7DBBCE8AC7A925798E0B52B8 /* DevDebug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A6A7E31BAED0E6D146F082CF /* Pods-Kirokun.devdebug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-KIROKUN";
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CODE_SIGN_ENTITLEMENTS = LangTrackApp/LangTrackApp.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = T2NKM8MRZM;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				INFOPLIST_FILE = Config/Dev/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
+				KIROKUN_API_BASE_URL = "http://localhost:18082/api/";
+				KIROKUN_DISPLAY_NAME = "KIROKUN Dev";
+				KIROKUN_ENVIRONMENT = dev;
+				KIROKUN_FIREBASE_CONFIG = "Config/Dev/GoogleService-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${TOOLCHAIN_DIR}/usr/lib/swift/${PLATFORM_NAME}\"",
+					/usr/lib/swift,
+					"$(PROJECT_DIR)/Pods/**",
+				);
+				MARKETING_VERSION = 2.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.alchembright.kirokun.dev;
+				PRODUCT_NAME = "Lang Track App";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) KIROKUN_DEV DEBUG";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = DevDebug;
 		};
 		8492B88838F3CF1949B5D3E4 /* ProtoRelease */ = {
 			isa = XCBuildConfiguration;
@@ -1099,6 +1268,9 @@
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				KIROKUN_API_BASE_URL = "https://proto.kirokun.alchembright.com/api/";
+				KIROKUN_DISPLAY_NAME = KIROKUN;
+				KIROKUN_ENVIRONMENT = proto;
+				KIROKUN_FIREBASE_CONFIG = "LangTrackApp/GoogleService-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1117,6 +1289,98 @@
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = ProtoRelease;
+		};
+		8A0CD7DB9F7A9C94626D1CA4 /* DevRelease */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				KIROKUN_API_BASE_URL = "https://dev.kirokun.alchembright.com/api/";
+				KIROKUN_DISPLAY_NAME = "KIROKUN Dev";
+				KIROKUN_ENVIRONMENT = dev;
+				KIROKUN_FIREBASE_CONFIG = "Config/Dev/GoogleService-Info.plist";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.alchembright.kirokun.dev;
+				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) KIROKUN_DEV";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = DevRelease;
+		};
+		8A26D7982F97E68445F58BE3 /* DevDebug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FCCAD4D0274C4E55FF03D2A0 /* Pods-Kirokun-KirokunUITests.devdebug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				INFOPLIST_FILE = LangTrackAppUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
+				KIROKUN_API_BASE_URL = "http://localhost:18082/api/";
+				KIROKUN_DISPLAY_NAME = "KIROKUN Dev";
+				KIROKUN_ENVIRONMENT = dev;
+				KIROKUN_FIREBASE_CONFIG = "Config/Dev/GoogleService-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.alchembright.kirokun.dev.kirokunuitests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) KIROKUN_DEV DEBUG";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Kirokun;
+			};
+			name = DevDebug;
 		};
 		93C555086BDCE0138CB7D3D5 /* ProtoRelease */ = {
 			isa = XCBuildConfiguration;
@@ -1167,6 +1431,9 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				KIROKUN_DISPLAY_NAME = KIROKUN;
+				KIROKUN_ENVIRONMENT = proto;
+				KIROKUN_FIREBASE_CONFIG = "LangTrackApp/GoogleService-Info.plist";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -1176,6 +1443,115 @@
 				VALIDATE_PRODUCT = YES;
 			};
 			name = ProtoRelease;
+		};
+		B444C67DE1C76D5B37054DF4 /* DevRelease */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BB88986E8A48C528F81E539A /* Pods-Kirokun.devrelease.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-KIROKUN";
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CODE_SIGN_ENTITLEMENTS = LangTrackApp/LangTrackApp.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = T2NKM8MRZM;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				INFOPLIST_FILE = Config/Dev/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
+				KIROKUN_API_BASE_URL = "https://dev.kirokun.alchembright.com/api/";
+				KIROKUN_DISPLAY_NAME = "KIROKUN Dev";
+				KIROKUN_ENVIRONMENT = dev;
+				KIROKUN_FIREBASE_CONFIG = "Config/Dev/GoogleService-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${TOOLCHAIN_DIR}/usr/lib/swift/${PLATFORM_NAME}\"",
+					/usr/lib/swift,
+					"$(PROJECT_DIR)/Pods/**",
+				);
+				MARKETING_VERSION = 2.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.alchembright.kirokun.dev;
+				PRODUCT_NAME = "Lang Track App";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) KIROKUN_DEV";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = DevRelease;
+		};
+		BA957E4997B1A62E6EBCC288 /* DevDebug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				KIROKUN_API_BASE_URL = "http://localhost:18082/api/";
+				KIROKUN_DISPLAY_NAME = "KIROKUN Dev";
+				KIROKUN_ENVIRONMENT = dev;
+				KIROKUN_FIREBASE_CONFIG = "Config/Dev/GoogleService-Info.plist";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.alchembright.kirokun.dev;
+				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) KIROKUN_DEV DEBUG";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = DevDebug;
 		};
 		C092315F2250B2571364E966 /* ProtoRelease */ = {
 			isa = XCBuildConfiguration;
@@ -1187,6 +1563,9 @@
 				INFOPLIST_FILE = LangTrackAppUITests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				KIROKUN_API_BASE_URL = "https://proto.kirokun.alchembright.com/api/";
+				KIROKUN_DISPLAY_NAME = KIROKUN;
+				KIROKUN_ENVIRONMENT = proto;
+				KIROKUN_FIREBASE_CONFIG = "LangTrackApp/GoogleService-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1255,6 +1634,9 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				KIROKUN_DISPLAY_NAME = KIROKUN;
+				KIROKUN_ENVIRONMENT = proto;
+				KIROKUN_FIREBASE_CONFIG = "LangTrackApp/GoogleService-Info.plist";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1314,6 +1696,9 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				KIROKUN_DISPLAY_NAME = KIROKUN;
+				KIROKUN_ENVIRONMENT = proto;
+				KIROKUN_FIREBASE_CONFIG = "LangTrackApp/GoogleService-Info.plist";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -1340,6 +1725,9 @@
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				KIROKUN_API_BASE_URL = "";
+				KIROKUN_DISPLAY_NAME = KIROKUN;
+				KIROKUN_ENVIRONMENT = proto;
+				KIROKUN_FIREBASE_CONFIG = "LangTrackApp/GoogleService-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1375,6 +1763,9 @@
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				KIROKUN_API_BASE_URL = "";
+				KIROKUN_DISPLAY_NAME = KIROKUN;
+				KIROKUN_ENVIRONMENT = proto;
+				KIROKUN_FIREBASE_CONFIG = "LangTrackApp/GoogleService-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1405,6 +1796,9 @@
 				INFOPLIST_FILE = LangTrackAppTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				KIROKUN_API_BASE_URL = "";
+				KIROKUN_DISPLAY_NAME = KIROKUN;
+				KIROKUN_ENVIRONMENT = proto;
+				KIROKUN_FIREBASE_CONFIG = "LangTrackApp/GoogleService-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1429,6 +1823,9 @@
 				INFOPLIST_FILE = LangTrackAppTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				KIROKUN_API_BASE_URL = "";
+				KIROKUN_DISPLAY_NAME = KIROKUN;
+				KIROKUN_ENVIRONMENT = proto;
+				KIROKUN_FIREBASE_CONFIG = "LangTrackApp/GoogleService-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1452,6 +1849,9 @@
 				INFOPLIST_FILE = LangTrackAppUITests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				KIROKUN_API_BASE_URL = "";
+				KIROKUN_DISPLAY_NAME = KIROKUN;
+				KIROKUN_ENVIRONMENT = proto;
+				KIROKUN_FIREBASE_CONFIG = "LangTrackApp/GoogleService-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1475,6 +1875,9 @@
 				INFOPLIST_FILE = LangTrackAppUITests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				KIROKUN_API_BASE_URL = "";
+				KIROKUN_DISPLAY_NAME = KIROKUN;
+				KIROKUN_ENVIRONMENT = proto;
+				KIROKUN_FIREBASE_CONFIG = "LangTrackApp/GoogleService-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1499,6 +1902,9 @@
 				INFOPLIST_FILE = LangTrackAppTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				KIROKUN_API_BASE_URL = "https://proto.kirokun.alchembright.com/api/";
+				KIROKUN_DISPLAY_NAME = KIROKUN;
+				KIROKUN_ENVIRONMENT = proto;
+				KIROKUN_FIREBASE_CONFIG = "LangTrackApp/GoogleService-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1522,6 +1928,8 @@
 				F156589623E2DD7600EC2796 /* Release */,
 				7575B293A211DA5274C9915C /* ProtoDebug */,
 				93C555086BDCE0138CB7D3D5 /* ProtoRelease */,
+				BA957E4997B1A62E6EBCC288 /* DevDebug */,
+				8A0CD7DB9F7A9C94626D1CA4 /* DevRelease */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1533,6 +1941,8 @@
 				F156589923E2DD7600EC2796 /* Release */,
 				24367771AB0EC967885ABF4B /* ProtoDebug */,
 				8492B88838F3CF1949B5D3E4 /* ProtoRelease */,
+				7DBBCE8AC7A925798E0B52B8 /* DevDebug */,
+				B444C67DE1C76D5B37054DF4 /* DevRelease */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1544,6 +1954,8 @@
 				F156589C23E2DD7600EC2796 /* Release */,
 				F90DABA73F73D8C8738C3BD3 /* ProtoDebug */,
 				6704A873A0B19871992047BD /* ProtoRelease */,
+				3798B7BF180FC10DF111CD48 /* DevDebug */,
+				7982C776B3027D5494E41DD3 /* DevRelease */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1555,6 +1967,8 @@
 				F156589F23E2DD7600EC2796 /* Release */,
 				0995EAFF3B42E1D834C6E593 /* ProtoDebug */,
 				C092315F2250B2571364E966 /* ProtoRelease */,
+				8A26D7982F97E68445F58BE3 /* DevDebug */,
+				27F7AACE2673741FFDED1535 /* DevRelease */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

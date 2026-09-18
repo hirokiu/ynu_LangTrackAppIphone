@@ -66,6 +66,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate {
             print("makeNewItem in didFinishLaunchingWithOptions2")
         }*/
         FirebaseApp.configure()
+        if Bundle.main.object(forInfoDictionaryKey: "KIROKUN_ENVIRONMENT") as? String == "dev" {
+            precondition(FirebaseApp.app()?.options.projectID == "kirokun-dev" && Bundle.main.bundleIdentifier == "com.alchembright.kirokun.dev", "Dev Firebase configuration mismatch")
+            return true
+        }
         Messaging.messaging().delegate = self
         if #available(iOS 10.0, *) {
           // For iOS 10 display notification (sent via APNS)
@@ -98,7 +102,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate {
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
         // Called when a new scene session is being created.
         // Use this method to select a configuration to create the new scene with.
+        #if KIROKUN_DEV
+        let config = UISceneConfiguration(name: "Dev", sessionRole: connectingSceneSession.role)
+        config.delegateClass = DevSceneDelegate.self
+        return config
+        #else
         return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
+        #endif
     }
     
     func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String?) {

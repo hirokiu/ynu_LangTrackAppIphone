@@ -1,5 +1,5 @@
 platform :ios, '17.6'
-project 'Kirokun.xcodeproj', 'Debug' => :debug, 'Release' => :release, 'ProtoDebug' => :debug, 'ProtoRelease' => :release
+project 'Kirokun.xcodeproj', 'Debug' => :debug, 'Release' => :release, 'ProtoDebug' => :debug, 'ProtoRelease' => :release, 'DevDebug' => :debug, 'DevRelease' => :release
 use_frameworks!
 
 target 'Kirokun' do
@@ -9,6 +9,7 @@ target 'Kirokun' do
   pod 'SwiftyJSON', '~> 5.0'
   pod 'Alamofire', '~> 5.10'
   pod 'DGCharts', '~> 5.1'
+  pod 'GoogleSignIn', '10.0.0', :configurations => ['DevDebug', 'DevRelease']
 
   target 'KirokunTests' do
     inherit! :search_paths

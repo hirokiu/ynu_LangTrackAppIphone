@@ -80,3 +80,12 @@ Copyright © 2020 Stephan Björck. All rights reserved.
 "Select a word from the list" = "リストから単語を選択してください";
 
 "Version %@" = "バージョン %@";
+
+"dev_login_intro" = "開発用Googleアカウントでログインしてください。この画面は接続確認用です。Surveyへの回答はまだ利用できません。";
+"dev_sign_out" = "ログアウト";
+"dev_retry_connection" = "接続を再確認";
+"dev_login_failed" = "ログインがキャンセルされたか、失敗しました。再度お試しください。";
+"dev_connecting" = "開発サーバーへの接続と利用権限を確認しています…";
+"dev_connected" = "Googleログインと開発サーバーの利用権限を確認できました。Surveyへの回答は次の段階で接続します。";
+"dev_not_authorized" = "このアカウントには開発環境の利用権限がありません。ログアウトして登録済みのアカウントを選んでください。";
+"dev_connection_failed" = "ログイン済みです。開発サーバーへの接続を確認できませんでした。開発用の接続経路を確認し、再試行してください。";
