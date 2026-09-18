@@ -92,3 +92,6 @@ Copyright © 2020 Stephan Björck. All rights reserved.
 "dev_connected" = "Google sign-in and development server access verified. Survey answering will be connected in the next step.";
 "dev_not_authorized" = "This account is not authorized for development. Sign out and choose the authorized account.";
 "dev_connection_failed" = "Signed in. The development server could not be reached. Check the development connection and retry.";
+"dev_google_failed" = "Google sign-in could not complete. Please report the following code.";
+"dev_firebase_failed" = "App authentication failed. Please report the following code.";
+"dev_login_cancelled" = "Sign-in was cancelled.";

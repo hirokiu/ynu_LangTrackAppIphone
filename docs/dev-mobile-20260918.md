@@ -31,3 +31,8 @@ SHA-256: DE:90:93:B6:CA:B7:95:E8:24:6A:49:EC:4D:C5:17:1C:1F:78:5F:F1:B1:A6:65:3E
 ## 実装参照
 - https://firebase.google.com/docs/auth/ios/google-signin
 - https://firebase.google.com/docs/auth/android/google-signin
+
+## iOSログイン時のKeychainエラー修正
+最初のシミュレーター配布はCODE_SIGNING_ALLOWED=NOでビルドしており、Firebase Auth起動時にSecItemCopyMatching(-34018)、ERROR_KEYCHAIN_ERROR(17995)が発生していた。Google側の認証同意完了はアプリ内の認証情報保存成功を意味しない。
+シミュレーターもCODE_SIGNING_ALLOWED=YES、CODE_SIGN_IDENTITY=-でビルドし、application-identifierが組み込まれるよう修正。再現防止のビルド手順はscripts/build-dev-simulator.sh。実機配布署名とは別。
+認証の失敗表示もGoogle→アプリ、Firebase認証、キャンセルに分離し、診断にはエラードメインとコードのみを記録する。トークンやuserInfoは記録しない。

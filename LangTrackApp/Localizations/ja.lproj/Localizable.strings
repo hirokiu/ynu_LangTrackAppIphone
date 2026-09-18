@@ -89,3 +89,6 @@ Copyright © 2020 Stephan Björck. All rights reserved.
 "dev_connected" = "Googleログインと開発サーバーの利用権限を確認できました。Surveyへの回答は次の段階で接続します。";
 "dev_not_authorized" = "このアカウントには開発環境の利用権限がありません。ログアウトして登録済みのアカウントを選んでください。";
 "dev_connection_failed" = "ログイン済みです。開発サーバーへの接続を確認できませんでした。開発用の接続経路を確認し、再試行してください。";
+"dev_google_failed" = "Googleからアプリへのログイン処理に失敗しました。次のコードをお知らせください。";
+"dev_firebase_failed" = "アプリの認証処理に失敗しました。次のコードをお知らせください。";
+"dev_login_cancelled" = "ログインをキャンセルしました。";

@@ -60,15 +60,23 @@ class DevLoginViewController: UIViewController {
         GIDSignIn.sharedInstance.signIn(withPresenting: self) { [weak self] result, error in
             guard let self = self else { return }
             guard let user = result?.user, let token = user.idToken?.tokenString, error == nil else {
-                self.status.text = self.text("dev_login_failed"); self.render(busy: false); return
+                self.reportAuthError(error, stage: "dev_google_failed"); return
             }
             let credential = GoogleAuthProvider.credential(withIDToken: token, accessToken: user.accessToken.tokenString)
             Auth.auth().signIn(with: credential) { [weak self] _, error in
                 guard let self = self else { return }
-                if error != nil { self.status.text = self.text("dev_login_failed"); self.render(busy: false); return }
+                if let error = error { self.reportAuthError(error, stage: "dev_firebase_failed"); return }
                 self.checkConnection()
             }
         }
+    }
+    private func reportAuthError(_ error: Error?, stage: String) {
+        let nsError = error as NSError?
+        // Log codes only: userInfo and descriptions may contain credentials or personal data.
+        NSLog("Dev authentication stage=%@ domain=%@ code=%ld", stage, nsError?.domain ?? "unknown", nsError?.code ?? 0)
+        let cancelled = nsError?.domain == "com.google.GIDSignIn" && nsError?.code == -5
+        status.text = cancelled ? text("dev_login_cancelled") : text(stage) + "\n" + String(nsError?.code ?? 0)
+        render(busy: false)
     }
     @objc private func signOut() {
         generation += 1
