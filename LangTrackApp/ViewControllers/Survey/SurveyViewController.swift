@@ -84,7 +84,7 @@ class SurveyViewController: UIViewController {
         view.addSubview(common)
         let info = UIStackView(arrangedSubviews: [surveyTitleLabel, surveyProgressLabel, surveyDetailLabel])
         info.axis = .vertical; info.spacing = 4
-        info.backgroundColor = KirokunTheme.brand
+        info.backgroundColor = KirokunTheme.filledBackground
         info.isLayoutMarginsRelativeArrangement = true
         info.directionalLayoutMargins = NSDirectionalEdgeInsets(top: 10, leading: 16, bottom: 10, trailing: 16)
         info.translatesAutoresizingMaskIntoConstraints = false
@@ -93,7 +93,7 @@ class SurveyViewController: UIViewController {
         surveyProgressLabel.font = .systemFont(ofSize: 14, weight: .medium)
         surveyDetailLabel.font = .systemFont(ofSize: 13)
         [surveyTitleLabel, surveyProgressLabel, surveyDetailLabel].forEach {
-            $0.textAlignment = .center; $0.textColor = .black; $0.numberOfLines = 0
+            $0.textAlignment = .center; $0.textColor = KirokunTheme.onFilled; $0.numberOfLines = 0
         }
         for constraint in view.constraints where constraint.firstItem as? UIView === surveyContainer && constraint.firstAttribute == .top {
             constraint.isActive = false

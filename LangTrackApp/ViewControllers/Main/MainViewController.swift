@@ -150,8 +150,8 @@ class MainViewController: UIViewController {
             subview.removeFromSuperview()
         }
         topViewDivider.isHidden = true
-        titleView.backgroundColor = KirokunTheme.brand
-        topView.backgroundColor = KirokunTheme.brand
+        titleView.backgroundColor = KirokunTheme.filledBackground
+        topView.backgroundColor = KirokunTheme.filledBackground
         let common = KirokunTheme.commonHeader()
         titleView.addSubview(common)
         titleView.bringSubviewToFront(menuButton)
@@ -167,7 +167,7 @@ class MainViewController: UIViewController {
         let encouragement = UILabel()
         encouragement.text = NSLocalizedString(["encouragement_1", "encouragement_2", "encouragement_3"].randomElement()!, comment: "")
         encouragement.font = .systemFont(ofSize: 14, weight: .medium)
-        [name, overview, encouragement].forEach { $0.textColor = .black; $0.numberOfLines = 0; $0.textAlignment = .center }
+        [name, overview, encouragement].forEach { $0.textColor = KirokunTheme.onFilled; $0.numberOfLines = 0; $0.textAlignment = .center }
         let stack = UIStackView(arrangedSubviews: [name, overview, encouragement])
         stack.axis = .vertical; stack.spacing = 4; stack.translatesAutoresizingMaskIntoConstraints = false
         titleView.addSubview(stack)

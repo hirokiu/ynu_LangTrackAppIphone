@@ -2,6 +2,11 @@
 
 KIROKUN is a Japanese research participant app derived from Lang-Track-App.
 
+## ビルド先と実機確認
+
+**Proto実機確認は `Kirokun-Proto`、開発シミュレーターは `Kirokun-Dev` を選択してください。**
+[切り替え・実機確認の手順](docs/ios-build-and-device-check.md)
+
 ## Development
 
 Use Xcode 27 and CocoaPods 1.16.2. Minimum deployment target: iOS 17.6.
@@ -12,7 +17,7 @@ open Kirokun.xcworkspace
 xcodebuild -workspace Kirokun.xcworkspace -scheme Kirokun -sdk iphonesimulator -destination 'generic/platform=iOS Simulator' CODE_SIGNING_ALLOWED=NO build
 ```
 
-Open **Kirokun.xcworkspace**, scheme **Kirokun**. Podfile.lock is version-controlled; do not use `pod update` for ordinary checkout setup.
+Open **Kirokun.xcworkspace**. Choose **Kirokun-Proto** or **Kirokun-Dev** as described above; **Kirokun** is the legacy routing scheme. Podfile.lock is version-controlled; do not use `pod update` for ordinary checkout setup.
 
 The next development version is 2.0.1 (2). This is NOT an App Store release. The bundle identifier remains `com.alchembright.dev.ynu-lta-dev` for update compatibility. The App Store currently displays version 1.0; its association with the local 2.0.0 (1) archive still requires verification in App Store Connect. See [source provenance](docs/SOURCE_BASELINE.md).
 

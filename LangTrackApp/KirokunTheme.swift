@@ -4,9 +4,12 @@ import FirebaseAuth
 // Centralized palette: icon coral for emphasis, darker/lighter variants for readable controls.
 enum KirokunTheme {
     static let brand = UIColor(red: 1, green: 88/255, blue: 87/255, alpha: 1)
+    // A deeper icon-derived red keeps white body text readable (contrast > 6:1).
+    static let filledBackground = UIColor(red: 0.72, green: 0.14, blue: 0.20, alpha: 1)
+    static let onFilled = UIColor.white
     static let action = UIColor { $0.userInterfaceStyle == .dark ? UIColor(red: 1, green: 0.55, blue: 0.54, alpha: 1) : UIColor(red: 0.72, green: 0.14, blue: 0.20, alpha: 1) }
     static func styleControls(primary: UIButton, secondary: UIButton, icon: UIImageView?, symbol: String?) {
-        primary.setTitleColor(.black, for: .normal)
+        primary.setTitleColor(onFilled, for: .normal)
         primary.backgroundColor = .clear
         primary.configuration = primaryButton(title: primary.currentTitle ?? "")
         secondary.backgroundColor = .clear
@@ -63,9 +66,15 @@ enum KirokunTheme {
             styleOverviewIcons(in: child, type: type)
         }
     }
+    static func setLabelColor(in view: UIView, color: UIColor) {
+        for child in view.subviews {
+            (child as? UILabel)?.textColor = color
+            setLabelColor(in: child, color: color)
+        }
+    }
     static func styleModalHeader(_ header: UIView) {
-        header.backgroundColor = brand
-        header.subviews.compactMap { $0 as? UILabel }.forEach { $0.textColor = .black }
+        header.backgroundColor = filledBackground
+        setLabelColor(in: header, color: onFilled)
         header.subviews.compactMap { $0 as? UIButton }.forEach {
             var config = UIButton.Configuration.plain()
             if #available(iOS 26.0, *), !UIAccessibility.isReduceTransparencyEnabled { config = .glass() }
@@ -73,7 +82,7 @@ enum KirokunTheme {
             config.image = UIImage(systemName: "xmark")
             config.preferredSymbolConfigurationForImage = UIImage.SymbolConfiguration(pointSize: 14, weight: .semibold)
             config.contentInsets = NSDirectionalEdgeInsets(top: 8, leading: 8, bottom: 8, trailing: 8)
-            config.baseForegroundColor = .black
+            config.baseForegroundColor = onFilled
             $0.configuration = config
             $0.accessibilityLabel = NSLocalizedString("close", comment: "")
         }
@@ -105,12 +114,12 @@ enum KirokunTheme {
         var config = UIButton.Configuration.filled()
         config.title = title
         var attributes = AttributeContainer()
-        attributes.foregroundColor = UIColor.black
+        attributes.foregroundColor = onFilled
         config.attributedTitle = AttributedString(title, attributes: attributes)
-        config.baseBackgroundColor = brand
-        config.baseForegroundColor = .black
+        config.baseBackgroundColor = filledBackground
+        config.baseForegroundColor = onFilled
         config.titleTextAttributesTransformer = UIConfigurationTextAttributesTransformer { attributes in
-            var updated = attributes; updated.foregroundColor = .black; return updated
+            var updated = attributes; updated.foregroundColor = onFilled; return updated
         }
         config.cornerStyle = .capsule
         config.contentInsets = NSDirectionalEdgeInsets(top: 14, leading: 24, bottom: 14, trailing: 24)
