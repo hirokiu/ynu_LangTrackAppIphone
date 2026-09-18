@@ -4,10 +4,10 @@
 
 ## 実装
 
-- `LaunchRibbon.imageset/launch-ribbon.png`を画面全体にaspect-fillで表示。
+- `KirokunLaunchRibbon.imageset/launch-ribbon.png`を画面全体にaspect-fillで表示。
 - ライト／ダークとも赤い背景を維持。Devの黄色いホーム画面アイコンとは独立。
 - 中央のロゴは画像の中央付近に配置し、SEとPro Maxの縦横比差によるクロップでも残る構成。
-- OSのLaunchScreenとして静的表示。アニメーションや人為的な起動待ち時間を加えない。
+- OSの起動画面として静的表示。2026-09-19の修正で、起動直後にも同じ画像を0.8秒表示し、0.2秒でフェードアウトする共通処理を追加。画面・通信処理はその間も進める。「視差効果を減らす」が有効ならフェードせず切り替える。
 - 画像生成ツール（組み込みimage_gen）で、承認された比較画像の中央案から単体画像を生成。
 
 ## 生成指示
@@ -16,8 +16,22 @@ Create the production-ready standalone iPhone splash screen of ONLY THE MIDDLE D
 
 ## Proto／Dev共通化の確認（2026-09-19）
 
-利用者の方針：アイコン以外のUI/UXは共通。スプラッシュは両環境とも同一のLaunchScreen.storyboardとLaunchRibbonを使用し、環境別の表示時間やアニメーションは追加しない。接続先・認証方式・プロジェクト名は既定の環境分離を維持する。
+利用者の方針：アイコン以外のUI/UXは共通。スプラッシュは両環境とも同一のKirokunLaunch.storyboardとKirokunLaunchRibbon、KirokunTheme.showLaunchArtworkを使用。環境別の表示時間の違いは設けない。接続先・認証方式・プロジェクト名は既定の環境分離を維持する。
 
 高速起動ではOSの起動画面がごく短時間で切り替わる。背景のみが見えたという報告だけでは、表示時間の短さとOSによるキャッシュを区別できない。アプリの削除によるデータ消去は行わず、最新画像入りDevビルドへ更新する。
 
 検証：Devビルド成功。Proto／Devのコンパイル済みAssets.carに含まれるLaunchRibbonの画像寸法（854×1842）とダイジェストが一致。通常確認用Devシミュレーターを更新し、起動成功。
+
+## 背景のみ表示される問題への対応（2026-09-19）
+
+前回のAssets.carの比較は画像の梱包確認にとどまり、実際の起動表示の確認として不十分だった。
+
+- 既存SEシミュレーターで背景だけの状態を再現。通常のStoryboard描画では画像を読み込めた。
+- 起動Storyboard／画像の参照名を更新し、画像スケールを明示的に3x指定。ProtoとDevそれぞれのInfo.plistを更新。
+- 新規シミュレーターでは起動待機中に画像を確認できた一方、既存SEでは再起動後も背景のみの表示が残った。OSのキャッシュを含む正確な内部原因は断定していない。
+- OSの起動表示だけに依存しないよう、シーン作成時に同じ画像を重ね、0.8秒後に0.2秒で取り除く。Protoは起動時にログインモーダルを開くため、画像を専用の非キーウィンドウで前面表示し、ログイン画面に覆われないようにする。アプリ削除やデータ消去は不要。バックグラウンドから戻るたびには表示しない。
+- Debugシミュレーターの `--launch-preview` は、通常起動と同じ画像オーバーレイを静止表示する検証専用引数。配布ビルドには静止動作を含めない。
+
+検証：起動StoryboardをInfo.plistから読み込み、画像854×1842ピクセルとSE／Max寸法での全画面配置を確認するテスト成功。既存SE／Pro MaxのiOS27で共通オーバーレイのロゴ・ガラス模様を目視確認。Proto/iOS26.4でも画像と通常起動後のログイン画面への移行を確認。DevビルドとProto実機ビルド成功。通常確認用・SE・MaxのDevシミュレーター、iPhone11 ProのProto版を更新。実機の見え方は利用者の確認待ち。
+
+参考：[Apple TN3118: Debugging your app’s launch screen](https://developer.apple.com/documentation/technotes/tn3118-debugging-your-apps-launch-screen)。アセットカタログ内のPNGと標準Storyboardを使用し、ユーザーデータを保持して更新する。

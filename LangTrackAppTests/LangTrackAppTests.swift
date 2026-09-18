@@ -92,4 +92,19 @@ final class LangTrackAppTests: XCTestCase {
         }
     }
     #endif
+    @MainActor
+    func testLaunchStoryboardLoadsArtworkAtAllScreenSizes() {
+        let name = Bundle.main.object(forInfoDictionaryKey: "UILaunchStoryboardName") as! String
+        let controller = UIStoryboard(name: name, bundle: .main).instantiateInitialViewController()!
+        controller.loadViewIfNeeded()
+        let imageView = controller.view.subviews.compactMap { $0 as? UIImageView }.first!
+        XCTAssertNotNil(imageView.image, "The launch storyboard must resolve its asset")
+        XCTAssertEqual(imageView.image?.cgImage?.width, 854)
+        XCTAssertEqual(imageView.image?.cgImage?.height, 1842)
+        for size in [CGSize(width: 375, height: 667), CGSize(width: 440, height: 956)] {
+            controller.view.frame = CGRect(origin: .zero, size: size)
+            controller.view.layoutIfNeeded()
+            XCTAssertEqual(imageView.frame, controller.view.bounds)
+        }
+    }
 }

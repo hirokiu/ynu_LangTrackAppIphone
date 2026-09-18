@@ -44,7 +44,7 @@
 		F156587523E2DD7500EC2796 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F156587423E2DD7500EC2796 /* MainViewController.swift */; };
 		F156587823E2DD7500EC2796 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F156587623E2DD7500EC2796 /* Main.storyboard */; };
 		F156587A23E2DD7600EC2796 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F156587923E2DD7600EC2796 /* Assets.xcassets */; };
-		F156587D23E2DD7600EC2796 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F156587B23E2DD7600EC2796 /* LaunchScreen.storyboard */; };
+		F156587D23E2DD7600EC2796 /* KirokunLaunch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F156587B23E2DD7600EC2796 /* KirokunLaunch.storyboard */; };
 		F156588823E2DD7600EC2796 /* LangTrackAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F156588723E2DD7600EC2796 /* LangTrackAppTests.swift */; };
 		F156589323E2DD7600EC2796 /* LangTrackAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F156589223E2DD7600EC2796 /* LangTrackAppUITests.swift */; };
 		F15658A223E33D1400EC2796 /* SurveyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15658A123E33D1400EC2796 /* SurveyViewController.swift */; };
@@ -117,10 +117,10 @@
 		7131C4B656699393503FBBFB /* KirokunTheme.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KirokunTheme.swift; path = LangTrackApp/KirokunTheme.swift; sourceTree = "<group>"; };
 		7C3888C627E3BE7E46B21A45 /* Pods-Kirokun-KirokunUITests.protodebug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kirokun-KirokunUITests.protodebug.xcconfig"; path = "Target Support Files/Pods-Kirokun-KirokunUITests/Pods-Kirokun-KirokunUITests.protodebug.xcconfig"; sourceTree = "<group>"; };
 		924A9A402C9563E100867462 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
-		924A9A412C9563E100867462 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		924A9A412C9563E100867462 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/KirokunLaunch.strings; sourceTree = "<group>"; };
 		924A9A422C9563E100867462 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		92C66D882CB7ABDB0074E27C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
-		92C66D8A2CB7ABE80074E27C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		92C66D8A2CB7ABE80074E27C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/KirokunLaunch.strings; sourceTree = "<group>"; };
 		92F808F22C7D6F8F00FB7220 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		94DCEC5C895F6C0CD332B531 /* Pods-Kirokun-KirokunUITests.protorelease.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kirokun-KirokunUITests.protorelease.xcconfig"; path = "Target Support Files/Pods-Kirokun-KirokunUITests/Pods-Kirokun-KirokunUITests.protorelease.xcconfig"; sourceTree = "<group>"; };
 		A0EB333163E50B55E70C6D24 /* Pods-Kirokun.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kirokun.release.xcconfig"; path = "Target Support Files/Pods-Kirokun/Pods-Kirokun.release.xcconfig"; sourceTree = "<group>"; };
@@ -148,7 +148,7 @@
 		F11499FC241575DA00DC988A /* TimeIntervalExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeIntervalExtension.swift; sourceTree = "<group>"; };
 		F11499FE2416384700DC988A /* CellTimerListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellTimerListener.swift; sourceTree = "<group>"; };
 		F128D855246FE81E009E3EB9 /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/Main.strings; sourceTree = "<group>"; };
-		F128D856246FE81E009E3EB9 /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		F128D856246FE81E009E3EB9 /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/KirokunLaunch.strings; sourceTree = "<group>"; };
 		F1399CD8243C6EC800545D47 /* OverviewLikertTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewLikertTableViewCell.swift; sourceTree = "<group>"; };
 		F1399CDA243CACA700545D47 /* OverviewDurationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewDurationTableViewCell.swift; sourceTree = "<group>"; };
 		F1399CDC243CC00D00545D47 /* OverviewSingleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewSingleTableViewCell.swift; sourceTree = "<group>"; };
@@ -168,7 +168,7 @@
 		F156587423E2DD7500EC2796 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		F156587723E2DD7500EC2796 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F156587923E2DD7600EC2796 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		F156587C23E2DD7600EC2796 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F156587C23E2DD7600EC2796 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/KirokunLaunch.storyboard; sourceTree = "<group>"; };
 		F156587E23E2DD7600EC2796 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F156588323E2DD7600EC2796 /* KirokunTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KirokunTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F156588723E2DD7600EC2796 /* LangTrackAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LangTrackAppTests.swift; sourceTree = "<group>"; };
@@ -201,7 +201,7 @@
 		F1963208240922AE00A0D8D2 /* VKCheckbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKCheckbox.swift; sourceTree = "<group>"; };
 		F198D7AB23F548AE008B85AA /* SkipLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkipLogic.swift; sourceTree = "<group>"; };
 		F1B0A57D2542AA790054CB54 /* ar-001 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "ar-001"; path = "ar-001.lproj/Main.strings"; sourceTree = "<group>"; };
-		F1B0A57E2542AA790054CB54 /* ar-001 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "ar-001"; path = "ar-001.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		F1B0A57E2542AA790054CB54 /* ar-001 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "ar-001"; path = "ar-001.lproj/KirokunLaunch.strings"; sourceTree = "<group>"; };
 		F1B0A57F2542AA7A0054CB54 /* ar-001 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "ar-001"; path = "ar-001.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		F1BAF78D245C44A400621F7F /* LabelExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelExtension.swift; sourceTree = "<group>"; };
 		F1BAFD032420B6260047E9E5 /* AnswerBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerBody.swift; sourceTree = "<group>"; };
@@ -214,13 +214,13 @@
 		F1DB199C2424FEC10068F49E /* IncludeIf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncludeIf.swift; sourceTree = "<group>"; };
 		F1DB199E24275D810068F49E /* NextButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextButton.swift; sourceTree = "<group>"; };
 		F1EF299D26E8D8950094EA26 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Main.strings; sourceTree = "<group>"; };
-		F1EF299E26E8D8960094EA26 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		F1EF299E26E8D8960094EA26 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/KirokunLaunch.strings; sourceTree = "<group>"; };
 		F1EF299F26E8D8960094EA26 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F1EF29A026E8D9360094EA26 /* fa */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fa; path = fa.lproj/Main.strings; sourceTree = "<group>"; };
-		F1EF29A126E8D9370094EA26 /* fa */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fa; path = fa.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		F1EF29A126E8D9370094EA26 /* fa */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fa; path = fa.lproj/KirokunLaunch.strings; sourceTree = "<group>"; };
 		F1EF29A226E8D9370094EA26 /* fa */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fa; path = fa.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F1EF29A326E8D9980094EA26 /* fa-AF */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "fa-AF"; path = "fa-AF.lproj/Main.strings"; sourceTree = "<group>"; };
-		F1EF29A426E8D9990094EA26 /* fa-AF */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "fa-AF"; path = "fa-AF.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		F1EF29A426E8D9990094EA26 /* fa-AF */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "fa-AF"; path = "fa-AF.lproj/KirokunLaunch.strings"; sourceTree = "<group>"; };
 		F1EF29A526E8D9990094EA26 /* fa-AF */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "fa-AF"; path = "fa-AF.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		F1F7771F245B67B200B93D8D /* ContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
 		F1F77722245B691200B93D8D /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
@@ -402,7 +402,7 @@
 				F156587223E2DD7500EC2796 /* SceneDelegate.swift */,
 				F156587623E2DD7500EC2796 /* Main.storyboard */,
 				F156587923E2DD7600EC2796 /* Assets.xcassets */,
-				F156587B23E2DD7600EC2796 /* LaunchScreen.storyboard */,
+				F156587B23E2DD7600EC2796 /* KirokunLaunch.storyboard */,
 				F156587E23E2DD7600EC2796 /* Info.plist */,
 				92F808F22C7D6F8F00FB7220 /* GoogleService-Info.plist */,
 				F10B84B323E46025003CAC76 /* Colors.xcassets */,
@@ -673,7 +673,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F17F34822437343100CD64BB /* SingleItem.xib in Resources */,
-				F156587D23E2DD7600EC2796 /* LaunchScreen.storyboard in Resources */,
+				F156587D23E2DD7600EC2796 /* KirokunLaunch.storyboard in Resources */,
 				F10B84B423E46025003CAC76 /* Colors.xcassets in Resources */,
 				F1399CDF243D0D9400545D47 /* SingleView.xib in Resources */,
 				F1F7D1DC246FEE57003D881B /* Localizable.strings in Resources */,
@@ -943,7 +943,7 @@
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		F156587B23E2DD7600EC2796 /* LaunchScreen.storyboard */ = {
+		F156587B23E2DD7600EC2796 /* KirokunLaunch.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				F156587C23E2DD7600EC2796 /* Base */,
@@ -955,7 +955,7 @@
 				924A9A412C9563E100867462 /* ja */,
 				92C66D8A2CB7ABE80074E27C /* en */,
 			);
-			name = LaunchScreen.storyboard;
+			name = KirokunLaunch.storyboard;
 			sourceTree = "<group>";
 		};
 		F1F7D1DE246FEE57003D881B /* Localizable.strings */ = {

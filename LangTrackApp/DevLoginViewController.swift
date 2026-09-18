@@ -30,6 +30,7 @@ class DevSceneDelegate: UIResponder, UIWindowSceneDelegate {
         #endif
         window?.tintColor = KirokunTheme.action
         window?.makeKeyAndVisible()
+        KirokunTheme.showLaunchArtwork(in: window)
         #if DEBUG && targetEnvironment(simulator)
         if let survey = window?.rootViewController as? SurveyViewController,
            let argument = ProcessInfo.processInfo.arguments.first(where: { $0.hasPrefix("--preview-page=") }),
