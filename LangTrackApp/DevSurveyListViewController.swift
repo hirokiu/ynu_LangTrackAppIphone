@@ -11,6 +11,7 @@ enum KirokunTheme {
         primary.configuration = primaryButton(title: primary.currentTitle ?? "")
         secondary.backgroundColor = .clear
         var config = UIButton.Configuration.bordered()
+        if #available(iOS 26.0, *), !UIAccessibility.isReduceTransparencyEnabled { config = .glass() }
         config.title = secondary.currentTitle; config.baseForegroundColor = action
         config.cornerStyle = .capsule
         config.titleTextAttributesTransformer = UIConfigurationTextAttributesTransformer { attributes in
@@ -46,10 +47,7 @@ enum KirokunTheme {
         }
     }
     static func primaryButton(title: String) -> UIButton.Configuration {
-        var config: UIButton.Configuration
-        if #available(iOS 26.0, *), !UIAccessibility.isReduceTransparencyEnabled {
-            config = .prominentGlass()
-        } else { config = .filled() }
+        var config = UIButton.Configuration.filled()
         config.title = title
         config.baseBackgroundColor = brand
         config.baseForegroundColor = .black
