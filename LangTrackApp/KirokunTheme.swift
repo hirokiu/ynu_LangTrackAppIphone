@@ -4,8 +4,8 @@ import FirebaseAuth
 // Centralized palette: icon coral for emphasis, darker/lighter variants for readable controls.
 enum KirokunTheme {
     static let brand = UIColor(red: 1, green: 88/255, blue: 87/255, alpha: 1)
-    // A deeper icon-derived red keeps white body text readable (contrast > 6:1).
-    static let filledBackground = UIColor(red: 0.72, green: 0.14, blue: 0.20, alpha: 1)
+    // Filled surfaces follow the original KIROKUN icon color.
+    static let filledBackground = brand
     static let onFilled = UIColor.white
     static let action = UIColor { $0.userInterfaceStyle == .dark ? UIColor(red: 1, green: 0.55, blue: 0.54, alpha: 1) : UIColor(red: 0.72, green: 0.14, blue: 0.20, alpha: 1) }
     static func styleControls(primary: UIButton, secondary: UIButton, icon: UIImageView?, symbol: String?) {

@@ -1221,7 +1221,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A6A7E31BAED0E6D146F082CF /* Pods-Kirokun.devdebug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-KIROKUN";
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Dev";
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = LangTrackApp/LangTrackApp.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
@@ -1452,7 +1452,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BB88986E8A48C528F81E539A /* Pods-Kirokun.devrelease.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-KIROKUN";
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Dev";
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = LangTrackApp/LangTrackApp.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
