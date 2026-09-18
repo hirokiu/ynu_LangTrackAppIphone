@@ -54,7 +54,8 @@ struct SurveyRepository {
         // Build-time routing leaves the shared Firebase URL unchanged.
         if let configured = Bundle.main.object(forInfoDictionaryKey: "KIROKUN_API_BASE_URL") as? String,
            !configured.isEmpty, !configured.hasPrefix("$(") {
-            guard let url = URL(string: configured), url.scheme == "https", url.host != nil,
+            let isDevLoopback = Bundle.main.object(forInfoDictionaryKey: "KIROKUN_ENVIRONMENT") as? String == "dev" && configured.hasPrefix("http://localhost:18082/api/")
+            guard let url = URL(string: configured), (url.scheme == "https" || isDevLoopback), url.host != nil,
                   configured.hasSuffix("/") else {
                 completionhandler(nil)
                 return
@@ -102,7 +103,8 @@ struct SurveyRepository {
 //        }
 //    }
     
-    static func postAnswer(answerDict: [Int: Answer]){
+    static func postAnswer(answerDict: [Int: Answer], completion: ((Bool) -> Void)? = nil){
+        guard !userId.isEmpty, !(selectedAssignment?.id ?? "").isEmpty else { completion?(false); return }
         if userId != ""{
             var answers = [AnswerBody]()
             for answer in answerDict.values{
@@ -138,17 +140,18 @@ struct SurveyRepository {
                     "Content-Type":"application/json"
                 ]
                 getUrl { (theUrl) in
-                    if let theUrl = theUrl{
-                        if theUrl != ""{
-                            let answerUrl = "\(theUrl)users/\(userId)/assignments/\(selectedAssignment!.id)/datasets"
-                            let req = AF.request(answerUrl,
-                                       method: .post,
-                                       parameters: theBody,
-                                       encoder: JSONParameterEncoder.default,
-                                       headers: headers)
-                            req.response { response in
-                            }
-                        }
+                    guard let theUrl = theUrl, !theUrl.isEmpty else { completion?(false); return }
+                    let answerUrl = "\(theUrl)users/\(userId)/assignments/\(selectedAssignment!.id)/datasets"
+                    let req = AF.request(answerUrl,
+                               method: .post,
+                               parameters: theBody,
+                               encoder: JSONParameterEncoder.default,
+                               headers: headers)
+                    req.response { response in
+                        let code = response.response?.statusCode ?? 0
+                        let json = response.data.flatMap { try? JSON(data: $0) }
+                        let stored = (code == 201) || (code == 200 && json?["dataset"]["answers"].array != nil)
+                        completion?(response.error == nil && stored)
                     }
                 }
                 
@@ -339,7 +342,7 @@ struct SurveyRepository {
         return finallist
     }
     
-    private static func createAssignmentsFromData(data: Data) -> [Assignment]?{
+    static func createAssignmentsFromData(data: Data) -> [Assignment]?{
         var returnValue = [Assignment]()
         do {
             let json = try JSON(data: data)

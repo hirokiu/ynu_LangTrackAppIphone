@@ -20,6 +20,11 @@ class FooterViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        #if KIROKUN_DEV
+        sendInButton.backgroundColor = .clear
+        sendInButton.configuration = KirokunTheme.primaryButton(title: sendInButton.currentTitle ?? "")
+        previousButton.tintColor = KirokunTheme.action
+        #endif
         previousButton.layer.cornerRadius = 8
         sendInButton.layer.cornerRadius = 8
         theIcon.clipsToBounds = false

@@ -84,14 +84,30 @@ Copyright © 2020 Stephan Björck. All rights reserved.
 
 "tech mail subject" = "Concerning KIROKUN";
 
-"dev_login_intro" = "Sign in with your development Google account. This screen checks access only; Survey answering is not connected yet.";
+"dev_login_intro" = "Sign in with your development Google account. Use this app for development surveys only.";
 "dev_sign_out" = "Sign out";
 "dev_retry_connection" = "Check connection again";
 "dev_login_failed" = "Sign-in was cancelled or failed. Please try again.";
 "dev_connecting" = "Checking development server access…";
-"dev_connected" = "Google sign-in and development server access verified. Survey answering will be connected in the next step.";
+"dev_connected" = "Connected to the development environment. You can answer test surveys.";
 "dev_not_authorized" = "This account is not authorized for development. Sign out and choose the authorized account.";
 "dev_connection_failed" = "Signed in. The development server could not be reached. Check the development connection and retry.";
 "dev_google_failed" = "Google sign-in could not complete. Please report the following code.";
 "dev_firebase_failed" = "App authentication failed. Please report the following code.";
 "dev_login_cancelled" = "Sign-in was cancelled.";
+
+"dev_open_surveys" = "View surveys";
+"dev_surveys" = "Surveys";
+"dev_loading_surveys" = "Loading surveys…";
+"dev_load_failed" = "Unable to load surveys. Tap refresh to try again.";
+"dev_no_surveys" = "No surveys are available yet.";
+"dev_test_environment" = "Development · Test data only";
+"dev_answered" = "Answered";
+"dev_ready" = "Ready to answer";
+"dev_expired" = "Expired";
+"dev_deadline" = "Due";
+"dev_begin_answer" = "Open survey";
+"dev_sending" = "Saving your answers…";
+"dev_saved" = "Your answers have been saved";
+"dev_save_failed" = "Could not confirm that answers were saved";
+"dev_answers_retained" = "Your input is still on this screen. Check your connection and try again.";

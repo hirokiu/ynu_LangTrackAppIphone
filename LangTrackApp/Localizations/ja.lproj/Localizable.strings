@@ -81,14 +81,30 @@ Copyright © 2020 Stephan Björck. All rights reserved.
 
 "Version %@" = "バージョン %@";
 
-"dev_login_intro" = "開発用Googleアカウントでログインしてください。この画面は接続確認用です。Surveyへの回答はまだ利用できません。";
+"dev_login_intro" = "開発用Googleアカウントでログインしてください。このアプリは開発用アンケートの確認に使用します。";
 "dev_sign_out" = "ログアウト";
 "dev_retry_connection" = "接続を再確認";
 "dev_login_failed" = "ログインがキャンセルされたか、失敗しました。再度お試しください。";
 "dev_connecting" = "開発サーバーへの接続と利用権限を確認しています…";
-"dev_connected" = "Googleログインと開発サーバーの利用権限を確認できました。Surveyへの回答は次の段階で接続します。";
+"dev_connected" = "開発環境に接続できました。テスト用のアンケートに回答できます。";
 "dev_not_authorized" = "このアカウントには開発環境の利用権限がありません。ログアウトして登録済みのアカウントを選んでください。";
 "dev_connection_failed" = "ログイン済みです。開発サーバーへの接続を確認できませんでした。開発用の接続経路を確認し、再試行してください。";
 "dev_google_failed" = "Googleからアプリへのログイン処理に失敗しました。次のコードをお知らせください。";
 "dev_firebase_failed" = "アプリの認証処理に失敗しました。次のコードをお知らせください。";
 "dev_login_cancelled" = "ログインをキャンセルしました。";
+
+"dev_open_surveys" = "アンケートを見る";
+"dev_surveys" = "アンケート";
+"dev_loading_surveys" = "アンケートを読み込んでいます…";
+"dev_load_failed" = "読み込めませんでした。更新ボタンで再試行してください。";
+"dev_no_surveys" = "現在、届いているアンケートはありません。";
+"dev_test_environment" = "開発環境・テスト用データ";
+"dev_answered" = "回答済み";
+"dev_ready" = "回答できます";
+"dev_expired" = "回答期限終了";
+"dev_deadline" = "回答期限";
+"dev_begin_answer" = "アンケートを開きます";
+"dev_sending" = "回答を保存しています…";
+"dev_saved" = "回答を保存しました";
+"dev_save_failed" = "回答の保存を確認できませんでした";
+"dev_answers_retained" = "入力内容はこの画面に残っています。接続を確認し、もう一度送信してください。";

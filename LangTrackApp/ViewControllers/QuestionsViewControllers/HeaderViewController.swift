@@ -23,6 +23,11 @@ class HeaderViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        #if KIROKUN_DEV
+        nextButton.backgroundColor = .clear
+        nextButton.configuration = KirokunTheme.primaryButton(title: nextButton.currentTitle ?? "")
+        closeButton.tintColor = KirokunTheme.action
+        #endif
         closeButton.layer.cornerRadius = 8
         nextButton.layer.cornerRadius = 8
     }

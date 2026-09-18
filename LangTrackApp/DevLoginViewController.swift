@@ -9,7 +9,8 @@ class DevSceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options: UIScene.ConnectionOptions) {
         guard let scene = scene as? UIWindowScene else { return }
         window = UIWindow(windowScene: scene)
-        window?.rootViewController = DevLoginViewController()
+        window?.rootViewController = UINavigationController(rootViewController: DevLoginViewController())
+        window?.tintColor = KirokunTheme.action
         window?.makeKeyAndVisible()
         for context in options.urlContexts { GIDSignIn.sharedInstance.handle(context.url) }
     }
@@ -25,18 +26,23 @@ class DevLoginViewController: UIViewController {
     private let signOutButton = UIButton(type: .system)
     private let retryButton = UIButton(type: .system)
     private var generation = 0
+    private let surveysButton = UIButton(type: .system)
     private func text(_ key: String) -> String { NSLocalizedString(key, comment: "Dev authentication") }
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemBackground
+        view.backgroundColor = .systemGroupedBackground
+        navigationItem.title = "KIROKUN Dev"
+        surveysButton.configuration = KirokunTheme.primaryButton(title: text("dev_open_surveys"))
+        surveysButton.addTarget(self, action: #selector(openSurveys), for: .touchUpInside)
+        surveysButton.isHidden = true
         let title = UILabel(); title.text = "KIROKUN Dev"; title.font = .preferredFont(forTextStyle: .largeTitle)
-        status.numberOfLines = 0; status.text = text("dev_login_intro")
+        status.font = .preferredFont(forTextStyle: .body); status.adjustsFontForContentSizeCategory = true; status.numberOfLines = 0; status.text = text("dev_login_intro")
         signInButton.addTarget(self, action: #selector(signIn), for: .touchUpInside)
         signOutButton.setTitle(text("dev_sign_out"), for: .normal)
         signOutButton.addTarget(self, action: #selector(signOut), for: .touchUpInside)
         retryButton.setTitle(text("dev_retry_connection"), for: .normal)
         retryButton.addTarget(self, action: #selector(checkConnection), for: .touchUpInside)
-        let stack = UIStackView(arrangedSubviews: [title, status, signInButton, retryButton, signOutButton, spinner])
+        let stack = UIStackView(arrangedSubviews: [title, status, signInButton, surveysButton, retryButton, signOutButton, spinner])
         stack.axis = .vertical; stack.spacing = 24; stack.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(stack)
         NSLayoutConstraint.activate([stack.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 24), stack.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -24), stack.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 48)])
@@ -78,7 +84,13 @@ class DevLoginViewController: UIViewController {
         status.text = cancelled ? text("dev_login_cancelled") : text(stage) + "\n" + String(nsError?.code ?? 0)
         render(busy: false)
     }
+    @objc private func openSurveys() {
+        navigationController?.pushViewController(DevSurveyListViewController(), animated: true)
+    }
     @objc private func signOut() {
+        surveysButton.isHidden = true
+        SurveyRepository.userId = ""; SurveyRepository.idToken = ""; SurveyRepository.assignmentList = []
+        SurveyRepository.selectedAssignment = nil
         generation += 1
         do { try Auth.auth().signOut() } catch { status.text = text("dev_login_failed"); return }
         GIDSignIn.sharedInstance.signOut()
@@ -87,12 +99,13 @@ class DevLoginViewController: UIViewController {
     @objc private func checkConnection() {
         guard let user = Auth.auth().currentUser else { return }
         generation += 1; let requestGeneration = generation
+        surveysButton.isHidden = true
         render(busy: true); status.text = text("dev_connecting")
         user.getIDTokenForcingRefresh(true) { [weak self] token, error in
             guard let self = self, self.generation == requestGeneration else { return }
             guard let token = token, error == nil,
                   let base = Bundle.main.object(forInfoDictionaryKey: "KIROKUN_API_BASE_URL") as? String,
-                  let url = URL(string: base + "admin/surveys?page=1&limit=10") else {
+                  let url = URL(string: base + "me") else {
                 self.status.text = self.text("dev_login_failed"); self.render(busy: false); return
             }
             var request = URLRequest(url: url); request.timeoutInterval = 15
@@ -105,8 +118,14 @@ class DevLoginViewController: UIViewController {
                     guard let self = self, self.generation == requestGeneration else { return }
                     let code = (response as? HTTPURLResponse)?.statusCode
                     let object = data.flatMap { try? JSONSerialization.jsonObject(with: $0) } as? [String: Any]
-                    let validJSON = object?["items"] is [Any]
+                    let resolvedId = object?["userId"] as? String
+                    let validJSON = !(resolvedId ?? "").isEmpty
                     let key = error == nil && code == 200 && validJSON ? "dev_connected" : ((code == 401 || code == 403) ? "dev_not_authorized" : "dev_connection_failed")
+                    if key == "dev_connected", let userId = resolvedId {
+                        SurveyRepository.userId = userId
+                        SurveyRepository.idToken = token
+                        self.surveysButton.isHidden = false
+                    }
                     self.status.text = self.text(key); self.render(busy: false)
                 }
             }.resume()

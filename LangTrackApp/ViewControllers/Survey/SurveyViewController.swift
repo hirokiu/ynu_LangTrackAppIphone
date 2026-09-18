@@ -7,6 +7,9 @@
 //
 
 import UIKit
+#if KIROKUN_DEV
+import FirebaseAuth
+#endif
 
 class SurveyViewController: UIViewController {
     @IBOutlet weak var surveyContainer: UIView!
@@ -16,6 +19,8 @@ class SurveyViewController: UIViewController {
     var currentPage = Question()
     var theUser: User?
     var inTestMode = false
+    var onSaved: (() -> Void)?
+    private var sending = false
     
     var header: HeaderViewController?
     var likertScale: LikertScaleViewController?
@@ -241,6 +246,9 @@ class SurveyViewController: UIViewController {
             footer!.didMove(toParent: self)
             footer!.setInfo(question: theQuestion)
         }
+            #if KIROKUN_DEV
+        children.forEach { KirokunTheme.styleQuestion($0) }
+        #endif
     }
     
     func skipIsExecuted(current: Question) -> Question?{
@@ -502,8 +510,36 @@ extension SurveyViewController: QuestionListener{
                         tempAnswers[theAnswer.value.index] = theAnswer.value
                     }
                 }
+                #if KIROKUN_DEV
+                guard !sending else { return }
+                sending = true
+                view.isUserInteractionEnabled = false
+                isModalInPresentation = true
+                let progress = UIAlertController(title: NSLocalizedString("dev_sending", comment: ""), message: nil, preferredStyle: .alert)
+                present(progress, animated: true)
+                guard let user = Auth.auth().currentUser else { sending = false; view.isUserInteractionEnabled = true; isModalInPresentation = false; progress.dismiss(animated: true); return }
+                user.getIDTokenForcingRefresh(false) { [weak self] token, error in
+                    guard let self = self else { return }
+                    let finish: (Bool) -> Void = { success in
+                        DispatchQueue.main.async {
+                            self.sending = false; self.view.isUserInteractionEnabled = true; self.isModalInPresentation = false
+                            progress.dismiss(animated: true) {
+                                if success { self.dismiss(animated: true) { self.onSaved?() } }
+                                else {
+                                    let alert = UIAlertController(title: NSLocalizedString("dev_save_failed", comment: ""), message: NSLocalizedString("dev_answers_retained", comment: ""), preferredStyle: .alert)
+                                    alert.addAction(UIAlertAction(title: "OK", style: .default)); self.present(alert, animated: true)
+                                }
+                            }
+                        }
+                    }
+                    guard let token = token, error == nil else { finish(false); return }
+                    SurveyRepository.idToken = token
+                    SurveyRepository.postAnswer(answerDict: tempAnswers, completion: finish)
+                }
+                #else
                 SurveyRepository.postAnswer(answerDict: tempAnswers)
                 self.dismiss(animated: true, completion: nil)
+                #endif
             }
         }
     }
