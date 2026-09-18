@@ -66,3 +66,7 @@ DevDebug / DevReleaseだけ黄色＋黒い「DEV」表示のAppIcon-Devを使用
 Devがシミュレーター専用という恒久的な制約はない。現在のDevDebugの接続経路がMac向けであることが制約。別のアプリIDで実機に共存させることは可能だが、今回はiPhone 11 ProにProtoを入れる。
 
 署名時にAppleアカウントのログイン拒否が出る場合、Xcode Settings → Accountsで再認証する。Push Notifications付きの署名プロファイルが必要で、エラー回避のために通知権限を削除しない。
+
+## iPhone 11 Proへの導入結果（2026-09-18）
+
+Appleアカウントの再認証後、Kirokun-Proto / ProtoDebugの実機署名付きビルドに成功。接続したiPhone 11 Proへのインストールとプロセス起動を確認した。接続先はProto、アプリIDは既存版と同一。端末でのログイン・回答・小型端末での表示確認は利用者による次の確認項目。Push配信確認は未実施。
