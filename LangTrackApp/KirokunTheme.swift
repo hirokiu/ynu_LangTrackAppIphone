@@ -3,43 +3,6 @@ import FirebaseAuth
 
 // Centralized palette: icon coral for emphasis, darker/lighter variants for readable controls.
 enum KirokunTheme {
-    /// Continue the system launch artwork briefly while the first screen loads.
-    /// Keeping this in the shared theme gives Proto and Dev identical startup behavior.
-    private static var launchWindow: UIWindow?
-    static func showLaunchArtwork(in window: UIWindow?) {
-        guard let window = window, let scene = window.windowScene,
-              let image = UIImage(named: "KirokunLaunchRibbon") else { return }
-        let artwork = UIImageView(image: image)
-        artwork.frame = window.bounds
-        artwork.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        artwork.contentMode = .scaleAspectFill
-        artwork.clipsToBounds = true
-        artwork.backgroundColor = brand
-        artwork.isUserInteractionEnabled = true
-        artwork.accessibilityIdentifier = "kirokun-launch-artwork"
-        let controller = UIViewController()
-        controller.view = artwork
-        let splash = UIWindow(windowScene: scene)
-        splash.frame = window.bounds
-        splash.rootViewController = controller
-        // Login is presented as a modal in Proto. A separate, non-key window keeps
-        // the shared artwork above that transition without taking keyboard focus.
-        splash.windowLevel = UIWindow.Level.normal + 1
-        launchWindow = splash
-        splash.isHidden = false
-        #if DEBUG && targetEnvironment(simulator)
-        // Inspect the same overlay used at normal startup, without affecting release builds.
-        if ProcessInfo.processInfo.arguments.contains("--launch-preview") { return }
-        #endif
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) {
-            UIView.animate(withDuration: UIAccessibility.isReduceMotionEnabled ? 0 : 0.2,
-                           animations: { splash.alpha = 0 },
-                           completion: { _ in
-                               splash.isHidden = true
-                               if launchWindow === splash { launchWindow = nil }
-                           })
-        }
-    }
     static let brand = UIColor(red: 1, green: 88/255, blue: 87/255, alpha: 1)
     // Filled surfaces follow the original KIROKUN icon color.
     static let filledBackground = brand
