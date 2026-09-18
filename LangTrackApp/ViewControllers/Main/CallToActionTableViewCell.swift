@@ -66,6 +66,8 @@ class CallToActionTableViewCell: UITableViewCell {
 
     func setSurveyInfo(assignment: Assignment, tableviewHeight: CGFloat)  {
         self.callToActionHeightConstraint.constant = tableviewHeight / 3
+        callToActionLabel.text = assignment.survey.title + "\n" + NSLocalizedString("survey_ready", comment: "")
+        callToActionLabel.numberOfLines = 0
         self.theSurvey = assignment.survey
         self.theAssignment = assignment
         setExpieryTime()

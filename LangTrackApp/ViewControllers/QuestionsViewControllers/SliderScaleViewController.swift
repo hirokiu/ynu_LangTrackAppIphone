@@ -84,6 +84,7 @@ class SliderScaleViewController: UIViewController {
     @IBAction func sliderChanged(_ sender: UISlider) {
         valueLabel.text = "\(Int(sender.value))"
         savedTempAnswer = Int(sender.value)
+        listener?.setSliderAnswer(selected: savedTempAnswer, naButton: false)
     }
     
     @IBAction func naButtonPressed(_ sender: LikertRadioButton) {
@@ -98,12 +99,14 @@ class SliderScaleViewController: UIViewController {
     }
     
     @IBAction func nextButtonPressed(_ sender: Any) {
+        listener?.setSliderAnswer(selected: Int(theSlider.value), naButton: naButton.isSelected)
         listener?.nextQuestion(current: theQuestion)
         theAnswer = nil
         savedTempAnswer = 0
     }
     
     @IBAction func previousButtonPressed(_ sender: Any) {
+        listener?.setSliderAnswer(selected: Int(theSlider.value), naButton: naButton.isSelected)
         listener?.previousQuestion(current: theQuestion)
         theAnswer = nil
         savedTempAnswer = 0

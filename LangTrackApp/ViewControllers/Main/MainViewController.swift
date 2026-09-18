@@ -152,6 +152,9 @@ class MainViewController: UIViewController {
         topViewDivider.isHidden = true
         titleView.backgroundColor = KirokunTheme.brand
         topView.backgroundColor = KirokunTheme.brand
+        let common = KirokunTheme.commonHeader()
+        titleView.addSubview(common)
+        titleView.bringSubviewToFront(menuButton)
         let name = UILabel(); name.text = KirokunProject.name
         name.font = .systemFont(ofSize: 24, weight: .bold)
         let overview = UILabel()
@@ -164,18 +167,22 @@ class MainViewController: UIViewController {
         let encouragement = UILabel()
         encouragement.text = NSLocalizedString(["encouragement_1", "encouragement_2", "encouragement_3"].randomElement()!, comment: "")
         encouragement.font = .systemFont(ofSize: 14, weight: .medium)
-        [name, overview, encouragement].forEach { $0.textColor = .black; $0.numberOfLines = 0 }
+        [name, overview, encouragement].forEach { $0.textColor = .black; $0.numberOfLines = 0; $0.textAlignment = .center }
         let stack = UIStackView(arrangedSubviews: [name, overview, encouragement])
         stack.axis = .vertical; stack.spacing = 4; stack.translatesAutoresizingMaskIntoConstraints = false
         titleView.addSubview(stack)
         NSLayoutConstraint.activate([
-            titleView.heightAnchor.constraint(greaterThanOrEqualToConstant: 120),
-            stack.leadingAnchor.constraint(equalTo: titleView.leadingAnchor, constant: 60),
+            titleView.heightAnchor.constraint(greaterThanOrEqualToConstant: 164),
+            common.topAnchor.constraint(equalTo: titleView.topAnchor),
+            common.leadingAnchor.constraint(equalTo: titleView.leadingAnchor),
+            common.trailingAnchor.constraint(equalTo: titleView.trailingAnchor),
+            common.heightAnchor.constraint(equalToConstant: 44),
+            stack.leadingAnchor.constraint(equalTo: titleView.leadingAnchor, constant: 20),
             stack.trailingAnchor.constraint(equalTo: titleView.trailingAnchor, constant: -20),
-            stack.topAnchor.constraint(equalTo: titleView.topAnchor, constant: 12),
+            stack.topAnchor.constraint(equalTo: common.bottomAnchor, constant: 12),
             stack.bottomAnchor.constraint(equalTo: titleView.bottomAnchor, constant: -12),
             menuButton.leadingAnchor.constraint(equalTo: titleView.leadingAnchor, constant: 15),
-            menuButton.topAnchor.constraint(equalTo: titleView.topAnchor, constant: 15)
+            menuButton.topAnchor.constraint(equalTo: titleView.topAnchor, constant: 7)
         ])
     }
 

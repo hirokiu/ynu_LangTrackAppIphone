@@ -100,6 +100,10 @@ extension OverviewViewController: UITableViewDelegate, UITableViewDataSource{
         return questionsWithAnswers.count
     }
     
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        KirokunTheme.styleOverviewIcons(in: cell.contentView, type: questionsWithAnswers[indexPath.row].question.type)
+    }
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let listObject = questionsWithAnswers[indexPath.row]
         switch questionsWithAnswers[indexPath.row].question.type {

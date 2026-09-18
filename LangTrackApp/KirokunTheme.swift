@@ -35,6 +35,34 @@ enum KirokunTheme {
             traits.userInterfaceStyle == .dark ? UIColor(red: 0.18, green: 0.12, blue: 0.13, alpha: 1) : UIColor(red: 1, green: 0.94, blue: 0.94, alpha: 1)
         }
     }
+    static func commonHeader() -> UILabel {
+        let label = UILabel()
+        label.text = "KIROKUN"
+        label.font = .systemFont(ofSize: 22, weight: .bold)
+        label.textColor = action; label.backgroundColor = .systemBackground
+        label.textAlignment = .center
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }
+    static func inputDescription(for type: String) -> String {
+        NSLocalizedString("input_mode_" + type, comment: "Actual input behavior")
+    }
+    static func styleOverviewIcons(in view: UIView, type: String) {
+        for child in view.subviews {
+            if let icon = child as? UIImageView {
+                if type == "header" {
+                    icon.isHidden = true
+                    icon.constraints.filter { $0.firstAttribute == .height }.forEach { $0.constant = 0 }
+                } else {
+                    let symbols = ["open":"text.alignleft", "likert":"slider.horizontal.3", "multi":"checklist", "single":"list.bullet.circle", "blanks":"text.insert", "slider":"slider.horizontal.3", "duration":"clock"]
+                    icon.image = UIImage(systemName: symbols[type] ?? "checkmark.circle")
+                    icon.tintColor = action; icon.contentMode = .scaleAspectFit
+                    icon.backgroundColor = .clear; icon.layer.shadowOpacity = 0
+                }
+            }
+            styleOverviewIcons(in: child, type: type)
+        }
+    }
     static func styleModalHeader(_ header: UIView) {
         header.backgroundColor = brand
         header.subviews.compactMap { $0 as? UILabel }.forEach { $0.textColor = .black }
@@ -51,20 +79,6 @@ enum KirokunTheme {
         }
     }
     static func styleQuestion(_ controller: UIViewController) {
-        if controller.view.viewWithTag(74001) == nil {
-            let banner = UILabel(); banner.tag = 74001
-            banner.text = KirokunProject.name
-            banner.font = .preferredFont(forTextStyle: .headline)
-            banner.textAlignment = .center; banner.textColor = .black; banner.backgroundColor = brand
-            banner.translatesAutoresizingMaskIntoConstraints = false
-            controller.view.addSubview(banner)
-            NSLayoutConstraint.activate([
-                banner.topAnchor.constraint(equalTo: controller.view.safeAreaLayoutGuide.topAnchor),
-                banner.leadingAnchor.constraint(equalTo: controller.view.leadingAnchor),
-                banner.trailingAnchor.constraint(equalTo: controller.view.trailingAnchor),
-                banner.heightAnchor.constraint(equalToConstant: 52)
-            ])
-        }
         switch controller {
         case let c as HeaderViewController:
             c.subTitleLabel.textColor = action
@@ -90,6 +104,9 @@ enum KirokunTheme {
     static func primaryButton(title: String) -> UIButton.Configuration {
         var config = UIButton.Configuration.filled()
         config.title = title
+        var attributes = AttributeContainer()
+        attributes.foregroundColor = UIColor.black
+        config.attributedTitle = AttributedString(title, attributes: attributes)
         config.baseBackgroundColor = brand
         config.baseForegroundColor = .black
         config.titleTextAttributesTransformer = UIConfigurationTextAttributesTransformer { attributes in

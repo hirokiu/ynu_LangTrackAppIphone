@@ -122,3 +122,18 @@ Copyright © 2020 Stephan Björck. All rights reserved.
 "encouragement_2" = "今日の気づきを、ひとつずつ。";
 "encouragement_3" = "ご協力ありがとうございます。あなたのペースで。";
 "close" = "閉じる";
+
+"survey_start_count" = "回答開始・全%d問";
+"survey_total_count" = "全%d問";
+"survey_progress" = "設問 %d / %d";
+"survey_review" = "回答内容の送信";
+"survey_dates" = "公開日：%@\n回答期限：%@";
+"date_unspecified" = "未設定";
+"input_mode_open" = "自由入力・任意";
+"input_mode_likert" = "5件法・選択必須";
+"input_mode_single" = "単一選択・選択必須";
+"input_mode_multi" = "複数選択・1つ以上選択必須";
+"input_mode_blanks" = "空欄補充・選択必須";
+"input_mode_slider" = "スライダー・初期値50（該当なしも選択可）";
+"input_mode_duration" = "時間入力・初期値0時間0分";
+"survey_ready" = "回答するアンケート";

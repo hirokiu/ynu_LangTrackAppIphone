@@ -21,6 +21,9 @@ class SurveyViewController: UIViewController {
     var inTestMode = false
     var onSaved: (() -> Void)?
     private var sending = false
+    private let surveyTitleLabel = UILabel()
+    private let surveyProgressLabel = UILabel()
+    private let surveyDetailLabel = UILabel()
     
     var header: HeaderViewController?
     var likertScale: LikertScaleViewController?
@@ -34,7 +37,9 @@ class SurveyViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.tintColor = KirokunTheme.action
         
+        configureSurveyHeaders()
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         header = storyboard.instantiateViewController(withIdentifier: "header") as? HeaderViewController
         header?.setListener(listener: self)
@@ -73,6 +78,60 @@ class SurveyViewController: UIViewController {
          // TODO: popup if error
     }
     
+
+    private func configureSurveyHeaders() {
+        let common = KirokunTheme.commonHeader()
+        view.addSubview(common)
+        let info = UIStackView(arrangedSubviews: [surveyTitleLabel, surveyProgressLabel, surveyDetailLabel])
+        info.axis = .vertical; info.spacing = 4
+        info.backgroundColor = KirokunTheme.brand
+        info.isLayoutMarginsRelativeArrangement = true
+        info.directionalLayoutMargins = NSDirectionalEdgeInsets(top: 10, leading: 16, bottom: 10, trailing: 16)
+        info.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(info)
+        surveyTitleLabel.font = .systemFont(ofSize: 18, weight: .semibold)
+        surveyProgressLabel.font = .systemFont(ofSize: 14, weight: .medium)
+        surveyDetailLabel.font = .systemFont(ofSize: 13)
+        [surveyTitleLabel, surveyProgressLabel, surveyDetailLabel].forEach {
+            $0.textAlignment = .center; $0.textColor = .black; $0.numberOfLines = 0
+        }
+        for constraint in view.constraints where constraint.firstItem as? UIView === surveyContainer && constraint.firstAttribute == .top {
+            constraint.isActive = false
+        }
+        NSLayoutConstraint.activate([
+            common.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            common.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            common.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            common.heightAnchor.constraint(equalToConstant: 44),
+            info.topAnchor.constraint(equalTo: common.bottomAnchor),
+            info.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            info.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            surveyContainer.topAnchor.constraint(equalTo: info.bottomAnchor)
+        ])
+    }
+    private func updateSurveyHeaders(for question: Question) {
+        guard let assignment = theAssignment else { return }
+        surveyTitleLabel.text = assignment.survey.title.isEmpty ? assignment.survey.name : assignment.survey.title
+        // Exclude introductory/completion pages. The denominator is the survey's total
+        // question count, even if conditional branching skips some questions.
+        let questions = assignment.survey.questions.filter { $0.type != "header" && $0.type != "footer" }.sorted { $0.index < $1.index }
+        if question.type == "header" {
+            surveyProgressLabel.text = String(format: NSLocalizedString("survey_start_count", comment: ""), questions.count)
+            func dateText(_ value: String) -> String {
+                guard let date = DateParser.getDate(dateString: value) else { return NSLocalizedString("date_unspecified", comment: "") }
+                return DateFormatter.localizedString(from: date, dateStyle: .medium, timeStyle: .short)
+            }
+            surveyDetailLabel.text = String(format: NSLocalizedString("survey_dates", comment: ""), dateText(assignment.published), dateText(assignment.expiry))
+        } else if question.type == "footer" {
+            surveyProgressLabel.text = NSLocalizedString("survey_review", comment: "")
+            surveyDetailLabel.text = String(format: NSLocalizedString("survey_total_count", comment: ""), questions.count)
+        } else {
+            let position = (questions.firstIndex { $0.index == question.index } ?? 0) + 1
+            surveyProgressLabel.text = String(format: NSLocalizedString("survey_progress", comment: ""), position, questions.count)
+            surveyDetailLabel.text = KirokunTheme.inputDescription(for: question.type)
+        }
+        view.layoutIfNeeded()
+    }
 
     func showPage(newPage : Question)
     {
@@ -139,6 +198,7 @@ class SurveyViewController: UIViewController {
             footer!.removeFromParent()
         }
         currentPage = newPage
+        updateSurveyHeaders(for: theQuestion)
         
         
         if(currentPage.type == Type.header.rawValue)

@@ -125,3 +125,18 @@ Copyright © 2020 Stephan Björck. All rights reserved.
 "encouragement_2" = "Share one observation at a time.";
 "encouragement_3" = "Thank you for contributing. Take your time.";
 "close" = "Close";
+
+"survey_start_count" = "Start · %d questions";
+"survey_total_count" = "%d questions total";
+"survey_progress" = "Question %d / %d";
+"survey_review" = "Submit responses";
+"survey_dates" = "Published: %@\nDeadline: %@";
+"date_unspecified" = "Not specified";
+"input_mode_open" = "Free text · Optional";
+"input_mode_likert" = "5-point scale · Selection required";
+"input_mode_single" = "Single choice · Selection required";
+"input_mode_multi" = "Multiple choice · Select at least one";
+"input_mode_blanks" = "Fill in the blank · Selection required";
+"input_mode_slider" = "Slider · Default 50 (N/A available)";
+"input_mode_duration" = "Duration · Default 0 hours 0 minutes";
+"survey_ready" = "Ready to answer";
