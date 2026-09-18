@@ -79,14 +79,11 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         
         view.tintColor = KirokunTheme.action
-        // Keep the original title/icon/header/table layout; reuse its subtitle for the project.
-        let titleLabels = titleView.subviews.compactMap { $0 as? UILabel }
-        titleLabels.min(by: { $0.font.pointSize < $1.font.pointSize })?.text = KirokunProject.connectionTitle
-        titleLabels.forEach { $0.textColor = KirokunTheme.action }
+        configureProjectBanner()
         var menuStyle = UIButton.Configuration.plain()
         if #available(iOS 26.0, *), !UIAccessibility.isReduceTransparencyEnabled { menuStyle = .glass() }
         menuStyle.image = UIImage(systemName: "line.3.horizontal")
-        menuStyle.baseForegroundColor = KirokunTheme.action
+        menuStyle.baseForegroundColor = .black
         menuStyle.contentInsets = .zero
         menuButton.configuration = menuStyle
         menuButton.accessibilityLabel = NSLocalizedString("menu", comment: "")
@@ -146,6 +143,42 @@ class MainViewController: UIViewController {
         animateHeaderView()
     }
     
+    private func configureProjectBanner() {
+        // Replace only the former logo block; keep the response chart and table constraints.
+        NSLayoutConstraint.deactivate(titleView.constraints)
+        for subview in titleView.subviews where subview !== menuButton && subview !== topViewDivider {
+            subview.removeFromSuperview()
+        }
+        topViewDivider.isHidden = true
+        titleView.backgroundColor = KirokunTheme.brand
+        topView.backgroundColor = KirokunTheme.brand
+        let name = UILabel(); name.text = KirokunProject.name
+        name.font = .systemFont(ofSize: 24, weight: .bold)
+        let overview = UILabel()
+        #if KIROKUN_DEV
+        overview.text = NSLocalizedString("project_overview_dev", comment: "")
+        #else
+        overview.text = NSLocalizedString("project_overview_proto", comment: "")
+        #endif
+        overview.font = .systemFont(ofSize: 13)
+        let encouragement = UILabel()
+        encouragement.text = NSLocalizedString(["encouragement_1", "encouragement_2", "encouragement_3"].randomElement()!, comment: "")
+        encouragement.font = .systemFont(ofSize: 14, weight: .medium)
+        [name, overview, encouragement].forEach { $0.textColor = .black; $0.numberOfLines = 0 }
+        let stack = UIStackView(arrangedSubviews: [name, overview, encouragement])
+        stack.axis = .vertical; stack.spacing = 4; stack.translatesAutoresizingMaskIntoConstraints = false
+        titleView.addSubview(stack)
+        NSLayoutConstraint.activate([
+            titleView.heightAnchor.constraint(greaterThanOrEqualToConstant: 120),
+            stack.leadingAnchor.constraint(equalTo: titleView.leadingAnchor, constant: 60),
+            stack.trailingAnchor.constraint(equalTo: titleView.trailingAnchor, constant: -20),
+            stack.topAnchor.constraint(equalTo: titleView.topAnchor, constant: 12),
+            stack.bottomAnchor.constraint(equalTo: titleView.bottomAnchor, constant: -12),
+            menuButton.leadingAnchor.constraint(equalTo: titleView.leadingAnchor, constant: 15),
+            menuButton.topAnchor.constraint(equalTo: titleView.topAnchor, constant: 15)
+        ])
+    }
+
     @objc func willEnterForeground() {
        
        updateAssignments()
@@ -614,6 +647,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource{
                 cell.selectionStyle = .none
                 if let cell = cell as? CallToActionTableViewCell{
                     cell.setSurveyInfo(assignment: currentAssignment, tableviewHeight: theTableView.frame.height)
+                    cell.applyRowTheme(index: indexPath.row)
                     cell.setListener(theListener: self)
                 }else{
                     print("no cell")
@@ -624,6 +658,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource{
                 cell.selectionStyle = .none
                 if let cell = cell as? SurveyTableViewCell{
                     cell.setSurveyInfo(assignment: currentAssignment)
+                    cell.applyRowTheme(index: indexPath.row, answered: currentAssignment.dataset != nil)
                 }else{
                     print("no cell")
                 }
@@ -634,6 +669,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource{
             cell.selectionStyle = .none
             if let cell = cell as? SurveyTableViewCell{
                 cell.setSurveyInfo(assignment: currentAssignment)
+                    cell.applyRowTheme(index: indexPath.row, answered: currentAssignment.dataset != nil)
             }else{
                 print("no cell")
             }

@@ -118,3 +118,10 @@ Copyright © 2020 Stephan Björck. All rights reserved.
 "project_switch" = "Switch project";
 "answer_rate" = "Response rate";
 "menu" = "Menu";
+
+"project_overview_dev" = "Development project";
+"project_overview_proto" = "KIROKUN prototype research";
+"encouragement_1" = "Your answers help research move forward.";
+"encouragement_2" = "Share one observation at a time.";
+"encouragement_3" = "Thank you for contributing. Take your time.";
+"close" = "Close";

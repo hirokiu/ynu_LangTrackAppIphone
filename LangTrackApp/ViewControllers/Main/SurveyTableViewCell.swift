@@ -27,6 +27,16 @@ class SurveyTableViewCell: UITableViewCell {
     }
     
     
+    func applyRowTheme(index: Int, answered: Bool) {
+        let background = KirokunTheme.rowBackground(index)
+        backgroundColor = background; contentView.backgroundColor = background; surveyBackground.backgroundColor = background
+        let foreground: UIColor = answered ? KirokunTheme.answeredText : KirokunTheme.action
+        surveyTitle.textColor = foreground; answeredLabel.textColor = foreground
+        surveyTitle.font = .systemFont(ofSize: 17, weight: answered ? .regular : .semibold)
+        dateLabel.textColor = KirokunTheme.answeredText
+        answeredIndicator.backgroundColor = answered ? .secondaryLabel : KirokunTheme.brand
+    }
+
     func setSurveyInfo(assignment: Assignment)  {
         answeredIndicator.layer.cornerRadius = 5
         surveyTitle.text = assignment.survey.title

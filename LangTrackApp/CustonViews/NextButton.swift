@@ -13,14 +13,6 @@ class NextButton: UIButton {
     
     func setEnabled(enabled: Bool){
         self.isEnabled = enabled
-        #if KIROKUN_DEV
         self.backgroundColor = .clear
-        return
-        #endif
-        if enabled{
-            self.backgroundColor = UIColor(named: "lta_blue")
-        }else{
-            self.backgroundColor = .lightGray
-        }
     }
 }

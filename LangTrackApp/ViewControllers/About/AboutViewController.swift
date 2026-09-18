@@ -22,6 +22,8 @@ class AboutViewController: UIViewController, UIScrollViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.tintColor = KirokunTheme.action
+        KirokunTheme.styleModalHeader(topView)
 
         view1.layer.cornerRadius = 12
         view1.setLargeViewShadow()
@@ -60,7 +62,7 @@ class AboutViewController: UIViewController, UIScrollViewDelegate {
         if let address = URL(string: translatedFounderAddress), address.scheme != nil {
             image1String.addAttributes([NSAttributedString.Key.link: address], range: myRange)
         }
-        finalString.append(image1String)
+        if image1Attachment.image != nil { finalString.append(image1String) }
         
         aboutTextView.attributedText = finalString
     }

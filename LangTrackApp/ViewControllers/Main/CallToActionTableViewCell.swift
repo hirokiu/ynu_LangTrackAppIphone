@@ -54,6 +54,16 @@ class CallToActionTableViewCell: UITableViewCell {
         }
     }
     
+    func applyRowTheme(index: Int) {
+        let background = KirokunTheme.rowBackground(index)
+        backgroundColor = background; contentView.backgroundColor = background
+        callToActionBackgroundView.backgroundColor = background
+        callToActionLabel.textColor = KirokunTheme.action
+        expiryLabel.textColor = KirokunTheme.action
+        callToActionBackgroundView.layer.borderWidth = 1
+        callToActionBackgroundView.layer.borderColor = KirokunTheme.brand.cgColor
+    }
+
     func setSurveyInfo(assignment: Assignment, tableviewHeight: CGFloat)  {
         self.callToActionHeightConstraint.constant = tableviewHeight / 3
         self.theSurvey = assignment.survey

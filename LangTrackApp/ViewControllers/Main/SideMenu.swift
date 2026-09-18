@@ -10,13 +10,13 @@ import UIKit
 import DGCharts
 
 let attributeLtaBlueHeaderText = [ NSAttributedString.Key.font: UIFont.systemFont(ofSize: 22, weight: .bold),
-                                   NSAttributedString.Key.foregroundColor: UIColor(named: "lta_blue") ?? UIColor.blue ]
+                                   NSAttributedString.Key.foregroundColor: KirokunTheme.action ]
 
 let attributeLtaRedHeaderText = [ NSAttributedString.Key.font: UIFont.systemFont(ofSize: 20),
-                                   NSAttributedString.Key.foregroundColor: UIColor(named: "lta_red") ?? UIColor.red ]
+                                   NSAttributedString.Key.foregroundColor: KirokunTheme.action ]
 
 let attributeLtaBlueText = [ NSAttributedString.Key.font: UIFont.systemFont(ofSize: 17),
-                             NSAttributedString.Key.foregroundColor: UIColor(named: "lta_blue") ?? UIColor.blue ]
+                             NSAttributedString.Key.foregroundColor: UIColor.label ]
 
 let attributeSmallText = [ NSAttributedString.Key.font: UIFont.systemFont(ofSize: 15)]
 

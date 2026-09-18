@@ -30,6 +30,9 @@ class OverviewViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.tintColor = KirokunTheme.action
+        KirokunTheme.styleModalHeader(topView)
+        topViewContainer.backgroundColor = KirokunTheme.brand.withAlphaComponent(0.10)
         overviewTableview.delegate = self
         overviewTableview.rowHeight = UITableView.automaticDimension
         overviewTableview.estimatedRowHeight = 60

@@ -21,6 +21,8 @@ class ContactViewController: UIViewController, UIScrollViewDelegate, UITextViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.tintColor = KirokunTheme.action
+        KirokunTheme.styleModalHeader(topView)
 
         view2.layer.cornerRadius = 12
         view2.setLargeViewShadow()

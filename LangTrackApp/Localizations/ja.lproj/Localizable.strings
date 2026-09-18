@@ -115,3 +115,10 @@ Copyright © 2020 Stephan Björck. All rights reserved.
 "project_switch" = "プロジェクトの切り替え";
 "answer_rate" = "回答率";
 "menu" = "メニュー";
+
+"project_overview_dev" = "開発用プロジェクト";
+"project_overview_proto" = "KIROKUNのプロトタイプ調査";
+"encouragement_1" = "あなたの回答が、研究の一歩になります。";
+"encouragement_2" = "今日の気づきを、ひとつずつ。";
+"encouragement_3" = "ご協力ありがとうございます。あなたのペースで。";
+"close" = "閉じる";

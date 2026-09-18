@@ -246,9 +246,7 @@ class SurveyViewController: UIViewController {
             footer!.didMove(toParent: self)
             footer!.setInfo(question: theQuestion)
         }
-            #if KIROKUN_DEV
         children.forEach { KirokunTheme.styleQuestion($0) }
-        #endif
     }
     
     func skipIsExecuted(current: Question) -> Question?{

@@ -23,6 +23,8 @@ class HeaderViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        lu_inageView.isHidden = true
+        for constraint in lu_inageView.constraints where constraint.firstAttribute == .height { constraint.constant = 0 }
         #if KIROKUN_DEV
         nextButton.backgroundColor = .clear
         nextButton.configuration = KirokunTheme.primaryButton(title: nextButton.currentTitle ?? "")

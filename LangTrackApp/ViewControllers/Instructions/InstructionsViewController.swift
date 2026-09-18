@@ -23,6 +23,8 @@ class InstructionsViewController: UIViewController, UIScrollViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.tintColor = KirokunTheme.action
+        KirokunTheme.styleModalHeader(topView)
 
         
         instructionsView.layer.cornerRadius = 12
