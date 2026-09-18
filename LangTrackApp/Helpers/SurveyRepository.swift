@@ -51,6 +51,17 @@ struct SurveyRepository {
     }
     
     static func getUrl(completionhandler: @escaping (_ result: String?) -> Void){
+        // Build-time routing leaves the shared Firebase URL unchanged.
+        if let configured = Bundle.main.object(forInfoDictionaryKey: "KIROKUN_API_BASE_URL") as? String,
+           !configured.isEmpty, !configured.hasPrefix("$(") {
+            guard let url = URL(string: configured), url.scheme == "https", url.host != nil,
+                  configured.hasSuffix("/") else {
+                completionhandler(nil)
+                return
+            }
+            completionhandler(configured)
+            return
+        }
         /*
          Getting the correct url from firebase realtime - prodUrl or stagingUrl
          */

@@ -1,0 +1,17 @@
+# アプリのproto接続準備（2026-09-18）
+
+既存ログインID/パスワード・Firebaseプロジェクト・アプリ識別子を維持したproto接続用ビルドを追加。元のMac作業フォルダーは変更せず、隔離コピーで実装。
+
+既存アプリはFirebase Realtime Databaseのurl/stagingUrlを取得して接続する。今回、その共有値は変更しない。protoビルドだけhttps://proto.kirokun.alchembright.com/api/を使用し、従来ビルドは今までどおりFirebaseの値を取得する。
+
+Android：legacyDebug/legacyReleaseが従来方式、protoDebug/protoReleaseが固定接続。iOS：既存Kirokunが従来方式、新Kirokun-Proto schemeのProtoDebug/ProtoReleaseが固定接続。
+
+protoビルドは既存版の更新用として同じアプリIDを維持する。別アプリIDの上松専用dev版は次の作業。今回のprotoビルドにkirokun-devの認証情報は入れない。
+
+現在のprotoサーバーは上松・研究者2名だけの確認コピーで、配信準備・通知停止。一般回答者への配布はまだ行わない。アプリでAPI書込が発生し得るため、この段階での実データを使う実機ログインは未実施。最終移行前に既存参加者全員の権限、端末登録、取得/回答/通知、オフライン未送信データを検証する。
+
+次のdev版には独立Bundle ID/applicationIdとFirebase iOS/Androidアプリ登録が必要。公開済みdev Web設定はモバイル設定ファイルの代わりにはならない。旧ドメイン除去・新ログイン方式は共同研究者との方針確定後とする。
+
+リリース前にバージョン/ビルド番号を更新し、Androidは既存配布APKと署名証明書が一致することを確認。新コピーのdebug署名を配布用として採用しない。iOSは署名付きArchiveとTestFlightの実機確認を別途実施。ビルド成功は配信/通知成功を意味しない。
+
+検証：Xcode 27 / iOS Simulator用ProtoDebugビルド成功。生成Info.plistのAPI URLと既存Bundle IDの維持を確認。依存ライブラリのバージョン変更なし。署名付き実機Archive・回答送信・通知・ストア配布は未実施。

@@ -1,5 +1,5 @@
 platform :ios, '17.6'
-project 'Kirokun.xcodeproj'
+project 'Kirokun.xcodeproj', 'Debug' => :debug, 'Release' => :release, 'ProtoDebug' => :debug, 'ProtoRelease' => :release
 use_frameworks!
 
 target 'Kirokun' do

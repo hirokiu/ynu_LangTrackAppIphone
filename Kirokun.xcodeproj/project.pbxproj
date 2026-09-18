@@ -105,21 +105,26 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		23717050A65A493A1C2F74EE /* Pods-KirokunTests.protodebug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KirokunTests.protodebug.xcconfig"; path = "Target Support Files/Pods-KirokunTests/Pods-KirokunTests.protodebug.xcconfig"; sourceTree = "<group>"; };
 		3966711958B60E545CBF7C4F /* Pods-KirokunTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KirokunTests.release.xcconfig"; path = "Target Support Files/Pods-KirokunTests/Pods-KirokunTests.release.xcconfig"; sourceTree = "<group>"; };
 		4CF814D4F328EF7D7DF89444 /* Pods_Kirokun.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kirokun.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5187634D5603CB87955B3369 /* Pods-Kirokun.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kirokun.debug.xcconfig"; path = "Target Support Files/Pods-Kirokun/Pods-Kirokun.debug.xcconfig"; sourceTree = "<group>"; };
 		57608BCD0647F61496C0177D /* Pods-Kirokun-KirokunUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kirokun-KirokunUITests.debug.xcconfig"; path = "Target Support Files/Pods-Kirokun-KirokunUITests/Pods-Kirokun-KirokunUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		67893367C32DFBB921A5B40B /* Pods-Kirokun-KirokunUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kirokun-KirokunUITests.release.xcconfig"; path = "Target Support Files/Pods-Kirokun-KirokunUITests/Pods-Kirokun-KirokunUITests.release.xcconfig"; sourceTree = "<group>"; };
+		7C3888C627E3BE7E46B21A45 /* Pods-Kirokun-KirokunUITests.protodebug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kirokun-KirokunUITests.protodebug.xcconfig"; path = "Target Support Files/Pods-Kirokun-KirokunUITests/Pods-Kirokun-KirokunUITests.protodebug.xcconfig"; sourceTree = "<group>"; };
 		924A9A402C9563E100867462 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
 		924A9A412C9563E100867462 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		924A9A422C9563E100867462 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		92C66D882CB7ABDB0074E27C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		92C66D8A2CB7ABE80074E27C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		92F808F22C7D6F8F00FB7220 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		94DCEC5C895F6C0CD332B531 /* Pods-Kirokun-KirokunUITests.protorelease.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kirokun-KirokunUITests.protorelease.xcconfig"; path = "Target Support Files/Pods-Kirokun-KirokunUITests/Pods-Kirokun-KirokunUITests.protorelease.xcconfig"; sourceTree = "<group>"; };
 		A0EB333163E50B55E70C6D24 /* Pods-Kirokun.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kirokun.release.xcconfig"; path = "Target Support Files/Pods-Kirokun/Pods-Kirokun.release.xcconfig"; sourceTree = "<group>"; };
 		AE07763E25751DA1335CB8A7 /* Pods_KirokunTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KirokunTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7080B495011BCC590132CBA /* Pods_Kirokun_KirokunUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kirokun_KirokunUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C72899C1AD82EBFABB488C3A /* Pods-Kirokun.protorelease.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kirokun.protorelease.xcconfig"; path = "Target Support Files/Pods-Kirokun/Pods-Kirokun.protorelease.xcconfig"; sourceTree = "<group>"; };
 		D03700066FB9AF4B70851B50 /* Pods-KirokunTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KirokunTests.debug.xcconfig"; path = "Target Support Files/Pods-KirokunTests/Pods-KirokunTests.debug.xcconfig"; sourceTree = "<group>"; };
+		E41F0F22045C319634D8B99A /* Pods-KirokunTests.protorelease.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KirokunTests.protorelease.xcconfig"; path = "Target Support Files/Pods-KirokunTests/Pods-KirokunTests.protorelease.xcconfig"; sourceTree = "<group>"; };
 		F10136E623E8372300B36CF0 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		F10136E923E85F3B00B36CF0 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		F102725124460EEF00203711 /* OverviewHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewHeaderTableViewCell.swift; sourceTree = "<group>"; };
@@ -214,6 +219,7 @@
 		F1F7D1DD246FEE57003D881B /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F1F7D1DF246FEE8B003D881B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F1F7D1E0246FEEDC003D881B /* TranslatedStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslatedStrings.swift; sourceTree = "<group>"; };
+		FD1EBDD9C0BD2B457A50A85E /* Pods-Kirokun.protodebug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kirokun.protodebug.xcconfig"; path = "Target Support Files/Pods-Kirokun/Pods-Kirokun.protodebug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -263,6 +269,12 @@
 				67893367C32DFBB921A5B40B /* Pods-Kirokun-KirokunUITests.release.xcconfig */,
 				D03700066FB9AF4B70851B50 /* Pods-KirokunTests.debug.xcconfig */,
 				3966711958B60E545CBF7C4F /* Pods-KirokunTests.release.xcconfig */,
+				FD1EBDD9C0BD2B457A50A85E /* Pods-Kirokun.protodebug.xcconfig */,
+				C72899C1AD82EBFABB488C3A /* Pods-Kirokun.protorelease.xcconfig */,
+				7C3888C627E3BE7E46B21A45 /* Pods-Kirokun-KirokunUITests.protodebug.xcconfig */,
+				94DCEC5C895F6C0CD332B531 /* Pods-Kirokun-KirokunUITests.protorelease.xcconfig */,
+				23717050A65A493A1C2F74EE /* Pods-KirokunTests.protodebug.xcconfig */,
+				E41F0F22045C319634D8B99A /* Pods-KirokunTests.protorelease.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -924,6 +936,270 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		0995EAFF3B42E1D834C6E593 /* ProtoDebug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7C3888C627E3BE7E46B21A45 /* Pods-Kirokun-KirokunUITests.protodebug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				INFOPLIST_FILE = LangTrackAppUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
+				KIROKUN_API_BASE_URL = "https://proto.kirokun.alchembright.com/api/";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = se.lu.humlab.LangTrackAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Kirokun;
+			};
+			name = ProtoDebug;
+		};
+		24367771AB0EC967885ABF4B /* ProtoDebug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FD1EBDD9C0BD2B457A50A85E /* Pods-Kirokun.protodebug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-KIROKUN";
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CODE_SIGN_ENTITLEMENTS = LangTrackApp/LangTrackApp.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = T2NKM8MRZM;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				INFOPLIST_FILE = LangTrackApp/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
+				KIROKUN_API_BASE_URL = "https://proto.kirokun.alchembright.com/api/";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${TOOLCHAIN_DIR}/usr/lib/swift/${PLATFORM_NAME}\"",
+					/usr/lib/swift,
+					"$(PROJECT_DIR)/Pods/**",
+				);
+				MARKETING_VERSION = 2.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.alchembright.dev.ynu-lta-dev";
+				PRODUCT_NAME = "Lang Track App";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = ProtoDebug;
+		};
+		6704A873A0B19871992047BD /* ProtoRelease */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E41F0F22045C319634D8B99A /* Pods-KirokunTests.protorelease.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				INFOPLIST_FILE = LangTrackAppTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
+				KIROKUN_API_BASE_URL = "https://proto.kirokun.alchembright.com/api/";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = se.lu.humlab.LangTrackAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Lang Track App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Lang Track App";
+			};
+			name = ProtoRelease;
+		};
+		7575B293A211DA5274C9915C /* ProtoDebug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = ProtoDebug;
+		};
+		8492B88838F3CF1949B5D3E4 /* ProtoRelease */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C72899C1AD82EBFABB488C3A /* Pods-Kirokun.protorelease.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-KIROKUN";
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CODE_SIGN_ENTITLEMENTS = LangTrackApp/LangTrackApp.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = T2NKM8MRZM;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				INFOPLIST_FILE = LangTrackApp/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
+				KIROKUN_API_BASE_URL = "https://proto.kirokun.alchembright.com/api/";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${TOOLCHAIN_DIR}/usr/lib/swift/${PLATFORM_NAME}\"",
+					/usr/lib/swift,
+					"$(PROJECT_DIR)/Pods/**",
+				);
+				MARKETING_VERSION = 2.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.alchembright.dev.ynu-lta-dev";
+				PRODUCT_NAME = "Lang Track App";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = ProtoRelease;
+		};
+		93C555086BDCE0138CB7D3D5 /* ProtoRelease */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = ProtoRelease;
+		};
+		C092315F2250B2571364E966 /* ProtoRelease */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 94DCEC5C895F6C0CD332B531 /* Pods-Kirokun-KirokunUITests.protorelease.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				INFOPLIST_FILE = LangTrackAppUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
+				KIROKUN_API_BASE_URL = "https://proto.kirokun.alchembright.com/api/";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = se.lu.humlab.LangTrackAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Kirokun;
+			};
+			name = ProtoRelease;
+		};
 		F156589523E2DD7600EC2796 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1063,6 +1339,7 @@
 				INFOPLIST_FILE = LangTrackApp/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
+				KIROKUN_API_BASE_URL = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1097,6 +1374,7 @@
 				INFOPLIST_FILE = LangTrackApp/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
+				KIROKUN_API_BASE_URL = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1123,9 +1401,10 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = LangTrackAppTests/Info.plist;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				INFOPLIST_FILE = LangTrackAppTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
+				KIROKUN_API_BASE_URL = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1146,9 +1425,10 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = LangTrackAppTests/Info.plist;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				INFOPLIST_FILE = LangTrackAppTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
+				KIROKUN_API_BASE_URL = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1168,9 +1448,10 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = LangTrackAppUITests/Info.plist;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				INFOPLIST_FILE = LangTrackAppUITests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
+				KIROKUN_API_BASE_URL = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1190,9 +1471,10 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = LangTrackAppUITests/Info.plist;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				INFOPLIST_FILE = LangTrackAppUITests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
+				KIROKUN_API_BASE_URL = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1206,6 +1488,30 @@
 			};
 			name = Release;
 		};
+		F90DABA73F73D8C8738C3BD3 /* ProtoDebug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 23717050A65A493A1C2F74EE /* Pods-KirokunTests.protodebug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				INFOPLIST_FILE = LangTrackAppTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
+				KIROKUN_API_BASE_URL = "https://proto.kirokun.alchembright.com/api/";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = se.lu.humlab.LangTrackAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Lang Track App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Lang Track App";
+			};
+			name = ProtoDebug;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1214,6 +1520,8 @@
 			buildConfigurations = (
 				F156589523E2DD7600EC2796 /* Debug */,
 				F156589623E2DD7600EC2796 /* Release */,
+				7575B293A211DA5274C9915C /* ProtoDebug */,
+				93C555086BDCE0138CB7D3D5 /* ProtoRelease */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1223,6 +1531,8 @@
 			buildConfigurations = (
 				F156589823E2DD7600EC2796 /* Debug */,
 				F156589923E2DD7600EC2796 /* Release */,
+				24367771AB0EC967885ABF4B /* ProtoDebug */,
+				8492B88838F3CF1949B5D3E4 /* ProtoRelease */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1232,6 +1542,8 @@
 			buildConfigurations = (
 				F156589B23E2DD7600EC2796 /* Debug */,
 				F156589C23E2DD7600EC2796 /* Release */,
+				F90DABA73F73D8C8738C3BD3 /* ProtoDebug */,
+				6704A873A0B19871992047BD /* ProtoRelease */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1241,6 +1553,8 @@
 			buildConfigurations = (
 				F156589E23E2DD7600EC2796 /* Debug */,
 				F156589F23E2DD7600EC2796 /* Release */,
+				0995EAFF3B42E1D834C6E593 /* ProtoDebug */,
+				C092315F2250B2571364E966 /* ProtoRelease */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
