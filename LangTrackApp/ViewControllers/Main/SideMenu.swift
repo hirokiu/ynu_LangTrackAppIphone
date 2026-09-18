@@ -40,11 +40,23 @@ class SideMenu: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let project = KirokunProject.selector(title: NSLocalizedString("project_switch", comment: ""))
+        project.translatesAutoresizingMaskIntoConstraints = false
+        menuBackground.addSubview(project)
+        NSLayoutConstraint.activate([
+            project.topAnchor.constraint(equalTo: aboutButton.bottomAnchor, constant: 16),
+            project.leadingAnchor.constraint(equalTo: menuBackground.leadingAnchor, constant: 15),
+            project.trailingAnchor.constraint(equalTo: menuBackground.trailingAnchor, constant: -15),
+            project.heightAnchor.constraint(greaterThanOrEqualToConstant: 44)
+        ])
+        view.tintColor = KirokunTheme.action
+        menuBackground.subviews.compactMap { $0 as? UILabel }.forEach { $0.textColor = KirokunTheme.action }
+        [instructionsButton, aboutButton, contactButton, logOutButton].forEach { $0?.setTitleColor(KirokunTheme.action, for: .normal) }
         testViewDivider.layer.cornerRadius = 1
 
         menuBackground.layer.cornerRadius = 12
         menuBackground.layer.borderWidth = 2
-        menuBackground.layer.borderColor = UIColor(named: "lta_blue")?.cgColor
+        menuBackground.layer.borderColor = KirokunTheme.brand.cgColor
         
         let version = UIApplication.appVersion
         if version != nil{

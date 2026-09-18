@@ -25,6 +25,22 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        view.tintColor = KirokunTheme.action
+        let project = KirokunProject.selector()
+        project.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(project)
+        // Insert the project selector before credentials while retaining the original form.
+        for constraint in view.constraints where constraint.firstItem as? UIView === userNameTextField && constraint.firstAttribute == .top {
+            constraint.isActive = false
+        }
+        NSLayoutConstraint.activate([
+            project.topAnchor.constraint(equalTo: subTitleLabel.bottomAnchor, constant: 16),
+            project.leadingAnchor.constraint(equalTo: userNameTextField.leadingAnchor),
+            project.trailingAnchor.constraint(equalTo: userNameTextField.trailingAnchor),
+            project.heightAnchor.constraint(greaterThanOrEqualToConstant: 44),
+            userNameTextField.topAnchor.constraint(equalTo: project.bottomAnchor, constant: 16)
+        ])
+        logInButton.configuration = KirokunTheme.primaryButton(title: logInButton.currentTitle ?? "")
         helpButton.layer.cornerRadius = 18
         helpButton.layer.borderColor = UIColor.init(named: "lta_blue")?.cgColor
         helpButton.layer.borderWidth = 0.5

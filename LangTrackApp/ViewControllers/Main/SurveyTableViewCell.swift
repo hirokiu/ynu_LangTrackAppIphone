@@ -30,6 +30,7 @@ class SurveyTableViewCell: UITableViewCell {
     func setSurveyInfo(assignment: Assignment)  {
         answeredIndicator.layer.cornerRadius = 5
         surveyTitle.text = assignment.survey.title
+        surveyTitle.textColor = KirokunTheme.action
         //dateLabel.text = DateParser.getLocalTime(date: DateParser.getDate(dateString: assignment.published)!)
         dateLabel.text = DateParser.displayString(for: DateParser.getDate(dateString: assignment.published)!)
         if assignment.dataset == nil{

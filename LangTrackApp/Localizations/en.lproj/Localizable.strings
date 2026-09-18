@@ -111,3 +111,10 @@ Copyright © 2020 Stephan Björck. All rights reserved.
 "dev_saved" = "Your answers have been saved";
 "dev_save_failed" = "Could not confirm that answers were saved";
 "dev_answers_retained" = "Your input is still on this screen. Check your connection and try again.";
+
+"project_connected_format" = "Connected to: %@";
+"project_selection_format" = "Project: %@";
+"project_available" = "Available projects";
+"project_switch" = "Switch project";
+"answer_rate" = "Response rate";
+"menu" = "Menu";

@@ -85,7 +85,7 @@
 		F1F77723245B691200B93D8D /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F77722245B691200B93D8D /* AboutViewController.swift */; };
 		F1F7D1DC246FEE57003D881B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F1F7D1DE246FEE57003D881B /* Localizable.strings */; };
 		F1F7D1E1246FEEDC003D881B /* TranslatedStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F7D1E0246FEEDC003D881B /* TranslatedStrings.swift */; };
-		FA74DF1000512BDC77247F6D /* DevSurveyListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7131C4B656699393503FBBFB /* DevSurveyListViewController.swift */; };
+		FA74DF1000512BDC77247F6D /* KirokunTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7131C4B656699393503FBBFB /* KirokunTheme.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,7 +114,7 @@
 		5187634D5603CB87955B3369 /* Pods-Kirokun.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kirokun.debug.xcconfig"; path = "Target Support Files/Pods-Kirokun/Pods-Kirokun.debug.xcconfig"; sourceTree = "<group>"; };
 		57608BCD0647F61496C0177D /* Pods-Kirokun-KirokunUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kirokun-KirokunUITests.debug.xcconfig"; path = "Target Support Files/Pods-Kirokun-KirokunUITests/Pods-Kirokun-KirokunUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		67893367C32DFBB921A5B40B /* Pods-Kirokun-KirokunUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kirokun-KirokunUITests.release.xcconfig"; path = "Target Support Files/Pods-Kirokun-KirokunUITests/Pods-Kirokun-KirokunUITests.release.xcconfig"; sourceTree = "<group>"; };
-		7131C4B656699393503FBBFB /* DevSurveyListViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DevSurveyListViewController.swift; path = LangTrackApp/DevSurveyListViewController.swift; sourceTree = "<group>"; };
+		7131C4B656699393503FBBFB /* KirokunTheme.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KirokunTheme.swift; path = LangTrackApp/KirokunTheme.swift; sourceTree = "<group>"; };
 		7C3888C627E3BE7E46B21A45 /* Pods-Kirokun-KirokunUITests.protodebug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kirokun-KirokunUITests.protodebug.xcconfig"; path = "Target Support Files/Pods-Kirokun-KirokunUITests/Pods-Kirokun-KirokunUITests.protodebug.xcconfig"; sourceTree = "<group>"; };
 		924A9A402C9563E100867462 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
 		924A9A412C9563E100867462 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
@@ -373,7 +373,7 @@
 				C748AA31549D222278D046F0 /* Pods */,
 				5F44E29F24431FC8BA32DE87 /* Frameworks */,
 				E673C16112CC1B73CA5E4F98 /* DevLoginViewController.swift */,
-				7131C4B656699393503FBBFB /* DevSurveyListViewController.swift */,
+				7131C4B656699393503FBBFB /* KirokunTheme.swift */,
 			);
 			sourceTree = "<group>";
 		};
@@ -892,7 +892,7 @@
 				F11499FF2416384700DC988A /* CellTimerListener.swift in Sources */,
 				F13C4B1023E968F80028F912 /* User.swift in Sources */,
 				692F31DDE03DFA0372FF10CF /* DevLoginViewController.swift in Sources */,
-				FA74DF1000512BDC77247F6D /* DevSurveyListViewController.swift in Sources */,
+				FA74DF1000512BDC77247F6D /* KirokunTheme.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

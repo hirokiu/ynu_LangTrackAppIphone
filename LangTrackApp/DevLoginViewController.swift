@@ -42,12 +42,20 @@ class DevLoginViewController: UIViewController {
         signOutButton.addTarget(self, action: #selector(signOut), for: .touchUpInside)
         retryButton.setTitle(text("dev_retry_connection"), for: .normal)
         retryButton.addTarget(self, action: #selector(checkConnection), for: .touchUpInside)
-        let stack = UIStackView(arrangedSubviews: [title, status, signInButton, surveysButton, retryButton, signOutButton, spinner])
+        let stack = UIStackView(arrangedSubviews: [title, KirokunProject.selector(), status, signInButton, surveysButton, retryButton, signOutButton, spinner])
         stack.axis = .vertical; stack.spacing = 24; stack.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(stack)
         NSLayoutConstraint.activate([stack.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 24), stack.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -24), stack.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 48)])
         render(busy: false)
         if Auth.auth().currentUser != nil { checkConnection() }
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if Auth.auth().currentUser == nil {
+            surveysButton.isHidden = true
+            status.text = text("dev_login_intro")
+        }
+        render(busy: false)
     }
     private func render(busy: Bool) {
         signInButton.isEnabled = !busy
@@ -85,7 +93,11 @@ class DevLoginViewController: UIViewController {
         render(busy: false)
     }
     @objc private func openSurveys() {
-        navigationController?.pushViewController(DevSurveyListViewController(), animated: true)
+        guard presentedViewController == nil else { return }
+        let home = UIStoryboard(name: "Main", bundle: .main).instantiateViewController(withIdentifier: "main")
+        home.modalPresentationStyle = .fullScreen
+        home.overrideUserInterfaceStyle = .light
+        present(home, animated: true)
     }
     @objc private func signOut() {
         surveysButton.isHidden = true
@@ -125,6 +137,7 @@ class DevLoginViewController: UIViewController {
                         SurveyRepository.userId = userId
                         SurveyRepository.idToken = token
                         self.surveysButton.isHidden = false
+                        self.openSurveys()
                     }
                     self.status.text = self.text(key); self.render(busy: false)
                 }

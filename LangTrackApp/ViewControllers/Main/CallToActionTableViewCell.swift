@@ -22,6 +22,8 @@ class CallToActionTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         callToActionBackgroundView.layer.cornerRadius = 15
+        callToActionBackgroundView.backgroundColor = KirokunTheme.brand
+        callToActionLabel.textColor = .black
         //update label every minute
         Timer.scheduledTimer(timeInterval: 60.0, target: self, selector: #selector(updateCounter), userInfo: nil, repeats: true)
     }

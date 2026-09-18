@@ -78,6 +78,18 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        view.tintColor = KirokunTheme.action
+        // Keep the original title/icon/header/table layout; reuse its subtitle for the project.
+        let titleLabels = titleView.subviews.compactMap { $0 as? UILabel }
+        titleLabels.min(by: { $0.font.pointSize < $1.font.pointSize })?.text = KirokunProject.connectionTitle
+        titleLabels.forEach { $0.textColor = KirokunTheme.action }
+        var menuStyle = UIButton.Configuration.plain()
+        if #available(iOS 26.0, *), !UIAccessibility.isReduceTransparencyEnabled { menuStyle = .glass() }
+        menuStyle.image = UIImage(systemName: "line.3.horizontal")
+        menuStyle.baseForegroundColor = KirokunTheme.action
+        menuStyle.contentInsets = .zero
+        menuButton.configuration = menuStyle
+        menuButton.accessibilityLabel = NSLocalizedString("menu", comment: "")
         //to update list everytime app enters foreground
         NotificationCenter.default.addObserver(self, selector: #selector(willEnterForeground),
                                                name: UIApplication.willEnterForegroundNotification,
@@ -110,7 +122,7 @@ class MainViewController: UIViewController {
             setIdTokenListener()
         }
         //headerView.layer.cornerRadius = 10
-        headerView.backgroundColor = UIColor.init(named: "lta_gold")?.withAlphaComponent(0.2) ?? UIColor.white
+        headerView.backgroundColor = KirokunTheme.brand.withAlphaComponent(0.08)
         let headerGesture = UITapGestureRecognizer(target: self, action: #selector(self.clickOnHeader))
         headerView.addGestureRecognizer(headerGesture)
         
@@ -141,8 +153,13 @@ class MainViewController: UIViewController {
     
     
     override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         if Auth.auth().currentUser == nil {
+            #if KIROKUN_DEV
+            dismiss(animated: true)
+            #else
             performSegue(withIdentifier: "login", sender: nil)
+            #endif
         }else{
             if self.idTokenChangeListener == nil{
                 setIdTokenListener()
@@ -156,6 +173,7 @@ class MainViewController: UIViewController {
     
     deinit {
       NotificationCenter.default.removeObserver(self)
+      if let listener = idTokenChangeListener { Auth.auth().removeIDTokenDidChangeListener(listener) }
     }
     
     @IBAction func handlePan(_ gesture: UIPanGestureRecognizer) {
@@ -273,9 +291,13 @@ class MainViewController: UIViewController {
     }
     
     func fetchAssignmentsAndSetUserName(){
+        #if KIROKUN_DEV
+        let username: String? = SurveyRepository.userId // Resolved by /api/me, never from the Google email.
+        #else
         var username = Auth.auth().currentUser?.email
-        username!.until("@")
+        username?.until("@")
         SurveyRepository.userId = username ?? ""
+        #endif
         sideMenu?.setTestView(userName: username ?? "")
         SurveyRepository.theUser = User(userName: username ?? "noName", mail: Auth.auth().currentUser?.email ?? "noMail")
         updateAssignments()
@@ -382,6 +404,10 @@ class MainViewController: UIViewController {
         }
         
         
+        colors = [KirokunTheme.brand, UIColor.systemGray5]
+        chartView.isAccessibilityElement = true
+        chartView.accessibilityLabel = NSLocalizedString("answer_rate", comment: "")
+        chartView.accessibilityValue = "\(percentRounded)%"
         setChart(answered: Double(numberOfAnswered), unanswered: Double(totalNumberOfSurveys - numberOfAnswered), total: totalNumberOfSurveys, colors: colors)
         
         chartView.drawHoleEnabled = true
@@ -401,7 +427,7 @@ class MainViewController: UIViewController {
         dataEntries.append(dataEntry1)
         dataEntries.append(dataEntry2)
         
-        let pieChartDataSet = PieChartDataSet(entries: dataEntries, label: "\(Int(answered)) av \(total) besvarade")
+        let pieChartDataSet = PieChartDataSet(entries: dataEntries, label: headerViewLabel.text ?? NSLocalizedString("answer_rate", comment: ""))
         pieChartDataSet.drawValuesEnabled = false
         pieChartDataSet.valueTextColor = UIColor.init(named: "lta_lightGrey") ?? UIColor.lightGray
         let pieChartData = PieChartData(dataSet: pieChartDataSet)
@@ -413,41 +439,11 @@ class MainViewController: UIViewController {
         
     }
     func animateHeaderView(){
-        if activeSurveyExists || SurveyRepository.assignmentList.isEmpty{
-            if headerViewHeightConstraint.constant > 0{
-                //close topView
-                UIView.animate(withDuration: 0.2, animations: {
-                    self.headerViewHeightConstraint.constant = self.headerViewMinHeight
-                    self.view.layoutIfNeeded()
-                }){ _ in
-                    self.setHeaderShadow()
-                }
-            }
-        }else{
-            if headerViewHeightConstraint.constant < headerViewMaxHeight &&
-                headerViewHeightConstraint.constant > headerViewMinHeight{
-                
-                if headerViewHeightConstraint.constant < (headerViewMinHeight + (headerViewMaxHeight - headerViewMinHeight)) / 2{
-                    //close topView
-                    UIView.animate(withDuration: 0.2, animations: {
-                        self.headerViewHeightConstraint.constant = self.headerViewMinHeight
-                        self.view.layoutIfNeeded()
-                    }){ _ in
-                    self.setHeaderShadow()
-                    }
-                }else{
-                    //expand topView
-                    UIView.animate(withDuration: 0.2, animations: {
-                        self.headerViewHeightConstraint.constant = self.headerViewMaxHeight
-                        self.view.layoutIfNeeded()
-                    }){ _ in
-                        self.setHeaderShadow()
-                    }
-                }
-            }
-        }
+        // Achievement remains visible, including while unanswered surveys are available.
+        headerViewHeightConstraint.constant = headerViewMaxHeight
+        setHeaderShadow()
     }
-    
+
     func showHeaderView(){
         UIView.animate(withDuration: 0.2, animations: {
             self.headerViewHeightConstraint.constant = self.headerViewMaxHeight
@@ -458,14 +454,9 @@ class MainViewController: UIViewController {
     }
     
     @objc func clickOnHeader(){
-        UIView.animate(withDuration: 0.3, animations: {
-            self.headerViewHeightConstraint.constant = self.headerViewMinHeight
-            self.view.layoutIfNeeded()
-        }){ _ in
-            self.setHeaderShadow()
-        }
+        showHeaderView()
     }
-    
+
     //MARK: Menu
     
     @objc func clickOnBackground(sender : UITapGestureRecognizer) {
@@ -505,6 +496,10 @@ class MainViewController: UIViewController {
             dest.theAssignment = SurveyRepository.selectedAssignment
             dest.theUser = SurveyRepository.theUser
             dest.inTestMode = self.inTestMode
+            #if KIROKUN_DEV
+            dest.overrideUserInterfaceStyle = .light
+            dest.onSaved = { [weak self] in self?.updateAssignments() }
+            #endif
             SurveyRepository.surveyOpened()
         }else if segue.identifier == "login"{
             let dest = segue.destination as! LoginViewController
@@ -693,21 +688,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource{
     // MARK: - Scroll View
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        if !activeSurveyExists{
-            let y: CGFloat = scrollView.contentOffset.y
-            let newHeaderViewHeight: CGFloat = headerViewHeightConstraint.constant - y
-            setHeaderShadow()
-            
-            if newHeaderViewHeight > headerViewMaxHeight {
-                //
-                headerViewHeightConstraint.constant = headerViewMaxHeight
-            } else if newHeaderViewHeight < headerViewMinHeight {
-                headerViewHeightConstraint.constant = headerViewMinHeight
-            } else {
-                headerViewHeightConstraint.constant = newHeaderViewHeight
-                scrollView.contentOffset.y = 0 // block scroll view
-            }
-        }
+        // Keep the achievement chart visible instead of collapsing it on scroll.
     }
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         // stopped scrolling
@@ -764,6 +745,21 @@ extension MainViewController: MenuListener{
     }
     
     func logOutSelected() {
+        #if KIROKUN_DEV
+        let popup = UIAlertController(title: translatedLogOut, message: translatedDoYouWantToLogOut, preferredStyle: .alert)
+        popup.addAction(UIAlertAction(title: translatedCancel, style: .cancel))
+        popup.addAction(UIAlertAction(title: translatedLogOut, style: .destructive) { [weak self] _ in
+            do {
+                try Auth.auth().signOut()
+                SurveyRepository.userId = ""; SurveyRepository.idToken = ""
+                SurveyRepository.assignmentList = []; SurveyRepository.selectedAssignment = nil
+                SurveyRepository.theUser = nil
+                self?.dismiss(animated: true)
+            } catch { self?.showServerErrorMessage() }
+        })
+        present(popup, animated: true)
+        return
+        #else
         let firebaseAuth = Auth.auth()
         if firebaseAuth.currentUser != nil{
             var username = firebaseAuth.currentUser?.email
@@ -804,5 +800,6 @@ extension MainViewController: MenuListener{
                 self.present(popup, animated: true, completion: nil)
             }
         }
+        #endif
     }
 }

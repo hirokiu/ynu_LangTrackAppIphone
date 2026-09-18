@@ -220,6 +220,9 @@ struct SurveyRepository {
     }
     
     static func postDeviceToken(){
+        #if KIROKUN_DEV
+        return // Dev has no push registration and must not upsert production-style users.
+        #else
         print("do postDeviceToken to upsert user")
         if userId != "" && deviceToken != ""{
             let vNumber = UIDevice.current.systemVersion
@@ -268,64 +271,52 @@ struct SurveyRepository {
                 
             }
         }
+        #endif
     }
     
-    static func getSurveys( completionhandler: @escaping (_ result: [Assignment]?) -> Void){
-        getUrl { (theUrl) in
-            if let theUrl = theUrl{
-                if theUrl != ""{
-                    print("getSurveys, userId: \(userId)")
-                    if userId != ""{
-                        let assignmentsTokenUrl = "\(theUrl)users/\(userId)/assignments"
-                        let request = NSMutableURLRequest(url: URL(string: assignmentsTokenUrl)!)
-                        
-                        // Set HTTP Request Header
-                        request.setValue("application/json", forHTTPHeaderField: "Accept")
-                        request.setValue(idToken, forHTTPHeaderField: "token")
-                        
-                        let session = URLSession.shared
-                        request.httpMethod = "GET"
-                        request.cachePolicy = .reloadIgnoringLocalAndRemoteCacheData//to refresh...
-                        
-                        let task = session.dataTask(with: request as URLRequest, completionHandler: {data, response, error -> Void in
-                            if(error != nil){
-                                print("ERROR, task = session.dataTask: \(error!.localizedDescription)")
-                                completionhandler(nil)
-                                return
-                            }
-                            if data != nil{
-                                let listWithAssignments = createAssignmentsFromData(data: data!)
-                                if listWithAssignments != nil{
-                                    for assignment in listWithAssignments!{
-                                        for question in assignment.survey.questions{
-                                            if question.index == 0{
-                                                question.previous = 0
-                                                question.next = question.index + 1
-                                            }else if question.index < assignment.survey.questions.count - 1{
-                                                question.next = question.index + 1
-                                                question.previous = question.index - 1
-                                            }else{
-                                                question.next = 0
-                                                question.previous = question.index - 1
-                                            }
-                                        }
-                                    }
-                                }
-                                if listWithAssignments != nil{
-                                    assignmentList = listWithAssignments!
-                                }
-                            }
-                            
-                            completionhandler(assignmentList)
-                        })
-                        task.resume()
+    static func getSurveys(completionhandler: @escaping (_ result: [Assignment]?) -> Void) {
+        guard let user = Auth.auth().currentUser, !userId.isEmpty else { completionhandler(nil); return }
+        let requestedId = userId
+        user.getIDToken { token, error in
+            guard error == nil, let token = token, requestedId == userId,
+                  Auth.auth().currentUser?.uid == user.uid else { completionhandler(nil); return }
+            idToken = token
+            fetchSurveys(completionhandler: completionhandler)
+        }
+    }
+
+    private static func fetchSurveys(completionhandler: @escaping (_ result: [Assignment]?) -> Void) {
+        let requestedId = userId
+        let requestedUID = Auth.auth().currentUser?.uid
+        getUrl { base in
+            guard let base = base, !requestedId.isEmpty,
+                  let escapedId = requestedId.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed),
+                  let url = URL(string: base + "users/" + escapedId + "/assignments") else { completionhandler(nil); return }
+            var request = URLRequest(url: url)
+            request.timeoutInterval = 20
+            request.cachePolicy = .reloadIgnoringLocalAndRemoteCacheData
+            request.setValue(idToken, forHTTPHeaderField: "token")
+            URLSession.shared.dataTask(with: request) { data, response, error in
+                guard error == nil, (response as? HTTPURLResponse)?.statusCode == 200,
+                      let data = data, (try? JSONSerialization.jsonObject(with: data)) is [Any],
+                      let items = createAssignmentsFromData(data: data) else { completionhandler(nil); return }
+                for assignment in items {
+                    let questions = assignment.survey.questions.sorted { $0.index < $1.index }
+                    for (i, question) in questions.enumerated() {
+                        question.previous = i == 0 ? 0 : questions[i - 1].index
+                        question.next = i + 1 < questions.count ? questions[i + 1].index : 0
                     }
                 }
-            }
+                DispatchQueue.main.async {
+                    guard requestedId == userId, let uid = requestedUID,
+                          Auth.auth().currentUser?.uid == uid else { completionhandler(nil); return }
+                    assignmentList = items
+                    completionhandler(items)
+                }
+            }.resume()
         }
-        
     }
-    
+
     static func sortAssignmentList(theList : [Assignment]) -> [Assignment]{
         let now = Date()
         //if the assignment is active and the dataset is empty

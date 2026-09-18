@@ -108,3 +108,10 @@ Copyright © 2020 Stephan Björck. All rights reserved.
 "dev_saved" = "回答を保存しました";
 "dev_save_failed" = "回答の保存を確認できませんでした";
 "dev_answers_retained" = "入力内容はこの画面に残っています。接続を確認し、もう一度送信してください。";
+
+"project_connected_format" = "接続中：%@";
+"project_selection_format" = "プロジェクト：%@";
+"project_available" = "接続できるプロジェクト";
+"project_switch" = "プロジェクトの切り替え";
+"answer_rate" = "回答率";
+"menu" = "メニュー";
