@@ -26,7 +26,19 @@ class UnansweredPopupViewController: UIViewController {
 
         let backgroundClickRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.backgroundClicked))
         backgroundView.addGestureRecognizer(backgroundClickRecognizer)
-        popupContainer.layer.cornerRadius = 8
+        KirokunTheme.styleModalHeader(popupContainer)
+        KirokunTheme.alignMetadataValues([numberQuestionsLabel, publishedLabel, expiredLabel], in: popupContainer)
+        popupContainer.layer.cornerRadius = 24
+        popupContainer.clipsToBounds = true
+        if #available(iOS 26.0, *), !UIAccessibility.isReduceTransparencyEnabled {
+            let glass = UIGlassEffect(style: .regular)
+            glass.tintColor = KirokunTheme.brand
+            let effect = UIVisualEffectView(effect: glass)
+            effect.frame = popupContainer.bounds
+            effect.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+            effect.isUserInteractionEnabled = false
+            popupContainer.insertSubview(effect, at: 0)
+        }
         popupContainer.layer.borderWidth = 2
         popupContainer.layer.borderColor = UIColor.white.cgColor
         
@@ -34,7 +46,7 @@ class UnansweredPopupViewController: UIViewController {
             popupTitle.text = current.survey.title
             publishedLabel.text = DateParser.displayString(for: DateParser.getDate(dateString: current.published)!)
             expiredLabel.text = DateParser.displayString(for: DateParser.getDate(dateString: current.expiry)!)
-            numberQuestionsLabel.text = "\(current.survey.questions.count) \(translatedNumberEnding)"
+            numberQuestionsLabel.text = "\(current.survey.questions.filter { $0.type != "header" && $0.type != "footer" }.count) \(translatedNumberEnding)"
         }
     }
     

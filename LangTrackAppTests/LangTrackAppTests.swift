@@ -34,4 +34,62 @@ final class LangTrackAppTests: XCTestCase {
             XCTAssertLessThanOrEqual(rect.maxY, controller.nextButton.frame.minY)
         }
     }
+    #if KIROKUN_DEV && DEBUG && targetEnvironment(simulator)
+    @MainActor
+    func testAllQuestionFormsOnCurrentDevice() {
+        let controller = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "surveyContainer") as! SurveyViewController
+        controller.theAssignment = DevSceneDelegate.layoutFixture()
+        let window = UIWindow(frame: UIScreen.main.bounds)
+        window.rootViewController = controller
+        window.makeKeyAndVisible()
+        controller.loadViewIfNeeded()
+        controller.view.layoutIfNeeded()
+        for question in controller.theAssignment!.survey.questions {
+            controller.showPage(newPage: question)
+            controller.view.layoutIfNeeded()
+            guard let child = controller.children.first else { XCTFail("Missing page"); continue }
+            child.view.layoutIfNeeded()
+            var buttons: [UIButton] = []
+            if let c = child as? HeaderViewController { buttons = [c.nextButton, c.closeButton] }
+            if let c = child as? OpenEndedTextResponsesViewController { buttons = [c.nextButton, c.previousButton] }
+            if let c = child as? LikertScaleViewController { buttons = [c.nextButton, c.previousButton, c.radioButton1, c.radioButton2, c.radioButton3, c.radioButton4, c.radioButton5] }
+            if let c = child as? SingleMultipleAnswersViewController { buttons = [c.nextButton, c.previousButton] }
+            if let c = child as? MultipleChoiceViewController { buttons = [c.nextButton, c.previousButton] }
+            if let c = child as? FillInTheBlankViewController { buttons = [c.nextButton, c.previousButton] }
+            if let c = child as? SliderScaleViewController { buttons = [c.nextButton, c.previousButton] }
+            if let c = child as? TimeDurationViewController { buttons = [c.nextButton, c.previousButton] }
+            if let c = child as? FooterViewController { buttons = [c.sendInButton, c.previousButton] }
+            for button in buttons {
+                let rect = button.convert(button.bounds, to: controller.view)
+                XCTAssertGreaterThanOrEqual(rect.minX, -1, question.type)
+                XCTAssertLessThanOrEqual(rect.maxX, controller.view.bounds.width + 1, question.type)
+                XCTAssertGreaterThanOrEqual(rect.minY, controller.surveyContainer.frame.minY - 1, question.type)
+                XCTAssertLessThanOrEqual(rect.maxY, controller.view.bounds.height + 1, question.type)
+            }
+        }
+        window.isHidden = true
+    }
+    @MainActor
+    func testModalMetadataAlignmentAndTheme() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let oldSelection = SurveyRepository.selectedAssignment
+        defer { SurveyRepository.selectedAssignment = oldSelection }
+        SurveyRepository.selectedAssignment = DevSceneDelegate.layoutFixture()
+        let popup = storyboard.instantiateViewController(withIdentifier: "unansweredPopup") as! UnansweredPopupViewController
+        let overview = storyboard.instantiateViewController(withIdentifier: "answeredPreview") as! OverviewViewController
+        overview.theAssignment = DevSceneDelegate.layoutFixture()
+        for controller in [popup as UIViewController, overview as UIViewController] {
+            controller.loadViewIfNeeded()
+            controller.view.frame = UIScreen.main.bounds
+            controller.view.layoutIfNeeded()
+            let values: [UILabel] = controller === popup ? [popup.numberQuestionsLabel, popup.publishedLabel, popup.expiredLabel] : [overview.topViewNumberOfQuestionsLabel, overview.topViewPublishedLabel, overview.topViewAnsweredLabel]
+            let origin = values[0].convert(values[0].bounds, to: controller.view).minX
+            for value in values {
+                XCTAssertEqual(value.convert(value.bounds, to: controller.view).minX, origin, accuracy: 0.5)
+                XCTAssertEqual(value.textColor, UIColor.white)
+            }
+            XCTAssertEqual((controller === popup ? popup.popupContainer : overview.topViewContainer)?.backgroundColor, KirokunTheme.brand)
+        }
+    }
+    #endif
 }

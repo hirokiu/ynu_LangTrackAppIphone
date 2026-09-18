@@ -10,14 +10,65 @@ class DevSceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let scene = scene as? UIWindowScene else { return }
         window = UIWindow(windowScene: scene)
         window?.rootViewController = UINavigationController(rootViewController: DevLoginViewController())
+        #if DEBUG && targetEnvironment(simulator)
+        if ProcessInfo.processInfo.arguments.contains("--layout-preview") {
+            let survey = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "surveyContainer") as! SurveyViewController
+            survey.theAssignment = Self.layoutFixture()
+            window?.rootViewController = survey
+            if ProcessInfo.processInfo.arguments.contains("--preview-unanswered") {
+                SurveyRepository.selectedAssignment = Self.layoutFixture()
+                window?.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "unansweredPopup")
+            } else if ProcessInfo.processInfo.arguments.contains("--preview-answered") {
+                let overview = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "answeredPreview") as! OverviewViewController
+                var fixture = Self.layoutFixture()
+                let dataset = Dataset(); dataset.createdAt = fixture.published
+                dataset.answers = [Answer(type: "open", index: 1, openEndedAnswer: "確認用の回答です。"), Answer(type: "likert", index: 2, likertAnswer: 2)]
+                fixture.dataset = dataset; overview.theAssignment = fixture
+                window?.rootViewController = overview
+            }
+        }
+        #endif
         window?.tintColor = KirokunTheme.action
         window?.makeKeyAndVisible()
+        #if DEBUG && targetEnvironment(simulator)
+        if let survey = window?.rootViewController as? SurveyViewController,
+           let argument = ProcessInfo.processInfo.arguments.first(where: { $0.hasPrefix("--preview-page=") }),
+           let index = Int(argument.replacingOccurrences(of: "--preview-page=", with: "")),
+           let question = survey.theAssignment?.survey.questions.first(where: { $0.index == index }) {
+            survey.view.layoutIfNeeded()
+            survey.showPage(newPage: question)
+        }
+        #endif
         for context in options.urlContexts { GIDSignIn.sharedInstance.handle(context.url) }
     }
     func scene(_ scene: UIScene, openURLContexts contexts: Set<UIOpenURLContext>) {
         for context in contexts { GIDSignIn.sharedInstance.handle(context.url) }
     }
 }
+
+#if DEBUG && targetEnvironment(simulator)
+extension DevSceneDelegate {
+    static func layoutFixture() -> Assignment {
+        var assignment = Assignment()
+        assignment.id = "local-layout-preview"
+        assignment.published = "2026-09-18T00:00:00.000Z"
+        assignment.expiry = "2099-10-02T00:00:00.000Z"
+        assignment.survey.title = "画面サイズ確認用アンケート（端末内のみ）"
+        let types = ["header", "open", "likert", "single", "multi", "blanks", "slider", "duration", "footer"]
+        let texts = ["7種類の入力形式を確認します。回答はサーバーへ送信されません。", "今日の学習で気づいたことや、難しかったことを自由に入力してください。", "今日の学習に満足していますか？", "今日もっとも使った言語を選んでください。", "今日行った活動をすべて選んでください。", "今日は _____ を学びました。", "今日の学習の集中度を教えてください。", "今日の学習時間を入力してください。", "回答内容の確認"]
+        assignment.survey.questions = types.enumerated().map { index, type in
+            let q = Question(); q.type = type; q.index = index; q.previous = max(0, index - 1); q.next = min(8, index + 1)
+            q.text = texts[index]; q.title = "端末内の表示テスト"
+            q.likertMin = "まったく満足していない"; q.likertMax = "とても満足している"
+            q.singleMultipleAnswers = ["日本語", "英語", "その他の言語（複数の言語を組み合わせた場合を含みます）"]
+            q.multipleChoisesAnswers = ["読む", "聞く", "話す", "書く"]
+            q.fillBlanksChoises = ["単語", "文法", "発音"]
+            return q
+        }
+        return assignment
+    }
+}
+#endif
 
 class DevLoginViewController: UIViewController {
     private let status = UILabel()

@@ -145,3 +145,5 @@ Copyright © 2020 Stephan Björck. All rights reserved.
 "review_empty_text" = "未入力（任意）";
 "review_na" = "該当なし";
 "review_duration" = "%d時間%d分";
+
+"survey_published" = "公開日";

@@ -72,6 +72,20 @@ enum KirokunTheme {
             setLabelColor(in: child, color: color)
         }
     }
+    static func alignMetadataValues(_ values: [UILabel], in container: UIView) {
+        let links = container.constraints.filter { constraint in
+            constraint.firstAttribute == .leading && values.contains { constraint.firstItem as? UILabel === $0 } && constraint.secondItem is UILabel
+        }
+        let keys = links.compactMap { $0.secondItem as? UILabel }
+        guard let first = values.first, let widest = keys.max(by: { $0.intrinsicContentSize.width < $1.intrinsicContentSize.width }) else { return }
+        NSLayoutConstraint.deactivate(links)
+        first.leadingAnchor.constraint(equalTo: widest.trailingAnchor, constant: 15).isActive = true
+        for value in values {
+            value.textAlignment = .left
+            value.numberOfLines = 0
+            if value !== first { value.leadingAnchor.constraint(equalTo: first.leadingAnchor).isActive = true }
+        }
+    }
     static func styleModalHeader(_ header: UIView) {
         header.backgroundColor = filledBackground
         setLabelColor(in: header, color: onFilled)

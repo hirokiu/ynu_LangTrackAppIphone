@@ -28,9 +28,28 @@ class OpenEndedTextResponsesViewController: UIViewController {
         theIcon.setSmallViewShadow()
         openTextView.layer.cornerRadius = 8
         openTextView.layer.borderWidth = 1
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardFrameChanged(_:)), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
         openTextView.addDoneButton(title: "OK", target: self, selector: #selector(tapDone(sender:)))
     }
     
+    deinit { NotificationCenter.default.removeObserver(self) }
+
+    @objc private func keyboardFrameChanged(_ notification: Notification) {
+        guard isViewLoaded, view.window != nil,
+              let frame = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect,
+              let block = openTextView.superview else { return }
+        block.transform = .identity
+        let keyboardTop = view.convert(frame, from: nil).minY
+        let editing = keyboardTop < view.bounds.maxY && openTextView.isFirstResponder
+        theIcon.isHidden = editing
+        nextButton.isHidden = editing; previousButton.isHidden = editing
+        if editing {
+            let rect = block.convert(block.bounds, to: view)
+            let top = max(8, min(rect.minY, keyboardTop - rect.height - 8))
+            block.transform = CGAffineTransform(translationX: 0, y: top - rect.minY)
+        }
+    }
+
     func setInfo(question: Question){
         self.theQuestion = question
         openTextLabel.text = theQuestion.text

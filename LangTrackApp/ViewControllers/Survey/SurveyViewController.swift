@@ -24,6 +24,9 @@ class SurveyViewController: UIViewController {
     private let surveyTitleLabel = UILabel()
     private let surveyProgressLabel = UILabel()
     private let surveyDetailLabel = UILabel()
+    private let datesStack = UIStackView()
+    private let publishedValueLabel = UILabel()
+    private let expiryValueLabel = UILabel()
     
     var header: HeaderViewController?
     var likertScale: LikertScaleViewController?
@@ -82,7 +85,19 @@ class SurveyViewController: UIViewController {
     private func configureSurveyHeaders() {
         let common = KirokunTheme.commonHeader()
         view.addSubview(common)
-        let info = UIStackView(arrangedSubviews: [surveyTitleLabel, surveyProgressLabel, surveyDetailLabel])
+        datesStack.axis = .vertical; datesStack.spacing = 2
+        let dateKeys = [NSLocalizedString("survey_published", comment: ""), NSLocalizedString("dev_deadline", comment: "")].map { text -> UILabel in
+            let label = UILabel(); label.text = text; label.font = .systemFont(ofSize: 13); label.textColor = KirokunTheme.onFilled
+            return label
+        }
+        let keyWidth = dateKeys.map { $0.intrinsicContentSize.width }.max() ?? 70
+        for (key, value) in zip(dateKeys, [publishedValueLabel, expiryValueLabel]) {
+            value.font = .systemFont(ofSize: 13); value.textColor = KirokunTheme.onFilled; value.numberOfLines = 0
+            key.widthAnchor.constraint(equalToConstant: keyWidth).isActive = true
+            let row = UIStackView(arrangedSubviews: [key, value]); row.spacing = 12; row.alignment = .top
+            datesStack.addArrangedSubview(row)
+        }
+        let info = UIStackView(arrangedSubviews: [surveyTitleLabel, surveyProgressLabel, surveyDetailLabel, datesStack])
         info.axis = .vertical; info.spacing = 4
         info.backgroundColor = KirokunTheme.filledBackground
         info.isLayoutMarginsRelativeArrangement = true
@@ -115,13 +130,16 @@ class SurveyViewController: UIViewController {
         // Exclude introductory/completion pages. The denominator is the survey's total
         // question count, even if conditional branching skips some questions.
         let questions = assignment.survey.questions.filter { $0.type != "header" && $0.type != "footer" }.sorted { $0.index < $1.index }
+        datesStack.isHidden = question.type != "header"
+        surveyDetailLabel.isHidden = question.type == "header"
         if question.type == "header" {
             surveyProgressLabel.text = String(format: NSLocalizedString("survey_start_count", comment: ""), questions.count)
             func dateText(_ value: String) -> String {
                 guard let date = DateParser.getDate(dateString: value) else { return NSLocalizedString("date_unspecified", comment: "") }
                 return DateFormatter.localizedString(from: date, dateStyle: .medium, timeStyle: .short)
             }
-            surveyDetailLabel.text = String(format: NSLocalizedString("survey_dates", comment: ""), dateText(assignment.published), dateText(assignment.expiry))
+            publishedValueLabel.text = dateText(assignment.published)
+            expiryValueLabel.text = dateText(assignment.expiry)
         } else if question.type == "footer" {
             surveyProgressLabel.text = NSLocalizedString("survey_review", comment: "")
             surveyDetailLabel.text = String(format: NSLocalizedString("survey_total_count", comment: ""), questions.count)
@@ -549,6 +567,14 @@ extension SurveyViewController: QuestionListener{
     }
 
     func sendInSurvey() {
+        #if KIROKUN_DEV && DEBUG && targetEnvironment(simulator)
+        if ProcessInfo.processInfo.arguments.contains("--layout-preview") {
+            let alert = UIAlertController(title: "表示テスト完了", message: "この回答は端末内の確認用です。サーバーへは送信していません。", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default))
+            present(alert, animated: true)
+            return
+        }
+        #endif
         if !answer.isEmpty{
             
             // check if expired

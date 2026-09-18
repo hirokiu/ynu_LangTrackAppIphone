@@ -148,3 +148,5 @@ Copyright © 2020 Stephan Björck. All rights reserved.
 "review_empty_text" = "Not entered (optional)";
 "review_na" = "Not applicable";
 "review_duration" = "%d hours %d minutes";
+
+"survey_published" = "Published";

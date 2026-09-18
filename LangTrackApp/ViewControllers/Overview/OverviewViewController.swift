@@ -32,8 +32,8 @@ class OverviewViewController: UIViewController {
         super.viewDidLoad()
         view.tintColor = KirokunTheme.action
         KirokunTheme.styleModalHeader(topView)
-        topViewContainer.backgroundColor = KirokunTheme.brand.withAlphaComponent(0.10)
-        KirokunTheme.setLabelColor(in: topViewContainer, color: .label)
+        KirokunTheme.styleModalHeader(topViewContainer)
+        KirokunTheme.alignMetadataValues([topViewNumberOfQuestionsLabel, topViewPublishedLabel, topViewAnsweredLabel], in: topViewContainer)
         overviewTableview.delegate = self
         overviewTableview.rowHeight = UITableView.automaticDimension
         overviewTableview.estimatedRowHeight = 60
