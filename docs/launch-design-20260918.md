@@ -1,13 +1,15 @@
-# 起動画面の更新（2026-09-18）
+# 起動画面：流れるガラス（2026-09-18）
 
-既存のKIROKUNアイコン（キロクン／kirokunの文字を含む）を維持し、その背面に淡いテーマカラーの光、半透明パネル、反射線を配置。新しい文字列・キャッチコピーは追加しない。
+3案の比較画像から、利用者が中央の案「流れるガラス」を選択。全面のコーラルレッド、白いキロクン／kirokunのロゴ、曲線状の透明なガラスと光の反射で構成。新しい文字列は追加しない。
 
-OSのLaunchScreenは静的表示のため、ランタイムのUIGlassEffectや起動待ち時間を追加しない。Liquid Glassと調和する静的な表現で、通常画面へ直接移る。
+## 実装
 
-- LaunchGlass：ライト／ダークのベクターPDF。画面幅の58%、縦横比360:320。
-- 既存アイコン：画面幅の24%、中央配置。元のアセットは編集しない。
-- LaunchBackground：ライト／ダークそれぞれの背景色。
-- ProtoとDevの共通の起動画面。Devの黄色いホーム画面アイコンは維持。
-- 再生成：`swift scripts/design/render-launch.swift LangTrackApp/Assets.xcassets/LaunchGlass.imageset`
+- `LaunchRibbon.imageset/launch-ribbon.png`を画面全体にaspect-fillで表示。
+- ライト／ダークとも赤い背景を維持。Devの黄色いホーム画面アイコンとは独立。
+- 中央のロゴは画像の中央付近に配置し、SEとPro Maxの縦横比差によるクロップでも残る構成。
+- OSのLaunchScreenとして静的表示。アニメーションや人為的な起動待ち時間を加えない。
+- 画像生成ツール（組み込みimage_gen）で、承認された比較画像の中央案から単体画像を生成。
 
-ベクター描画をレンダリングして確認。LaunchScreenの制約は画面幅に比例し、SEの375ポイント幅でも最大機種の幅でも中央に収まる。実機での初回起動表示・OS側キャッシュの更新は別途目視確認が必要。
+## 生成指示
+
+Create the production-ready standalone iPhone splash screen of ONLY THE MIDDLE DESIGN in the reference triptych. Match this approved middle design faithfully: full-bleed KIROKUN coral red #FF5857 backdrop; one flowing curved transparent liquid-glass ribbon sweeping from the upper-left around and behind the central white logo and toward lower-right; delicate luminous rim reflections and soft warm caustics. White Japanese キロクン above lowercase kirokun centered horizontally and vertically, preserve exactly the recognizable lettering from the middle reference. No extra text. Deliver ONE portrait image 1024x2208 (approximately 9:19.5); no white gutters, no other proposals, no frames, no phone bezel. All four edges must remain coral red, keep central logo and main glass turn within central 50% of height and central 75% of width so it survives aspect-fill cropping on iPhone SE as well as Pro Max. Elegant spacious launch screen, not a busy poster. Preserve the reference's soft polished glass appearance and brand saturation. No glass square panels, only the flowing ribbon from the middle proposal.
