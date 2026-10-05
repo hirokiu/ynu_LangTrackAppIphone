@@ -24,3 +24,21 @@
 - DevDebug、ProtoDebugのシミュレーター向けビルド成功。
 - iOS 18.0 / iPhone SE (3rd generation) で`testAuthenticationOptionsFailClosed`成功。options有効・無効・404互換・401/429/503/通信失敗/不正応答の分岐を検証。実認証通信を置き換えるテストではない。
 - 2026-10-05、親タスクの未ログイン読取確認：現行Protoは `/api/me` と `/api/auth/options` が404。Devは `/api/me` が401（実装あり）、optionsが404。**現段階でこのアプリをProto利用者に配布しない。APIを先に更新する必要がある。**
+
+## 実Firebase・Dev APIへの統合テスト（2026-10-06）
+
+専用iPhone SE (3rd generation)／iOS 18.0シミュレーターで
+`testInvitedAccountAgainstDev`成功。実アプリのKirokunAccountSessionと
+SurveyRepositoryを使用し、招待QAユーザー名認証→Firebaseサインイン→
+/me本人識別→Survey取得→日本語の回答送信→再取得した回答一致を確認。
+サーバーDBでも保存値を確認し、QA専用Assignmentを削除した。
+既存の上松さんのシミュレーターとGoogleセッションは変更していない。
+
+テストは専用DevシミュレーターのDocuments/kirokun-private-qa.jsonがない場合はskip。
+DevのBundle ID、Firebase projectID、ローカルAPI URLを検査し、他のUIDでログイン済みなら拒否。
+ファイルはサーバーのQA情報にiosAssignmentを加えた文字列辞書で、Gitへ保存しない。
+試験後はサインアウトし、ファイルも削除。テストログへ秘密値を出さない。
+
+これはSDKと通信・保存の統合テストで、画面をタップするUIテストやPush受信試験ではない。
+Devは端末登録・topic購読停止を維持。Protoには/meと全利用者のUID対応が未反映のため、
+引き続き一般利用者へ配布しない。Google追加連携の実操作はユーザー指定で後日。

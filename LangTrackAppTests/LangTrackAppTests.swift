@@ -1,7 +1,72 @@
 import XCTest
+import FirebaseCore
+import FirebaseAuth
 @testable import Lang_Track_App
 
 final class LangTrackAppTests: XCTestCase {
+    // Opt-in integration check; private fixture is provisioned only on a dedicated Dev simulator.
+    @MainActor
+    func testInvitedAccountAgainstDev() throws {
+        let url = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+            .appendingPathComponent("kirokun-private-qa.json")
+        guard FileManager.default.fileExists(atPath: url.path) else {
+            throw XCTSkip("Dedicated Dev fixture not installed")
+        }
+        XCTAssertEqual(Bundle.main.bundleIdentifier, "com.alchembright.kirokun.dev")
+        guard Bundle.main.bundleIdentifier == "com.alchembright.kirokun.dev",
+              FirebaseApp.app()?.options.projectID == "kirokun-dev",
+              Bundle.main.object(forInfoDictionaryKey: "KIROKUN_API_BASE_URL") as? String == "http://localhost:18082/api/" else {
+            XCTFail("Unexpected environment"); return
+        }
+        let fixture = try JSONDecoder().decode([String:String].self, from: Data(contentsOf: url))
+        let username = try XCTUnwrap(fixture["username"])
+        let password = try XCTUnwrap(fixture["password"])
+        let assignmentID = try XCTUnwrap(fixture["iosAssignment"])
+        guard username.hasPrefix("qa_auth_") else { XCTFail("Not a QA account"); return }
+        guard Auth.auth().currentUser == nil || Auth.auth().currentUser?.uid == fixture["uid"] else {
+            XCTFail("Dedicated simulator required"); return
+        }
+        defer {
+            try? Auth.auth().signOut()
+            SurveyRepository.userId = ""
+            SurveyRepository.idToken = ""
+            SurveyRepository.selectedAssignment = nil
+        }
+        let login = expectation(description: "Username login")
+        var loggedIn = false
+        KirokunAccountSession.signIn(username: username, password: password) { error in
+            loggedIn = error == nil; login.fulfill()
+        }
+        wait(for: [login], timeout: 45)
+        guard loggedIn else { XCTFail("Login failed"); return }
+        let identity = expectation(description: "Resolve identity")
+        var resolved = false
+        KirokunAccountSession.resolve { success in resolved = success; identity.fulfill() }
+        wait(for: [identity], timeout: 30)
+        guard resolved && SurveyRepository.userId == fixture["userId"] else { XCTFail("Identity mismatch"); return }
+        let listed = expectation(description: "Read assignment")
+        var target: Assignment?
+        SurveyRepository.getSurveys { items in target = items?.first { $0.id == assignmentID }; listed.fulfill() }
+        wait(for: [listed], timeout: 30)
+        SurveyRepository.selectedAssignment = try XCTUnwrap(target)
+        let value = "iOS 招待回答 " + UUID().uuidString
+        let sent = expectation(description: "Submit answer")
+        var saved = false
+        SurveyRepository.postAnswer(answerDict: [1: Answer(type: "open", index: 1, openEndedAnswer: value)]) {
+            success in saved = success; sent.fulfill()
+        }
+        wait(for: [sent], timeout: 30)
+        guard saved else { XCTFail("Submission failed"); return }
+        let reread = expectation(description: "Read saved answer")
+        var persisted: String?
+        SurveyRepository.getSurveys { items in
+            persisted = items?.first { $0.id == assignmentID }?.dataset?.answers.first { $0.index == 1 }?.openEndedAnswer
+            reread.fulfill()
+        }
+        wait(for: [reread], timeout: 30)
+        XCTAssertEqual(persisted, value)
+    }
+
     func testAuthenticationOptionsFailClosed() {
         XCTAssertEqual(KirokunAccountSession.loginRoute(status: 200, enabled: true), .username)
         XCTAssertEqual(KirokunAccountSession.loginRoute(status: 200, enabled: false), .legacy)
