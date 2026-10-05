@@ -147,3 +147,6 @@ Copyright © 2020 Stephan Björck. All rights reserved.
 "review_duration" = "%d時間%d分";
 
 "survey_published" = "公開日";
+
+"account_login_failed" = "ログインできませんでした。ユーザー名・パスワードと接続状況を確認して、再試行してください。";
+"account_password_login" = "ユーザー名・パスワードでログイン";

@@ -607,3 +607,79 @@ struct SurveyRepository {
         }
     }
 }
+
+// Authentication uses the selected environment. Firebase email is never a data owner ID.
+enum KirokunAccountSession {
+    enum Failure: Error { case connection, credentials }
+    private final class NoRedirect: NSObject, URLSessionTaskDelegate {
+        func urlSession(_ session: URLSession, task: URLSessionTask, willPerformHTTPRedirection response: HTTPURLResponse, newRequest request: URLRequest, completionHandler: @escaping (URLRequest?) -> Void) { completionHandler(nil) }
+    }
+    static func request(_ path: String, body: [String: String]? = nil, token: String? = nil,
+                        completion: @escaping (Int?, [String: Any]?) -> Void) {
+        SurveyRepository.getUrl { base in
+            guard let base = base, let url = URL(string: base + path) else { completion(nil, nil); return }
+            var request = URLRequest(url: url); request.timeoutInterval = 20
+            request.cachePolicy = .reloadIgnoringLocalCacheData
+            if let token = token { request.setValue(token, forHTTPHeaderField: "token") }
+            if let body = body {
+                request.httpMethod = "POST"; request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+                request.httpBody = try? JSONSerialization.data(withJSONObject: body)
+            }
+            let session = URLSession(configuration: .ephemeral, delegate: NoRedirect(), delegateQueue: nil)
+            session.dataTask(with: request) { data, response, error in
+                defer { session.finishTasksAndInvalidate() }
+                let object = data.flatMap { try? JSONSerialization.jsonObject(with: $0) } as? [String: Any]
+                completion(error == nil ? (response as? HTTPURLResponse)?.statusCode : nil, object)
+            }.resume()
+        }
+    }
+    enum LoginRoute { case legacy, username, unavailable }
+    static func loginRoute(status: Int?, enabled: Bool?) -> LoginRoute {
+        if status == 404 { return .legacy } // Older API has no account-options endpoint. /me is still required.
+        guard status == 200, let enabled = enabled else { return .unavailable }
+        return enabled ? .username : .legacy
+    }
+    static func signIn(username: String, password: String, completion: @escaping (Error?) -> Void) {
+        func legacy() {
+            let email = username.contains("@") ? username : username + "@humlablu.com"
+            Auth.auth().signIn(withEmail: email, password: password) { _, error in completion(error) }
+        }
+        if username.contains("@") { legacy(); return }
+        request("auth/options") { code, object in
+            // A failed options request is not permission to bypass the selected auth method.
+            switch loginRoute(status: code, enabled: object?["usernameLogin"] as? Bool) {
+            case .unavailable: completion(Failure.connection); return
+            case .legacy: legacy(); return
+            case .username: break
+            }
+            request("auth/username-login", body: ["username": username, "password": password]) { code, object in
+                if code == 401 { legacy(); return } // Unmigrated accounts retain Firebase passwords.
+                guard code == 200, let token = object?["customToken"] as? String, !token.isEmpty else {
+                    completion(code == 400 ? Failure.credentials : Failure.connection); return
+                }
+                Auth.auth().signIn(withCustomToken: token) { _, error in completion(error) }
+            }
+        }
+    }
+    static func resolve(completion: @escaping (Bool) -> Void) {
+        func finish(_ success: Bool) {
+            DispatchQueue.main.async { completion(success) }
+        }
+        guard let user = Auth.auth().currentUser else { finish(false); return }
+        let uid = user.uid
+        user.getIDToken { token, error in
+            guard let token = token, error == nil else { finish(false); return }
+            request("me", token: token) { code, object in
+                DispatchQueue.main.async {
+                    guard Auth.auth().currentUser?.uid == uid, code == 200,
+                          let identifier = object?["userId"] as? String, !identifier.isEmpty else {
+                        completion(false); return
+                    }
+                    SurveyRepository.userId = identifier
+                    SurveyRepository.idToken = token
+                    completion(true)
+                }
+            }
+        }
+    }
+}

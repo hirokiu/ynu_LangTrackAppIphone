@@ -112,20 +112,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate {
     }
     
     func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String?) {
-        print("Firebase registration token: \(fcmToken)")
+        guard let fcmToken = fcmToken else { return }
+        SurveyRepository.deviceToken = fcmToken
+        NotificationCenter.default.post(name: Notification.Name("FCMToken"), object: nil, userInfo: ["token": fcmToken])
+        // Identity is resolved by /api/me before registering the token with the API.
 
-        let dataDict:[String: String?] = ["token": fcmToken]
-        NotificationCenter.default.post(name: Notification.Name("FCMToken"), object: nil, userInfo: dataDict)
-        // TODO: If necessary send token to application server.
-        // Note: This callback is fired at each app startup and whenever a new token is generated.
-        SurveyRepository.deviceToken = fcmToken!
-        var username = Auth.auth().currentUser?.email
-        if username != nil{
-            if username! != ""{
-                username!.until("@")
-                SurveyRepository.userId = username ?? ""
-            }
-        }
     }
 
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any],

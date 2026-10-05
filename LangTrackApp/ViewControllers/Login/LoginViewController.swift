@@ -20,7 +20,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var logInButton: UIButton!
     
     
-    var authHandle : AuthStateDidChangeListenerHandle?
+    var onSignedIn: (() -> Void)?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,25 +50,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
         activityIndicator.hidesWhenStopped = true
         activityIndicator.stopAnimating()
-        authHandle = Auth.auth().addStateDidChangeListener { (auth, user) in
-            print("auth addStateDidChangeListener email: \(auth.currentUser?.email ?? "nil")")
-            if auth.currentUser != nil{
-                var username = auth.currentUser?.email
-                username!.until("@")
-                if username != nil{
-                    if username! != ""{
-                        Messaging.messaging().subscribe(toTopic: username!) { error in
-                            if error != nil{
-                                print("messaging().subscribe ERROR: \(error.debugDescription)")
-                            }else{
-                                print("Messaging subscribed to \(username!)")
-                            }
-                        }
-                    }
-                }
-                self.close()
-            }
-        }
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -76,7 +58,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        Auth.auth().removeStateDidChangeListener(authHandle!)
+        super.viewWillDisappear(animated)
     }
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -91,7 +73,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     func logIn(){
-        let username = userNameTextField.text
+        guard logInButton.isEnabled else { return }
+        let username = userNameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines)
         let password = passwordTextField.text
         if (username ?? "" == "") || (password ?? "" == ""){
             DispatchQueue.main.async {
@@ -102,28 +85,37 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             }
         }else{
             activityIndicator.startAnimating()
-            let userEmail = "\(username!)@humlablu.com"
-            
-            Auth.auth().signIn(withEmail: userEmail, password: password!) { (result, error) in
-                if error == nil{
-                    print("auth signIn: \(result?.debugDescription)")
-                }else{
-                    self.activityIndicator.stopAnimating()
-                    print("auth signIn ERROR: \(error?.localizedDescription ?? "")")
-                    DispatchQueue.main.async {
-                        let popup = UIAlertController(title: translatedErrorLogin, message: translatedInvalidUsernameOrPassword, preferredStyle: .alert)
-                        popup.addAction(UIAlertAction(title: "OK", style: .default, handler:{alert -> Void in
-                            self.userNameTextField.becomeFirstResponder()
-                        }))
-                        
-                        self.present(popup, animated: true, completion: nil)
+            logInButton.isEnabled = false
+            isModalInPresentation = true
+            KirokunAccountSession.signIn(username: username!.trimmingCharacters(in: .whitespacesAndNewlines), password: password!) { [weak self] error in
+                guard let self = self else { return }
+                if error != nil { self.loginFailed(); return }
+                KirokunAccountSession.resolve { success in
+                    if success {
+                        #if !KIROKUN_DEV
+                        Messaging.messaging().subscribe(toTopic: SurveyRepository.userId)
+                        #endif
+                        DispatchQueue.main.async { self.passwordTextField.text = ""; self.close() }
+                    } else {
+                        try? Auth.auth().signOut()
+                        self.loginFailed()
                     }
                 }
-                
             }
         }
     }
    
+    private func loginFailed() {
+        DispatchQueue.main.async {
+            self.activityIndicator.stopAnimating(); self.logInButton.isEnabled = true
+            self.isModalInPresentation = false
+            let popup = UIAlertController(title: translatedErrorLogin,
+                message: NSLocalizedString("account_login_failed", comment: ""), preferredStyle: .alert)
+            popup.addAction(UIAlertAction(title: "OK", style: .default))
+            self.present(popup, animated: true)
+        }
+    }
+
     @IBAction func logInButtonPressed(_ sender: Any) {
         logIn()
     }
@@ -131,7 +123,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     func close(){
         self.activityIndicator.stopAnimating()
         //self.navigationController?.popViewController(animated: true)
-        self.dismiss(animated: true, completion: nil)
+        self.dismiss(animated: true, completion: onSignedIn)
     }
     @IBAction func helpButtonPressed(_ sender: Any) {
         DispatchQueue.main.async {

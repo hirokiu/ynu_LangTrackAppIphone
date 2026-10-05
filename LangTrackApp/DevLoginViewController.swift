@@ -77,6 +77,7 @@ class DevLoginViewController: UIViewController {
     private let signOutButton = UIButton(type: .system)
     private let retryButton = UIButton(type: .system)
     private var generation = 0
+    private let passwordButton = UIButton(type: .system)
     private let surveysButton = UIButton(type: .system)
     private func text(_ key: String) -> String { NSLocalizedString(key, comment: "Dev authentication") }
     override func viewDidLoad() {
@@ -93,7 +94,9 @@ class DevLoginViewController: UIViewController {
         signOutButton.addTarget(self, action: #selector(signOut), for: .touchUpInside)
         retryButton.setTitle(text("dev_retry_connection"), for: .normal)
         retryButton.addTarget(self, action: #selector(checkConnection), for: .touchUpInside)
-        let stack = UIStackView(arrangedSubviews: [title, KirokunProject.selector(), status, signInButton, surveysButton, retryButton, signOutButton, spinner])
+        passwordButton.setTitle(text("account_password_login"), for: .normal)
+        passwordButton.addTarget(self, action: #selector(openPasswordLogin), for: .touchUpInside)
+        let stack = UIStackView(arrangedSubviews: [title, KirokunProject.selector(), status, signInButton, passwordButton, surveysButton, retryButton, signOutButton, spinner])
         stack.axis = .vertical; stack.spacing = 24; stack.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(stack)
         NSLayoutConstraint.activate([stack.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 24), stack.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -24), stack.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 48)])
@@ -114,9 +117,16 @@ class DevLoginViewController: UIViewController {
         signOutButton.isEnabled = !busy
         let signedIn = Auth.auth().currentUser != nil
         signInButton.isHidden = signedIn
+        passwordButton.isHidden = signedIn
+        passwordButton.isEnabled = !busy
         retryButton.isHidden = !signedIn
         signOutButton.isHidden = !signedIn
         busy ? spinner.startAnimating() : spinner.stopAnimating()
+    }
+    @objc private func openPasswordLogin() {
+        let login = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "accountLogin") as! LoginViewController
+        login.onSignedIn = { [weak self] in self?.checkConnection() }
+        present(login, animated: true)
     }
     @objc private func signIn() {
         guard let clientID = FirebaseApp.app()?.options.clientID else { return }

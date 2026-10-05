@@ -70,6 +70,7 @@ class MainViewController: UIViewController {
     var inTestMode = false
     let headerViewMaxHeight: CGFloat = 200
     let headerViewMinHeight: CGFloat = 0
+    private var identityGeneration = 0
     var activeSurveyExists = false
     var topViewShadowIsShowing = false
     
@@ -331,19 +332,29 @@ class MainViewController: UIViewController {
     }
     
     func fetchAssignmentsAndSetUserName(){
-        #if KIROKUN_DEV
-        let username: String? = SurveyRepository.userId // Resolved by /api/me, never from the Google email.
-        #else
-        var username = Auth.auth().currentUser?.email
-        username?.until("@")
-        SurveyRepository.userId = username ?? ""
-        #endif
-        sideMenu?.setTestView(userName: username ?? "")
-        SurveyRepository.theUser = User(userName: username ?? "noName", mail: Auth.auth().currentUser?.email ?? "noMail")
-        updateAssignments()
-        sideMenu?.setInfo(name: SurveyRepository.theUser!.userName, listener: self)
-        theTableView.reloadData()
-        setUserCharts()
+        identityGeneration += 1
+        let requestedGeneration = identityGeneration
+        KirokunAccountSession.resolve { [weak self] success in
+            guard let self = self, self.identityGeneration == requestedGeneration else { return }
+            guard success else {
+                SurveyRepository.userId = ""; SurveyRepository.idToken = ""
+                SurveyRepository.assignmentList = []; SurveyRepository.selectedAssignment = nil
+                SurveyRepository.theUser = nil
+                self.theTableView.reloadData(); self.setUserCharts()
+                self.showServerErrorMessage(); return
+            }
+            let username = SurveyRepository.userId
+            self.sideMenu?.setTestView(userName: username)
+            SurveyRepository.theUser = User(userName: username, mail: Auth.auth().currentUser?.email ?? "")
+            SurveyRepository.postDeviceToken()
+            #if !KIROKUN_DEV
+            Messaging.messaging().subscribe(toTopic: username)
+            #endif
+            self.updateAssignments()
+            self.sideMenu?.setInfo(name: username, listener: self)
+            self.theTableView.reloadData()
+            self.setUserCharts()
+        }
     }
     
     func useStagingServer(staging: Bool){
@@ -805,8 +816,7 @@ extension MainViewController: MenuListener{
         #else
         let firebaseAuth = Auth.auth()
         if firebaseAuth.currentUser != nil{
-            var username = firebaseAuth.currentUser?.email
-            username!.until("@")
+            let username: String? = SurveyRepository.userId
             
             DispatchQueue.main.async {
                 let popup = UIAlertController(title: translatedLogOut, message: "\(translatedDoYouWantToLogOut)\n\(username ?? "")", preferredStyle: .alert)
@@ -822,6 +832,8 @@ extension MainViewController: MenuListener{
                             }
                         }
                         self.performSegue(withIdentifier: "login", sender: nil)
+                        SurveyRepository.userId = ""; SurveyRepository.idToken = ""
+                        SurveyRepository.theUser = nil; SurveyRepository.selectedAssignment = nil
                         SurveyRepository.assignmentList = []
                         self.theTableView.reloadData()
                         self.sideMenu?.serverSwitch.isOn = false

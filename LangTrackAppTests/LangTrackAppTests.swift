@@ -2,6 +2,15 @@ import XCTest
 @testable import Lang_Track_App
 
 final class LangTrackAppTests: XCTestCase {
+    func testAuthenticationOptionsFailClosed() {
+        XCTAssertEqual(KirokunAccountSession.loginRoute(status: 200, enabled: true), .username)
+        XCTAssertEqual(KirokunAccountSession.loginRoute(status: 200, enabled: false), .legacy)
+        XCTAssertEqual(KirokunAccountSession.loginRoute(status: 404, enabled: nil), .legacy)
+        for status: Int? in [nil, 401, 429, 503] {
+            XCTAssertEqual(KirokunAccountSession.loginRoute(status: status, enabled: false), .unavailable)
+        }
+        XCTAssertEqual(KirokunAccountSession.loginRoute(status: 200, enabled: nil), .unavailable)
+    }
     func testServerTimestampParsesUTC() {
         let date = DateParser.getDate(dateString: "2025-11-08T00:00:00.000Z")
         XCTAssertEqual(date?.timeIntervalSince1970, 1762560000)
