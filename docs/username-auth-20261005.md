@@ -42,3 +42,11 @@ DevのBundle ID、Firebase projectID、ローカルAPI URLを検査し、他のU
 これはSDKと通信・保存の統合テストで、画面をタップするUIテストやPush受信試験ではない。
 Devは端末登録・topic購読停止を維持。Protoには/meと全利用者のUID対応が未反映のため、
 引き続き一般利用者へ配布しない。Google追加連携の実操作はユーザー指定で後日。
+
+## 通知の事前修正（2026-10-06）
+
+UNUserNotificationCenterDelegateのwillPresentに前面通知処理を追加。
+アプリを開いているときも標準バナー・通知センター・音を使い、Survey一覧の更新を通知する。
+ProtoDebugシミュレータービルド成功。実APNs/FCMの受信、通知タップは未確認。
+DevのPush登録停止は維持。ユーザーは実機を後で接続する予定。
+配布・既存利用者への通知・稼働サーバーの設定変更は行っていない。
