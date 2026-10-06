@@ -376,6 +376,7 @@ class MainViewController: UIViewController {
                             self.checkIfActiveSurveyExists()
                             self.theTableView.reloadData()
                             self.setUserCharts()
+                            self.openNotificationTarget()
                         }
                     }else{
                         self.showServerErrorMessage()
@@ -394,6 +395,27 @@ class MainViewController: UIViewController {
     
     
     
+    private func openNotificationTarget() {
+        guard view.window != nil, presentedViewController == nil,
+              !children.contains(where: { $0 is UnansweredPopupViewController }),
+              Auth.auth().currentUser != nil else { return }
+        guard let id = KirokunNotificationTarget.consume(userId: SurveyRepository.userId) else { return }
+        guard let assignment = SurveyRepository.assignmentList.first(where: { $0.id == id }) else {
+            showToast(message: NSLocalizedString("notification_survey_unavailable", comment: ""), font: .systemFont(ofSize: 18))
+            return
+        }
+        SurveyRepository.selectedAssignment = assignment
+        if assignment.dataset != nil {
+            performSegue(withIdentifier: "overview", sender: nil)
+        } else if let expiry = DateParser.getDate(dateString: assignment.expiry), expiry > Date() {
+            performSegue(withIdentifier: "survey", sender: nil)
+        } else {
+            let popup = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "unansweredPopup") as! UnansweredPopupViewController
+            addChild(popup); popup.view.frame = view.bounds
+            view.addSubview(popup.view); popup.didMove(toParent: self)
+        }
+    }
+
     func showServerErrorMessage(){
         DispatchQueue.main.async {
             self.showToast(message: translatedNoContactWithServer, font: UIFont.systemFont(ofSize: 18))

@@ -150,3 +150,5 @@ Copyright © 2020 Stephan Björck. All rights reserved.
 
 "account_login_failed" = "ログインできませんでした。ユーザー名・パスワードと接続状況を確認して、再試行してください。";
 "account_password_login" = "ユーザー名・パスワードでログイン";
+
+"notification_survey_unavailable" = "このアンケートは現在表示できません。一覧を確認してください。";

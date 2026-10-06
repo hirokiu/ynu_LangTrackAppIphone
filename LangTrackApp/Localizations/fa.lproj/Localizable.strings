@@ -101,3 +101,5 @@ Copyright © 2021 Stephan Björck. All rights reserved.
 
 داده های شما توسط محققان این پروژه جمع‌آوری و تحلیل خواهند شد. هیچ فرد دیگری به جوابهای شما دسترسی نخواهد داشت. زمانی که نتایج پروژه را اعلام می کنیم تمامی شرکت کنندگان ناشناس خواهند بود.
 ";
+
+"notification_survey_unavailable" = "This survey is currently unavailable. Please check the survey list.";

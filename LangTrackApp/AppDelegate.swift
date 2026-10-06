@@ -258,6 +258,7 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
         // 1
         let notificationPayload = response.notification.request.content.userInfo
         recordPushQA("tap", info: notificationPayload)
+        KirokunNotificationTarget.capture(notificationPayload)
         
         // 2
         if let aps = notificationPayload["aps"] as? [String: AnyObject]{
@@ -284,3 +285,24 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
     }
 }
 
+
+
+// Notification IDs are hints only; navigation uses the authenticated assignment list.
+enum KirokunNotificationTarget {
+    static let key = "kirokun.pendingNotification"
+    static func capture(_ info: [AnyHashable: Any]) {
+        guard let id = info["kirokunAssignmentId"] as? String,
+              id.range(of: "^[a-fA-F0-9]{24}$", options: .regularExpression) != nil,
+              let recipient = info["kirokunUserId"] as? String, !recipient.isEmpty,
+              let environment = info["kirokunEnvironment"] as? String,
+              environment == Bundle.main.object(forInfoDictionaryKey: "KIROKUN_ENVIRONMENT") as? String else { return }
+        UserDefaults.standard.set(["id": id, "recipient": recipient, "time": Date().timeIntervalSince1970], forKey: key)
+    }
+    static func consume(userId: String) -> String? {
+        guard let value = UserDefaults.standard.dictionary(forKey: key) else { return nil }
+        UserDefaults.standard.removeObject(forKey: key)
+        guard value["recipient"] as? String == userId,
+              let time = value["time"] as? Double, Date().timeIntervalSince1970 - time < 3600 else { return nil }
+        return value["id"] as? String
+    }
+}

@@ -78,3 +78,5 @@ Copyright © 2021 Stephan Björck. All rights reserved.
 "instructionsText1" = "Bu uygulamadaki kısa anketleri günde birkaç kez yanıtlamanızı rica ediyoruz. Yeni bir anket olduğunda bir push bildirimi alacaksınız. Telefonunuzu yanınızda taşıyın ve bildirim sesini kapatmayın.\n\nHer soruyu mümkün olan en kısa sürede yanıtlamanız önemlidir. Bir anketi yanıtlamazsanız, 60 dakika sonra otomatik olarak kapanacaktır.";
 "Data processing" = "Veri işleme";
 "dataProcessing1" = "Uygulama, sorulara verdiğiniz yanıtlara ek olarak, anketi açtığınız ve yanıtlarınızı gönderdiğiniz tarih ve saati otomatik olarak kaydeder. Uygulama, konum bilgisi gibi başka herhangi bir veri toplamaz.\n\nVerileriniz projedeki araştırmacılar tarafından derlenecek ve analiz edilecektir. Başka hiç kimse verilerinize erişemez. Proje sonuçlarını raporladığımızda, tüm araştırma katılımcıları isimsiz olacaktır.";
+
+"notification_survey_unavailable" = "This survey is currently unavailable. Please check the survey list.";

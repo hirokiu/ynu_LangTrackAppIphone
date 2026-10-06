@@ -153,3 +153,5 @@ Copyright © 2020 Stephan Björck. All rights reserved.
 
 "account_login_failed" = "Unable to sign in. Check your username, password and connection, then try again.";
 "account_password_login" = "Sign in with username and password";
+
+"notification_survey_unavailable" = "This survey is currently unavailable. Please check the survey list.";
