@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import UIKit
+import UserNotifications
 import SwiftyJSON
 import Alamofire
 import Firebase
@@ -31,13 +33,35 @@ struct SurveyRepository {
         }
     }
     static var localTimeZoneIdentifier = ""
-    static var assignmentList: [Assignment] = []
+    static var assignmentList: [Assignment] = [] { didSet { updateBadge() } }
     static var selectedAssignment: Assignment?
     static let tempuserId = ""
-    static var userId = ""
+    static var userId = "" { didSet { if userId != oldValue { applyBadge(0) } } }
     static let realtimeRef = Database.database().reference()
     static var useStagingServer = false
     
+    static func unansweredCount(_ items: [Assignment], now: Date = Date()) -> Int {
+        Set(items.filter { item in
+            guard item.dataset == nil,
+                  let published = DateParser.getDate(dateString: item.published),
+                  let expires = DateParser.getDate(dateString: item.expiry) else { return false }
+            return published <= now && now < expires
+        }.map { $0.id }).count
+    }
+
+    static func updateBadge() {
+        let count = userId.isEmpty ? 0 : unansweredCount(assignmentList)
+        applyBadge(count)
+    }
+
+    static func applyBadge(_ count: Int) {
+        DispatchQueue.main.async {
+            UNUserNotificationCenter.current().setBadgeCount(count) { error in
+                if error != nil { NSLog("KIROKUN badge update unavailable") }
+            }
+        }
+    }
+
     static func setIdToken(token: String){
         self.idToken = token
     }
@@ -151,6 +175,7 @@ struct SurveyRepository {
                         let code = response.response?.statusCode ?? 0
                         let json = response.data.flatMap { try? JSON(data: $0) }
                         let stored = (code == 201) || (code == 200 && json?["dataset"]["answers"].array != nil)
+                        if response.error == nil && stored { getSurveys { _ in } }
                         completion?(response.error == nil && stored)
                     }
                 }

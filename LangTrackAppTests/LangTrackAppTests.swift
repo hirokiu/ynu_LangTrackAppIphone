@@ -4,6 +4,19 @@ import FirebaseAuth
 @testable import Lang_Track_App
 
 final class LangTrackAppTests: XCTestCase {
+    func testUnansweredBadgeCount() throws {
+        let now = try XCTUnwrap(DateParser.getDate(dateString: "2026-10-07T00:00:00.000Z"))
+        func item(_ id: String, published: String = "2026-10-06T00:00:00.000Z", expiry: String = "2026-10-08T00:00:00.000Z", answered: Bool = false) -> Assignment {
+            var a = Assignment(); a.id = id; a.published = published; a.expiry = expiry
+            if answered { a.dataset = Dataset() }
+            return a
+        }
+        let active = item("active")
+        XCTAssertEqual(SurveyRepository.unansweredCount([active, active, item("answered", answered: true), item("future", published: "2026-10-08T00:00:00.000Z"), item("expired", expiry: "2026-10-07T00:00:00.000Z"), item("bad", expiry: "invalid")], now: now), 1)
+        XCTAssertEqual(SurveyRepository.unansweredCount([item("boundary", published: "2026-10-07T00:00:00.000Z")], now: now), 1)
+        XCTAssertEqual(SurveyRepository.unansweredCount([], now: now), 0)
+    }
+
     // Opt-in integration check; private fixture is provisioned only on a dedicated Dev simulator.
     @MainActor
     func testInvitedAccountAgainstDev() throws {

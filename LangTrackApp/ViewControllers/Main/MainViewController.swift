@@ -627,31 +627,9 @@ class MainViewController: UIViewController {
     }
     
     func setBadge(){
-        var numberOfActive = 0
-        for assignment in SurveyRepository.assignmentList {
-            let now = Date()
-            let expiary = DateParser.getDate(dateString: assignment.expiry) ?? now
-            if assignment.dataset == nil{
-                if now < expiary{
-                    //assigmnent is active
-                    numberOfActive += 1
-                }else{
-                    //assignment is NOT active
-                }
-            }else{
-                //assignment is NOT active
-            }
-        }
-        DispatchQueue.main.async {
-            if #available(iOS 16.0, *) {
-                // 通知を許可しないと機能しない
-                UNUserNotificationCenter.current().setBadgeCount(numberOfActive)
-            } else {
-                // Fallback on earlier versions
-                UIApplication.shared.applicationIconBadgeNumber = numberOfActive
-            }
-        }
+        SurveyRepository.updateBadge()
     }
+
 }
 
 //MARK:- Tableview extension
@@ -827,6 +805,7 @@ extension MainViewController: MenuListener{
         popup.addAction(UIAlertAction(title: translatedLogOut, style: .destructive) { [weak self] _ in
             do {
                 try Auth.auth().signOut()
+                SurveyRepository.applyBadge(0)
                 SurveyRepository.userId = ""; SurveyRepository.idToken = ""
                 SurveyRepository.assignmentList = []; SurveyRepository.selectedAssignment = nil
                 SurveyRepository.theUser = nil
@@ -845,6 +824,7 @@ extension MainViewController: MenuListener{
                 popup.addAction(UIAlertAction(title: translatedLogOut, style: .destructive, handler:{alert -> Void in
                     do {
                         try firebaseAuth.signOut()
+                        SurveyRepository.applyBadge(0)
                         if username != nil{
                             if username! != ""{
                                 Messaging.messaging().unsubscribe(fromTopic: username!)
