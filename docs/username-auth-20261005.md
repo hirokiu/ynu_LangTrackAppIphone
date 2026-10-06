@@ -50,3 +50,20 @@ UNUserNotificationCenterDelegateのwillPresentに前面通知処理を追加。
 ProtoDebugシミュレータービルド成功。実APNs/FCMの受信、通知タップは未確認。
 DevのPush登録停止は維持。ユーザーは実機を後で接続する予定。
 配布・既存利用者への通知・稼働サーバーの設定変更は行っていない。
+
+## iPhone実機Pushの準備（2026-10-06）
+
+DevDebugで明示的な起動引数`--kirokun-push-qa`を付けた場合だけ、Dev Firebase／
+Dev Bundle IDを検査して通知登録を許可する。ProtoとReleaseは同引数を無視する。
+通常Dev起動ではMessagingの自動登録を停止し、既存のサーバー端末登録・topic購読停止を維持。
+検証トークンとQAマーカー付き通知の受信・タップ記録は、バックアップ対象外・保護付きの
+アプリDocuments内ファイルへ保存し、ログへトークンを出さない。
+
+iPhone11 Pro/iOS26.6へ署名付きDevアプリを配置し、本人の通知許可とトークン取得を確認。
+Dev Firebaseからそのトークン1件へ送信したが、messaging/third-party-auth-errorで拒否された。
+ユーザーがkirokun-devのAPNsキー未登録を確認し、設定作業中。実受信は未確認。
+設定完了後に1台限定で再送する。QAトークンはMacと新サーバーの非公開一時ファイルで保持。
+完了後に削除し、検証引数なしで再起動する。ProtoDebugビルドも成功。
+
+今回はPushの検証のみ。iPhoneのDevDebug APIはlocalhostのままであり、実機からDev APIへ
+ログイン・回答する経路の準備と通し確認は別途必要。既存Protoアプリは変更していない。

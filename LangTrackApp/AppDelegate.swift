@@ -20,6 +20,32 @@ enum Identifiers {
 class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate {
 
 
+    // Explicit launch opt-in; never active in release or Proto builds.
+    private var isPushQA: Bool {
+        #if DEBUG && KIROKUN_DEV
+        return ProcessInfo.processInfo.arguments.contains("--kirokun-push-qa")
+            && FirebaseApp.app()?.options.projectID == "kirokun-dev"
+            && Bundle.main.bundleIdentifier == "com.alchembright.kirokun.dev"
+        #else
+        return false
+        #endif
+    }
+    private func recordPushQA(_ event: String, info: [AnyHashable: Any]? = nil, token: String? = nil) {
+        guard isPushQA else { return }
+        if let info = info, info["kirokunQA"] as? String != "device-only-20261006" { return }
+        var result = ["event": event, "projectId": "kirokun-dev", "bundleId": "com.alchembright.kirokun.dev",
+                      "time": ISO8601DateFormatter().string(from: Date())]
+        if let token = token { result["token"] = token }
+        let folder = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+        var url = folder.appendingPathComponent("kirokun-push-qa-\(event).json")
+        do {
+            let data = try JSONSerialization.data(withJSONObject: result)
+            try data.write(to: url, options: [.atomic, .completeFileProtectionUntilFirstUserAuthentication])
+            var values = URLResourceValues(); values.isExcludedFromBackup = true
+            try url.setResourceValues(values)
+        } catch { /* No credentials or provider error details in logs. */ }
+    }
+
     let gcmMessageIDKey = "gcm.message_id"
     var window: UIWindow?
 
@@ -68,7 +94,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate {
         FirebaseApp.configure()
         if Bundle.main.object(forInfoDictionaryKey: "KIROKUN_ENVIRONMENT") as? String == "dev" {
             precondition(FirebaseApp.app()?.options.projectID == "kirokun-dev" && Bundle.main.bundleIdentifier == "com.alchembright.kirokun.dev", "Dev Firebase configuration mismatch")
-            return true
+            Messaging.messaging().isAutoInitEnabled = isPushQA
+            if !isPushQA { return true }
+            recordPushQA("started")
         }
         Messaging.messaging().delegate = self
         if #available(iOS 10.0, *) {
@@ -78,7 +106,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate {
           let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
           UNUserNotificationCenter.current().requestAuthorization(
             options: authOptions,
-            completionHandler: {_, _ in })
+            completionHandler: { granted, _ in
+                self.recordPushQA(granted ? "permission-granted" : "permission-denied")
+            })
         } else {
           let settings: UIUserNotificationSettings =
           UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
@@ -113,14 +143,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate {
     
     func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String?) {
         guard let fcmToken = fcmToken else { return }
+        recordPushQA("token", token: fcmToken)
         SurveyRepository.deviceToken = fcmToken
         NotificationCenter.default.post(name: Notification.Name("FCMToken"), object: nil, userInfo: ["token": fcmToken])
         // Identity is resolved by /api/me before registering the token with the API.
 
     }
 
+    func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
+        recordPushQA("apns-registration-failed")
+    }
+
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any],
                      fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        recordPushQA("background", info: userInfo)
         // If you are receiving a notification message while your app is in the background,
         // this callback will not be fired till the user taps on the notification launching the application.
         // TODO: Handle data of notification
@@ -182,6 +218,7 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
     func userNotificationCenter(_ center: UNUserNotificationCenter,
                                 willPresent notification: UNNotification,
                                 withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        recordPushQA("foreground", info: notification.request.content.userInfo)
         NotificationCenter.default.post(name: .newNotification, object: nil)
         if #available(iOS 14.0, *) {
             completionHandler([.banner, .list, .sound])
@@ -197,6 +234,7 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
         
         // 1
         let notificationPayload = response.notification.request.content.userInfo
+        recordPushQA("tap", info: notificationPayload)
         
         // 2
         if let aps = notificationPayload["aps"] as? [String: AnyObject]{
