@@ -67,3 +67,18 @@ Dev Firebaseからそのトークン1件へ送信したが、messaging/third-par
 
 今回はPushの検証のみ。iPhoneのDevDebug APIはlocalhostのままであり、実機からDev APIへ
 ログイン・回答する経路の準備と通し確認は別途必要。既存Protoアプリは変更していない。
+
+
+## iPhone実機Push確認完了（2026-10-06追記）
+
+APNsキー登録後、iPhone 11 Pro / iOS 26.6のKIROKUN DevでFCM送信成功、
+前面受信（22:56:47 JST）、背景の通知タップ（22:58:59 JST）をアプリ記録で確認。
+本人も通知からKIROKUN Devが開くことを確認した。
+DevDebug専用の `--kirokun-push-qa-cleanup` で一時FCMトークンを失効し、
+端末内QAファイルを削除。23:02:34 JSTの完了記録を確認し、通常起動へ戻した。
+Mac・新サーバーの一時トークンファイルも削除済み。
+Android実機と合わせ、単一Dev端末への通知受信・タップ起動確認が完了。
+通常の通知スケジューラー、Proto、既存利用者への配信は変更していない。
+これはDevの単一端末通知試験であり、実機のログイン→Survey回答、
+通知から対象Surveyへの遷移、アプリ終了状態、Proto配信の通し確認は別途必要。
+API通知処理の修正は未デプロイ。

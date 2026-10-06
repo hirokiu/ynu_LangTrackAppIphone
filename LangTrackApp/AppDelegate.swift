@@ -30,8 +30,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate {
         return false
         #endif
     }
+    private var isPushQACleanup: Bool {
+        #if DEBUG && KIROKUN_DEV
+        return ProcessInfo.processInfo.arguments.contains("--kirokun-push-qa-cleanup")
+            && FirebaseApp.app()?.options.projectID == "kirokun-dev"
+            && Bundle.main.bundleIdentifier == "com.alchembright.kirokun.dev"
+        #else
+        return false
+        #endif
+    }
     private func recordPushQA(_ event: String, info: [AnyHashable: Any]? = nil, token: String? = nil) {
-        guard isPushQA else { return }
+        guard isPushQA || isPushQACleanup else { return }
         if let info = info, info["kirokunQA"] as? String != "device-only-20261006" { return }
         var result = ["event": event, "projectId": "kirokun-dev", "bundleId": "com.alchembright.kirokun.dev",
                       "time": ISO8601DateFormatter().string(from: Date())]
@@ -94,7 +103,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate {
         FirebaseApp.configure()
         if Bundle.main.object(forInfoDictionaryKey: "KIROKUN_ENVIRONMENT") as? String == "dev" {
             precondition(FirebaseApp.app()?.options.projectID == "kirokun-dev" && Bundle.main.bundleIdentifier == "com.alchembright.kirokun.dev", "Dev Firebase configuration mismatch")
-            Messaging.messaging().isAutoInitEnabled = isPushQA
+            Messaging.messaging().isAutoInitEnabled = isPushQA && !isPushQACleanup
+            if isPushQACleanup {
+                Messaging.messaging().deleteToken { error in
+                    guard error == nil else { self.recordPushQA("cleanup-failed"); return }
+                    let folder = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+                    do {
+                        for file in try FileManager.default.contentsOfDirectory(at: folder, includingPropertiesForKeys: nil)
+                            where file.lastPathComponent.hasPrefix("kirokun-push-qa-") {
+                            try FileManager.default.removeItem(at: file)
+                        }
+                        self.recordPushQA("cleanup-complete")
+                    } catch { self.recordPushQA("cleanup-failed") }
+                }
+                return true
+            }
             if !isPushQA { return true }
             recordPushQA("started")
         }
