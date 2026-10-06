@@ -32,7 +32,7 @@ Protoは既存ストア版と同じアプリIDなので、その端末の既存�
 
 ## Devの注意点
 
-Runは`DevDebug`を使い、接続先は`http://localhost:18082/api/`。MacのSSHトンネルが必要で、iPhone実機のlocalhostはMacを指さない。この構成のまま実機でDevを実行してもサーバー接続はできない。
+Runは`DevDebug`を使う。2026-10-06以降、iPhone実機はSDK条件付き設定により`https://dev.kirokun.alchembright.com/api/`へ直接接続する。シミュレーターは従来の`http://localhost:18082/api/`を使うためMacのSSHトンネルが必要。XcodeでKirokun-Devと接続端末を選ぶだけで切り替わる。Protoの接続先とFirebaseは変更しない。
 
 DevのArchiveは`DevRelease`で、設定上の接続先は`https://dev.kirokun.alchembright.com/api/`。この経路のモバイル利用と署名・通知は別途検証が必要。実機Dev対応済み、TestFlight配布済みという意味ではない。
 

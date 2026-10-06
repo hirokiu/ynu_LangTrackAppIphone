@@ -1077,6 +1077,7 @@
 				INFOPLIST_FILE = LangTrackAppTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				KIROKUN_API_BASE_URL = "http://localhost:18082/api/";
+				"KIROKUN_API_BASE_URL[sdk=iphoneos*]" = "https://dev.kirokun.alchembright.com/api/";
 				KIROKUN_DISPLAY_NAME = "KIROKUN Dev";
 				KIROKUN_ENVIRONMENT = dev;
 				KIROKUN_FIREBASE_CONFIG = "Config/Dev/GoogleService-Info.plist";
@@ -1233,6 +1234,7 @@
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				KIROKUN_API_BASE_URL = "http://localhost:18082/api/";
+				"KIROKUN_API_BASE_URL[sdk=iphoneos*]" = "https://dev.kirokun.alchembright.com/api/";
 				KIROKUN_DISPLAY_NAME = "KIROKUN Dev";
 				KIROKUN_ENVIRONMENT = dev;
 				KIROKUN_FIREBASE_CONFIG = "Config/Dev/GoogleService-Info.plist";
@@ -1369,6 +1371,7 @@
 				INFOPLIST_FILE = LangTrackAppUITests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				KIROKUN_API_BASE_URL = "http://localhost:18082/api/";
+				"KIROKUN_API_BASE_URL[sdk=iphoneos*]" = "https://dev.kirokun.alchembright.com/api/";
 				KIROKUN_DISPLAY_NAME = "KIROKUN Dev";
 				KIROKUN_ENVIRONMENT = dev;
 				KIROKUN_FIREBASE_CONFIG = "Config/Dev/GoogleService-Info.plist";
@@ -1543,6 +1546,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				KIROKUN_API_BASE_URL = "http://localhost:18082/api/";
+				"KIROKUN_API_BASE_URL[sdk=iphoneos*]" = "https://dev.kirokun.alchembright.com/api/";
 				KIROKUN_DISPLAY_NAME = "KIROKUN Dev";
 				KIROKUN_ENVIRONMENT = dev;
 				KIROKUN_FIREBASE_CONFIG = "Config/Dev/GoogleService-Info.plist";
