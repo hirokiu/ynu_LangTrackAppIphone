@@ -1,6 +1,14 @@
 # TestFlight候補（2026-10-08）
 
-ProtoRelease archive/export成功。Appleへのアップロード・審査・配布は未実施。
+ProtoRelease archive/export成功。2026-10-08 08:00:52 JSTにAppleへのアップロード成功。Apple側の処理開始を確認。処理完了・審査・配布は未確認／未実施。
+
+## アップロード結果
+
+- 同じArchiveからApp Store Connectへアップロード。バージョン2.0.0、ビルド2026100801を維持。
+- Xcodeの結果は `Upload succeeded` / `EXPORT SUCCEEDED`（終了コード0）。
+- 最終状態は `Uploaded package is processing`。これを審査通過・配布可能と扱わない。
+- App Store Connectのブラウザーは未ログイン。上松のログイン後にTestFlightの処理結果、輸出コンプライアンス、外部テスト審査情報を確認する。
+- テスターへの招待送信、旧認証の削除、通常通知の有効化は行っていない。
 
 - Scheme Kirokun-Proto / ProtoRelease、ソース40d144f。
 - バージョン2.0.0、ビルド2026100801（ビルド時に明示指定）。
