@@ -135,3 +135,12 @@ Dev DBを読み取り照合し、回答保存済み・回答数1・当該利用�
 回答内容自体は記録していない。検証データの削除やProtoの変更は行っていない。
 iOSの件数計算XCTestは接続したiPhone上で成功済み。
 この確認は回答後の一覧更新に伴う消去を対象とする。アプリ終了中や期限到来時の自動更新は未対応のまま。
+
+
+### Proto実機確認の準備（2026-10-07）
+Protoサーバーに/meと45名UID対応、更新APIを反映済み。通常通知・配信準備と新規認証モジュールは停止中。
+Kirokun-Proto / ProtoDebugのiPhone実機ビルド成功。生成plistで環境proto・HTTPSのProto API・既存Bundle IDを確認し、iPhone 11 Proへ上書き配置・起動成功。
+本人に従来アカウントでのログイン・Proto表示・Survey一覧を確認依頼中。回答送信・Proto実Pushはまだ未確認。一般配布は行っていない。
+
+本人がiOS/Androidともにログアウト→従来認証で再ログイン→Proto Survey一覧表示を確認済み。
+続いてhiroki_u専用にqa_proto_answer_20261007_ios / qa_proto_answer_20261007_androidを用意。各header/open/footerの3ページ、個人情報不要の端末名入力1問。既存データ変更なし、通常通知停止。回答送信確認待ち。
