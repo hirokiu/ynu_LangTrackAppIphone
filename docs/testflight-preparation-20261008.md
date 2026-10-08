@@ -52,3 +52,5 @@ TestFlightでReady to Submitを確認。内部の開発者グループ（10名�
 TestFlight利用者から、終了後の初回起動で一覧は表示できるのに接続エラーのトーストが出るとの報告。従来はviewDidAppearの/me解決と、foreground/通知のping→一覧取得が並走し、userId未確定の取得が失敗し得た。全更新経路を認証・/me解決→一覧取得へ統一し、同時更新をまとめた。冗長な一覧前pingを除去し、実際の認証・一覧取得失敗は引き続き表示する。更新終了時のユーザー一致も確認する。
 
 ProtoDebugシミュレータービルド成功。実機で報告された症状の修正確認は未実施。次のTestFlight候補番号は2026100802。終了後の初回起動、前面復帰、通知からの起動、オフライン時のエラー、下スワイプ再取得を確認する。
+
+2026100802はProtoRelease Archive成功、2026-10-08 10:30:16 JSTにApp Store Connectアップロード成功（EXPORT SUCCEEDED、終了コード0）。Apple側処理開始まで確認。配布用Archiveの環境proto/API URLとバージョンを確認済み。Archiveはリポジトリ外の../releases/ios/20261008-cold-start/に保全。実機での症状解消は更新後に確認する。
