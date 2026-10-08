@@ -71,6 +71,7 @@ class MainViewController: UIViewController {
     let headerViewMaxHeight: CGFloat = 200
     let headerViewMinHeight: CGFloat = 0
     private var identityGeneration = 0
+    private var assignmentsRefreshInFlight = false
     var activeSurveyExists = false
     var topViewShadowIsShowing = false
     
@@ -332,11 +333,29 @@ class MainViewController: UIViewController {
     }
     
     func fetchAssignmentsAndSetUserName(){
+        guard Thread.isMainThread else {
+            DispatchQueue.main.async { [weak self] in self?.fetchAssignmentsAndSetUserName() }
+            return
+        }
+        guard !assignmentsRefreshInFlight else { return }
+        guard Auth.auth().currentUser != nil else {
+            pullControl.endRefreshing()
+            return
+        }
+        assignmentsRefreshInFlight = true
+        let requestedUID = Auth.auth().currentUser?.uid
         identityGeneration += 1
         let requestedGeneration = identityGeneration
         KirokunAccountSession.resolve { [weak self] success in
             guard let self = self, self.identityGeneration == requestedGeneration else { return }
+            guard Auth.auth().currentUser?.uid == requestedUID else {
+                self.assignmentsRefreshInFlight = false
+                self.pullControl.endRefreshing()
+                return
+            }
             guard success else {
+                self.assignmentsRefreshInFlight = false
+                self.pullControl.endRefreshing()
                 SurveyRepository.userId = ""; SurveyRepository.idToken = ""
                 SurveyRepository.assignmentList = []; SurveyRepository.selectedAssignment = nil
                 SurveyRepository.theUser = nil
@@ -350,7 +369,7 @@ class MainViewController: UIViewController {
             #if !KIROKUN_DEV
             Messaging.messaging().subscribe(toTopic: username)
             #endif
-            self.updateAssignments()
+            self.loadResolvedAssignments(requestedUID: requestedUID)
             self.sideMenu?.setInfo(name: username, listener: self)
             self.theTableView.reloadData()
             self.setUserCharts()
@@ -368,33 +387,32 @@ class MainViewController: UIViewController {
     }
     
     func updateAssignments(){
-        SurveyRepository.apiIsAlive { (alive) in
-            if alive {
-                SurveyRepository.getSurveys() { (assignments) in
-                    if assignments != nil{
-                        DispatchQueue.main.async {
-                            self.checkIfActiveSurveyExists()
-                            self.theTableView.reloadData()
-                            self.setUserCharts()
-                            self.openNotificationTarget()
-                        }
-                    }else{
-                        self.showServerErrorMessage()
-                    }
-                    DispatchQueue.main.async {
-                        self.hideOrShowEmptyListInfo()
-                    }
-                    self.setBadge()
+        // Foreground and notification events can precede the first /me response.
+        // All refreshes must share the same authentication-then-fetch sequence.
+        fetchAssignmentsAndSetUserName()
+    }
+
+    private func loadResolvedAssignments(requestedUID: String?) {
+        SurveyRepository.getSurveys { [weak self] assignments in
+            DispatchQueue.main.async {
+                guard let self = self else { return }
+                self.assignmentsRefreshInFlight = false
+                self.pullControl.endRefreshing()
+                guard Auth.auth().currentUser?.uid == requestedUID else { return }
+                guard assignments != nil else {
+                    self.showServerErrorMessage()
+                    return
                 }
-            }else{
-                self.showServerErrorMessage()
+                self.checkIfActiveSurveyExists()
+                self.theTableView.reloadData()
+                self.setUserCharts()
+                self.hideOrShowEmptyListInfo()
+                self.setBadge()
+                self.openNotificationTarget()
             }
         }
-        hideOrShowEmptyListInfo()
     }
-    
-    
-    
+
     private func openNotificationTarget() {
         guard view.window != nil, presentedViewController == nil,
               !children.contains(where: { $0 is UnansweredPopupViewController }),
@@ -588,34 +606,7 @@ class MainViewController: UIViewController {
     
     //when pull to refresh
     @objc private func refreshListData(_ sender: Any) {
-        SurveyRepository.apiIsAlive { (alive) in
-            if alive{
-                SurveyRepository.getSurveys() { (assignments) in
-                    DispatchQueue.main.async {
-                        self.pullControl.endRefreshing()
-                    }
-                    if assignments != nil{
-                        DispatchQueue.main.async {
-                            //self.surveyList = self.sortSurveyList(theList: surveys!)
-                            self.checkIfActiveSurveyExists()
-                            print("checkIfActiveSurveyExists refreshListData")
-                            self.theTableView.reloadData()
-                            self.setUserCharts()
-                        }
-                    }else{
-                        DispatchQueue.main.async {
-                            self.pullControl.endRefreshing()
-                        }
-                        self.showServerErrorMessage()
-                    }
-                }
-            }else{
-                DispatchQueue.main.async {
-                    self.pullControl.endRefreshing()
-                }
-                self.showServerErrorMessage()
-            }
-        }
+        updateAssignments()
     }
     
     @IBAction func menuButtonPressed(_ sender: Any) {
