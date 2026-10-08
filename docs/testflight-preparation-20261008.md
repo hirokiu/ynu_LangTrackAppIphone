@@ -54,3 +54,6 @@ TestFlight利用者から、終了後の初回起動で一覧は表示できる�
 ProtoDebugシミュレータービルド成功。実機で報告された症状の修正確認は未実施。次のTestFlight候補番号は2026100802。終了後の初回起動、前面復帰、通知からの起動、オフライン時のエラー、下スワイプ再取得を確認する。
 
 2026100802はProtoRelease Archive成功、2026-10-08 10:30:16 JSTにApp Store Connectアップロード成功（EXPORT SUCCEEDED、終了コード0）。Apple側処理開始まで確認。配布用Archiveの環境proto/API URLとバージョンを確認済み。Archiveはリポジトリ外の../releases/ios/20261008-cold-start/に保全。実機での症状解消は更新後に確認する。
+
+### 2026100802の配布待ち解消
+Apple処理後はMissing Complianceで停止していた。アプリの通信構成を確認し、App Encryption Documentationで「None of the algorithms mentioned above」を保存。Ready to Submitへの遷移と、既存内部グループ（10名）への自動割当を画面で確認した。外部審査通過を意味しない。TestFlight端末側の表示・インストール確認は利用者待ち。
