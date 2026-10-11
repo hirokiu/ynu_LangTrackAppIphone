@@ -144,12 +144,46 @@ enum KirokunTheme {
 // Project availability is deliberately scoped to the installed app's Firebase environment.
 // Add projects only together with their authentication and API routing configuration.
 enum KirokunProject {
+    static var projectId: String {
+        #if KIROKUN_DEV
+        return "dev"
+        #else
+        return "proto"
+        #endif
+    }
+    private static let labels = NSHashTable<UILabel>.weakObjects()
+    private static let selectors = NSMapTable<UIButton, NSString>.weakToStrongObjects()
+    private static var cacheKey: String? {
+        guard let uid = Auth.auth().currentUser?.uid else { return nil }
+        return "project-name:" + (Bundle.main.object(forInfoDictionaryKey: "KIROKUN_API_BASE_URL") as? String ?? projectId) + ":" + uid
+    }
     static var name: String {
+        if let key = cacheKey, let saved = UserDefaults.standard.string(forKey: key), !saved.isEmpty { return saved }
         #if KIROKUN_DEV
         return "Dev"
         #else
         return "Proto"
         #endif
+    }
+    static func accept(_ object: [String: Any]?) {
+        guard let object = object, object["projectId"] as? String == projectId,
+              let value = object["displayName"] as? String else { return }
+        let clean = value.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !clean.isEmpty, clean.unicodeScalars.count <= 80,
+              clean.rangeOfCharacter(from: .controlCharacters) == nil, let key = cacheKey else { return }
+        UserDefaults.standard.set(clean, forKey: key)
+        for label in labels.allObjects { label.text = name }
+        for button in selectors.keyEnumerator().allObjects.compactMap({ $0 as? UIButton }) {
+            update(button, title: selectors.object(forKey: button) as String?)
+        }
+    }
+    static func bind(_ label: UILabel) { labels.add(label); label.text = name }
+    private static func update(_ button: UIButton, title: String?) {
+        var config = button.configuration
+        config?.title = (title?.isEmpty == false) ? title : String(format: NSLocalizedString("project_selection_format", comment: ""), name)
+        button.configuration = config
+        button.menu = UIMenu(title: NSLocalizedString("project_available", comment: ""), children: [UIAction(title: name, state: .on) { _ in }])
+        button.accessibilityValue = name
     }
     static var connectionTitle: String {
         String(format: NSLocalizedString("project_connected_format", comment: ""), name)
@@ -167,6 +201,8 @@ enum KirokunProject {
         button.menu = UIMenu(title: NSLocalizedString("project_available", comment: ""), children: [
             UIAction(title: name, state: .on) { _ in /* Already selected; retain the current session. */ }
         ])
+        selectors.setObject((title ?? "") as NSString, forKey: button)
+        button.titleLabel?.numberOfLines = 2
         button.accessibilityValue = name
         return button
     }

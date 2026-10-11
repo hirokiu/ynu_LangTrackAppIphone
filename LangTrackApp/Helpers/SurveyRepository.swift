@@ -700,6 +700,7 @@ enum KirokunAccountSession {
                           let identifier = object?["userId"] as? String, !identifier.isEmpty else {
                         completion(false); return
                     }
+                    KirokunProject.accept(object?["project"] as? [String: Any])
                     SurveyRepository.userId = identifier
                     SurveyRepository.idToken = token
                     completion(true)

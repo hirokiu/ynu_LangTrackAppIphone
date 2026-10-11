@@ -157,7 +157,7 @@ class MainViewController: UIViewController {
         let common = KirokunTheme.commonHeader()
         titleView.addSubview(common)
         titleView.bringSubviewToFront(menuButton)
-        let name = UILabel(); name.text = KirokunProject.name
+        let name = UILabel(); KirokunProject.bind(name)
         name.font = .systemFont(ofSize: 24, weight: .bold)
         let overview = UILabel()
         #if KIROKUN_DEV
