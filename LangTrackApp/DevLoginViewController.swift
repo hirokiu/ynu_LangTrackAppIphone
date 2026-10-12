@@ -54,6 +54,26 @@ extension DevSceneDelegate {
         assignment.published = "2026-09-18T00:00:00.000Z"
         assignment.expiry = "2099-10-02T00:00:00.000Z"
         assignment.survey.title = "画面サイズ確認用アンケート（端末内のみ）"
+        // Local, simulator-only fixture: no authentication bypass in distributed builds.
+        if ProcessInfo.processInfo.arguments.contains("--preview-survey-json"),
+           let data = try? Data(contentsOf: FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("scroll-survey.json")),
+           let json = (try? JSONSerialization.jsonObject(with: data)) as? [String: Any],
+           let questions = json["questions"] as? [[String: Any]] {
+            assignment.survey.title = json["title"] as? String ?? "Scroll preview"
+            assignment.survey.questions = questions.enumerated().map { offset, item in
+                let q = Question()
+                q.index = item["index"] as? Int ?? offset
+                q.type = item["type"] as? String ?? "open"
+                q.title = item["title"] as? String ?? ""
+                q.text = item["text"] as? String ?? ""
+                q.description = item["description"] as? String ?? ""
+                q.previous = max(0, q.index - 1); q.next = min(questions.count - 1, q.index + 1)
+                q.singleMultipleAnswers = item["values"] as? [String]
+                q.multipleChoisesAnswers = item["values"] as? [String]
+                return q
+            }
+            return assignment
+        }
         let types = ["header", "open", "likert", "single", "multi", "blanks", "slider", "duration", "footer"]
         let texts = ["7種類の入力形式を確認します。回答はサーバーへ送信されません。", "今日の学習で気づいたことや、難しかったことを自由に入力してください。", "今日の学習に満足していますか？", "今日もっとも使った言語を選んでください。", "今日行った活動をすべて選んでください。", "今日は _____ を学びました。", "今日の学習の集中度を教えてください。", "今日の学習時間を入力してください。", "回答内容の確認"]
         assignment.survey.questions = types.enumerated().map { index, type in

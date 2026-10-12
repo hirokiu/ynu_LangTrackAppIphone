@@ -31,8 +31,36 @@ class MultipleChoiceViewController: UIViewController {
     var showingBottomShadow = false
     var headerHeight: CGFloat = 100
     
+    private let questionLabel = UILabel()
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Keep the question fixed outside the scrolling table. Pinned section
+        // headers render as a black rectangle on iOS 26 with this legacy layout.
+        for overlay in tableviewContainer.subviews where !(overlay is UITableView) {
+            overlay.isHidden = true
+        }
+        topViewBottomConstraint.isActive = false
+        for constraint in tableviewContainer.constraints
+            where constraint.firstItem as? UITableView === multiTableView
+                && constraint.firstAttribute == .centerY {
+            constraint.isActive = false
+        }
+        questionLabel.numberOfLines = 0
+        questionLabel.font = UIFont.systemFont(ofSize: 20, weight: .medium)
+        questionLabel.textAlignment = .center
+        questionLabel.textColor = .black
+        questionLabel.backgroundColor = .white
+        questionLabel.translatesAutoresizingMaskIntoConstraints = false
+        questionLabel.setContentCompressionResistancePriority(.required, for: .vertical)
+        tableviewContainer.addSubview(questionLabel)
+        NSLayoutConstraint.activate([
+            questionLabel.topAnchor.constraint(equalTo: tableviewContainer.topAnchor, constant: 8),
+            questionLabel.leadingAnchor.constraint(equalTo: multiTableView.leadingAnchor, constant: 5),
+            questionLabel.trailingAnchor.constraint(equalTo: multiTableView.trailingAnchor, constant: -5),
+            multiTableView.topAnchor.constraint(equalTo: questionLabel.bottomAnchor, constant: 12),
+            multiTableView.bottomAnchor.constraint(equalTo: tableviewContainer.bottomAnchor, constant: -12)
+        ])
         previousButton.layer.cornerRadius = 8
         nextButton.layer.cornerRadius = 8
         theIcon.clipsToBounds = false
@@ -74,6 +102,7 @@ class MultipleChoiceViewController: UIViewController {
     
     func setInfo(question: Question){
         self.theQuestion = question
+        questionLabel.text = question.text
         setTableviewWidth()
         nextButton.setEnabled(enabled: false)
         setSelectedAnswer()
@@ -82,7 +111,7 @@ class MultipleChoiceViewController: UIViewController {
         setTableviewWidth()
         multiTableView.reloadData()
         
-        topViewBottomConstraint.constant = -headerHeight
+
     }
     
     func setListener(listener: QuestionListener) {
@@ -208,22 +237,7 @@ extension MultipleChoiceViewController: UITableViewDelegate, UITableViewDataSour
         multiTableView.reloadData()
     }
     
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        let theTitle = theQuestion.text
-        headerHeight = theTitle.height(withConstrainedWidth: multiTableView.frame.width - 10, font: UIFont.systemFont(ofSize: 20, weight: .medium)) + 25
-        return headerHeight
-    }
-    
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let headerLabel = UILabel()
-        headerLabel.numberOfLines = 0
-        headerLabel.font = UIFont.systemFont(ofSize: 20, weight: .medium)
-        headerLabel.textAlignment = .center
-        headerLabel.contentMode = .top
-        headerLabel.text = theQuestion.text
-        headerLabel.backgroundColor = UIColor.white
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat { 0 }
 
-        return headerLabel
-    }
-    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? { nil }
 }
