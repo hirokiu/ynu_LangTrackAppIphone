@@ -152,6 +152,7 @@ enum KirokunProject {
         #endif
     }
     private static let labels = NSHashTable<UILabel>.weakObjects()
+    private static let subtitleLabels = NSMapTable<UILabel, NSString>.weakToStrongObjects()
     private static let selectors = NSMapTable<UIButton, NSString>.weakToStrongObjects()
     private static var cacheKey: String? {
         guard let uid = Auth.auth().currentUser?.uid else { return nil }
@@ -172,10 +173,26 @@ enum KirokunProject {
         guard !clean.isEmpty, clean.unicodeScalars.count <= 80,
               clean.rangeOfCharacter(from: .controlCharacters) == nil, let key = cacheKey else { return }
         UserDefaults.standard.set(clean, forKey: key)
+        if let subtitle = object["subtitle"] as? String, subtitle.unicodeScalars.count <= 120,
+           subtitle.rangeOfCharacter(from: .controlCharacters) == nil {
+            UserDefaults.standard.set(subtitle, forKey: key + ":subtitle")
+        } else { UserDefaults.standard.removeObject(forKey: key + ":subtitle") }
+        for label in subtitleLabels.keyEnumerator().allObjects.compactMap({ $0 as? UILabel }) {
+            updateSubtitle(label)
+        }
         for label in labels.allObjects { label.text = name }
         for button in selectors.keyEnumerator().allObjects.compactMap({ $0 as? UIButton }) {
             update(button, title: selectors.object(forKey: button) as String?)
         }
+    }
+    private static func updateSubtitle(_ label: UILabel) {
+        let saved = cacheKey.flatMap { UserDefaults.standard.string(forKey: $0 + ":subtitle") }
+        label.text = saved ?? (subtitleLabels.object(forKey: label) as String? ?? "")
+        label.isHidden = label.text?.isEmpty != false
+    }
+    static func bindSubtitle(_ label: UILabel, fallback: String) {
+        subtitleLabels.setObject(fallback as NSString, forKey: label)
+        updateSubtitle(label)
     }
     static func bind(_ label: UILabel) { labels.add(label); label.text = name }
     private static func update(_ button: UIButton, title: String?) {

@@ -161,9 +161,9 @@ class MainViewController: UIViewController {
         name.font = .systemFont(ofSize: 24, weight: .bold)
         let overview = UILabel()
         #if KIROKUN_DEV
-        overview.text = NSLocalizedString("project_overview_dev", comment: "")
+        KirokunProject.bindSubtitle(overview, fallback: NSLocalizedString("project_overview_dev", comment: ""))
         #else
-        overview.text = NSLocalizedString("project_overview_proto", comment: "")
+        KirokunProject.bindSubtitle(overview, fallback: NSLocalizedString("project_overview_proto", comment: ""))
         #endif
         overview.font = .systemFont(ofSize: 13)
         let encouragement = UILabel()
