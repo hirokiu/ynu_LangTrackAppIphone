@@ -18,3 +18,7 @@ App Store Connectはログイン期限切れのため、上松の再ログイン
 - リリース候補、審査用データ、公開文面が揃ってから審査提出へ進む。
 
 根拠: https://developer.apple.com/help/app-store-connect/manage-submissions-to-app-review/submit-an-app
+
+## 2026-10-14 App Store Connect下書き
+
+上松の再ログイン後、既存公開1.0から新バージョン2.0.0を作成。確認済み2026101202を選択し、上記更新内容を保存。再読込後もPrepare for Submission、ビルド2026101202、更新内容、手動公開を確認。審査追加・提出・公開は未実施。審査連絡先欄は未入力、既存の審査用ログイン情報は未変更・未検証。
