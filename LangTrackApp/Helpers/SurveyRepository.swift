@@ -246,8 +246,12 @@ struct SurveyRepository {
     
     static func postDeviceToken(){
         #if KIROKUN_DEV
-        return // Dev has no push registration and must not upsert production-style users.
-        #else
+        // Dev must never register its token against the Proto API.
+        guard Bundle.main.object(forInfoDictionaryKey: "KIROKUN_ENVIRONMENT") as? String == "dev",
+              let base = Bundle.main.object(forInfoDictionaryKey: "KIROKUN_API_BASE_URL") as? String,
+              let url = URL(string: base),
+              url.host == "dev.kirokun.alchembright.com" || (url.host == "localhost" && url.port == 18082) else { return }
+        #endif
         print("do postDeviceToken to upsert user")
         if userId != "" && deviceToken != ""{
             let vNumber = UIDevice.current.systemVersion
@@ -296,7 +300,7 @@ struct SurveyRepository {
                 
             }
         }
-        #endif
+
     }
     
     static func getSurveys(completionhandler: @escaping (_ result: [Assignment]?) -> Void) {

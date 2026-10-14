@@ -217,6 +217,8 @@ class DevLoginViewController: UIViewController {
                     if key == "dev_connected", let userId = resolvedId {
                         SurveyRepository.userId = userId
                         SurveyRepository.idToken = token
+                        SurveyRepository.localTimeZoneIdentifier = TimeZone.current.identifier
+                        SurveyRepository.postDeviceToken()
                         self.surveysButton.isHidden = false
                         self.openSurveys()
                     }
