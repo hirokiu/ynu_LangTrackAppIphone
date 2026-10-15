@@ -103,7 +103,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate {
         FirebaseApp.configure()
         if Bundle.main.object(forInfoDictionaryKey: "KIROKUN_ENVIRONMENT") as? String == "dev" {
             precondition(FirebaseApp.app()?.options.projectID == "kirokun-dev" && Bundle.main.bundleIdentifier == "com.alchembright.kirokun.dev", "Dev Firebase configuration mismatch")
-            Messaging.messaging().isAutoInitEnabled = isPushQA && !isPushQACleanup
+            Messaging.messaging().isAutoInitEnabled = !isPushQACleanup
             if isPushQACleanup {
                 Messaging.messaging().deleteToken { error in
                     guard error == nil else { self.recordPushQA("cleanup-failed"); return }
@@ -118,7 +118,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate {
                 }
                 return true
             }
-            if !isPushQA { return true }
             recordPushQA("started")
         }
         Messaging.messaging().delegate = self
